@@ -1,0 +1,4 @@
+{
+  "name": "PediRes AI",
+  "install": "if [ -f .cursor/install.sh ]; then bash .cursor/install.sh; else python3 --version && node --version && git --version && echo 'PediRes_AI_1: no application dependencies to install yet.'; fi"
+}
