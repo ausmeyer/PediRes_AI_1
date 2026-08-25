@@ -33,11 +33,11 @@ Do not add rows for textbook ML definitions (supervised/unsupervised) unless a s
 | C13 | *Pediatrics*: AI not an author; disclose name, manufacturer, how used; cover letter + Methods/Acknowledgments | https://publications.aap.org/pediatrics/pages/author-instructions | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` |
 | C14 | AAP digital-ecosystems policy 20 Jan 2026; AI forthcoming in separate statement | *Pediatrics* 157(2):e2025075320 doi:10.1542/peds.2025-075320 | 2026-01-20 | 25 Aug 2026 | `retrieved` |
 | C15 | PLACES/PAS: 48% used AI at work; 39% scribes; 78% concerned about no oversight; 6% confident in pediatric-appropriate development | https://www.aap.org/en/research/pas-abstracts/us-pediatricians-experiences-with-artificial-intelligence-in-healthcare-in-2025/ | 2025 abstract | 25 Aug 2026 | `abstract-only` |
-| C16 | AMA 2026 HOD: AI assistive not replacement; payer AI transparency; physician review of coverage | AMA press release | 2026 Annual Meeting | 25 Aug 2026 | `retrieved` (calendar day not on page) |
+| C16 | AMA 2026 HOD: AI assistive not replacement; payer AI transparency; physician review of coverage | AMA press release dated 10 June 2026 | 2026-06-10 | 25 Aug 2026 | `retrieved` (saved PDF; HOD item numbers still not on page) |
 | C17 | AMA H-480.931 reaffirmed 2026 | AMA PolicyFinder | 2026 | 25 Aug 2026 | `retrieved` |
-| C18 | Bergman, Wachter, Emanuel licensure framework | *JAMA* doi:10.1001/jama.2026.5483 | 2026-04-29 | landing pages | `canonical`; full PDF not retrieved |
-| C19 | WHO B09667: AI augments rather than replaces judgement in EIP | https://www.who.int/publications/i/item/B09667 | 2026 (overview) | 25 Aug 2026 | `retrieved` (overview, not full PDF) |
-| C20 | FDA GenAI device discussion paper: not guidance; two-axis risk; competency-based idea; docket FDA-2026-N-7874; comments to 19 Oct 2026 | Publicly posted discussion-paper PDF text | 2026-08-18 (press/legal reports); paper itself retrieved | 25 Aug 2026 | `retrieved` |
+| C18 | Bergman, Wachter, Emanuel licensure framework; six elements; HHS Office of Clinical AI Oversight | *JAMA* 2026;335(20):1751-1754 doi:10.1001/jama.2026.5483 | online 2026-04-29; print 26 May 2026 | 25 Aug 2026 | `retrieved` (full PDF; Viewpoint, not original research) |
+| C19 | WHO B09667: AI complements rather than replaces judgement in EIP | WHO discussion paper doi:10.2471/B09667 | 2026 | 25 Aug 2026 | `retrieved` (full PDF) |
+| C20 | FDA GenAI device discussion paper: not guidance; two-axis risk; competency-based idea; docket FDA-2026-N-7874 | Official docket attachment in `briefing/papers/` | 2026-08 | 25 Aug 2026 | `retrieved`. Comment-close 19 Oct 2026 remains docket/press metadata (not in PDF body) |
 | C21 | FDA does not regulate AI as such; regulates devices | Same discussion paper §III | 2026 | 25 Aug 2026 | `retrieved` |
 | C22 | FDA examples: child sore-throat triage vs chest-pain ED; insulin vs OTC hydrocortisone | Same paper §IV | 2026 | 25 Aug 2026 | `retrieved` |
 | C23 | OCR tracking-technology bulletin: BAA required for tracking vendors with PHI | https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/hipaa-online-tracking/index.html | updated 2024; still posted | 25 Aug 2026 | `retrieved` |
@@ -60,29 +60,34 @@ Do not add rows for textbook ML definitions (supervised/unsupervised) unless a s
 | C40 | GLM-5.3 14 Aug 2026; same base as 5.2; post-training only; weights in two weeks after safety work | https://z.ai/blog/glm-5.3 | 2026-08-14 | 25 Aug 2026 | `retrieved` `vendor-reported` evals |
 | C41 | GLM-5.3 vendor Terminal-Bench 3.0 4.6→28.3; CyberGym 84.5% | Same | 2026-08-14 | 25 Aug 2026 | `vendor-reported` |
 | C42 | OpenEvidence partners NEJM, JAMA, Nature, Cochrane, AAP among societies; 200M consultations; HIPAA/SOC2 claims | https://www.openevidence.com/about/ | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` **vendor claims** |
-| C43 | OpenEvidence SR: 11 studies to Jan 2026; lower fabricated citations vs general LLMs where measured; often reinforces decisions | Artsi et al. *npj Digit Med* doi:10.1038/s41746-026-03077-4 | published 2026-08-12 | 25 Aug 2026 | `abstract-only` |
-| C44 | “>40% of US physicians daily” | Same abstract says “reportedly”; also vendor marketing | 2026 | 25 Aug 2026 | **do not treat as audited** |
-| C45 | UpToDate Expert AI announced 24 Sep 2025; Enterprise Q4 2025 | Wolters Kluwer / Business Wire | 2025-09-24 | 25 Aug 2026 | `canonical` (WK HTML timeout; Business Wire retrieved in search) |
+| C43 | OpenEvidence SR: 11 studies to Jan 2026; PROSPERO CRD420261289103; lower fabricated citations vs general LLMs where measured (minority of studies); often reinforces decisions; no pediatric synthesis | Artsi et al. *npj Digit Med* doi:10.1038/s41746-026-03077-4 | published 2026-08-12 (accepted 26 Jul 2026) | 25 Aug 2026 | `retrieved` (article-in-press PDF) |
+| C44 | “>40% of US physicians daily” | Same review: company-reported, repeated as “reportedly” | 2026 | 25 Aug 2026 | **do not treat as audited** |
+| C45 | UpToDate Expert AI announced 24 Sep 2025; Enterprise Q4 2025; vendor 7,600 experts | Wolters Kluwer announcement page | 2025-09-24 | 25 Aug 2026 | `retrieved` (saved WK PDF). 6 Aug 2026 “~2,500 US hospitals” is a related vendor item on the same print |
 | C46 | Claude Code: terminal/IDE agent; GitHub anthropics/claude-code | https://www.anthropic.com/product/claude-code | 2026 | 25 Aug 2026 | `retrieved` |
 | C47 | Codex sandbox: OS-enforced; workspace-write default pattern; Seatbelt / bubblewrap / Windows elevated sandbox | OpenAI engineering + developers.openai.com/codex/concepts/sandboxing | 2026 | 25 Aug 2026 | `retrieved` |
 | C48 | OpenClaw: personal assistant, many chat channels, Gateway, skills | https://github.com/openclaw/openclaw | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` |
 | C49 | Hermes Agent: Nous Research; OpenClaw import; skills/memory | https://github.com/nousresearch/hermes-agent | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` |
 | C50 | OpenCode: open-source coding agent anomalyco/opencode | https://github.com/anomalyco/opencode | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` |
-| C51 | 2024 DHAC GenAI TPLC meeting is **not** the 2026 discussion paper | FDA media/184078 vs 2026 discussion paper | 2024 vs 2026 | 25 Aug 2026 | do not conflate |
+| C51 | 2024 DHAC GenAI TPLC meeting is **not** the 2026 discussion paper | FDA media/184078 vs 2026 discussion paper (DHAC exec summary cited in 2026 PDF as media/182871) | 2024 vs 2026 | 25 Aug 2026 | do not conflate |
+| C52 | Generative AI SOTA review for families/pediatricians; AI is not a friend or caregiver; 72% teens used companion chatbots (via Common Sense Media 2025) | Grundmeier et al. *Pediatrics* 2026;157(4):e2025074912 | accepted 2026-01-07; issue Apr 2026 | 25 Aug 2026 | `retrieved` (full PDF). **Not AAP policy.** 72% not independently re-fetched |
+| C53 | Qwen3.8-Max long-horizon coding demo (oh-my-cli; ~16 days; 151 issues as of 30 Jul 2026) | Local `Qwen.pdf` marketing screenshot | 2026-07-30 figure in copy | 25 Aug 2026 | `vendor-reported`; does **not** confirm 2.4T |
 
 ## Search log (this compilation)
 
 Queries and fetches included, among others: official GPT-5.6, Fable/Mythos, Opus 5, Kimi K3, GLM-5.3, DeepSeek-V4 HTML, Qwen3.8 GitHub and qwen.ai, Muse Spark/Glimmer, Gemini 3.7 Flash, Gemini Notebook, OpenEvidence About, Artsi 2026, ICMJE PDF, Pediatrics author instructions, AAP digital ecosystems, AMA press release, WHO B09667, FDA discussion paper PDF text, MCP intro, Agent Skills, Ollama library qwen3.8, Codex sandbox posts, OpenClaw/Hermes/OpenCode GitHub, Wolters Kluwer Expert AI, HHS OCR tracking, OpenAI HIPAA help article.
 
-**Intentionally unused as facts:** BenchLM / FelloAI / ThursdAI rankings except as discovery; OpenEvidence vs UpToDate comparison blogs; “65% of US doctors” marketing; GLM-5.3 independent cyber league tables; any invented DOI.
+**Local PDF re-read 25 Aug 2026** (`briefing/papers/`): Artsi article-in-press; Bergman *JAMA*; WHO B09667; FDA docket attachment; AMA 10 Jun 2026 press PDF; WK Expert AI page; Qwen one-page marketing shot; Grundmeier *Pediatrics* 2026;157(4):e2025074912.
+
+**Intentionally unused as facts:** BenchLM / FelloAI / ThursdAI rankings except as discovery; OpenEvidence vs UpToDate comparison blogs; “65% of US doctors” marketing; GLM-5.3 independent cyber league tables; any invented DOI; Kenya/Pakistan/NOHARM outcome numbers as quoted by Bergman (those primary papers were not opened).
 
 ## Known holes (do not paper over)
 
 1. OpenAI ChatGPT/GPT-4 HTML timed out; dates rest on canonical URLs.  
-2. Bergman *JAMA* full text not retrieved.  
-3. WHO full discussion paper PDF not retrieved.  
-4. UpToDate Expert AI independent pediatric trials: none retrieved.  
-5. GLM-5.3 weights: not public as of 25 Aug 2026 per vendor.  
-6. Exact AMA HOD calendar date: not on the fetched press page.  
-7. Claude Code MEMORY.md byte cap: community issues, not used as a hard number in the briefing body.  
-8. AAP dedicated AI policy: **forthcoming**, not published in this window.
+2. Official `fda.gov` HTML landing for the 2026 discussion paper still not fetched; docket PDF is in-repo. Comment-close date not in PDF body.  
+3. UpToDate Expert AI independent pediatric trials: none retrieved.  
+4. GLM-5.3 weights: not public as of 25 Aug 2026 per vendor.  
+5. AMA HOD **item numbers**: still not on the 10 June 2026 press PDF.  
+6. Claude Code MEMORY.md byte cap: community issues, not used as a hard number in the briefing body.  
+7. AAP dedicated AI **policy**: **forthcoming**, not published in this window. Grundmeier 2026 is a review, not that policy.  
+8. Common Sense Media 2025 teen-companion survey PDF (Robb and Mann): cited by Grundmeier; not opened here.  
+9. `Qwen.pdf` does not contain the 2.4T / open-weight-timeline spec.
