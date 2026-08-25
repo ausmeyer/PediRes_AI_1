@@ -284,14 +284,15 @@ The product residents should learn is the **loop** (files, tools, tests), not th
 ### Sources (examples)
 
 - AAP digital-ecosystems policy PDF (2026)  
+- Grundmeier et al. 2026 *Pediatrics* SOTA review (in `briefing/papers/`; **not** AAP policy)  
 - ICMJE Recommendations PDF  
 - CDC/AAP open bronchiolitis or immunization page saved as PDF  
-- Artsi et al. 2026 OpenEvidence review (open access)
+- Artsi et al. 2026 OpenEvidence review (open access; local PDF in `briefing/papers/`)
 
 ### Procedure
 
 1. Create a notebook. Upload only those files.  
-2. Ask: “What does AAP say it is **not** covering in this statement regarding AI?” (Answer: dedicated AI policy is forthcoming.)  
+2. Ask: “What does AAP say it is **not** covering in this statement regarding AI?” (Answer: dedicated AI policy is forthcoming.) Contrast with Grundmeier 2026: useful counseling review, **not** that policy.  
 3. Ask a question **outside** the corpus. The right behavior is refusal or “not in sources.”  
 4. Optional: generate an audio overview for commute learning.
 
