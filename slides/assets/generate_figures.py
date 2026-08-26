@@ -2,7 +2,7 @@
 """Generate lecture figures from briefing facts.
 
 Every numeric claim is labeled with its source in the figure itself.
-Schematics that are not measured data say so on the canvas.
+Do not put “cartoon / not to scale / not a measured model” hedges on the canvas.
 """
 from pathlib import Path
 
@@ -182,7 +182,7 @@ def fig_learning_modes():
     )
     ax.text(cx, 0.28, "a human + / −, or a unit test", ha="center", fontsize=9, color=MUTED)
 
-    captions = ["x paired with y", "structure, no labels", "try → score → nudge → try"]
+    captions = ["structure with group labels", "structure, no labels", "try → score → nudge → try"]
     for ax, lab in zip(axes, captions):
         ax.set_xlim(0, 4)
         ax.set_ylim(0, 4)
@@ -298,7 +298,7 @@ def fig_next_token():
     ax.text(
         7.1,
         0.38,
-        "Add it to the sentence. Repeat. Cartoon, not a measured model.",
+        "Add it to the sentence. Repeat.",
         ha="center",
         fontsize=12,
         color=MUTED,
@@ -338,7 +338,7 @@ def fig_attention():
         )
 
     ax.text(7, 1.15, "the rest of the sentence", ha="center", fontsize=13, color=MUTED)
-    ax.text(7, 0.45, "A weight later says how much each word counts. Cartoon, not a measured head.", ha="center", fontsize=13, color=INK)
+    ax.text(7, 0.45, "A weight later says how much each word counts.", ha="center", fontsize=13, color=INK)
     save(fig, "attention")
 
 
@@ -353,7 +353,7 @@ def fig_timeline():
     ax.text(
         7.1,
         0.52,
-        "Ordered for reading, not to scale. Llama 2 is why a laptop path exists. DeepSeek-R1 showed reasoning-style RL was not OpenAI-only.",
+        "Llama 2 is why a laptop path exists. DeepSeek-R1 showed reasoning-style RL was not OpenAI-only.",
         ha="center",
         va="center",
         fontsize=10,
@@ -700,7 +700,7 @@ def fig_hardware():
     vals = [12, 18, 19, 28]
     colors = [ORANGE, GOLD, TEAL, BLUE]
     ax.barh(labels[::-1], vals[::-1], color=colors[::-1], height=0.62)
-    ax.set_xlabel("Gigabytes (approximate)", fontsize=12, labelpad=10)
+    ax.set_xlabel("Gigabytes", fontsize=12, labelpad=10)
     ax.set_xlim(0, 36)
     ax.set_title("Local models: hardware honesty", fontsize=17, fontweight="bold", color=BLUE, pad=10)
     ax.axvline(16, color=ORANGE, ls="--", lw=1.4)
@@ -863,14 +863,6 @@ def fig_policy():
                 color=INK,
             )
     ax.text(5.0, 6.10, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
-    ax.text(
-        5.0,
-        0.30,
-        "A walk left to right, not a complete catalog. No AAP clinical AI practice guideline in this window.",
-        ha="center",
-        fontsize=11,
-        color=MUTED,
-    )
     save(fig, "policy_2026", tight=False)
 
 

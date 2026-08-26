@@ -107,7 +107,7 @@ A score, an alert, and a chatbot are all called AI — that sentence is on the c
 ![](assets/figures/learning_modes.png){width="100%"}
 
 ::: notes
-Same points in the first two panels. Supervised: the colors are the labels. Unsupervised: the colors are gone; the model only sees structure. Reinforcement is a roundabout: try an answer, get scored (a human +/−, or a unit test), nudge the weights, try again. LLMs are mostly self-supervised pretraining plus later alignment. Pediatric labels are often billing codes, not truth.
+Same points in the first two panels. Supervised: x goes with y; the colors are group labels. Unsupervised: the colors are gone; the model only sees structure. Reinforcement is a roundabout: try an answer, get scored (a human +/−, or a unit test), nudge the weights, try again. LLMs are mostly self-supervised pretraining plus later alignment. Pediatric labels are often billing codes, not truth.
 :::
 
 ---
@@ -137,7 +137,7 @@ A dose is several tokens. That is why numeric hallucination is easy and why "jus
 ![](assets/figures/next_token.png){width="100%"}
 
 ::: notes
-Decoder-style LLM: given the tokens so far, score the next one, add it, repeat. The mix-then-update stack is a transformer. Cartoon, not a measured head or a real softmax table. Next slide zooms on the mix.
+Decoder-style LLM: given the tokens so far, score the next one, add it, repeat. The mix-then-update stack is a transformer. Next slide zooms on the mix.
 :::
 
 ---
@@ -147,7 +147,7 @@ Decoder-style LLM: given the tokens so far, score the next one, add it, repeat. 
 ![](assets/figures/attention.png){width="100%"}
 
 ::: notes
-Self-attention, 2017. This is the mix step from the last slide. Cartoon: one token looking at the sentence with straight arrows. Not a measured attention head. Point: context, not magic understanding.
+Self-attention, 2017. This is the mix step from the last slide. One token looking at the sentence. Point: context, not magic understanding.
 :::
 
 ---
@@ -163,7 +163,7 @@ Self-attention, 2017. This is the mix step from the last slide. Cartoon: one tok
 ![](assets/figures/timeline.png){width="100%"}
 
 ::: notes
-GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT Nov 2022 is the public rupture — point at that orange line, not a long arrow. Spacing is for reading, not a time scale. GPT-4 multimodal. Llama 2 (Jul 2023) is why a laptop path exists. o1 Sep 2024 is test-time compute as a product. DeepSeek-R1 Jan 2025 is the public proof that reasoning-style RL was not OpenAI-only. 2026 names are access classes, not Elo to memorize.
+GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT Nov 2022 is the public rupture — point at that orange line, not a long arrow. GPT-4 multimodal. Llama 2 (Jul 2023) is why a laptop path exists. o1 Sep 2024 is test-time compute as a product. DeepSeek-R1 Jan 2025 is the public proof that reasoning-style RL was not OpenAI-only. 2026 names are access classes, not Elo to memorize.
 :::
 
 ---
@@ -209,7 +209,7 @@ Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start c
 ![](assets/figures/test_time_compute.png){width="100%"}
 
 ::: notes
-Not human reasoning. Try several answers at answer time and keep one that checks out. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses. The curve is a cartoon, not a vendor eval.
+Not human reasoning. Try several answers at answer time and keep one that checks out. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses.
 :::
 
 ---
@@ -505,7 +505,7 @@ Your PDFs. Grounded Q&A.
 :::
 
 ::: {.lab-catalog-foot}
-Recipes on the next slides. Free path for each. No PHI.
+Recipes on the next slides. Free path for each.
 :::
 :::
 ::::
@@ -532,7 +532,7 @@ Goal: one synthetic stem in a file becomes Word, Excel, and PowerPoint you can o
 STEM.md — we wrote this
 :::
 
-Not model output. Not a real child. We wrote it so the agent has a bounded case and cannot “helpfully” add identifiers, meds, or invented PubMed IDs.
+Not model output. We wrote it so the agent has a bounded case and cannot “helpfully” add identifiers, meds, or invented PubMed IDs.
 
 **What it says.** 6-month-old former 36-week infant, day 2 of RSV bronchiolitis. SpO2 nadir 88% on room air, now 94% on 0.5 L NC. Taking 50% of feeds. Family wants a plain-language update. Night team wants a wean tracker.
 :::
@@ -566,7 +566,7 @@ Live · 2 of 4 · same Cursor window, new folder
 :::
 
 ::: {.lab-goal}
-Goal: the model writes Excel that looks official. You audit formulas, not the pretty numbers. Fictional drug only. No live administration.
+Goal: the model writes Excel that looks official. You audit formulas, not the pretty numbers. Fictional drug only.
 :::
 
 :::: {.lab-split}
@@ -577,14 +577,14 @@ KEY.md — we wrote this too
 
 The key is the answer sheet, written by us, not a model. It exists so “correct” is defined before the agent runs.
 
-**Rules.** `teachicillin`, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose. Weight under 2 kg → TOO_SMALL. Age is recorded; it does not change the dose. Not a formulary.
+**Rules.** `teachicillin`, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose. Weight under 2 kg → TOO_SMALL. Age is recorded; it does not change the dose.
 :::
 ::: {.box .box-teal .box-prose}
 ::: {.box-label}
 How · paste in Cursor Agent
 :::
 
-Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README: not for clinical use.
+Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README.
 
 Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency.
 
@@ -593,11 +593,11 @@ Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented
 ::::
 
 ::: {.lab-done}
-Done when formula view is on the projector and the room has named at least one error. Repeat later with any made-up key you write yourself — never a real hospital nomogram.
+Done when formula view is on the projector and the room has named at least one error. Repeat later with any made-up key you write yourself.
 :::
 
 ::: notes
-KEY.md already in the folder. No live administration. Fallback is wrong on purpose.
+KEY.md already in the folder. Fallback is wrong on purpose.
 :::
 
 ---
@@ -727,7 +727,7 @@ Take-home · 6 of 8 · Ollama
 :::
 
 ::: {.lab-goal}
-Goal: summarize a synthetic H&P with the network off. The vendor never sees the prompt. Local is a privacy architecture, not a quality trophy.
+Goal: summarize a synthetic H&P with the network off. The vendor never sees the prompt.
 :::
 
 ::: {.lab-steps}
@@ -737,14 +737,14 @@ Goal: summarize a synthetic H&P with the network off. The vendor never sees the 
 
 1. Install [ollama.com](https://ollama.com). `ollama pull qwen3.8` or `ollama pull qwen3:8b` if memory is tight.
 2. Airplane mode. Confirm Wi-Fi is off.
-3. Paste a **synthetic** H&P. No real names.
+3. Paste a synthetic H&P.
 4. Prompt: list problems, overnight contingencies, three questions for the family. Do not invent labs. If a value is missing, say MISSING.
 
-**Then, while online.** Paste the same synthetic note into consumer ChatGPT. That is the vendor you do not have a contract with — if the note were PHI.
+**Then, while online.** Paste the same synthetic note into consumer ChatGPT. That is the vendor you do not have a contract with.
 :::
 
 ::: {.lab-done}
-Done when Wi-Fi is off the whole time and the model still answers. Unmanaged laptops still get stolen. Not a licensed hospital system.
+Done when Wi-Fi is off the whole time and the model still answers.
 :::
 
 ::: notes
@@ -764,13 +764,13 @@ Goal: the same request in ChatGPT and in a harness. The product you want is the 
 :::
 
 ::: {.lab-prompt}
-In an empty folder, create a single `index.html` that plots WHO-style weight-for-age **synthetic** curves for 0–24 months and lets me type a weight to see a labeled teaching z-score using an explicit formula in a comment. No external APIs. Then confirm the file opens. Not a clinical growth chart.
+In an empty folder, create a single `index.html` that plots WHO-style weight-for-age synthetic curves for 0–24 months and lets me type a weight to see a labeled teaching z-score using an explicit formula in a comment. No external APIs. Then confirm the file opens.
 :::
 
 ::: {.lab-steps}
 1. **Arm A · ChatGPT.** Paste the request. Try to copy files by hand. Notice where you stall (“where do I put this”).
 2. **Arm B · harness.** Cursor, Codex, Claude Code, or OpenCode + Ollama in an empty folder. Same request. Let it write and open the file.
-3. Open `index.html` in a browser. Confirm it is synthetic data only.
+3. Open `index.html` in a browser.
 :::
 
 ::: {.lab-done}
@@ -790,7 +790,7 @@ Take-home · 8 of 8 · your PDFs
 :::
 
 ::: {.lab-goal}
-Goal: grounded Q&A over files you chose. Right tool for journal club and policy. Wrong tool for the census. Google’s “we don’t train on uploads” is not a hospital privacy contract.
+Goal: grounded Q&A over files you chose. Right tool for journal club and policy. Wrong tool for the census.
 :::
 
 ::: {.lab-steps}

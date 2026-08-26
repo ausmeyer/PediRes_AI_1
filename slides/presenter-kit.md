@@ -67,7 +67,7 @@ If the agent stalls: `python workshops/lab1_fallback.py` from this repo.
 
 Empty folder. [`KEY.md`](workshops/KEY.md) already written (fictional `teachicillin` only). In Cursor Agent:
 
-> Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README: not for clinical use.
+> Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README.
 
 Flip to formula view. The room is hunting a missing max, mg vs mcg, an adult default, or an invented frequency. If the agent hangs: `python workshops/lab2_fallback.py` — that sheet omits the 400 mg cap on purpose.
 
