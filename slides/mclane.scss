@@ -255,6 +255,17 @@ $presentation-h2-font-size: 1.35em;
   color: $mclane-teal;
 }
 
+.box-prose {
+  font-size: 0.58em;
+  line-height: 1.32;
+  font-weight: 400;
+}
+
+.box-prose h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.35em;
+}
+
 .caution {
   border-left: 6px solid $mclane-orange;
   padding-left: 0.8em;

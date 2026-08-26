@@ -1,6 +1,8 @@
 .quarto/
 _site/
 workshops/w1_out/
+workshops/w6_out/
+assets/__pycache__/
 
 /.quarto/
 **/*.quarto_ipynb

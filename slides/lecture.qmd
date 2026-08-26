@@ -34,12 +34,10 @@ Pediatric residency workshop-lecture · Temple
 A survey of modern AI
 :::
 
-**Not a protocol. Not patient-specific direction.**
-
-Cutoff 25 August 2026
+Teaching survey · invented cases
 
 ::: notes
-Open on the train. This is McLane's mark from the hospital site, not clip-art. Say: one hour, two live labs, a written briefing for everything we skip. No PHI tonight.
+Open on the train. This is McLane's mark from the hospital site, not clip-art. Say: one hour, two live labs, a written briefing for everything we skip. No PHI tonight. This is a survey, not a protocol and not patient-specific direction — keep that in your voice, not as a punch on the title slide.
 :::
 
 ---
@@ -52,8 +50,6 @@ Open on the train. This is McLane's mark from the hospital site, not clip-art. S
 ### Invented cases
 
 Every demo patient is made up.
-
-Not a child on the census.
 :::
 :::
 ::: {.column width="32%"}
@@ -62,7 +58,7 @@ Not a child on the census.
 
 Consumer ChatGPT, Claude, Gemini.
 
-No names, MRNs, or pasted H&Ps.
+No names, record numbers, or pasted notes.
 :::
 :::
 ::: {.column width="32%"}
@@ -75,7 +71,7 @@ A dose or a citation from a model stays out of the note until the source is open
 ::::
 
 ::: notes
-Three of the five briefing rules, in English. De-identification is not a loophole, and a local laptop is not automatically compliant — those wait for the HIPAA slide. If someone offers a real H&P, stop and point at card 1.
+Three of the five briefing rules, in English. If someone offers a real H&P, stop and point at card 1. Consumer cloud is the problem. Local models wait for the prompt-goes-where slide.
 :::
 
 ---
@@ -85,14 +81,14 @@ Three of the five briefing rules, in English. De-identification is not a loophol
 ![](assets/figures/hour_map.png){width="100%"}
 
 ::: notes
-12-10-10-8-8-12. Q&A eats slack. Handout has six more workshops. Do not read the 40-page packet.
+10-8-8-8-8-18. Q&A eats slack. Handout has four more workshops. Do not read the 40-page packet.
 :::
 
 ---
 
 ## Foundations {background-color="#003DA6" .section-break}
 
-12 minutes
+10 minutes
 
 ---
 
@@ -101,7 +97,7 @@ Three of the five briefing rules, in English. De-identification is not a loophol
 ![](assets/figures/three_ais.png){width="100%"}
 
 ::: notes
-Rules / classical ML / foundation models. FDA does not regulate "AI as such"; it regulates devices by intended use.
+Rules / classical ML / foundation models. Left box is not “unlearned”: PEWS-style scores are often expert-weighted; neonatal sepsis rules were split out of data (sequential division). CAD on the middle card is computer-aided detection — a chest X-ray read. FDA does not regulate “AI as such”; it regulates devices by intended use.
 :::
 
 ---
@@ -111,12 +107,12 @@ Rules / classical ML / foundation models. FDA does not regulate "AI as such"; it
 ![](assets/figures/learning_modes.png){width="100%"}
 
 ::: notes
-Supervised: labels. Unsupervised: structure. RL: reward. LLMs are mostly self-supervised pretraining plus later alignment. Pediatric labels are often billing codes, not truth.
+Same points in the first two panels. Supervised: the colors are the labels. Unsupervised: the colors are gone; the model only sees structure. RL: reward. LLMs are mostly self-supervised pretraining plus later alignment. Pediatric labels are often billing codes, not truth.
 :::
 
 ---
 
-## Adult AUROC, pediatric ward {.viz}
+## Adult metrics, pediatric ward {.viz}
 
 ![](assets/figures/pediatric_shift.png){width="100%"}
 
@@ -148,7 +144,7 @@ Self-attention, 2017. Cartoon: one token looking at the sentence with straight a
 
 ## Timeline {background-color="#00C4B3" .section-break}
 
-10 minutes
+8 minutes
 
 ---
 
@@ -162,23 +158,23 @@ GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT 30 Nov 2022 is t
 
 ---
 
-## Size is not the whole story {.viz}
+## Size and what still matters {.viz}
 
 ![](assets/figures/param_scale.png){width="100%"}
 
 ::: notes
-MoE vs dense. Laptop 27B/30B vs trillion-parameter datacenter models. Counts from first-party posts in the briefing. Do not treat the y-axis as quality.
+Mixture-of-experts vs dense. Laptop 27-billion and 30-billion models vs trillion-parameter datacenter models. Counts from first-party posts in the briefing. Do not treat the y-axis as quality.
 :::
 
 ---
 
 ## Reasoning and tools {background-color="#691F74" .section-break}
 
-10 minutes
+8 minutes
 
 ---
 
-## RAG is a corpus choice {.viz}
+## Retrieve, then generate {.viz}
 
 ![](assets/figures/rag.png){width="100%"}
 
@@ -218,12 +214,12 @@ MCP, skills, orchestration — USB-C to tools, reusable instruction folders, a l
 
 ---
 
-## The exam is not the ward {.viz}
+## The exam and the ward {.viz}
 
 ![](assets/figures/benchmark_trap.png){width="100%"}
 
 ::: notes
-MedQA ≠ this infant. Vendor tables stay vendor-reported. FDA 2026 paper is still asking how to test open-ended GenAI. Not guidance.
+Board-style exams and vendor tables are one kind of test. This infant, this formulary, and this family’s language are another. FDA 2026 paper is still asking how to test open-ended generative AI.
 :::
 
 ---
@@ -234,12 +230,12 @@ MedQA ≠ this infant. Vendor tables stay vendor-reported. FDA 2026 paper is sti
 
 ---
 
-## Three boxes, August 2026 {.viz}
+## Three boxes {.viz}
 
 ![](assets/figures/three_boxes.png){width="100%"}
 
 ::: notes
-Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 3. GLM-5.3 weights not public as of 25 Aug 2026. Mythos is restricted — do not tell them to just use it.
+Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 3, and that is a reasonable setup: the vendor never sees the prompt, and they already use that laptop for the EHR. GLM-5.3 weights not public. Mythos is restricted — do not tell them to just use it.
 :::
 
 ---
@@ -254,19 +250,15 @@ Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 
 - More often reinforces a decision than changes it
 - The product is still moving
 
-Company line “>40% of US physicians daily” is vendor-reported. Not audited.
-
-::: {.small}
-PROSPERO CRD420261289103 · doi:10.1038/s41746-026-03077-4
-:::
+Company line “>40% of US physicians daily” is vendor-reported.
 
 ::: notes
-Artsi 2026 OpenEvidence SR. Click citations. Reinforces rather than changes decisions. Company "40% of US physicians" is not audited. Do not invent a pediatric evidence base from 11 adult-leaning studies.
+Artsi 2026 OpenEvidence systematic review. Click citations. Reinforces rather than changes decisions. Company "40% of US physicians" is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
 :::
 
 ---
 
-## Grounding ≠ accuracy {.viz}
+## Grounding and accuracy {.viz}
 
 ![](assets/figures/hajj_counterexample.png){width="100%"}
 
@@ -276,22 +268,22 @@ Hajj inside Artsi: ChatGPT-4o 66.7 vs OE 26.7 on 15 tricuspid questions. Do not 
 
 ---
 
-## Local models need RAM {.viz}
+## Local models need memory {.viz}
 
 ![](assets/figures/hardware.png){width="100%"}
 
 ::: notes
-Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class, not a measured fleet. Local removes a vendor, not the Security Rule.
+Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class. Hardware is the constraint. If it fits, local is a reasonable way to keep the prompt off a vendor.
 :::
 
 ---
 
-## HIPAA is not a vibe {.viz}
+## Where the prompt goes {.viz}
 
 ![](assets/figures/hipaa.png){width="100%"}
 
 ::: notes
-Tighten the planning prompt. Consumer tools: no BAA. OpenEvidence badge is vendor. Offline Ollama: stolen laptop. Only hospital tools with an executed BAA for real notes.
+Consumer ChatGPT: the prompt leaves the building. OpenEvidence’s HIPAA badge is still a vendor cloud. Local Ollama: the prompt stays on the laptop they already use for the EHR. That is a reasonable path. Hospital BAA tools are the official cloud path.
 :::
 
 ---
@@ -307,7 +299,7 @@ Tighten the planning prompt. Consumer tools: no BAA. OpenEvidence badge is vendo
 ![](assets/figures/aap_places.png){width="100%"}
 
 ::: notes
-PAS 2025 abstract. Punchline is 6%. Conference abstract, not a paper.
+PAS 2025. Punchline is 6%.
 :::
 
 ---
@@ -317,47 +309,50 @@ PAS 2025 abstract. Punchline is 6%. Conference abstract, not a paper.
 ![](assets/figures/policy_2026.png){width="100%"}
 
 ::: notes
-AAP digital ecosystems defers dedicated AI policy. Grundmeier April 2026 is a CHOP SOTA review — AI is not a friend — not AAP policy. Bergman Viewpoint, licensure, not law. AMA 10 June 2026: assistive, payer transparency. FDA August discussion paper, comments docket, not guidance; sore-throat child vs chest-pain ED. WHO B09667 is EIP, not bedside.
+Walk left to right. AAP January: digital-ecosystems policy; the dedicated AI statement is still forthcoming — do not invent one. ICMJE January: name the tool, chatbots cannot be authors, humans stay accountable; Pediatrics follows this. Grundmeier April is a CHOP state-of-the-art review in Pediatrics: AI is a tool; counsel teens using companion chatbots; it is a review. Bergman JAMA Viewpoint: license autonomous clinical AI more like a clinician; opinion, not a statute. AMA 10 June: assistive, physician review of coverage denials, transparency when models change — this is the one they feel on prior-auth. FDA August: discussion paper, two-axis risk (what the tool does × how bad an error is), comments docket. WHO B09667: evidence-informed policy for policy-makers, not a pediatric practice guideline. No AAP clinical AI policy in this window.
 :::
 
 ---
 
-## Journals still police disclosure, not agents
+## Judge the work
 
-::: {.columns}
-::: {.column width="50%"}
-::: {.box}
-**Required today**
+::: {.kicker}
+A position on journal AI rules
+:::
 
-Name the tool.
+:::: {.columns .columns-tight}
+::: {.column width="32%"}
+::: {.box .box-orange .box-prose}
+### Scarlet letter
 
-No chatbot authors.
-
-You are accountable.
+Journals treat the AI sentence like a confession. Naming the product does not make the science more true.
 :::
 :::
-::: {.column width="50%"}
-::: {.box}
-**Still missing**
+::: {.column width="32%"}
+::: {.box .box-purple .box-prose}
+### The postdoc test
 
-Prompts / logs / hashes.
+We do not keep the Slack thread with a graduate student. Prompts, chats, and logs are that same kind of thing. The manuscript is the record.
+:::
+:::
+::: {.column width="32%"}
+::: {.box .box-teal .box-prose}
+### Models in the pipeline
 
-Pediatric attestment.
-
-Harnesses that emit spreadsheets.
+Use LLMs for drafting, checking, review, and evaluation. Keep scientific importance and taste with the humans.
 :::
 :::
 ::::
 
 ::: notes
-ICMJE / Pediatrics / COPE. Gap: 2023 language still sounds like chatbots. AMA payer policy is the rare one about power. Until AAP's AI statement exists, do not quote Twitter as policy.
+ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then argue this slide: disclosure-as-stigma does no epistemic work; we do not archive conversations with postdocs; judge the project on its merits; let models into review and evaluation; keep importance and taste human. This is a position, not a journal’s current rulebook.
 :::
 
 ---
 
 ## Live labs {background-color="#5F277E" .section-break}
 
-12 minutes
+18 minutes
 
 ---
 
@@ -366,7 +361,7 @@ ICMJE / Pediatrics / COPE. Gap: 2023 language still sounds like chatbots. AMA pa
 ![](assets/figures/workshops_split.png){width="100%"}
 
 ::: notes
-W1 + W4. Cursor for W1. Three browser tabs for W4. Fallback Python if the agent dies. Residents watch; free paths are in the handout.
+W1 and W6 in Cursor. W4 and W5 in the browser. Fallback Python if the agent dies. Residents watch; free paths are in the handout.
 :::
 
 ---
@@ -381,11 +376,30 @@ A model that writes files, not paragraphs
 Read STEM.md.
 Create family_update.docx, oxygen_wean_tracker.xlsx,
 noon_conference.pptx from that stem only.
-No identifiers. No medication column. No invented PMIDs.
+No identifiers. No medication column. No invented PubMed IDs.
 ```
 
 ::: notes
 Leave this slide up. Empty folder; STEM.md already written. Paste the prompt. Open the three files. If the agent hangs: python slides/workshops/w1_fallback.py. Sting: chatbot "add dexamethasone dose." Spreadsheet has no meds on purpose.
+:::
+
+---
+
+## Lab 6 — audit the dose sheet
+
+::: {.kicker}
+Pretty spreadsheet. Fictional drug. Find the error.
+:::
+
+```text
+Read KEY.md.
+Create dosing.xlsx from those rules only.
+If KEY.md is silent, write CHECK_KEY.
+Add a README: not for clinical use.
+```
+
+::: notes
+Same Cursor window, new empty folder with KEY.md already there. Then formula view. Look for missing max, mg vs mcg, adult default, invented frequency. If the agent hangs: python slides/workshops/w6_fallback.py — that sheet is missing the 400 mg cap on purpose. Fictional teachicillin only. No live administration.
 :::
 
 ---
@@ -396,7 +410,7 @@ Leave this slide up. Empty folder; STEM.md already written. Paste the prompt. Op
 Same question. Three sources.
 :::
 
-> Previously healthy 8-week-old, 38.5 °C, well-appearing. Current AAP guidance on LP? **Quote the document.** If you cannot quote, say so.
+> Previously healthy 8-week-old, 38.5 °C, well-appearing. Current AAP guidance on lumbar puncture? **Quote the document.** If you cannot quote, say so.
 
 | A | B | C |
 |---|---|---|
@@ -404,6 +418,22 @@ Same question. Three sources.
 
 ::: notes
 Arm A often mashups febrile-infant algorithms. Click every chip. If OpenEvidence is blocked, B is enough.
+:::
+
+---
+
+## Lab 5 — citation autopsy
+
+::: {.kicker}
+Fluent references. Open PubMed.
+:::
+
+> Eight Vancouver-style references on high-flow vs CPAP for bronchiolitis, 2018–2026. Include PubMed IDs.
+
+Mark the first three: exists / wrong paper / does not exist.
+
+::: notes
+Stay on ChatGPT, search off — same tab as Lab 4 arm A. Paste the prompt. Open PubMed on the first three IDs. One dead or mismatched identifier is the sting. Do not need all eight. Grounded mode still needs a click; say that if there is time.
 :::
 
 ---

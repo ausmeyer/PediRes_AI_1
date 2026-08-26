@@ -2,7 +2,6 @@
 
 **Research briefing for a one-hour workshop-lecture**  
 McLane Children’s Hospital, pediatric residency  
-Knowledge cutoff: **25 August 2026**  
 Document type: source briefing (not slides). Compress into a one-hour spine later. Slide **medium**: Quarto Reveal.js as source of truth, PDF/PPTX as fail-safe — [`slides/README.md`](../slides/README.md).
 
 **How to use this document.** This is a teaching brief, not a clinical protocol. It does not provide patient-specific medical direction. Every workshop case is **synthetic**. Claims about 2025–2026 products and policies are dated and tied to sources in [`claim-source-ledger.md`](claim-source-ledger.md). Vendor benchmark tables are **vendor-reported** unless an independent evaluation is cited. Workshop recipes that you can run from an empty folder live in [`workshops.md`](workshops.md).
@@ -49,8 +48,8 @@ Retrieval date for this compilation: 25 August 2026. If a 2026 item could not be
 
 In clinical operations, “AI” has been used for at least three different things:
 
-- **Rules and scores.** If-then logic, NEWS/PEWS-style early-warning scores, order sets. These are not learned from data in the modern sense.
-- **Classical machine learning.** A model is fit to labeled examples (supervised) or to unlabeled structure (unsupervised). Outputs are usually a class, a probability, or a cluster. This is the generation behind sepsis alerts, readmission risk, and many radiology CAD tools.
+- **Rules and scores.** If-then logic, NEWS/PEWS-style early-warning scores, order sets. Some are expert-weighted. Some, including neonatal sepsis rules built by sequential splits of a dataset, are learned from data. They still emit a score or a branch, not tokens.
+- **Classical machine learning.** A model is fit to labeled examples (supervised) or to unlabeled structure (unsupervised). Outputs are usually a class, a probability, or a cluster. This is the generation behind sepsis alerts, readmission risk, and many chest X-ray computer-aided detection (CAD) tools.
 - **Foundation models / generative AI.** A large neural network is pretrained on broad data, then adapted. It emits **tokens** (pieces of text, code, or other symbols) rather than a single score. Large language models (LLMs) sit here.
 
 The 2026 FDA discussion paper is explicit that FDA does not regulate “AI as such”; it regulates products that meet the statutory definition of a medical device, using a risk-based approach ([FDA CDRH 2026](#ref-fda-2026)). That distinction matters for residents: ChatGPT answering a board-style question is not an FDA-cleared device. An ambient scribe or a triage bot **might** be, depending on intended use.
@@ -617,7 +616,7 @@ Design rule: **presenter-led sophisticated run** plus a **free path** a resident
 | 7 | Harness vs chatbot | Working repo vs stuck paste | The loop is the product |
 | 8 | Gemini Notebook | Source-grounded Q&A + optional overview | Research notebook ≠ BAA |
 
-Live hour: run **1** and **4** (or **7**). Hand out the rest.
+Live hour: run **1**, **6**, **4**, and **5**. Hand out 2, 3, 7, and 8.
 
 Optional ninth (2 minutes): ICMJE/*Pediatrics* disclosure quiz on a dummy manuscript.
 

@@ -1,17 +1,17 @@
 # Presenter kit — tools, live labs, remaining holes
 
-Companion to [`lecture.qmd`](lecture.qmd). Knowledge cutoff **25 August 2026**. Synthetic cases only.
+Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only.
 
 ## Do we need anything else before the hour?
 
-**Need these, or the live 12 minutes fail**
+**Need these, or the live 18 minutes fail**
 
 | Item | Why |
 |---|---|
 | Your laptop on HDMI, not the podium PC as master | Cursor + Chrome + this HTML deck |
-| Cursor logged in, agent mode working, **one** empty folder | Live Workshop 1 |
-| `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/w1_fallback.py`](workshops/w1_fallback.py) |
-| Chrome windows already logged in: consumer ChatGPT (personal), Gemini Notebook with **public** PDFs uploaded, OpenEvidence if your NPI works | Live Workshop 4 |
+| Cursor logged in, agent mode working, **two** empty folders | Live Workshop 1 and Workshop 6 |
+| `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/w1_fallback.py`](workshops/w1_fallback.py) / [`workshops/w6_fallback.py`](workshops/w6_fallback.py) |
+| Chrome windows already logged in: consumer ChatGPT (personal), Gemini Notebook with **public** PDFs uploaded, OpenEvidence if your NPI works, **PubMed** | Live Workshops 4 and 5 |
 | Frozen `lecture.html` (self-contained) + `lecture.pdf` on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
 | Printed `SYNTHETIC TEACHING CASE` tent card | Stops a well-meaning resident from offering a real H&P |
 
@@ -41,11 +41,12 @@ You are already in it. Residents see a file tree, not a black terminal. Paste a 
 
 | Arm | Tool | Role |
 |---|---|---|
-| Presenter harness | **Cursor** Agent on `~/peds-ai-workshop/w1/` | Workshop 1 (and 7 if you swap) |
-| Contrast chatbot | Consumer ChatGPT, **web search off** | Workshop 4 arm A |
+| Presenter harness | **Cursor** Agent on `~/peds-ai-workshop/w1/` then `w6/` | Workshops 1 and 6 |
+| Contrast chatbot | Consumer ChatGPT, **web search off** | Workshop 4 arm A and Workshop 5 |
 | Grounded notebook | Gemini Notebook with one public AAP/CDC PDF | Workshop 4 arm B |
 | Licensed RAG | OpenEvidence if NPI demo works; else skip to B-only | Workshop 4 arm C |
-| Fail-safe | [`workshops/w1_fallback.py`](workshops/w1_fallback.py) | If the agent hangs, still show `.docx/.xlsx/.pptx` |
+| Citation check | PubMed | Workshop 5 |
+| Fail-safe | [`workshops/w1_fallback.py`](workshops/w1_fallback.py), [`workshops/w6_fallback.py`](workshops/w6_fallback.py) | If the agent hangs, still show files |
 | This lecture | Chrome fullscreen on `lecture.html` | Everything else (`F` fullscreen, `S` speaker notes) |
 
 **Codex / Claude Code / OpenCode:** same *kind* of thing as Cursor (model + tools + files). Keep them on the handout as the free/paid echo. Do not context-switch live unless Cursor is dead.
@@ -62,9 +63,25 @@ Then open the three files. Optional sting: ChatGPT-only “add the dexamethasone
 
 If the agent stalls: `python workshops/w1_fallback.py` from this repo.
 
+### Workshop 6 — dosing audit, same harness
+
+Empty folder. [`KEY.md`](workshops/KEY.md) already written (fictional `teachicillin` only). In Cursor Agent:
+
+> Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README: not for clinical use.
+
+Flip to formula view. The room is hunting a missing max, mg vs mcg, an adult default, or an invented frequency. If the agent hangs: `python workshops/w6_fallback.py` — that sheet omits the 400 mg cap on purpose.
+
 ### Workshop 4 — no harness required
 
-Same febrile-infant LP question on three corpora. Whiteboard columns: *quoted? clickable? pediatric? would I act?*
+Same febrile-infant lumbar-puncture question on three corpora. Whiteboard columns: *quoted? clickable? pediatric? would I act?*
+
+### Workshop 5 — citation autopsy, same ChatGPT tab
+
+Search still **off**. Paste:
+
+> Eight Vancouver-style references on high-flow vs CPAP for bronchiolitis, 2018–2026. Include PubMed IDs.
+
+Open PubMed on the first three identifiers. One dead or mismatched ID is enough. Do not chase all eight.
 
 ## Theme
 

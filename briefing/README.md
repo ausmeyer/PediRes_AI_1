@@ -11,7 +11,7 @@ Source documents for a one-hour survey of modern AI for pediatric residents at M
 | [../slides/lecture.qmd](../slides/lecture.qmd) | Visual-first Reveal.js hour (McLane train theme) |
 | [../slides/presenter-kit.md](../slides/presenter-kit.md) | Cursor + browser lab stack; remaining holes |
 
-Knowledge cutoff: **25 August 2026**. All workshop cases are synthetic. Not clinical guidance.
+All workshop cases are synthetic.
 
 **Slides.** [`lecture.qmd`](../slides/lecture.qmd) is the hour. Speaker notes carry this packet; do not dump 40 pages onto the projector.
 

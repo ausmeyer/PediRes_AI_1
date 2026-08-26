@@ -1,7 +1,7 @@
 # Workshop recipes: from-scratch demos for pediatric residents
 
 Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md).  
-Knowledge cutoff: 25 August 2026. **All cases are synthetic. No PHI.**
+**All cases are synthetic. No PHI.**
 
 **Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
 
@@ -181,7 +181,7 @@ RAG is a **corpus choice**. OpenEvidence ≠ UpToDate ≠ ChatGPT. Artsi et al. 
 
 ## Workshop 5 — Citation autopsy
 
-**Time (live):** 8 minutes  
+**Time (live hour):** 4 minutes (full recipe 8)  
 **Goal:** Verify five identifiers from a model-written reference list.  
 **Surprising artifact:** At least one dead or mismatched citation in a fluent list (very often).  
 **HIPAA:** None.
@@ -210,7 +210,7 @@ ICMJE: authors must ensure attribution of quoted material and that AI text is no
 
 ## Workshop 6 — Spreadsheet that looks official and can harm if trusted
 
-**Time (live):** 10 minutes  
+**Time (live hour):** 5 minutes (full recipe 10)  
 **Goal:** Agent builds a weight-based dosing sheet; residents audit every formula.  
 **Surprising artifact:** A pretty Excel file with at least one wrong formula or unit.  
 **HIPAA:** Synthetic weights only. **No live administration.**
@@ -338,5 +338,5 @@ If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, ru
 - [ ] No Epic, no email with real names, no photo of a child  
 - [ ] Hardware story for Workshop 3 told **before** the demo fails  
 - [ ] Workshop 6 answer key on paper, not generated live as “truth”  
-- [ ] Two live demos max in the hour (1+4 or 1+7)  
+- [ ] Four live demos in the hour (1, 6, 4, 5); 18 minutes on the clock  
 - [ ] Handout QR to this markdown (or PDF export)
