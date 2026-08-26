@@ -13,6 +13,6 @@ quarto render lecture.qmd
 
 Night-before freeze: that HTML on the laptop **and** a PDF print of the deck (`lecture.html?print-pdf` in Chrome, Print → Save as PDF, landscape). PowerPoint is a fail-safe export, not the master. The HTML is self-contained; it does not need Google Fonts or hospital Wi-Fi.
 
-Workshop 1 fallback (if Cursor hangs): `python workshops/w1_fallback.py` (needs `python-docx`, `openpyxl`, `python-pptx`; see [`workshops/requirements.txt`](workshops/requirements.txt)).
+Workshop 1 fallback (if Cursor hangs): `python workshops/w1_fallback.py`. Lab 2 fallback: `python workshops/lab2_fallback.py`.
 
-**Why Reveal, not PowerPoint as master.** The hour is also the teaching object for Workshop 2 (Markdown → static HTML). Quarto keeps the deck in git next to the briefing. Hospital podium reality still wants a PDF (and a `.pptx` export if GME demands Office). Do not maintain a second slide master.
+**Why Reveal, not PowerPoint as master.** The hour is also the teaching object for Lab 5 (Markdown → static HTML). Quarto keeps the deck in git next to the briefing. Hospital podium reality still wants a PDF (and a `.pptx` export if GME demands Office). Do not maintain a second slide master.

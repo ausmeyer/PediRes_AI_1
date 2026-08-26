@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-26T01:30:38.803696</dc:date>
+    <dc:date>2026-08-26T03:33:44.997330</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 32.562 49.27536 32.562 53.26704
 L 32.562 328.69296 
 Q 32.562 332.68464 39.258 332.68464 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pe20654978d)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 295.938 332.68464 
@@ -53,7 +53,7 @@ Q 289.242 49.27536 289.242 53.26704
 L 289.242 328.69296 
 Q 289.242 332.68464 295.938 332.68464 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pe20654978d)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 552.618 332.68464 
@@ -66,7 +66,7 @@ Q 545.922 49.27536 545.922 53.26704
 L 545.922 328.69296 
 Q 545.922 332.68464 552.618 332.68464 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pe20654978d)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 150.3 136.6488 
@@ -79,7 +79,7 @@ C 129.333365 101.265687 126.864 107.188799 126.864 113.364
 C 126.864 119.539201 129.333365 125.462313 133.728245 129.82884 
 C 138.123126 134.195367 144.0847 136.6488 150.3 136.6488 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #003da6"/>
+" clip-path="url(#pe20654978d)" style="fill: #003da6"/>
    </g>
    <g id="text_1">
     <!-- Rules &amp; scores -->
@@ -821,7 +821,7 @@ C 386.013365 101.265687 383.544 107.188799 383.544 113.364
 C 383.544 119.539201 386.013365 125.462313 390.408245 129.82884 
 C 394.803126 134.195367 400.7647 136.6488 406.98 136.6488 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #691f74"/>
+" clip-path="url(#pe20654978d)" style="fill: #691f74"/>
    </g>
    <g id="text_4">
     <!-- Classical ML -->
@@ -1131,7 +1131,7 @@ C 642.693365 101.265687 640.224 107.188799 640.224 113.364
 C 640.224 119.539201 642.693365 125.462313 647.088245 129.82884 
 C 651.483126 134.195367 657.4447 136.6488 663.66 136.6488 
 z
-" clip-path="url(#pd34a748cb4)" style="fill: #00c4b3"/>
+" clip-path="url(#pe20654978d)" style="fill: #00c4b3"/>
    </g>
    <g id="text_7">
     <!-- Foundation models -->
@@ -1574,7 +1574,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pd34a748cb4">
+  <clipPath id="pe20654978d">
    <rect x="10.8" y="10.8" width="792.36" height="354.816"/>
   </clipPath>
  </defs>

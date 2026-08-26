@@ -70,7 +70,7 @@ Do not add rows for textbook ML definitions (supervised/unsupervised) unless a s
 | C50 | OpenCode: open-source coding agent anomalyco/opencode | https://github.com/anomalyco/opencode | accessed 25 Aug 2026 | 25 Aug 2026 | `retrieved` |
 | C51 | 2024 DHAC GenAI TPLC meeting is **not** the 2026 discussion paper | FDA media/184078 vs 2026 discussion paper (DHAC exec summary cited in 2026 PDF as media/182871) | 2024 vs 2026 | 25 Aug 2026 | do not conflate |
 | C52 | Generative AI SOTA review for families/pediatricians; AI is not a friend or caregiver; 72% teens used companion chatbots (via Common Sense Media 2025) | Grundmeier et al. *Pediatrics* 2026;157(4):e2025074912 | accepted 2026-01-07; issue Apr 2026 | 25 Aug 2026 | `retrieved` (full PDF). **Not AAP policy.** 72% not independently re-fetched |
-| C53 | Qwen3.8-Max long-horizon coding demo (oh-my-cli; ~16 days; 151 issues as of 30 Jul 2026) | Local `Qwen.pdf` marketing screenshot | 2026-07-30 figure in copy | 25 Aug 2026 | `vendor-reported`; does **not** confirm 2.4T |
+| C54 | Gemma 4 family 2 Apr 2026; 31B dense is the open-weight flagship; Q4_0 ~17.5 GB on Google’s memory table | https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/ and https://ai.google.dev/gemma/docs/core/model_card_4 | 2026-04-02 | 26 Aug 2026 | `retrieved` |
 
 ## Search log (this compilation)
 
