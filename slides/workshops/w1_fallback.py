@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fallback for Workshop 1 if the live agent hangs. Synthetic only."""
+"""Fallback for Lab 1 if the live agent hangs. Synthetic only."""
 from datetime import datetime, timedelta
 from pathlib import Path
 

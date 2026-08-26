@@ -42,9 +42,12 @@ plt.rcParams.update(
 )
 
 
-def save(fig, name):
-    fig.savefig(OUT / f"{name}.png", bbox_inches="tight", facecolor=PAPER, pad_inches=0.15)
-    fig.savefig(OUT / f"{name}.svg", bbox_inches="tight", facecolor=PAPER, pad_inches=0.15)
+def save(fig, name, tight=True):
+    kw = dict(facecolor=PAPER, pad_inches=0.15)
+    if tight:
+        kw["bbox_inches"] = "tight"
+    fig.savefig(OUT / f"{name}.png", **kw)
+    fig.savefig(OUT / f"{name}.svg", **kw)
     plt.close(fig)
 
 
@@ -115,7 +118,6 @@ def fig_three_ais():
 def fig_learning_modes():
     fig, axes = plt.subplots(1, 3, figsize=(14.2, 5.6))
     rng = np.random.default_rng(7)
-    captions = ["x paired with y", "structure, no labels", "try → signal → try again"]
     x_a = rng.normal(1, 0.35, 40)
     y_a = rng.normal(1, 0.35, 40)
     x_b = rng.normal(3, 0.35, 40)
@@ -140,10 +142,39 @@ def fig_learning_modes():
 
     ax = axes[2]
     ax.set_title("Reinforcement", color=ORANGE, fontweight="bold")
-    ax.annotate("", xy=(3.3, 3.2), xytext=(0.7, 0.7), arrowprops=dict(arrowstyle="->", color=PURPLE, lw=3))
-    ax.text(0.7, 0.35, "action", color=MUTED, fontsize=11)
-    ax.text(2.55, 3.45, "reward", color=ORANGE, fontsize=12, fontweight="bold")
+    # A roundabout, not a scatter and not a single arrow: try, get scored, nudge, repeat.
+    cx, cy, rr = 2.00, 2.12, 1.22
+    ring = Circle((cx, cy), rr, fill=False, edgecolor=INK, lw=2.4, alpha=0.18, zorder=1)
+    ax.add_patch(ring)
+    nodes = [
+        (cx, cy + rr, "try", ORANGE, WHITE),
+        (cx + rr * 0.92, cy - rr * 0.48, "score", GOLD, INK),
+        (cx - rr * 0.92, cy - rr * 0.48, "nudge", PURPLE, WHITE),
+    ]
+    for x, y, lab, fc, tc in nodes:
+        ax.add_patch(Circle((x, y), 0.46, facecolor=fc, edgecolor=WHITE, lw=2.2, zorder=3))
+        ax.text(x, y, lab, ha="center", va="center", color=tc, fontsize=10, fontweight="bold", zorder=4)
+    ax.annotate(
+        "",
+        xy=(nodes[1][0] - 0.12, nodes[1][1] + 0.38),
+        xytext=(nodes[0][0] + 0.34, nodes[0][1] - 0.18),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.7, mutation_scale=12),
+    )
+    ax.annotate(
+        "",
+        xy=(nodes[2][0] + 0.38, nodes[2][1] - 0.08),
+        xytext=(nodes[1][0] - 0.38, nodes[1][1] - 0.08),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.7, mutation_scale=12),
+    )
+    ax.annotate(
+        "",
+        xy=(nodes[0][0] - 0.34, nodes[0][1] - 0.18),
+        xytext=(nodes[2][0] + 0.12, nodes[2][1] + 0.38),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.7, mutation_scale=12),
+    )
+    ax.text(cx, 0.28, "a human + / −, or a unit test", ha="center", fontsize=9, color=MUTED)
 
+    captions = ["x paired with y", "structure, no labels", "try → score → nudge → try"]
     for ax, lab in zip(axes, captions):
         ax.set_xlim(0, 4)
         ax.set_ylim(0, 4)
@@ -240,26 +271,77 @@ def fig_attention():
 # --- 7. Timeline ---
 def fig_timeline():
     fig, ax = plt.subplots(figsize=(14.2, 5.8))
-    ax.set_xlim(2018.5, 2026.8)
-    ax.set_ylim(0, 6)
+    fig.subplots_adjust(left=0.02, right=0.98, top=0.96, bottom=0.04)
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 5.8)
     ax.axis("off")
-    ax.plot([2019, 2026.4], [2.4, 2.4], color=BLUE, lw=4, solid_capstyle="round")
+    ax.text(7.1, 5.52, "How we got here", ha="center", va="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(
+        7.1,
+        0.28,
+        "Ordered for reading, not to scale. Llama 2 is why a laptop path exists. DeepSeek-R1 showed reasoning-style RL was not OpenAI-only.",
+        ha="center",
+        va="center",
+        fontsize=10,
+        color=MUTED,
+    )
+    y_line = 2.82
+    ax.plot([0.35, 13.85], [y_line, y_line], color=BLUE, lw=4, solid_capstyle="round")
     events = [
-        (2019.2, "GPT-2", 3.3),
-        (2020.4, "GPT-3\n175B", 1.0),
-        (2022.2, "InstructGPT\nhuman feedback", 3.5),
-        (2022.9, "ChatGPT\n30 Nov 2022", 0.7),
-        (2023.25, "GPT-4", 3.4),
-        (2024.75, "o1\nreason", 0.75),
-        (2026.3, "GPT-5.6 · Opus 5\nFable · Kimi K3", 3.35),
+        ("2019", "GPT-2", True),
+        ("2020", "GPT-3  175B", False),
+        ("Jan 2022", "InstructGPT", True),
+        ("Nov 2022", "ChatGPT", False),
+        ("Mar 2023", "GPT-4", True),
+        ("Jul 2023", "Llama 2", False),
+        ("Sep 2024", "o1", True),
+        ("Jan 2025", "DeepSeek-R1", False),
+        ("2026", "GPT-5.6 · Opus 5", True),
     ]
-    for yr, lab, y in events:
-        ax.plot([yr, yr], [2.4, 2.7 if y > 2.4 else 2.1], color=PURPLE, lw=2)
-        ax.scatter([yr], [2.4], s=90, color=GOLD, zorder=5, edgecolor=PURPLE, linewidths=1.2)
-        ax.text(yr, y, lab, ha="center", va="bottom" if y > 2.4 else "top", fontsize=11, fontweight="bold", color=INK)
-    ax.text(2022.7, 5.4, "The public era starts here", ha="center", fontsize=16, fontweight="bold", color=ORANGE)
-    ax.annotate("", xy=(2022.9, 2.55), xytext=(2022.7, 5.15), arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.6))
-    save(fig, "timeline")
+    xs = np.linspace(0.85, 13.35, len(events))
+    date_off, name_off, gloss_off = 0.16, 0.32, 0.48
+    for x, (when, name, above) in zip(xs, events):
+        sign = 1 if above else -1
+        ax.plot([x, x], [y_line, y_line + sign * 0.08], color=PURPLE, lw=2)
+        ax.scatter([x], [y_line], s=92, color=GOLD, zorder=5, edgecolor=PURPLE, linewidths=1.2)
+        ax.text(
+            x,
+            y_line + sign * date_off,
+            when,
+            ha="center",
+            va="center",
+            fontsize=9.5,
+            color=MUTED,
+        )
+        ax.text(
+            x,
+            y_line + sign * name_off,
+            name,
+            ha="center",
+            va="center",
+            fontsize=11,
+            fontweight="bold",
+            color=INK,
+        )
+        extra = {
+            "ChatGPT": ("The public era starts here", ORANGE),
+            "Llama 2": ("open weights", MUTED),
+            "o1": ("test-time compute", MUTED),
+            "GPT-5.6 · Opus 5": ("Fable · Kimi K3", MUTED),
+        }.get(name)
+        if extra:
+            lab, col = extra
+            ax.text(
+                x,
+                y_line + sign * gloss_off,
+                lab,
+                ha="center",
+                va="center",
+                fontsize=10,
+                fontweight="bold" if col == ORANGE else "normal",
+                color=col,
+            )
+    save(fig, "timeline", tight=False)
 
 
 # --- 8. Three access boxes ---
@@ -284,18 +366,18 @@ def fig_three_boxes():
             4.95,
             PURPLE,
             "Open datacenter",
-            ["Kimi K3 · DeepSeek V4", "Qwen-Max · GLM-5.3*"],
+            ["Kimi K3 · DeepSeek V4", "Qwen-Max · GLM-5.3"],
             [
-                "The weights can be downloaded,",
-                "but you still need a graphics-card cluster.",
-                "A laptop cannot host these.",
+                "These need a graphics-card cluster.",
+                "A laptop cannot host them.",
+                "Hosted prompts can still leave the building.",
             ],
         ),
         (
             9.55,
             TEAL,
             "Open laptop",
-            ["Qwen3.8-27B", "Muse Glimmer 30B"],
+            ["Qwen3.8-27B", "Muse Glimmer 30B", "Gemma 4 31B"],
             [
                 "The vendor never sees the prompt.",
                 "You already use this laptop for",
@@ -303,8 +385,8 @@ def fig_three_boxes():
             ],
         ),
     ]
-    model_ys = [4.45, 4.00]
-    note_ys = [2.35, 1.90, 1.45]
+    model_ys = [4.52, 4.10, 3.68]
+    note_ys = [2.20, 1.75, 1.30]
     for x, c, title, models, notes in cards:
         rounded(ax, x, 0.55, 4.3, 5.45, WHITE, c, lw=3.5, r=0.1)
         cx = x + 2.15
@@ -313,15 +395,6 @@ def fig_three_boxes():
             ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=INK)
         for y, line in zip(note_ys, notes):
             ax.text(cx, y, line, ha="center", va="center", fontsize=11, color=MUTED)
-    ax.text(
-        7.1,
-        6.45,
-        "*GLM-5.3 weights not public",
-        ha="center",
-        va="center",
-        fontsize=13,
-        color=MUTED,
-    )
     save(fig, "three_boxes")
 
 
@@ -439,41 +512,105 @@ def fig_ttc():
 
 # --- 12. Harness loop ---
 def fig_harness():
-    fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 6.2)
+    ax.set_ylim(0, 6.4)
     ax.axis("off")
+    ax.text(7, 6.12, "A chatbot returns paragraphs. A harness returns files.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+
+    # Chatbot row — a dead end
+    rounded(ax, 0.28, 4.42, 2.15, 0.82, MUTED, r=0.08)
+    ax.text(1.35, 4.83, "Chatbot", ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold")
+    rounded(ax, 2.85, 4.32, 2.6, 1.02, BLUE, r=0.08)
+    ax.text(4.15, 4.83, "Prompt", ha="center", va="center", color=WHITE, fontsize=14, fontweight="bold")
+    ax.annotate("", xy=(6.05, 4.83), xytext=(5.55, 4.83), arrowprops=dict(arrowstyle="-|>", color=INK, lw=2))
+    rounded(ax, 6.15, 4.32, 7.5, 1.02, GOLD, r=0.08)
+    ax.text(9.9, 4.83, "A paragraph in the window", ha="center", va="center", color=INK, fontsize=14, fontweight="bold")
+    ax.text(9.9, 3.95, "You copy it. It is not a file. It is not versioned.", ha="center", fontsize=11, color=MUTED)
+
+    # Harness row — the loop
+    rounded(ax, 0.28, 2.22, 2.15, 0.82, PURPLE, r=0.08)
+    ax.text(1.35, 2.63, "Harness", ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold")
     nodes = [
-        (2.2, 3.2, BLUE, "Prompt"),
-        (5.3, 4.7, PURPLE, "Files"),
-        (5.3, 1.7, TEAL, "Tools"),
-        (8.6, 3.2, ORANGE, "Tests"),
-        (11.6, 3.2, GOLD, "Artifact"),
+        (4.00, BLUE, "Prompt", "what you asked"),
+        (6.55, PURPLE, "Files", "the folder it can see"),
+        (9.10, TEAL, "Tools", "search, code, browser"),
+        (11.65, ORANGE, "Artifact", "a file you can open"),
     ]
-    for x, y, c, lab in nodes:
-        rounded(ax, x - 1.15, y - 0.7, 2.3, 1.4, c, r=0.1)
-        ax.text(x, y, lab, ha="center", va="center", color=INK if c == GOLD else WHITE, fontsize=15, fontweight="bold")
-    arrows = [((3.35, 3.5), (4.15, 4.5)), ((3.35, 2.9), (4.15, 2.0)), ((6.45, 4.7), (7.45, 3.7)), ((6.45, 1.7), (7.45, 2.7)), ((9.75, 3.2), (10.45, 3.2))]
-    for (x1, y1), (x2, y2) in arrows:
-        ax.annotate("", xy=(x2, y2), xytext=(x1, y1), arrowprops=dict(arrowstyle="-|>", color=INK, lw=2))
-    ax.text(7, 5.85, "A chatbot returns paragraphs. A harness returns files.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    for x, c, lab, sub in nodes:
+        rounded(ax, x - 1.05, 2.12, 2.1, 1.02, c, r=0.08)
+        ax.text(x, 2.63, lab, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold")
+        ax.text(x, 1.72, sub, ha="center", va="center", fontsize=10.5, color=MUTED)
+    for x1, x2 in [(5.05, 5.48), (7.60, 8.03), (10.15, 10.58)]:
+        ax.annotate("", xy=(x2, 2.63), xytext=(x1, 2.63), arrowprops=dict(arrowstyle="-|>", color=INK, lw=2))
+    # Loop: the artifact goes back into the folder.
+    ax.annotate(
+        "",
+        xy=(6.55, 1.42),
+        xytext=(11.65, 1.42),
+        arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=1.8, mutation_scale=11),
+    )
+    ax.text(9.1, 1.18, "edit the file, run it again", ha="center", va="center", fontsize=10.5, color=PURPLE)
+    ax.text(
+        7,
+        0.48,
+        "Cursor, Codex, Claude Code, OpenCode: same genus. Labs 1 and 2 only make sense if the file is the product.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+    )
     save(fig, "harness_loop")
 
 
 # --- 13. Benchmark trap ---
 def fig_bench():
-    fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    fig, ax = plt.subplots(figsize=(14.2, 6.2))
     ax.set_xlim(0, 10)
-    ax.set_ylim(0, 6)
+    ax.set_ylim(0, 6.2)
     ax.axis("off")
-    rounded(ax, 0.5, 1.2, 4.2, 3.6, WHITE, TEAL, lw=3)
-    ax.text(2.6, 4.2, "On the exam", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(2.6, 2.7, "Board-style exams\nLeaderboard ratings\nVendor tables", ha="center", fontsize=14)
-    rounded(ax, 5.3, 1.2, 4.2, 3.6, WHITE, ORANGE, lw=3)
-    ax.text(7.4, 4.2, "On the ward", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(7.4, 2.7, "This infant\nThis hospital’s formulary\nThis family’s language", ha="center", fontsize=14)
-    ax.text(5, 5.4, "The exam and the ward", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(5, 0.45, "FDA 2026 discussion paper: open-ended generative AI is hard to premarket-test", ha="center", fontsize=11, color=MUTED)
+    rounded(ax, 0.45, 1.55, 4.3, 3.55, WHITE, TEAL, lw=3)
+    ax.text(2.6, 4.55, "On the exam", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(
+        2.6,
+        3.15,
+        "Board-style items\nLeaderboard ratings\nVendor tables",
+        ha="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.45,
+    )
+    ax.text(2.6, 2.15, "A test with a key", ha="center", fontsize=12, color=MUTED)
+    ax.text(2.6, 1.78, "Comparable across models", ha="center", fontsize=11, color=MUTED)
+    rounded(ax, 5.25, 1.55, 4.3, 3.55, WHITE, ORANGE, lw=3)
+    ax.text(7.4, 4.55, "On the ward", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(
+        7.4,
+        3.15,
+        "This infant\nThis hospital’s formulary\nThis family’s language",
+        ha="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.45,
+    )
+    ax.text(7.4, 2.15, "No single key", ha="center", fontsize=12, color=MUTED)
+    ax.text(7.4, 1.78, "This child, tonight", ha="center", fontsize=11, color=MUTED)
+    ax.text(5, 5.55, "The exam and the ward", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(
+        5,
+        0.85,
+        "High exam scores do not travel. The exam is comparable across models. The ward is this child, tonight.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+    )
+    ax.text(
+        5,
+        0.35,
+        "FDA 2026 discussion paper: open-ended generative AI is hard to premarket-test",
+        ha="center",
+        fontsize=11,
+        color=MUTED,
+    )
     save(fig, "benchmark_trap")
 
 
@@ -541,25 +678,37 @@ def fig_artsi():
 # --- 17. Hajj counterexample ---
 def fig_hajj():
     fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    # Plot occupies the middle quarter of the frame (half of a previous 50% plot).
+    fig.set_tight_layout(False)
+    ax.set_position([0.36, 0.22, 0.28, 0.62])
     labs = ["ChatGPT-4o", "OpenEvidence"]
     vals = [66.7, 26.7]
-    ax.bar(labs, vals, color=[ORANGE, TEAL], width=0.45)
+    ax.bar(labs, vals, color=[ORANGE, TEAL], width=0.32)
     ax.set_ylim(0, 100)
     ax.set_ylabel("% fully accurate (study-defined)")
+    ax.set_xlim(-0.7, 1.7)
     for i, v in enumerate(vals):
         ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=16, fontweight="bold")
-    ax.set_title("Grounding and accuracy can diverge", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(0.5, -0.2, "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions.", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
-    save(fig, "hajj_counterexample")
+    fig.text(0.5, 0.93, "Grounding and accuracy can diverge", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    fig.text(
+        0.5,
+        0.08,
+        "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions.",
+        ha="center",
+        fontsize=10,
+        color=MUTED,
+    )
+    save(fig, "hajj_counterexample", tight=False)
 
 
 # --- 18. Policy 2026 ---
 def fig_policy():
     fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    fig.subplots_adjust(left=0.02, right=0.98, top=0.96, bottom=0.04)
     ax.set_xlim(0.15, 9.85)
-    ax.set_ylim(0.2, 6.45)
+    ax.set_ylim(0, 6.4)
     ax.axis("off")
-    y_line = 3.12
+    y_line = 3.20
     ax.plot([0.4, 9.6], [y_line, y_line], color=BLUE, lw=4, solid_capstyle="round")
     items = [
         (
@@ -605,45 +754,50 @@ def fig_policy():
             ["WHO", "Speed evidence for", "policy-makers."],
         ),
     ]
+    date_off = 0.24
+    gloss0 = 0.50
+    gloss_step = 0.28
     for x, when, above, lines in items:
         ax.scatter([x], [y_line], s=120, color=GOLD, zorder=4, edgecolor=PURPLE, lw=1.2)
-        if above:
+        sign = 1 if above else -1
+        ax.text(
+            x,
+            y_line + sign * date_off,
+            when,
+            ha="center",
+            va="center",
+            fontsize=11,
+            fontweight="bold",
+            color=PURPLE,
+        )
+        n = len(lines)
+        for i, line in enumerate(lines):
+            # First content line sits farthest from the axis so each block
+            # reads top-to-bottom. Equal |offsets| keep the line centered
+            # between the commentary above and below.
+            if above:
+                y = y_line + gloss0 + (n - 1 - i) * gloss_step
+            else:
+                y = y_line - gloss0 - i * gloss_step
             ax.text(
                 x,
-                y_line + 0.18,
-                when,
+                y,
+                line,
                 ha="center",
-                va="bottom",
-                fontsize=11,
-                fontweight="bold",
-                color=PURPLE,
+                va="center",
+                fontsize=10,
+                color=INK,
             )
-            top = y_line + 0.48 + 0.30 * len(lines)
-            for i, line in enumerate(lines):
-                ax.text(x, top - i * 0.30, line, ha="center", va="bottom", fontsize=10, color=INK)
-        else:
-            ax.text(
-                x,
-                y_line - 0.18,
-                when,
-                ha="center",
-                va="top",
-                fontsize=11,
-                fontweight="bold",
-                color=PURPLE,
-            )
-            for i, line in enumerate(lines):
-                ax.text(
-                    x,
-                    y_line - 0.48 - i * 0.30,
-                    line,
-                    ha="center",
-                    va="top",
-                    fontsize=10,
-                    color=INK,
-                )
-    ax.text(5.0, 6.15, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
-    save(fig, "policy_2026")
+    ax.text(5.0, 6.10, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(
+        5.0,
+        0.30,
+        "A walk left to right, not a complete catalog. No AAP clinical AI practice guideline in this window.",
+        ha="center",
+        fontsize=11,
+        color=MUTED,
+    )
+    save(fig, "policy_2026", tight=False)
 
 
 # --- 19. HIPAA ---
@@ -704,18 +858,45 @@ def fig_scale():
 
 # --- 21. Workshop split ---
 def fig_workshops():
-    fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 6.2)
+    ax.set_ylim(0, 6.4)
     ax.axis("off")
-    rounded(ax, 0.4, 0.7, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3)
-    ax.text(3.6, 4.85, "This hour", ha="center", fontsize=16, fontweight="bold", color=PURPLE_WEB)
-    ax.text(3.6, 3.15, "W1  Office files from a harness\nW6  Dosing sheet audit\nW4  Same question, three corpora\nW5  Citation autopsy", ha="center", fontsize=14)
-    ax.text(3.6, 1.35, "Cursor, then three browsers", ha="center", fontsize=13, color=MUTED)
-    rounded(ax, 7.2, 0.7, 6.4, 4.7, WHITE, TEAL, lw=3)
-    ax.text(10.4, 4.85, "Take-home", ha="center", fontsize=16, fontweight="bold", color=TEAL)
-    ax.text(10.4, 2.85, "W2 Pages  ·  W3 Ollama\nW7 loop  ·  W8 Notebook", ha="center", fontsize=14)
-    ax.text(7, 5.8, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 6.05, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+
+    rounded(ax, 0.35, 0.45, 6.5, 5.15, WHITE, PURPLE_WEB, lw=3)
+    ax.text(3.6, 5.22, "This hour  ·  Labs 1–4", ha="center", fontsize=15, fontweight="bold", color=PURPLE_WEB)
+    live = [
+        ("1", "Files from a harness", "Word, Excel, slides from STEM.md"),
+        ("2", "Audit the dose sheet", "Fictional teachicillin. Find the error."),
+        ("3", "One question, three corpora", "Same febrile-infant question"),
+        ("4", "Citation autopsy", "Open PubMed on the first three IDs"),
+    ]
+    y0 = 4.38
+    gap = 0.92
+    for i, (n, title, sub) in enumerate(live):
+        y = y0 - i * gap
+        ax.add_patch(Circle((1.18, y), 0.26, facecolor=PURPLE_WEB, zorder=3))
+        ax.text(1.18, y, n, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold", zorder=4)
+        ax.text(1.62, y + 0.15, title, ha="left", va="center", fontsize=13, fontweight="bold", color=INK)
+        ax.text(1.62, y - 0.15, sub, ha="left", va="center", fontsize=11, color=MUTED)
+    ax.text(3.6, 0.72, "Cursor, then the browser. Watch, then try later.", ha="center", fontsize=11, color=MUTED)
+
+    rounded(ax, 7.15, 0.45, 6.5, 5.15, WHITE, TEAL, lw=3)
+    ax.text(10.4, 5.22, "Take-home  ·  Labs 5–8", ha="center", fontsize=15, fontweight="bold", color=TEAL)
+    home = [
+        ("5", "GitHub Pages journal club", "Markdown → a URL that works on a phone"),
+        ("6", "Local model on your laptop", "Ollama, airplane mode"),
+        ("7", "Harness loop vs chatbot", "Same request. Files vs a paragraph."),
+        ("8", "Gemini Notebook", "Your PDFs. Grounded Q&A."),
+    ]
+    for i, (n, title, sub) in enumerate(home):
+        y = y0 - i * gap
+        ax.add_patch(Circle((7.98, y), 0.26, facecolor=TEAL, zorder=3))
+        ax.text(7.98, y, n, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold", zorder=4)
+        ax.text(8.42, y + 0.15, title, ha="left", va="center", fontsize=13, fontweight="bold", color=INK)
+        ax.text(8.42, y - 0.15, sub, ha="left", va="center", fontsize=11, color=MUTED)
+    ax.text(10.4, 0.72, "Recipes in the handout. Free path for each.", ha="center", fontsize=11, color=MUTED)
     save(fig, "workshops_split")
 
 

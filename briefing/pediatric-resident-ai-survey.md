@@ -492,7 +492,7 @@ FDA’s discussion paper goes further: bounded input/output testing may be **imp
 
 ### 9.3 How to present this in 8 minutes
 
-Draw three boxes: **closed API**, **open datacenter**, **open laptop**. Place Sol / Fable / Opus 5 / Gemini 3.7 / Muse Spark in the first; Kimi K3 / DeepSeek V4 / Qwen-Max / (soon) GLM-5.3 in the second; Qwen3.8-27B / Muse Glimmer / smaller Qwen and Gemma-class models in the third. Then say: **your unpaid phone uses box 1 without a BAA; your research laptop can use box 3; the hospital EHR, if anything, will someday be a governed version of box 1.**
+Draw three boxes: **closed API**, **open datacenter**, **open laptop**. Place Sol / Fable / Opus 5 / Gemini 3.7 / Muse Spark in the first; Kimi K3 / DeepSeek V4 / Qwen-Max / GLM-5.3 in the second; Qwen3.8-27B / Muse Glimmer / **Gemma 4 31B** in the third. Gemma 4 (2 Apr 2026) is Google’s current open-weight family; 31B dense is the flagship that still belongs in the laptop/workstation class after quantization ([Google 2026](#ref-gemma4)). Then say: **your unpaid phone uses box 1 without a BAA; your research laptop can use box 3; the hospital EHR, if anything, will someday be a governed version of box 1.**
 
 ---
 
@@ -525,6 +525,8 @@ Scribes are where most pediatricians already are, according to the 2025 PAS abst
 **Ollama** is the lowest-friction local runtime for many clinicians: install, `ollama run qwen3.8`, optional launch into OpenCode / Hermes / OpenClaw / Claude Code ([Ollama](#ref-ollama)). Alternatives: **LM Studio** (GUI), **llama.cpp** (metal/CUDA, GGUF), **vLLM / SGLang** (server), **MLX** (Apple). Hugging Face is the weight warehouse, not the app.
 
 **Qwen3.8-27B (Ollama default `qwen3.8`).** 18 GB download in the library listing, 256K context, text+image, thinking on by default ([Ollama](#ref-ollama-qwen38)). This is the “best currently convenient local” candidate for a well-equipped demo machine.
+
+**Gemma 4 31B.** Google’s current open-weight flagship in the Gemma family (2 April 2026). Dense 31B; 4-bit listed at 17.5 GB on Google’s memory table, so the same workstation/laptop class as Qwen3.8-27B and Glimmer after quantization ([Google 2026](#ref-gemma4)).
 
 **Muse Glimmer 30B.** Apache 2.0, agent-oriented, image+text, designed for 24/32 GB envelopes after 4-bit quantization ([Meta 2026](#ref-muse-glimmer)). Overlaps Qwen3.8-27B’s hardware class.
 
@@ -784,6 +786,8 @@ Primary and canonical sources. Retrieval date 25 August 2026 unless noted. Statu
 <a id="ref-muse-spark"></a>Meta Superintelligence Labs. Introducing Muse Spark: scaling towards personal superintelligence. 8 April 2026. https://ai.meta.com/blog/introducing-muse-spark-msl/ **retrieved**.
 
 <a id="ref-muse-glimmer"></a>Meta Superintelligence Labs. Introducing Muse Glimmer: an open agentic model that runs on your device. August 2026. https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model **retrieved**.
+
+<a id="ref-gemma4"></a>Google. Gemma 4: our most capable open models to date. 2 April 2026. https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/ **retrieved** 26 Aug 2026. Memory table: https://ai.google.dev/gemma/docs/core/model_card_4 (31B Q4_0 17.5 GB).
 
 <a id="ref-kimi-k3"></a>Moonshot AI. Kimi K3: open frontier intelligence. https://www.kimi.com/blog/kimi-k3 **retrieved**. Technical report: arXiv:2607.24653.
 

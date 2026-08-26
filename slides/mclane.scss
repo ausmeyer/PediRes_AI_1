@@ -288,25 +288,213 @@ $presentation-h2-font-size: 1.35em;
   margin: 0;
 }
 
-.judge-lede {
-  font-size: 0.68em;
-  font-weight: 600;
-  color: $mclane-ink;
-  margin: 0.05em 0 0.45em;
-  line-height: 1.3;
+.box-web {
+  border-color: $mclane-purple-web;
 }
 
-.judge-lede p {
-  margin: 0;
+.box-web .box-label {
+  color: $mclane-purple-web;
+}
+
+.box-gold {
+  border-color: $mclane-gold;
+}
+
+.box-gold .box-label {
+  color: #8a5a00;
 }
 
 .judge-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0.55em 0.7em;
+  gap: 0.4em 0.5em;
   align-items: stretch;
-  height: 11.6em;
+  height: 13.4em;
+}
+
+.judge-grid .box {
+  padding: 0.5em 0.55em;
+}
+
+.judge-lede {
+  font-size: 0.62em;
+  font-weight: 600;
+  color: $mclane-ink;
+  margin: 0.02em 0 0.35em;
+  line-height: 1.3;
+}
+
+.box-prose {
+  font-size: 0.46em;
+  line-height: 1.28;
+  font-weight: 400;
+}
+
+.lab-goal,
+.lab-done {
+  font-size: 0.48em;
+  line-height: 1.32;
+  margin: 0.08em 0 0.28em;
+}
+
+.lab-goal {
+  font-weight: 600;
+  color: $mclane-ink;
+}
+
+.lab-done {
+  color: $mclane-muted;
+}
+
+.lab-goal p,
+.lab-done p,
+.lab-prompt p,
+.lab-steps p {
+  margin: 0;
+}
+
+.lab-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  align-items: stretch;
+}
+
+.lab-split .box {
+  margin: 0;
+  min-height: 0;
+}
+
+.lab-arms {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.45em;
+  margin-top: 0.25em;
+}
+
+.lab-arms .box {
+  margin: 0;
+  min-height: 0;
+  padding: 0.5em 0.55em;
+}
+
+.lab-prompt {
+  font-size: 0.48em;
+  line-height: 1.32;
+  background: #fff;
+  border: 2px solid $mclane-blue;
+  border-radius: 10px;
+  padding: 0.5em 0.65em;
+  margin: 0.2em 0 0.3em;
+}
+
+.lab-steps {
+  font-size: 0.48em;
+  line-height: 1.32;
+  margin: 0.1em 0 0.25em;
+}
+
+.lab-steps ol {
+  margin: 0.2em 0 0 1.15em;
+  padding: 0;
+}
+
+.lab-steps li {
+  margin: 0.1em 0;
+}
+
+.lab-catalog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65em;
+  margin-top: 0.1em;
+}
+
+.lab-catalog .box {
+  padding: 0.45em 0.65em 0.4em;
+  display: flex;
+  flex-direction: column;
+  min-height: 14.2em;
+}
+
+.lab-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55em;
+  margin: 0.22em 0;
+  text-align: left;
+}
+
+.lab-num {
+  flex: 0 0 1.55em;
+  width: 1.55em;
+  height: 1.55em;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #fff;
+  line-height: 1;
+}
+
+.lab-catalog .box-web .lab-num {
+  background: $mclane-purple-web;
+}
+
+.lab-catalog .box-teal .lab-num {
+  background: $mclane-teal;
+}
+
+.lab-num p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.lab-row-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.lab-row-text p {
+  margin: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.lab-row-text p:first-child {
+  font-weight: 700;
+  font-size: 0.58em;
+  color: $mclane-ink;
+}
+
+.lab-row-text p:last-child {
+  font-weight: 400;
+  font-size: 0.46em;
+  color: $mclane-muted;
+  margin-top: 0.12em;
+}
+
+.lab-catalog-foot {
+  font-size: 0.42em;
+  color: $mclane-muted;
+  margin: auto 0 0;
+  text-align: center;
+  padding-top: 0.25em;
+}
+
+.lab-catalog-foot p {
+  margin: 0;
+}
+
+.judge-lede p {
+  margin: 0;
 }
 
 .judge-grid .box > p {
@@ -322,16 +510,10 @@ $presentation-h2-font-size: 1.35em;
   box-sizing: border-box;
 }
 
-.box-prose {
-  font-size: 0.58em;
-  line-height: 1.32;
-  font-weight: 400;
-}
-
 .box-prose h3,
 .box-prose .box-label {
-  font-size: 1.2em;
-  margin-bottom: 0.35em;
+  font-size: 1.15em;
+  margin-bottom: 0.28em;
 }
 
 .caution {

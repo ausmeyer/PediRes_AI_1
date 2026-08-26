@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fallback for Workshop 6 if the live agent hangs. Synthetic only.
+"""Fallback for Lab 2 if the live agent hangs. Synthetic only.
 
 The sheet is wrong on purpose: it omits the 400 mg cap so the room
 still has something to catch in formula view.
@@ -9,7 +9,7 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font
 
-OUT = Path(__file__).parent / "w6_out"
+OUT = Path(__file__).parent / "lab2_out"
 OUT.mkdir(exist_ok=True)
 
 

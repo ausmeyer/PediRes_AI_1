@@ -5,6 +5,19 @@ Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md
 
 **Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
 
+**Lecture numbering.** Live hour is Labs 1–4, in this order. Take-home is Labs 5–8. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win.
+
+| Lab | When | What | Recipe in this file |
+|---|---|---|---|
+| 1 | Live | Office files from a harness | Workshop 1 |
+| 2 | Live | Dosing-sheet audit | Workshop 6 |
+| 3 | Live | One question, three corpora | Workshop 4 |
+| 4 | Live | Citation autopsy | Workshop 5 |
+| 5 | Take-home | GitHub Pages journal club | Workshop 2 |
+| 6 | Take-home | Local Ollama | Workshop 3 |
+| 7 | Take-home | Harness loop vs chatbot | Workshop 7 |
+| 8 | Take-home | Gemini Notebook | Workshop 8 |
+
 **Shared setup (2 minutes, once).**
 
 - Label the projector: `SYNTHETIC TEACHING CASE — NOT A REAL PATIENT`.
@@ -336,7 +349,7 @@ If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, ru
 
 - [ ] Synthetic banner on every slide and terminal  
 - [ ] No Epic, no email with real names, no photo of a child  
-- [ ] Hardware story for Workshop 3 told **before** the demo fails  
-- [ ] Workshop 6 answer key on paper, not generated live as “truth”  
-- [ ] Four live demos in the hour (1, 6, 4, 5); 18 minutes on the clock  
+- [ ] Four live demos in the hour (Labs 1, 2, 3, 4); 18 minutes on the clock  
+- [ ] Hardware story for Lab 6 (Ollama) told only if someone asks; it is take-home  
+- [ ] Lab 2 answer key on paper, not generated live as “truth”  
 - [ ] Handout QR to this markdown (or PDF export)
