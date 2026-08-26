@@ -1,8 +1,8 @@
 # Slides
 
-Repo overview: [`../README.md`](../README.md). How to run the hour: [`presenter-kit.md`](presenter-kit.md).
+Residents: start at the [repository README](../README.md). This folder is the deck source.
 
-**Source of truth:** [`lecture.qmd`](lecture.qmd) — Quarto Reveal.js, McLane train + BSW palette.
+**Source of truth:** [`lecture.qmd`](lecture.qmd) — Quarto Reveal.js, McLane train + BSW palette. Stage stack: [`presenter-kit.md`](presenter-kit.md).
 
 ```bash
 cd slides
@@ -12,7 +12,7 @@ quarto render lecture.qmd
 
 Night-before freeze: that HTML on the laptop **and** a PDF print (`lecture.html?print-pdf` in Chrome, Print → Save as PDF, landscape). The HTML is self-contained; it does not need Google Fonts or hospital Wi-Fi. PowerPoint is a fail-safe export, not a second master.
 
-Lab fallbacks (if Cursor hangs): [`workshops/README.md`](workshops/README.md).
+Lab 1–2 scripts: [`workshops/README.md`](workshops/README.md).
 
 ```bash
 pip install -r workshops/requirements.txt
