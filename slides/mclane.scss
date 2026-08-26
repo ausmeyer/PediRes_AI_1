@@ -231,6 +231,30 @@ $presentation-h2-font-size: 1.35em;
   font-size: 0.95em;
 }
 
+.box-orange {
+  border-color: $mclane-orange;
+}
+
+.box-orange h3 {
+  color: $mclane-orange;
+}
+
+.box-purple {
+  border-color: $mclane-purple;
+}
+
+.box-purple h3 {
+  color: $mclane-purple;
+}
+
+.box-teal {
+  border-color: $mclane-teal;
+}
+
+.box-teal h3 {
+  color: $mclane-teal;
+}
+
 .caution {
   border-left: 6px solid $mclane-orange;
   padding-left: 0.8em;
