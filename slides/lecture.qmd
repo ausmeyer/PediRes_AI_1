@@ -44,7 +44,7 @@ Open on the train. This is McLane's mark from the hospital site, not clip-art. S
 
 ---
 
-## The room rules {.viz}
+## The room rules
 
 :::: {.columns}
 ::: {.column width="48%"}

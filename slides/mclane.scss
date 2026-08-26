@@ -77,12 +77,20 @@ $presentation-h2-font-size: 1.35em;
   border: 0;
   box-shadow: none !important;
   background: transparent;
-  max-height: 78vh;
+  max-height: 82vh;
 }
 
+/* Keep h2 in the DOM for the slide menu; figures already carry the title. */
 .reveal .viz h2 {
-  font-size: 1.18em;
-  margin-bottom: 0.15em;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .reveal .viz p {
