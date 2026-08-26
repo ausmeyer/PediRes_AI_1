@@ -15,7 +15,7 @@ $body-color: $mclane-ink;
 $link-color: $mclane-purple-web;
 $presentation-heading-color: $mclane-blue;
 $presentation-heading-font-weight: 700;
-$presentation-title-slide-text-align: left;
+$presentation-title-slide-text-align: center;
 $code-block-bg: #fff;
 $code-block-border-color: #e5e5e5;
 $font-family-sans-serif: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
@@ -35,10 +35,12 @@ $presentation-h2-font-size: 1.35em;
 .reveal h3 {
   letter-spacing: -0.02em;
   text-transform: none;
+  text-align: inherit;
 }
 
 .reveal .slides section {
   padding-bottom: 2.2em;
+  text-align: center;
 }
 
 .reveal .slide-number {
@@ -80,6 +82,19 @@ $presentation-h2-font-size: 1.35em;
   max-height: 82vh;
 }
 
+/* Figures that hit max-height shrink in width; keep them on the midline. */
+.reveal .slides section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .quarto-figure {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 /* Keep h2 in the DOM for the slide menu; figures already carry the title. */
 .reveal .viz h2 {
   position: absolute;
@@ -102,6 +117,35 @@ $presentation-h2-font-size: 1.35em;
   font-size: 2.35em;
 }
 
+.reveal .section-break .column {
+  text-align: center;
+}
+
+/* Prose lists: one centered column, lines still flush left. */
+.reveal .copy-block {
+  display: inline-block;
+  text-align: left;
+  max-width: 22em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .copy-block p,
+.reveal .copy-block ul,
+.reveal .copy-block ol {
+  text-align: left;
+}
+
+/* Standalone bullets sit as a centered column; recipe lists stay full-width. */
+.reveal .slides section > ul,
+.reveal .slides section > ol {
+  display: inline-block;
+  text-align: left;
+  max-width: 22em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .deck-title {
   font-size: 2.15em;
   font-weight: 700;
@@ -109,6 +153,7 @@ $presentation-h2-font-size: 1.35em;
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0.2em 0 0.35em;
+  text-align: inherit;
 }
 
 .reveal .slides section.stack-viz img {
@@ -205,6 +250,7 @@ $presentation-h2-font-size: 1.35em;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.4em;
+  text-align: inherit;
 }
 
 .small {
@@ -255,6 +301,7 @@ $presentation-h2-font-size: 1.35em;
   padding: 0.7em 0.8em;
   background: #fff;
   height: auto;
+  text-align: left;
 }
 
 .box h3 {
@@ -355,6 +402,7 @@ $presentation-h2-font-size: 1.35em;
   color: $mclane-ink;
   margin: 0.02em 0 0.35em;
   line-height: 1.3;
+  text-align: center;
 }
 
 .box-prose {
@@ -368,6 +416,7 @@ $presentation-h2-font-size: 1.35em;
   font-size: 0.54em;
   line-height: 1.32;
   margin: 0.08em 0 0.28em;
+  text-align: left;
 }
 
 .lab-goal {
@@ -431,12 +480,14 @@ $presentation-h2-font-size: 1.35em;
   border-radius: 10px;
   padding: 0.5em 0.65em;
   margin: 0.2em 0 0.3em;
+  text-align: left;
 }
 
 .lab-steps {
   font-size: 0.52em;
   line-height: 1.32;
   margin: 0.1em 0 0.25em;
+  text-align: left;
 }
 
 .lab-steps ol {
