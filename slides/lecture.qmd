@@ -320,32 +320,43 @@ Walk left to right. AAP January: digital-ecosystems policy; the dedicated AI sta
 A position on journal AI rules
 :::
 
-:::: {.columns .columns-tight}
-::: {.column width="32%"}
+::: {.judge-lede}
+Evaluate the project on its merits. The manuscript carries the claims.
+:::
+
+:::: {.judge-grid}
 ::: {.box .box-orange .box-prose}
-### Scarlet letter
+::: {.box-label}
+Confession theater
+:::
 
-Journals treat the AI sentence like a confession. Naming the product does not make the science more true.
+Naming the product does not make the science more true. Grammar help and a fabricated table are different acts.
 :::
-:::
-::: {.column width="32%"}
 ::: {.box .box-purple .box-prose}
-### The postdoc test
+::: {.box-label}
+The paper is the record
+:::
 
-We do not keep the Slack thread with a graduate student. Prompts, chats, and logs are that same kind of thing. The manuscript is the record.
+We do not archive the Slack thread with a postdoc. Same for prompts. Share numbers, code, and the citation you can open. A model-written sheet is a method.
 :::
-:::
-::: {.column width="32%"}
 ::: {.box .box-teal .box-prose}
-### Models in the pipeline
-
-Use LLMs for drafting, checking, review, and evaluation. Keep scientific importance and taste with the humans.
+::: {.box-label}
+Models in the pipeline
 :::
+
+Use LLMs for drafting, checking, review, and evaluation. Reviewers can use them to check claims.
+:::
+::: {.box .box-blue .box-prose}
+::: {.box-label}
+Taste stays human
+:::
+
+Scientific importance and taste stay with authors, editors, and reviewers. Pediatric fit is a scientific claim.
 :::
 ::::
 
 ::: notes
-ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then argue this slide: disclosure-as-stigma does no epistemic work; we do not archive conversations with postdocs; judge the project on its merits; let models into review and evaluation; keep importance and taste human. This is a position, not a journal’s current rulebook.
+ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then this 2×2: disclosure-as-stigma does no epistemic work; grammar help ≠ a fabricated table; we do not archive conversations with postdocs; the checkable artifacts are the paper (numbers, code, opened citations); a harness that emits a spreadsheet is a method — audit the file; let models into review and evaluation as checkers; keep importance and taste with people. An adult creatinine in a pediatrics manuscript is a scientific failure, not a missing disclosure checkbox. This is a position, not a journal’s current rulebook.
 :::
 
 ---
