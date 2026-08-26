@@ -299,10 +299,10 @@ def fig_timeline():
         ("2026", "GPT-5.6 · Opus 5", True),
     ]
     xs = np.linspace(0.85, 13.35, len(events))
-    date_off, name_off, gloss_off = 0.16, 0.32, 0.48
+    date_off, name_off, gloss_off = 0.22, 0.40, 0.58
     for x, (when, name, above) in zip(xs, events):
         sign = 1 if above else -1
-        ax.plot([x, x], [y_line, y_line + sign * 0.08], color=PURPLE, lw=2)
+        ax.plot([x, x], [y_line, y_line + sign * 0.11], color=PURPLE, lw=2)
         ax.scatter([x], [y_line], s=92, color=GOLD, zorder=5, edgecolor=PURPLE, linewidths=1.2)
         ax.text(
             x,
