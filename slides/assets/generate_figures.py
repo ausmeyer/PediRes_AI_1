@@ -921,8 +921,16 @@ def fig_scale():
     )
     fig.text(
         0.5,
-        0.05,
-        "Counts from first-party posts cited in the briefing. Local 27-billion and 30-billion models are dense-class; Kimi, Qwen-Max, and DeepSeek-Pro are mixture-of-experts or sparse.",
+        0.07,
+        "Counts from first-party posts cited in the briefing.",
+        ha="center",
+        fontsize=9,
+        color=MUTED,
+    )
+    fig.text(
+        0.5,
+        0.035,
+        "Local 27-billion and 30-billion models are dense-class; Kimi, Qwen-Max, and DeepSeek-Pro are mixture-of-experts or sparse.",
         ha="center",
         fontsize=9,
         color=MUTED,

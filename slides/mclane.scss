@@ -121,6 +121,21 @@ $presentation-h2-font-size: 1.35em;
   text-align: center;
 }
 
+/* Prose lists: one centered column, lines still flush left. */
+.reveal .copy-block {
+  display: inline-block;
+  text-align: left;
+  max-width: 22em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .copy-block p,
+.reveal .copy-block ul,
+.reveal .copy-block ol {
+  text-align: left;
+}
+
 /* Standalone bullets sit as a centered column; recipe lists stay full-width. */
 .reveal .slides section > ul,
 .reveal .slides section > ol {
