@@ -1,0 +1,236 @@
+/*-- scss:defaults --*/
+
+$mclane-gold: #FFB71B;
+$mclane-orange: #FF4D00;
+$mclane-purple: #691F74;
+$mclane-purple-web: #5F277E;
+$mclane-teal: #00C4B3;
+$mclane-blue: #003DA6;
+$mclane-ink: #281241;
+$mclane-paper: #FAF9F7;
+$mclane-muted: #586F78;
+
+$body-bg: $mclane-paper;
+$body-color: $mclane-ink;
+$link-color: $mclane-purple-web;
+$presentation-heading-color: $mclane-blue;
+$presentation-heading-font-weight: 700;
+$presentation-title-slide-text-align: left;
+$code-block-bg: #fff;
+$code-block-border-color: #e5e5e5;
+$font-family-sans-serif: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+$presentation-heading-font: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+$presentation-font-size-root: 32px;
+$presentation-h1-font-size: 1.85em;
+$presentation-h2-font-size: 1.35em;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-weight: 400;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.reveal .slides section {
+  padding-bottom: 2.2em;
+}
+
+.reveal .slide-number {
+  color: $mclane-purple-web;
+  font-size: 14px;
+  background: transparent;
+}
+
+.reveal .footer {
+  color: $mclane-muted;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.reveal .slide-logo {
+  max-height: 56px !important;
+  max-width: 90px !important;
+  top: 14px !important;
+  right: 18px !important;
+}
+
+/* Wordmark already carries the train on the title slide. */
+.reveal .slides > section:first-child .slide-logo {
+  display: none;
+}
+
+.reveal.has-dark-background .footer {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.reveal.has-dark-background .slide-number {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.reveal img {
+  border: 0;
+  box-shadow: none !important;
+  background: transparent;
+  max-height: 78vh;
+}
+
+.reveal .viz h2 {
+  font-size: 1.18em;
+  margin-bottom: 0.15em;
+}
+
+.reveal .viz p {
+  margin: 0.15em 0 0.35em;
+}
+
+.reveal .section-break h2 {
+  color: #fff !important;
+  font-size: 2.35em;
+}
+
+.deck-title {
+  font-size: 2.15em;
+  font-weight: 700;
+  color: $mclane-blue;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0.2em 0 0.35em;
+}
+
+.reveal .slides section.stack-viz img {
+  max-height: 70vh;
+}
+
+.reveal .progress span {
+  background: $mclane-gold;
+}
+
+/* McLane train-car rail */
+.reveal .slides section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7px;
+  background: linear-gradient(
+    90deg,
+    $mclane-blue 0%,
+    $mclane-teal 22%,
+    $mclane-purple 48%,
+    $mclane-orange 74%,
+    $mclane-gold 100%
+  );
+}
+
+.reveal .title-slide::after {
+  height: 10px;
+}
+
+.reveal .title-slide h1 {
+  color: #fff;
+  font-size: 2.15em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .title-slide h2,
+.reveal .title-slide .subtitle,
+.reveal .title-slide .author,
+.reveal .title-slide .institute,
+.reveal .title-slide p {
+  color: $mclane-gold;
+}
+
+.reveal .title-slide .institute {
+  color: #fff !important;
+  opacity: 0.92;
+  font-size: 0.85em;
+}
+
+.reveal .title-slide .slide-logo {
+  filter: brightness(1.05);
+}
+
+.section-break h1 {
+  color: #fff !important;
+}
+
+.reveal table {
+  font-size: 0.72em;
+}
+
+.reveal pre {
+  font-size: 0.55em;
+  box-shadow: none;
+}
+
+.kicker {
+  color: $mclane-purple-web;
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+
+.small {
+  font-size: 0.72em;
+  color: $mclane-muted;
+}
+
+.vendor {
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $mclane-orange;
+}
+
+.pill {
+  display: inline-block;
+  background: $mclane-purple-web;
+  color: #fff;
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25em 0.7em;
+  border-radius: 999px;
+  margin-right: 0.4em;
+}
+
+.columns-tight .column {
+  padding: 0 0.4em;
+}
+
+.box {
+  border: 2px solid $mclane-blue;
+  border-radius: 10px;
+  padding: 0.7em 0.8em;
+  background: #fff;
+  height: 100%;
+}
+
+.box h3 {
+  color: $mclane-blue;
+  margin-top: 0;
+  font-size: 0.95em;
+}
+
+.caution {
+  border-left: 6px solid $mclane-orange;
+  padding-left: 0.8em;
+}
+
+.takehome {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.6em 0.9em;
+  border: 1px solid #e8e4ef;
+}
