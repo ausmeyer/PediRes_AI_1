@@ -86,8 +86,7 @@ def fig_hour_map():
     for t in range(0, 61, 10):
         ax.plot([t, t], [0.72, 0.85], color=INK, lw=1.5)
         ax.text(t, 0.42, f"{t}m", ha="center", fontsize=11, color=MUTED)
-    ax.text(30, 2.9, "The live hour  ·  Q&A eats whatever is left", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(30, 0.12, "Handout covers the other six workshops. Do not dump the 40-page briefing onto these slides.", ha="center", fontsize=10, color=MUTED)
+    ax.text(30, 2.9, "The live hour", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     save(fig, "hour_map")
 
 
@@ -116,32 +115,37 @@ def fig_three_ais():
 def fig_learning_modes():
     fig, axes = plt.subplots(1, 3, figsize=(14.2, 5.6))
     rng = np.random.default_rng(7)
+    captions = ["x paired with y", "structure, no labels", "try → signal → try again"]
+
+    for ax in axes:
+        ax.set_xlim(0, 4)
+        ax.set_ylim(0, 4)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_aspect("equal", adjustable="box")
 
     ax = axes[0]
     ax.scatter(rng.normal(1, 0.35, 40), rng.normal(1, 0.35, 40), c=BLUE, s=36)
     ax.scatter(rng.normal(3, 0.35, 40), rng.normal(3, 0.35, 40), c=ORANGE, s=36)
     ax.set_title("Supervised", color=BLUE, fontweight="bold")
-    ax.text(0.5, -0.22, "x paired with y", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
-    ax.set_xticks([])
-    ax.set_yticks([])
 
     ax = axes[1]
-    pts = rng.normal(2, 0.9, size=(80, 2))
+    pts = rng.normal(2, 0.55, size=(80, 2))
     ax.scatter(pts[:, 0], pts[:, 1], c=TEAL, s=28, alpha=0.85)
     ax.set_title("Unsupervised", color=PURPLE, fontweight="bold")
-    ax.text(0.5, -0.22, "structure, no labels", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
-    ax.set_xticks([])
-    ax.set_yticks([])
 
     ax = axes[2]
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, 10)
-    ax.axis("off")
     ax.set_title("Reinforcement", color=ORANGE, fontweight="bold")
-    ax.annotate("", xy=(8, 7.5), xytext=(1.5, 2), arrowprops=dict(arrowstyle="->", color=PURPLE, lw=3))
-    ax.text(1.3, 1.3, "action", color=MUTED, fontsize=11)
-    ax.text(6.8, 8.2, "reward", color=ORANGE, fontsize=12, fontweight="bold")
-    ax.text(5, -1.6, "try → signal → try again", ha="center", fontsize=10, color=MUTED)
+    ax.annotate("", xy=(3.3, 3.2), xytext=(0.7, 0.7), arrowprops=dict(arrowstyle="->", color=PURPLE, lw=3))
+    ax.text(0.7, 0.35, "action", color=MUTED, fontsize=11)
+    ax.text(2.55, 3.45, "reward", color=ORANGE, fontsize=12, fontweight="bold")
+
+    for ax, lab in zip(axes, captions):
+        ax.set_xlim(0, 4)
+        ax.set_ylim(0, 4)
+        ax.set_xlabel(lab, fontsize=11, color=MUTED, labelpad=12)
+
+    fig.align_xlabels(axes)
     fig.suptitle("How the model is taught", fontsize=18, fontweight="bold", color=BLUE, y=1.02)
     save(fig, "learning_modes")
 
@@ -152,16 +156,22 @@ def fig_pediatric_shift():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.2)
     ax.axis("off")
-    rounded(ax, 0.5, 1.3, 5.2, 3.8, WHITE, BLUE, lw=3)
-    ax.text(3.1, 4.5, "Trained here", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(3.1, 3.3, "Adult notes\nAdult creatinine\nAdult vital-sign ranges", ha="center", fontsize=14)
-    rounded(ax, 8.3, 1.3, 5.2, 3.8, WHITE, ORANGE, lw=3)
-    ax.text(10.9, 4.5, "Deployed here", ha="center", fontsize=16, fontweight="bold", color=ORANGE)
-    ax.text(10.9, 3.3, "Weight-based dosing\nCaregiver by proxy\nRare disease + development", ha="center", fontsize=14)
+    cards = [
+        (0.5, BLUE, "Trained here", ["Adult notes", "Adult creatinine", "Adult vital-sign ranges"]),
+        (8.3, ORANGE, "Deployed here", ["Weight-based dosing", "Caregiver by proxy", "Rare disease + development"]),
+    ]
+    title_y = 4.45
+    line_ys = [3.55, 2.95, 2.35]
+    for x, c, title, lines in cards:
+        rounded(ax, x, 1.3, 5.2, 3.8, WHITE, c, lw=3)
+        cx = x + 2.6
+        ax.text(cx, title_y, title, ha="center", va="center", fontsize=16, fontweight="bold", color=c)
+        for y, line in zip(line_ys, lines):
+            ax.text(cx, y, line, ha="center", va="center", fontsize=14, color=INK)
     ax.annotate("", xy=(8.15, 3.2), xytext=(5.85, 3.2), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
-    ax.text(7.0, 3.55, "shift", ha="center", color=PURPLE, fontsize=12, fontweight="bold")
-    ax.text(7.0, 5.7, "A high AUROC on adults is not a pediatric recommendation", ha="center", fontsize=16, fontweight="bold", color=INK)
-    ax.text(7.0, 0.45, "AAP PAS 2025 abstract: 6% confident AI is developed with adequate pediatric consideration", ha="center", fontsize=11, color=MUTED)
+    ax.text(7.0, 3.55, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
+    ax.text(7.0, 5.7, "A high AUROC on adults is not a pediatric recommendation", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(7.0, 0.45, "AAP PAS 2025 abstract: 6% confident AI is developed with adequate pediatric consideration", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "pediatric_shift")
 
 
@@ -174,13 +184,15 @@ def fig_tokens():
     ax.text(7, 4.45, "Models do not read letters. They read tokens.", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     sentence = "fever 38.5 °C"
     ax.text(7, 3.55, sentence, ha="center", fontsize=28, fontweight="bold", color=INK, family="DejaVu Sans")
-    pieces = [("fev", BLUE), ("er", TEAL), (" 38", PURPLE), (".5", ORANGE), (" °C", GOLD)]
-    x = 2.3
-    for t, c in pieces:
-        w = 0.55 + 0.28 * len(t.strip())
+    pieces = [("fev", BLUE), ("er", TEAL), ("38", PURPLE), (".5", ORANGE), ("°C", GOLD)]
+    gap = 0.35
+    widths = [1.15 + 0.22 * max(len(t) - 2, 0) for t, _ in pieces]
+    total = sum(widths) + gap * (len(pieces) - 1)
+    x = (14 - total) / 2
+    for (t, c), w in zip(pieces, widths):
         rounded(ax, x, 1.35, w, 1.15, c, r=0.08)
         ax.text(x + w / 2, 1.92, t, ha="center", va="center", fontsize=16, fontweight="bold", color=INK if c == GOLD else WHITE)
-        x += w + 0.35
+        x += w + gap
     ax.text(7, 0.55, "Byte-pair pieces · numbers often split · a dose is not one object to the model", ha="center", fontsize=12, color=MUTED)
     save(fig, "tokens")
 
@@ -191,25 +203,33 @@ def fig_attention():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.0, "Attention: every token can look at every other token", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 6.1, "Attention: every token can look at every other token", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+
     words = ["The", "infant", "wheezed", "after", "feeds"]
-    xs = np.linspace(1.4, 12.6, len(words))
-    y_top, y_bot = 4.6, 1.7
-    # connections (schematic, not a measured head)
-    pairs = [(0, 1), (1, 2), (2, 4), (1, 4), (3, 4), (0, 2)]
-    for i, j in pairs:
+    xs = np.linspace(1.6, 12.4, len(words))
+    y_sent = 2.05
+    y_query = 4.55
+    focus = 2
+    qx = xs[focus]
+
+    ax.text(qx, 5.45, "this token", ha="center", fontsize=13, fontweight="bold", color=ORANGE)
+    rounded(ax, qx - 1.2, y_query - 0.5, 2.4, 1.05, ORANGE, r=0.08)
+    ax.text(qx, y_query, "wheezed", ha="center", va="center", color=WHITE, fontsize=16, fontweight="bold")
+
+    ax.text(0.35, 3.35, "looks\nat", ha="center", va="center", fontsize=12, color=TEAL, fontweight="bold")
+    for x, w, i in zip(xs, words, range(len(words))):
+        c = ORANGE if i == focus else BLUE
+        rounded(ax, x - 1.05, y_sent - 0.5, 2.1, 1.0, c, r=0.08)
+        ax.text(x, y_sent, w, ha="center", va="center", color=WHITE, fontsize=14, fontweight="bold")
         ax.annotate(
             "",
-            xy=(xs[j], y_bot + 0.55),
-            xytext=(xs[i], y_top - 0.55),
-            arrowprops=dict(arrowstyle="-", color=TEAL, lw=2, alpha=0.7, connectionstyle="arc3,rad=0.15"),
+            xy=(x, y_sent + 0.55),
+            xytext=(qx, y_query - 0.55),
+            arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=2, mutation_scale=11),
         )
-    for x, w in zip(xs, words):
-        rounded(ax, x - 1.05, y_top - 0.55, 2.1, 1.0, BLUE, r=0.08)
-        ax.text(x, y_top, w, ha="center", va="center", color=WHITE, fontsize=14, fontweight="bold")
-        rounded(ax, x - 1.05, y_bot - 0.55, 2.1, 1.0, PURPLE, r=0.08)
-        ax.text(x, y_bot, w, ha="center", va="center", color=WHITE, fontsize=14, fontweight="bold")
-    ax.text(7, 0.45, "Schematic of self-attention, not a reproduction of Vaswani et al. 2017 Fig. 1", ha="center", fontsize=11, color=MUTED)
+
+    ax.text(7, 1.15, "the rest of the sentence", ha="center", fontsize=13, color=MUTED)
+    ax.text(7, 0.45, "A weight later says how much each word counts. That mix is context, not understanding.", ha="center", fontsize=13, color=INK)
     save(fig, "attention")
 
 
@@ -246,7 +266,7 @@ def fig_three_boxes():
     ax.set_ylim(0, 6.6)
     ax.axis("off")
     boxes = [
-        (0.35, ORANGE, "Closed API", "Sol · Fable · Opus 5\nGemini 3.7 · Muse Spark", "Your unpaid phone\nlives here — no BAA"),
+        (0.35, ORANGE, "Closed API", "Sol · Fable · Opus 5\nGemini 3.7 · Muse Spark", "Personal phone\n· no BAA"),
         (4.95, PURPLE, "Open datacenter", "Kimi K3 · DeepSeek V4\nQwen-Max · GLM-5.3*", "Weights, still a rack\nof GPUs"),
         (9.55, TEAL, "Open laptop", "Qwen3.8-27B\nMuse Glimmer 30B", "Privacy architecture\nnot a quality trophy"),
     ]
@@ -265,35 +285,83 @@ def fig_rag():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 5.8)
     ax.axis("off")
-    rounded(ax, 0.4, 1.6, 3.4, 2.6, BLUE)
-    ax.text(2.1, 2.9, "Corpus", ha="center", color=WHITE, fontsize=16, fontweight="bold")
-    ax.text(2.1, 2.2, "journals\nguidelines\nPDFs you added", ha="center", color=WHITE, fontsize=11)
-    rounded(ax, 5.3, 1.6, 3.4, 2.6, PURPLE)
-    ax.text(7.0, 2.9, "Retrieve", ha="center", color=WHITE, fontsize=16, fontweight="bold")
-    ax.text(7.0, 2.2, "nearest chunks\nnot “the whole\nlibrary”", ha="center", color=WHITE, fontsize=11)
-    rounded(ax, 10.2, 1.6, 3.4, 2.6, TEAL)
-    ax.text(11.9, 2.9, "Generate", ha="center", color=WHITE, fontsize=16, fontweight="bold")
-    ax.text(11.9, 2.2, "answer +\ncitations that\nmust still be clicked", ha="center", color=WHITE, fontsize=11)
+    cards = [
+        (0.4, BLUE, "Corpus", ["journals", "guidelines", "PDFs in the corpus"]),
+        (5.3, PURPLE, "Retrieve", ["nearest chunks", "not the whole library", ""]),
+        (10.2, TEAL, "Generate", ["answer + citations", "that still must", "be opened"]),
+    ]
+    title_y = 3.35
+    line_ys = [2.70, 2.30, 1.90]
+    for x, c, title, lines in cards:
+        rounded(ax, x, 1.6, 3.4, 2.6, c)
+        cx = x + 1.7
+        ax.text(cx, title_y, title, ha="center", va="center", color=WHITE, fontsize=16, fontweight="bold")
+        for y, line in zip(line_ys, lines):
+            if line:
+                ax.text(cx, y, line, ha="center", va="center", color=WHITE, fontsize=11)
     for x1, x2 in [(3.85, 5.25), (8.75, 10.15)]:
         ax.annotate("", xy=(x2, 2.9), xytext=(x1, 2.9), arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3))
-    ax.text(7, 5.2, "RAG is a corpus choice, not a synonym for “true”", ha="center", fontsize=17, fontweight="bold", color=BLUE)
-    ax.text(7, 0.55, "OpenEvidence ≠ UpToDate ≠ ChatGPT with search  ·  retrieval error still looks fluent", ha="center", fontsize=11, color=MUTED)
+    ax.text(7, 5.2, "RAG is a corpus choice, not a synonym for “true”", ha="center", va="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 0.55, "OpenEvidence ≠ UpToDate ≠ ChatGPT with search  ·  retrieval error still looks fluent", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "rag")
 
 
 # --- 10. Hallucinations ---
 def fig_hallucinations():
-    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    fig, ax = plt.subplots(figsize=(14.2, 6.6))
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 6)
+    ax.set_ylim(0, 6.6)
     ax.axis("off")
-    rounded(ax, 0.5, 0.8, 6.2, 4.4, WHITE, ORANGE, lw=3)
-    ax.text(3.6, 4.6, "2022–23 chatbot", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.6, 3.2, "Invented PMID\nInvented dose\nSounds like a review", ha="center", fontsize=15)
-    rounded(ax, 7.3, 0.8, 6.2, 4.4, WHITE, TEAL, lw=3)
-    ax.text(10.4, 4.6, "2025–26 with tools", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.4, 3.2, "Real paper, wrong claim\nHarness drops a constraint\nCitation theater", ha="center", fontsize=15)
-    ax.text(7, 5.55, "Hallucinations changed shape. They did not vanish.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(
+        7,
+        6.25,
+        "Hallucinations changed shape. They did not vanish.",
+        ha="center",
+        va="center",
+        fontsize=16,
+        fontweight="bold",
+        color=BLUE,
+    )
+    cards = [
+        (
+            0.4,
+            ORANGE,
+            "Chatbots, 2022–23",
+            [
+                ("Invented citation", "A PubMed ID that was never assigned."),
+                ("Invented dose", "A number that sounds like a monograph."),
+                ("Sounds like a review", "Fluent prose is not a source."),
+            ],
+        ),
+        (
+            7.2,
+            TEAL,
+            "With tools, 2025–26",
+            [
+                ("Real paper, wrong claim", "The article exists. That sentence is not in it."),
+                ("A rule gets dropped", "“No meds” at the start can be gone by the end."),
+                ("Citation theater", "A chip or URL can still dress up the wrong sentence."),
+            ],
+        ),
+    ]
+    title_y = 5.15
+    pair_ys = [(4.35, 3.95), (3.15, 2.75), (1.95, 1.55)]
+    for x, c, title, rows in cards:
+        rounded(ax, x, 0.85, 6.4, 4.7, WHITE, c, lw=3)
+        cx = x + 3.2
+        ax.text(cx, title_y, title, ha="center", va="center", fontsize=17, fontweight="bold", color=c)
+        for (y1, y2), (head, expl) in zip(pair_ys, rows):
+            ax.text(cx, y1, head, ha="center", va="center", fontsize=14, fontweight="bold", color=INK)
+            ax.text(cx, y2, expl, ha="center", va="center", fontsize=12, color=MUTED)
+    ax.text(
+        7,
+        0.4,
+        "They still sound confident. Open the source.",
+        ha="center",
+        va="center",
+        fontsize=13,
+        color=INK,
+    )
     save(fig, "hallucinations")
 
 
@@ -305,12 +373,12 @@ def fig_ttc():
     ax.plot(x, y, color=PURPLE, lw=3.5)
     ax.fill_between(x, 0, y, color=TEAL, alpha=0.18)
     ax.set_xlabel("Test-time compute  (thinking tokens / tool steps)", fontsize=12)
-    ax.set_ylabel("Task success  (schematic)", fontsize=12)
+    ax.set_ylabel("Task success", fontsize=12)
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_title("Reasoning ≈ extra compute at answer time, not a soul", fontsize=16, fontweight="bold", color=BLUE, pad=12)
-    ax.text(0.4, 0.92, "o1 era (Sep 2024) made this the product", transform=ax.transAxes, fontsize=11, color=MUTED)
-    ax.text(0.5, -0.18, "Schematic only — not a measured curve from any vendor eval", transform=ax.transAxes, ha="center", fontsize=11, color=ORANGE)
+    ax.set_title("Extra compute at answer time", fontsize=16, fontweight="bold", color=BLUE, pad=12)
+    ax.text(0.5, 0.92, "Not reasoning as we think about it. More like guess and grade.", transform=ax.transAxes, ha="center", fontsize=13, color=INK)
+    ax.text(0.4, 0.82, "o1 (Sep 2024) made this the product", transform=ax.transAxes, fontsize=11, color=MUTED)
     save(fig, "test_time_compute")
 
 
@@ -333,8 +401,7 @@ def fig_harness():
     arrows = [((3.35, 3.5), (4.15, 4.5)), ((3.35, 2.9), (4.15, 2.0)), ((6.45, 4.7), (7.45, 3.7)), ((6.45, 1.7), (7.45, 2.7)), ((9.75, 3.2), (10.45, 3.2))]
     for (x1, y1), (x2, y2) in arrows:
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1), arrowprops=dict(arrowstyle="-|>", color=INK, lw=2))
-    ax.text(7, 5.85, "A chatbot returns paragraphs. A harness returns files you can audit.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(7, 0.35, "Presenter face tonight: Cursor  ·  Codex is optional backup, not the show", ha="center", fontsize=11, color=MUTED)
+    ax.text(7, 5.85, "A chatbot returns paragraphs. A harness returns files.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     save(fig, "harness_loop")
 
 
@@ -349,7 +416,7 @@ def fig_bench():
     ax.text(2.6, 2.7, "MedQA · USMLE-style\nLeaderboard Elo\nVendor tables", ha="center", fontsize=14)
     rounded(ax, 5.3, 1.2, 4.2, 3.6, WHITE, ORANGE, lw=3)
     ax.text(7.4, 4.2, "Out-of-sample", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(7.4, 2.7, "This infant, tonight\nThis hospital’s formulary\nThis family’s language", ha="center", fontsize=14)
+    ax.text(7.4, 2.7, "This infant\nThis hospital’s formulary\nThis family’s language", ha="center", fontsize=14)
     ax.text(5, 5.4, "Passing a test the model has seen ≠ bedside competence", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     ax.text(5, 0.45, "FDA 2026 discussion paper: open-ended GenAI is hard to premarket-test  ·  not guidance", ha="center", fontsize=11, color=MUTED)
     save(fig, "benchmark_trap")
@@ -415,7 +482,7 @@ def fig_hajj():
     for i, v in enumerate(vals):
         ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=16, fontweight="bold")
     ax.set_title("Grounding is not always “more accurate”", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(0.5, -0.2, "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions. Do not generalize to pediatrics.", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
+    ax.text(0.5, -0.2, "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions. Not a pediatric study.", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
     save(fig, "hajj_counterexample")
 
 
@@ -438,7 +505,7 @@ def fig_policy():
         ax.scatter([x], [1.4], s=110, color=GOLD, zorder=4, edgecolor=PURPLE, lw=1.2)
         ax.text(x, 1.85, when, ha="center", fontsize=11, fontweight="bold", color=PURPLE)
         ax.text(x, 3.55, lab, ha="center", fontsize=11, color=INK)
-    ax.text(4.9, 5.7, "2026 statements you can actually point to", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(4.9, 5.7, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
     save(fig, "policy_2026")
 
 
@@ -450,7 +517,7 @@ def fig_hipaa():
     ax.axis("off")
     rows = [
         (ORANGE, "Consumer ChatGPT / Claude / Gemini", "No BAA  ·  PHI = impermissible disclosure"),
-        (GOLD, "OpenEvidence “HIPAA” badge", "Vendor claim  ·  still do not paste identifiers"),
+        (GOLD, "OpenEvidence “HIPAA” badge", "Vendor claim  ·  not a reason to paste identifiers"),
         (TEAL, "Offline Ollama on your laptop", "No vendor BA  ·  stolen laptop still ePHI"),
         (BLUE, "Hospital tool with executed BAA", "The only green light for real notes"),
     ]
@@ -470,7 +537,7 @@ def fig_scale():
     vals = [0.175, 0.027, 0.030, 1.6, 2.4, 2.8]
     colors = [BLUE, TEAL, TEAL, PURPLE, PURPLE, ORANGE]
     ax.bar(names, vals, color=colors, width=0.62)
-    ax.set_ylabel("Total parameters (trillions, log-ish visual)")
+    ax.set_ylabel("Total parameters (trillions, log scale)")
     ax.set_yscale("log")
     ax.set_title("Size exploded. Active parameters and distillation matter more than the headline T.", fontsize=14, fontweight="bold", color=BLUE)
     ax.text(0.5, -0.22, "Counts from first-party posts / reports cited in the briefing. Local 27B/30B are dense-class; Kimi/Qwen-Max/DeepSeek-Pro are MoE or sparse.", transform=ax.transAxes, ha="center", fontsize=9, color=MUTED)
@@ -484,11 +551,11 @@ def fig_workshops():
     ax.set_ylim(0, 6.2)
     ax.axis("off")
     rounded(ax, 0.4, 0.7, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3)
-    ax.text(3.6, 4.85, "Tonight  ·  12 min", ha="center", fontsize=16, fontweight="bold", color=PURPLE_WEB)
+    ax.text(3.6, 4.85, "This hour", ha="center", fontsize=16, fontweight="bold", color=PURPLE_WEB)
     ax.text(3.6, 3.3, "W1  Office files from a harness\nW4  Same question, three corpora", ha="center", fontsize=15)
-    ax.text(3.6, 1.5, "Your laptop  ·  Cursor agent\n+ three browser tabs", ha="center", fontsize=13, color=MUTED)
+    ax.text(3.6, 1.5, "Cursor  ·  three browsers", ha="center", fontsize=13, color=MUTED)
     rounded(ax, 7.2, 0.7, 6.4, 4.7, WHITE, TEAL, lw=3)
-    ax.text(10.4, 4.85, "Handout", ha="center", fontsize=16, fontweight="bold", color=TEAL)
+    ax.text(10.4, 4.85, "Take-home", ha="center", fontsize=16, fontweight="bold", color=TEAL)
     ax.text(10.4, 2.85, "W2 Pages  ·  W3 Ollama\nW5 citations  ·  W6 dosing audit\nW7 loop  ·  W8 Notebook", ha="center", fontsize=14)
     ax.text(7, 5.8, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
     save(fig, "workshops_split")

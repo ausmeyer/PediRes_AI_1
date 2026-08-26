@@ -10,7 +10,7 @@ format:
     height: 720
     margin: 0.05
     logo: assets/mclane-train.svg
-    footer: "McLane Children's · not clinical guidance · sources in briefing/"
+    footer: "BSW McLane Children's"
     embed-resources: true
     navigation-mode: linear
     controls-tutorial: false
@@ -36,7 +36,7 @@ A survey of modern AI
 
 **Not a protocol. Not patient-specific direction.**
 
-Cutoff 25 August 2026 · written briefing in `briefing/`
+Cutoff 25 August 2026
 
 ::: notes
 Open on the train. This is McLane's mark from the hospital site, not clip-art. Say: one hour, two live labs, a written briefing for everything we skip. No PHI tonight.
@@ -44,27 +44,38 @@ Open on the train. This is McLane's mark from the hospital site, not clip-art. S
 
 ---
 
-## The room rules
+## Three rules for this hour
 
 :::: {.columns}
-::: {.column width="48%"}
-![](assets/mclane-train.svg){width="70%"}
+::: {.column width="32%"}
+::: {.box .box-orange}
+### Invented cases
+
+Every demo patient is made up.
+
+Not a child on the census.
 :::
-::: {.column width="52%"}
-::: {.caution}
-**Synthetic only**
+:::
+::: {.column width="32%"}
+::: {.box .box-purple}
+### No real notes in ChatGPT
 
-No tonight's patients.
+Consumer ChatGPT, Claude, Gemini.
 
-No consumer ChatGPT with PHI.
+No names, MRNs, or pasted H&Ps.
+:::
+:::
+::: {.column width="32%"}
+::: {.box .box-teal}
+### Check before you copy
 
-No copying a dose or a PMID you have not opened.
+A dose or a citation from a model stays out of the note until the source is open.
 :::
 :::
 ::::
 
 ::: notes
-Five non-negotiables from the briefing. The train is a reminder they are in a children's hospital: cute is not a safety control.
+Three of the five briefing rules, in English. De-identification is not a loophole, and a local laptop is not automatically compliant — those wait for the HIPAA slide. If someone offers a real H&P, stop and point at card 1.
 :::
 
 ---
@@ -130,7 +141,7 @@ A dose is several tokens. That is why numeric hallucination is easy and why "jus
 ![](assets/figures/attention.png){width="100%"}
 
 ::: notes
-Self-attention, 2017. Original schematic — not Vaswani Figure 1. Point: context, not magic understanding. Then Transformers + scale + data.
+Self-attention, 2017. Cartoon: one token looking at the sentence with straight arrows. Not a measured attention head. Point: context, not magic understanding.
 :::
 
 ---
@@ -182,17 +193,17 @@ Retrieve then generate. Reduces some hallucinations. Does not stop wrong-paper, 
 ![](assets/figures/hallucinations.png){width="100%"}
 
 ::: notes
-Old: invented PMID. New: real paper, wrong claim; harness amnesia. Artsi: interpretive error even with real citations.
+Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. Artsi: interpretive error even with real citations.
 :::
 
 ---
 
-## "Reasoning" {.viz}
+## Extra compute at answer time {.viz}
 
 ![](assets/figures/test_time_compute.png){width="100%"}
 
 ::: notes
-Schematic. o1: RL on chain of thought plus test-time compute. Coding evals moved because you can check code. That pulled computer-use and harnesses.
+Not human reasoning. Sample candidates, check them, spend more tokens at answer time. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses. The curve is a cartoon, not a vendor eval.
 :::
 
 ---
@@ -253,7 +264,7 @@ Hajj inside Artsi: ChatGPT-4o 66.7 vs OE 26.7 on 15 tricuspid questions. Do not 
 
 ---
 
-## Your ThinkPad is not a Studio {.viz}
+## Local models need RAM {.viz}
 
 ![](assets/figures/hardware.png){width="100%"}
 
@@ -338,7 +349,7 @@ ICMJE / Pediatrics / COPE. Gap: 2023 language still sounds like chatbots. AMA pa
 
 ---
 
-## Tonight vs take-home {.viz}
+## This hour vs take-home {.viz}
 
 ![](assets/figures/workshops_split.png){width="100%"}
 
@@ -351,7 +362,7 @@ W1 + W4. Cursor for W1. Three browser tabs for W4. Fallback Python if the agent 
 ## Lab 1 — files, not paragraphs
 
 ::: {.kicker}
-Cursor agent · empty folder · STEM.md already written
+A model that writes files, not paragraphs
 :::
 
 ```text
@@ -361,10 +372,8 @@ noon_conference.pptx from that stem only.
 No identifiers. No medication column. No invented PMIDs.
 ```
 
-If the agent hangs: `python slides/workshops/w1_fallback.py`
-
 ::: notes
-Leave this slide up. Paste the prompt. Open the three files. Sting: chatbot "add dexamethasone dose." Spreadsheet has no meds on purpose. Codex is not required.
+Leave this slide up. Empty folder; STEM.md already written. Paste the prompt. Open the three files. If the agent hangs: python slides/workshops/w1_fallback.py. Sting: chatbot "add dexamethasone dose." Spreadsheet has no meds on purpose.
 :::
 
 ---
@@ -372,16 +381,14 @@ Leave this slide up. Paste the prompt. Open the three files. Sting: chatbot "add
 ## Lab 4 — one question, three corpora
 
 ::: {.kicker}
-No harness. Three browsers.
+Same question. Three sources.
 :::
 
 > Previously healthy 8-week-old, 38.5 °C, well-appearing. Current AAP guidance on LP? **Quote the document.** If you cannot quote, say so.
 
 | A | B | C |
 |---|---|---|
-| ChatGPT, search **off** | Gemini Notebook + one public PDF | OpenEvidence, if NPI works |
-
-Whiteboard: quoted? clickable? pediatric? would I act?
+| ChatGPT, search **off** | Gemini Notebook + one public PDF | OpenEvidence |
 
 ::: notes
 Arm A often mashups febrile-infant algorithms. Click every chip. If OpenEvidence is blocked, B is enough.
@@ -406,14 +413,10 @@ Repeat. Point at the briefing packet and workshops.md. Pocket card is in the bri
 ![](assets/mclane-wordmark.svg){width="100%"}
 :::
 ::: {.column width="58%"}
-The packet is the source of truth.
-
-`briefing/` · `slides/presenter-kit.md`
-
-Train mark © BSW / McLane Children's — internal teaching use.
+Questions
 :::
 ::::
 
 ::: notes
-Stop. Do not invent an AAP clinical AI guideline in Q&A.
+Stop. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Train mark is BSW/McLane, internal teaching use.
 :::
