@@ -330,14 +330,14 @@ Evaluate the project on its merits. The manuscript carries the claims.
 Confession theater
 :::
 
-Naming the product does not make the science more true. Grammar help and a fabricated table are different acts.
+Naming the tools does not make the science more true. Grammar help and a fabricated table are different acts.
 :::
 ::: {.box .box-purple .box-prose}
 ::: {.box-label}
 The paper is the record
 :::
 
-We do not archive Slack with a postdoc. Same for prompts. Share numbers, code, and the citation you can open.
+A Slack thread with a colleague is not the paper. Prompts are that kind of working chat. Share the numbers, the code, and a citation you can open.
 :::
 ::: {.box .box-teal .box-prose}
 ::: {.box-label}
@@ -365,12 +365,12 @@ Importance stays with authors and reviewers. Models are tuned more for engineeri
 Pedantry is not the argument
 :::
 
-They stall on reproducibility theater — pedantic checks that are not the core claim. That is not the argument of the paper.
+They stall on reproducibility theater — pedantic checks that do not carry the result. Those checks are not the scientific claim.
 :::
 ::::
 
 ::: notes
-ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then the 3×2: disclosure-as-stigma does no epistemic work; grammar help ≠ a fabricated table; we do not archive conversations with postdocs; a session may have used Cursor plus two models plus a browser tool — listing every hop is not a methods standard; let models into review as checkers; keep importance with people; LLMs are tuned more for engineering than for scientific taste, so they get stuck on pedantic reproducibility theater that does not carry the core argument. An adult creatinine in a pediatrics manuscript is a scientific failure, not a missing disclosure checkbox. This is a position, not a journal’s current rulebook.
+ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then the 3×2: naming the tools does no epistemic work; grammar help ≠ a fabricated table; a Slack thread with a colleague is not the paper, and neither is a prompt log — share numbers, code, and a citation you can open; a session may have used Cursor plus two models plus a browser tool — listing every hop is not a methods standard; let models into review as checkers; keep importance with people; LLMs are tuned more for engineering than for scientific taste, so they get stuck on pedantic reproducibility theater that does not carry the scientific claim. An adult creatinine in a pediatrics manuscript is a scientific failure, not a missing disclosure checkbox. This is a position, not a journal’s current rulebook.
 :::
 
 ---
