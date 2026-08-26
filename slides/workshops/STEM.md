@@ -1,5 +1,5 @@
 # Synthetic bronchiolitis stem — teaching only
-# Not a real patient. Do not add identifiers.
+# Do not add identifiers.
 
 6-month-old former 36-week infant, day 2 of RSV bronchiolitis.
 SpO2 nadir 88% on room air overnight, now 94% on 0.5 L NC.

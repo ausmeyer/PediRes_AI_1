@@ -1,6 +1,6 @@
 # Labs 1 and 2, on your laptop
 
-Synthetic only. Not a real child. Not a formulary. Longer recipes: [`../../briefing/workshops.md`](../../briefing/workshops.md).
+Invented bronchiolitis stem and a fictional dosing key. Longer recipes: [`../../briefing/workshops.md`](../../briefing/workshops.md).
 
 | File | Lab | What it is |
 |---|---|---|

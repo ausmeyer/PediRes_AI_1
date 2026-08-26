@@ -114,7 +114,7 @@ Versioned teaching materials beat emailing `final_v7.pptx`. “I don’t code”
 **Time (live):** 10 minutes (plus pre-download)  
 **Goal:** Summarize a synthetic H&P with Ollama while the laptop is in airplane mode.  
 **Surprising artifact:** A competent summary with the network off.  
-**HIPAA:** This is the closest “no vendor BA” demo. Still not a licensed hospital system. Do not use real notes.
+**HIPAA:** Closest no-vendor-BA demo. Do not use real notes.
 
 ### Hardware honesty (say this before you boot)
 
@@ -148,11 +148,11 @@ Install Ollama from https://ollama.com (or LM Studio). Pull the largest model th
 
 ### Intentional failure
 
-While **online**, paste the same note into consumer ChatGPT. Ask the room: “Which of these just created a business associate we do not have a contract with?” (Answer: the cloud one, if the note were PHI.)
+While **online**, paste the same note into consumer ChatGPT. Ask the room: “Which of these just created a business associate we do not have a contract with?” (Answer: the cloud one.)
 
 ### Teaching point
 
-Local models are a **privacy architecture**, not a quality trophy. Offline Qwen3.8-27B is useful for drafting. It is not GPT-5.6 Sol. Unmanaged laptops still get stolen.
+Local models keep the prompt off a vendor. Offline Qwen3.8-27B is useful for drafting. It is not GPT-5.6 Sol.
 
 ---
 
@@ -163,7 +163,7 @@ Local models are a **privacy architecture**, not a quality trophy. Offline Qwen3
 **Surprising artifact:** Side-by-side citations: fabricated vs quoted vs editorial.  
 **HIPAA:** Public sources only. No patient detail.
 
-### Question (from a published teaching case pattern, not a real child)
+### Question (published teaching-case pattern)
 
 > In a previously healthy 8-week-old with fever of 38.5 °C, well-appearing, what is the current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say you cannot.
 
@@ -226,11 +226,11 @@ ICMJE: authors must ensure attribution of quoted material and that AI text is no
 **Time (live hour):** 5 minutes (full recipe 10)  
 **Goal:** Agent builds a weight-based dosing sheet; residents audit every formula.  
 **Surprising artifact:** A pretty Excel file with at least one wrong formula or unit.  
-**HIPAA:** Synthetic weights only. **No live administration.**
+**HIPAA:** Synthetic weights only.
 
 ### Guardrails (read first)
 
-This is an **audit exercise**, not a formulary. Use a **fictional** drug name (`teachicillin`) or a widely published OTC example with a **labeled answer key** you prepared. Do **not** generate a real hospital gentamicin nomogram from a model and do not leave it on a shared drive.
+Use a **fictional** drug name (`teachicillin`) or a widely published OTC example with a **labeled answer key** you prepared.
 
 ### Answer key (presenter prepares on paper)
 
@@ -242,7 +242,7 @@ Example teaching key (synthetic):
 
 ### Presenter path
 
-> Create dosing.xlsx with inputs: weight_kg, age_months. Compute teachicillin_mg_per_dose and doses_per_day using ONLY the rules in KEY.md. If KEY.md is silent, write CHECK_KEY rather than guessing. Add a README: “Not for clinical use.”
+> Create dosing.xlsx with inputs: weight_kg, age_months. Compute teachicillin_mg_per_dose and doses_per_day using ONLY the rules in KEY.md. If KEY.md is silent, write CHECK_KEY rather than guessing. Add a README.
 
 Then flip the projector to formula view. Residents find:
 
@@ -263,7 +263,7 @@ Numeric hallucination plus official formatting is how a model kills someone. FDA
 **Time (live):** 8–10 minutes  
 **Goal:** Same request in ChatGPT paste vs an agent in an empty git repo.  
 **Surprising artifact:** A running local HTML growth-chart **teaching toy** (synthetic data) vs a blob of code that does not run.  
-**HIPAA:** Synthetic points only. Not a clinical growth chart for a real child.
+**HIPAA:** Synthetic points only.
 
 ### Request (identical in both arms)
 

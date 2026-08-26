@@ -20,4 +20,4 @@ python workshops/lab1_fallback.py
 python workshops/lab2_fallback.py
 ```
 
-Brand files: [`assets/README.md`](assets/README.md). Figures: [`assets/figures/`](assets/figures/) (generated from briefing facts; schematics labeled as such).
+Brand files: [`assets/README.md`](assets/README.md). Figures: [`assets/figures/`](assets/figures/) (generated from briefing facts).

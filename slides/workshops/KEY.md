@@ -1,7 +1,5 @@
 # Teaching key — fictional drug only
 
-Not for clinical use. Synthetic audit exercise.
-
 - Drug name: `teachicillin` (fictional; do not substitute a real formulary drug)
 - Route: oral
 - Dose: 10 mg per kg per dose

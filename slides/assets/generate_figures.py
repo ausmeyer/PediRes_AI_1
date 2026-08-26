@@ -2,7 +2,7 @@
 """Generate lecture figures from briefing facts.
 
 Every numeric claim is labeled with its source in the figure itself.
-Schematics that are not measured data say so on the canvas.
+Do not put “cartoon / not to scale / not a measured model” hedges on the canvas.
 """
 from pathlib import Path
 

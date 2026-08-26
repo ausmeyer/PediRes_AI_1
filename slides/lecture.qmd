@@ -577,14 +577,14 @@ KEY.md — we wrote this too
 
 The key is the answer sheet, written by us, not a model. It exists so “correct” is defined before the agent runs.
 
-**Rules.** `teachicillin`, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose. Weight under 2 kg → TOO_SMALL. Age is recorded; it does not change the dose. Not a formulary.
+**Rules.** `teachicillin`, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose. Weight under 2 kg → TOO_SMALL. Age is recorded; it does not change the dose.
 :::
 ::: {.box .box-teal .box-prose}
 ::: {.box-label}
 How · paste in Cursor Agent
 :::
 
-Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README: not for clinical use.
+Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README.
 
 Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency.
 

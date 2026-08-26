@@ -2,13 +2,13 @@
 
 Handout for the McLane Children’s pediatric residency hour on modern AI.
 
-Cases in this repo are **invented**. They are not a real child, not a protocol, and not advice about a patient you are caring for.
+Cases in this repo are **invented**.
 
 ## Ground rules
 
 1. Do not paste names, medical record numbers, or real notes into consumer ChatGPT, Claude, Gemini, or similar apps.
 2. Do not copy a dose or a citation into a note until you have opened the source yourself.
-3. A model on your own laptop keeps the prompt off a vendor. That is still not the hospital’s official system.
+3. A model on your own laptop keeps the prompt off a vendor.
 
 ## What to read
 
