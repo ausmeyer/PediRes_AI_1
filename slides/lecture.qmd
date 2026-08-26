@@ -213,7 +213,7 @@ Not human reasoning. Sample candidates, check them, spend more tokens at answer 
 ![](assets/figures/harness_loop.png){width="100%"}
 
 ::: notes
-MCP, skills, orchestration — one slide of vocabulary: USB-C to tools, reusable folders of instructions plus code, a loop that writes files. Tonight's face is Cursor. Codex is the same genus.
+MCP, skills, orchestration — USB-C to tools, reusable instruction folders, a loop that writes files. Cursor is one harness. Codex is the same genus.
 :::
 
 ---
