@@ -333,7 +333,7 @@ $presentation-h2-font-size: 1.35em;
 
 .lab-goal,
 .lab-done {
-  font-size: 0.48em;
+  font-size: 0.54em;
   line-height: 1.32;
   margin: 0.08em 0 0.28em;
 }
@@ -363,7 +363,12 @@ $presentation-h2-font-size: 1.35em;
 
 .lab-split .box {
   margin: 0;
-  min-height: 0;
+  min-height: 11.5em;
+}
+
+.lab-split .box-prose {
+  font-size: 0.54em;
+  line-height: 1.32;
 }
 
 .lab-arms {
@@ -380,7 +385,7 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .lab-prompt {
-  font-size: 0.48em;
+  font-size: 0.52em;
   line-height: 1.32;
   background: #fff;
   border: 2px solid $mclane-blue;
@@ -390,7 +395,7 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .lab-steps {
-  font-size: 0.48em;
+  font-size: 0.52em;
   line-height: 1.32;
   margin: 0.1em 0 0.25em;
 }

@@ -275,10 +275,10 @@ def fig_timeline():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 5.8)
     ax.axis("off")
-    ax.text(7.1, 5.52, "How we got here", ha="center", va="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(7.1, 5.22, "How we got here", ha="center", va="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
-        0.28,
+        0.52,
         "Ordered for reading, not to scale. Llama 2 is why a laptop path exists. DeepSeek-R1 showed reasoning-style RL was not OpenAI-only.",
         ha="center",
         va="center",
