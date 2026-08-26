@@ -222,7 +222,7 @@ $presentation-h2-font-size: 1.35em;
   border-radius: 10px;
   padding: 0.7em 0.8em;
   background: #fff;
-  height: 100%;
+  height: auto;
 }
 
 .box h3 {
@@ -345,6 +345,9 @@ $presentation-h2-font-size: 1.35em;
 
 .lab-done {
   color: $mclane-muted;
+  margin-top: 0.45em;
+  position: relative;
+  z-index: 1;
 }
 
 .lab-goal p,
@@ -359,11 +362,13 @@ $presentation-h2-font-size: 1.35em;
   grid-template-columns: 1fr 1fr;
   gap: 0.5em;
   align-items: stretch;
+  margin: 0 0 0.15em;
 }
 
 .lab-split .box {
   margin: 0;
-  min-height: 11.5em;
+  height: auto;
+  min-height: 0;
 }
 
 .lab-split .box-prose {
@@ -376,10 +381,12 @@ $presentation-h2-font-size: 1.35em;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.45em;
   margin-top: 0.25em;
+  margin-bottom: 0.15em;
 }
 
 .lab-arms .box {
   margin: 0;
+  height: auto;
   min-height: 0;
   padding: 0.5em 0.55em;
 }
