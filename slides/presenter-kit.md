@@ -1,6 +1,6 @@
 # Presenter kit — tools, live labs, remaining holes
 
-Companion to [`lecture.qmd`](lecture.qmd). If you just cloned the repo, start at the [repository README](../README.md). Synthetic cases only.
+Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only. Residents use the [repository README](../README.md); this file is the stage stack.
 
 ## Do we need anything else before the hour?
 

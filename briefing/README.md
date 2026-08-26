@@ -1,18 +1,12 @@
-# PediRes AI — research briefing
+# PediRes AI — reading packet
 
-Repo overview: [`../README.md`](../README.md). The live hour is [`../slides/lecture.qmd`](../slides/lecture.qmd).
+Start at the [repository README](../README.md) if you were in the hour and want the labs.
 
-Source documents for a one-hour survey of modern AI for pediatric residents at McLane Children’s Hospital. All workshop cases are synthetic.
-
-| File | Role |
+| File | What it is |
 |---|---|
-| [pediatric-resident-ai-survey.md](pediatric-resident-ai-survey.md) | Main 30–40 page briefing |
-| [workshops.md](workshops.md) | Eight from-scratch recipes (live labs 1–4, take-home 5–8) |
+| [pediatric-resident-ai-survey.md](pediatric-resident-ai-survey.md) | The written survey (foundations through policy) |
+| [workshops.md](workshops.md) | Lab recipes you can run from an empty folder |
 | [claim-source-ledger.md](claim-source-ledger.md) | Claim → source → retrieval status |
-| [papers/](papers/README.md) | Local PDFs re-read 25 Aug 2026 |
-| [research-prompt.txt](research-prompt.txt) | Original research charge (provenance) |
-| [../slides/presenter-kit.md](../slides/presenter-kit.md) | Stage stack and remaining holes |
+| [papers/](papers/README.md) | Local copies of papers cited in the ledger |
 
-Speaker notes on the slides carry this packet. Do not dump 40 pages onto the projector.
-
-Print the **packet** (survey + workshops + ledger) at 11–12 pt, 1.15 line spacing, 1-inch margins.
+All workshop cases are synthetic. Do not paste real notes into a consumer app.
