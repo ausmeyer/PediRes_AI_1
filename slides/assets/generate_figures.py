@@ -72,16 +72,16 @@ def fig_hour_map():
     ax.axis("off")
     blocks = [
         (0, 10, BLUE, "Foundations\n10 min"),
-        (10, 8, TEAL, "Timeline\n8"),
-        (18, 8, PURPLE, "Reasoning\n+ tools 8"),
-        (26, 8, ORANGE, "Frontier\n+ HIPAA 8"),
-        (34, 8, GOLD, "Policy\n8"),
+        (10, 8, TEAL, "Timeline\n8 min"),
+        (18, 8, PURPLE, "Reasoning\n+ tools 8 min"),
+        (26, 8, ORANGE, "Frontier\n+ HIPAA 8 min"),
+        (34, 8, GOLD, "Policy\n8 min"),
         (42, 18, PURPLE_WEB, "Live labs\n18 min"),
     ]
     for x, w, c, lab in blocks:
         rounded(ax, x + 0.3, 1.15, w - 0.6, 1.35, c, r=0.15)
         color = INK if c == GOLD else WHITE
-        ax.text(x + w / 2, 1.82, lab, ha="center", va="center", color=color, fontsize=13, fontweight="bold")
+        ax.text(x + w / 2, 1.82, lab, ha="center", va="center", color=color, fontsize=12, fontweight="bold")
     ax.plot([0, 60], [0.85, 0.85], color=INK, lw=2)
     for t in range(0, 61, 10):
         ax.plot([t, t], [0.72, 0.85], color=INK, lw=1.5)
