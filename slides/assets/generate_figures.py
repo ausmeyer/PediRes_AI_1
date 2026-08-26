@@ -261,21 +261,64 @@ def fig_timeline():
 
 # --- 8. Three access boxes ---
 def fig_three_boxes():
-    fig, ax = plt.subplots(figsize=(14.2, 6.6))
+    fig, ax = plt.subplots(figsize=(14.2, 6.8))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.6)
+    ax.set_ylim(0, 6.8)
     ax.axis("off")
-    boxes = [
-        (0.35, ORANGE, "Closed API", "Sol · Fable · Opus 5\nGemini 3.7 · Muse Spark", "Personal phone\n· no BAA"),
-        (4.95, PURPLE, "Open datacenter", "Kimi K3 · DeepSeek V4\nQwen-Max · GLM-5.3*", "Weights, still a rack\nof GPUs"),
-        (9.55, TEAL, "Open laptop", "Qwen3.8-27B\nMuse Glimmer 30B", "Privacy architecture\nnot a quality trophy"),
+    cards = [
+        (
+            0.35,
+            ORANGE,
+            "Closed API",
+            ["Sol · Fable · Opus 5", "Gemini 3.7 · Muse Spark"],
+            [
+                "You use these through a company",
+                "website or phone app. There is",
+                "no hospital privacy contract (BAA).",
+            ],
+        ),
+        (
+            4.95,
+            PURPLE,
+            "Open datacenter",
+            ["Kimi K3 · DeepSeek V4", "Qwen-Max · GLM-5.3*"],
+            [
+                "The weights can be downloaded,",
+                "but you still need a GPU cluster.",
+                "A laptop cannot host these.",
+            ],
+        ),
+        (
+            9.55,
+            TEAL,
+            "Open laptop",
+            ["Qwen3.8-27B", "Muse Glimmer 30B"],
+            [
+                "Small enough to run on a machine",
+                "you own. That is a privacy setup,",
+                "not a claim that it is smarter.",
+            ],
+        ),
     ]
-    for x, c, t, mid, bot in boxes:
-        rounded(ax, x, 0.7, 4.3, 5.2, WHITE, c, lw=3.5, r=0.1)
-        ax.text(x + 2.15, 5.25, t, ha="center", fontsize=18, fontweight="bold", color=c)
-        ax.text(x + 2.15, 3.55, mid, ha="center", fontsize=13, color=INK)
-        ax.text(x + 2.15, 1.55, bot, ha="center", fontsize=12, color=MUTED)
-    ax.text(7.1, 6.25, "August 2026 access map  ·  *GLM-5.3 weights not public as of 25 Aug 2026", ha="center", fontsize=13, color=MUTED)
+    model_ys = [4.45, 4.00]
+    note_ys = [2.35, 1.90, 1.45]
+    for x, c, title, models, notes in cards:
+        rounded(ax, x, 0.55, 4.3, 5.45, WHITE, c, lw=3.5, r=0.1)
+        cx = x + 2.15
+        ax.text(cx, 5.45, title, ha="center", va="center", fontsize=18, fontweight="bold", color=c)
+        for y, line in zip(model_ys, models):
+            ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=INK)
+        for y, line in zip(note_ys, notes):
+            ax.text(cx, y, line, ha="center", va="center", fontsize=11, color=MUTED)
+    ax.text(
+        7.1,
+        6.45,
+        "August 2026 access map  ·  *GLM-5.3 weights not public as of 25 Aug 2026",
+        ha="center",
+        va="center",
+        fontsize=13,
+        color=MUTED,
+    )
     save(fig, "three_boxes")
 
 
