@@ -545,7 +545,7 @@ Paste in Cursor Agent:
 
 Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, noon_conference.pptx from that stem only. No identifiers. No medication column. No invented PubMed IDs. End the letter with “this is a teaching example.”
 
-**At home, no Cursor.** `pip install python-docx openpyxl python-pptx` then `python slides/workshops/w1_fallback.py`. Or ask ChatGPT for a Python script and run it locally.
+**At home, no Cursor.** `pip install python-docx openpyxl python-pptx` then `python slides/workshops/lab1_fallback.py`. Or ask ChatGPT for a Python script and run it locally.
 :::
 ::::
 

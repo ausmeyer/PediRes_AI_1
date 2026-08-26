@@ -5,7 +5,7 @@ Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md
 
 **Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
 
-**Lecture numbering.** Live hour is Labs 1–4, in this order. Take-home is Labs 5–8. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win.
+**Lecture numbering.** Live hour is Labs 1–4, in this order. Take-home is Labs 5–8. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win. If the live agent hangs, run the fallbacks in [`../slides/workshops/`](../slides/workshops/README.md).
 
 | Lab | When | What | Recipe in this file |
 |---|---|---|---|

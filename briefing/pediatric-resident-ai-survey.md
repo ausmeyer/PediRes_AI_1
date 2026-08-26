@@ -2,7 +2,7 @@
 
 **Research briefing for a one-hour workshop-lecture**  
 McLane Children’s Hospital, pediatric residency  
-Document type: source briefing (not slides). Compress into a one-hour spine later. Slide **medium**: Quarto Reveal.js as source of truth, PDF/PPTX as fail-safe — [`slides/README.md`](../slides/README.md).
+Document type: source briefing (not slides). The live hour is [`../slides/lecture.qmd`](../slides/lecture.qmd).
 
 **How to use this document.** This is a teaching brief, not a clinical protocol. It does not provide patient-specific medical direction. Every workshop case is **synthetic**. Claims about 2025–2026 products and policies are dated and tied to sources in [`claim-source-ledger.md`](claim-source-ledger.md). Vendor benchmark tables are **vendor-reported** unless an independent evaluation is cited. Workshop recipes that you can run from an empty folder live in [`workshops.md`](workshops.md).
 

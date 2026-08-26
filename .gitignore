@@ -1,0 +1,16 @@
+# Local agent dumps and OS junk
+.playwright-mcp/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Accidental screenshot dumps at the repo root.
+# Lecture figures live in slides/assets/figures/.
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+
+# Quarto scratch (also listed under slides/)
+.quarto/
+**/*.quarto_ipynb
