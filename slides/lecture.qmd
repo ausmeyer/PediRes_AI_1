@@ -244,12 +244,24 @@ Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 
 
 ---
 
-## 11 studies. Zero pediatric. {.viz}
+## 11 studies. Zero pediatric.
 
-![](assets/figures/artsi_eleven.png){width="100%"}
+**Artsi et al., 2026** — independent systematic review of OpenEvidence. *npj Digital Medicine*, article-in-press.
+
+- 11 studies, through January 2026
+- None synthesized as pediatric
+- Where measured, fewer invented citations than general chatbots
+- More often reinforces a decision than changes it
+- The product is still moving
+
+Company line “>40% of US physicians daily” is vendor-reported. Not audited.
+
+::: {.small}
+PROSPERO CRD420261289103 · doi:10.1038/s41746-026-03077-4
+:::
 
 ::: notes
-Artsi 2026 OpenEvidence SR. Click citations. Reinforces rather than changes decisions. Company "40% of US physicians" is not audited.
+Artsi 2026 OpenEvidence SR. Click citations. Reinforces rather than changes decisions. Company "40% of US physicians" is not audited. Do not invent a pediatric evidence base from 11 adult-leaning studies.
 :::
 
 ---
@@ -269,7 +281,7 @@ Hajj inside Artsi: ChatGPT-4o 66.7 vs OE 26.7 on 15 tricuspid questions. Do not 
 ![](assets/figures/hardware.png){width="100%"}
 
 ::: notes
-Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. Local removes a vendor, not the Security Rule.
+Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class, not a measured fleet. Local removes a vendor, not the Security Rule.
 :::
 
 ---

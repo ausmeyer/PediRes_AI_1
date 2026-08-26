@@ -468,16 +468,20 @@ def fig_bench():
 # --- 14. Hardware honesty ---
 def fig_hardware():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
-    labels = ["Typical resident\nlaptop RAM\n8–16 GB", "Ollama qwen3.8\n27B download\n18 GB", "Glimmer 30B\n4-bit envelope\n<20 GB", "Comfortable\nlocal box\n24–32 GB GPU"]
+    labels = [
+        "Typical resident\nlaptop RAM\n8–16 GB",
+        "Ollama qwen3.8\n27B download\n18 GB",
+        "Glimmer 30B\n4-bit envelope\n<20 GB",
+        "Comfortable\nlocal box\n24–32 GB GPU",
+    ]
     vals = [12, 18, 19, 28]
     colors = [ORANGE, GOLD, TEAL, BLUE]
-    bars = ax.barh(labels[::-1], vals[::-1], color=colors[::-1], height=0.62)
-    ax.set_xlabel("Gigabytes (approximate)", fontsize=12)
+    ax.barh(labels[::-1], vals[::-1], color=colors[::-1], height=0.62)
+    ax.set_xlabel("Gigabytes (approximate)", fontsize=12, labelpad=10)
     ax.set_xlim(0, 36)
     ax.set_title("Local models: hardware honesty", fontsize=17, fontweight="bold", color=BLUE, pad=10)
     ax.axvline(16, color=ORANGE, ls="--", lw=1.4)
-    ax.text(16.3, 3.45, "many laptops stop here", color=ORANGE, fontsize=10)
-    ax.text(0, -0.9, "Sources: Ollama library qwen3.8 listing (18 GB) and Meta Glimmer post (~4-bit <20 GB), retrieved 25 Aug 2026. Midpoint 12 GB is illustrative of the 8–16 GB class, not a measured fleet.", fontsize=9, color=MUTED, wrap=True)
+    ax.text(16.3, 3.45, "many laptops stop here", color=ORANGE, fontsize=10, va="center")
     save(fig, "hardware")
 
 
