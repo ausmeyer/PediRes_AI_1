@@ -561,6 +561,7 @@ def fig_hallucinations():
 # --- 11. Test-time compute schematic ---
 def fig_ttc():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    fig.set_tight_layout(False)
     x = np.linspace(0.2, 8, 80)
     y = 1 - np.exp(-0.45 * x)
     ax.plot(x, y, color=PURPLE, lw=3.5)
@@ -570,18 +571,18 @@ def fig_ttc():
     ax.set_xticks([])
     ax.set_yticks([])
     ax.set_ylim(0, 1.02)
-    fig.subplots_adjust(top=0.78)
-    fig.text(0.5, 0.96, "Extra compute at answer time", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.set_position([0.12, 0.16, 0.78, 0.58])
+    fig.text(0.5, 0.93, "Extra compute at answer time", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     fig.text(
         0.5,
-        0.91,
+        0.87,
         "Not human reasoning. Try several answers and keep one that checks out.",
         ha="center",
         fontsize=13,
         color=INK,
     )
-    fig.text(0.5, 0.87, "o1 (Sep 2024) made this the product", ha="center", fontsize=11, color=MUTED)
-    save(fig, "test_time_compute")
+    fig.text(0.5, 0.82, "o1 (Sep 2024) made this the product", ha="center", fontsize=11, color=MUTED)
+    save(fig, "test_time_compute", tight=False)
 
 
 # --- 12. Harness loop ---
@@ -691,6 +692,7 @@ def fig_bench():
 # --- 14. Hardware honesty ---
 def fig_hardware():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    fig.set_tight_layout(False)
     labels = [
         "Typical resident\nlaptop memory\n8–16 GB",
         "Ollama qwen3.8\n27B download\n18 GB",
@@ -702,15 +704,17 @@ def fig_hardware():
     ax.barh(labels[::-1], vals[::-1], color=colors[::-1], height=0.62)
     ax.set_xlabel("Gigabytes", fontsize=12, labelpad=10)
     ax.set_xlim(0, 36)
-    ax.set_title("Local models: hardware honesty", fontsize=17, fontweight="bold", color=BLUE, pad=10)
     ax.axvline(16, color=ORANGE, ls="--", lw=1.4)
     ax.text(16.3, 3.45, "many laptops stop here", color=ORANGE, fontsize=10, va="center")
-    save(fig, "hardware")
+    ax.set_position([0.22, 0.14, 0.72, 0.68])
+    fig.text(0.5, 0.93, "Local models: hardware honesty", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    save(fig, "hardware", tight=False)
 
 
 # --- 15. AAP PAS bars ---
 def fig_aap_places():
     fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    fig.set_tight_layout(False)
     labs = ["Used AI at work\nprior 12 mo", "Used AI scribes\n(among users)", "Concerned: no\nhuman oversight", "Confident tools are\npediatric-appropriate"]
     vals = [48, 39, 78, 6]
     cols = [BLUE, TEAL, ORANGE, PURPLE]
@@ -719,17 +723,17 @@ def fig_aap_places():
     ax.set_ylabel("% of respondents")
     for i, v in enumerate(vals):
         ax.text(i, v + 2.5, f"{v}%", ha="center", fontsize=14, fontweight="bold")
-    ax.set_title("US pediatricians and AI, 2025", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(
+    ax.set_position([0.10, 0.18, 0.82, 0.62])
+    fig.text(0.5, 0.93, "US pediatricians and AI, 2025", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    fig.text(
         0.5,
-        -0.18,
+        0.05,
         "Pediatric Academic Societies 2025  ·  US pediatricians’ experiences with artificial intelligence in healthcare",
-        transform=ax.transAxes,
         ha="center",
         fontsize=10,
         color=MUTED,
     )
-    save(fig, "aap_places")
+    save(fig, "aap_places", tight=False)
 
 
 # --- 16. Artsi evidence ---
@@ -890,6 +894,7 @@ def fig_hipaa():
 # --- 20. Parameter scale ---
 def fig_scale():
     fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    fig.set_tight_layout(False)
     names = [
         "GPT-3\n175 billion",
         "Qwen3.8\n27 billion local",
@@ -903,23 +908,26 @@ def fig_scale():
     ax.bar(names, vals, color=colors, width=0.62)
     ax.set_ylabel("Total parameters (trillions, log scale)")
     ax.set_yscale("log")
-    ax.set_title(
-        "Size exploded. Active parameters and distillation matter more than a headline count in the trillions.",
-        fontsize=12,
-        fontweight="bold",
-        color=BLUE,
-    )
     ax.tick_params(axis="x", labelsize=10)
-    ax.text(
+    ax.set_position([0.10, 0.22, 0.82, 0.56])
+    fig.text(0.5, 0.92, "Size exploded.", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    fig.text(
         0.5,
-        -0.28,
+        0.86,
+        "Active parameters and distillation matter more than a headline count in the trillions.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+    )
+    fig.text(
+        0.5,
+        0.05,
         "Counts from first-party posts cited in the briefing. Local 27-billion and 30-billion models are dense-class; Kimi, Qwen-Max, and DeepSeek-Pro are mixture-of-experts or sparse.",
-        transform=ax.transAxes,
         ha="center",
         fontsize=9,
         color=MUTED,
     )
-    save(fig, "param_scale")
+    save(fig, "param_scale", tight=False)
 
 
 # --- 21. Workshop split ---
