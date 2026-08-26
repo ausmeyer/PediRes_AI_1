@@ -121,11 +121,12 @@ $presentation-h2-font-size: 1.35em;
   text-align: center;
 }
 
-/* Standalone bullets sit as a centered block; recipe lists stay full-width. */
+/* Standalone bullets sit as a centered column; recipe lists stay full-width. */
 .reveal .slides section > ul,
 .reveal .slides section > ol {
   display: inline-block;
   text-align: left;
+  max-width: 22em;
   margin-left: auto;
   margin-right: auto;
 }

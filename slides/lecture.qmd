@@ -824,16 +824,9 @@ Repeat. Point at the briefing packet and workshops.md. Pocket card is in the bri
 
 ---
 
-## Questions {background-color="#003DA6" .section-break}
+## Questions {background-color="#003DA6" .section-break .nostretch}
 
-:::: {.columns}
-::: {.column width="42%"}
-![](assets/mclane-wordmark.svg){width="100%"}
-:::
-::: {.column width="58%"}
-Questions
-:::
-::::
+![](assets/mclane-wordmark.svg){width="48%"}
 
 ::: notes
 Stop. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Train mark is BSW/McLane, internal teaching use.
