@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate lecture figures from briefing facts (25 Aug 2026).
+"""Generate lecture figures from briefing facts.
 
 Every numeric claim is labeled with its source in the figure itself.
 Schematics that are not measured data say so on the canvas.
@@ -71,12 +71,12 @@ def fig_hour_map():
     ax.set_ylim(0, 3.2)
     ax.axis("off")
     blocks = [
-        (0, 12, BLUE, "Foundations\n12 min"),
-        (12, 10, TEAL, "Timeline\n10"),
-        (22, 10, PURPLE, "Reasoning\n+ tools 10"),
-        (32, 8, ORANGE, "Frontier\n+ HIPAA 8"),
-        (40, 8, GOLD, "Policy\n8"),
-        (48, 12, PURPLE_WEB, "Live labs\n12 min"),
+        (0, 10, BLUE, "Foundations\n10 min"),
+        (10, 8, TEAL, "Timeline\n8"),
+        (18, 8, PURPLE, "Reasoning\n+ tools 8"),
+        (26, 8, ORANGE, "Frontier\n+ HIPAA 8"),
+        (34, 8, GOLD, "Policy\n8"),
+        (42, 18, PURPLE_WEB, "Live labs\n18 min"),
     ]
     for x, w, c, lab in blocks:
         rounded(ax, x + 0.3, 1.15, w - 0.6, 1.35, c, r=0.15)
@@ -97,9 +97,9 @@ def fig_three_ais():
     ax.set_ylim(0, 6.4)
     ax.axis("off")
     cards = [
-        (0.4, BLUE, "Rules & scores", "If-then · PEWS · order sets", "Not learned\nfrom data"),
-        (5.0, PURPLE, "Classical ML", "Labels in → class / risk out", "Sepsis alert\nCXR CAD"),
-        (9.6, TEAL, "Foundation models", "Tokens out, not a score", "Chat · scribes\nagents"),
+        (0.4, BLUE, "Rules & scores", "If-then · scores · order sets", "Written by people\nor split from data"),
+        (5.0, PURPLE, "Classical ML", "Labels in → class / risk out", "Sepsis alert\nchest X-ray read"),
+        (9.6, TEAL, "Foundation models", "Next-token output", "Chat · scribes\nagents"),
     ]
     for x, c, title, mid, bot in cards:
         rounded(ax, x, 0.6, 4.2, 5.1, WHITE, ec=c, r=0.12, lw=3)
@@ -116,6 +116,10 @@ def fig_learning_modes():
     fig, axes = plt.subplots(1, 3, figsize=(14.2, 5.6))
     rng = np.random.default_rng(7)
     captions = ["x paired with y", "structure, no labels", "try → signal → try again"]
+    x_a = rng.normal(1, 0.35, 40)
+    y_a = rng.normal(1, 0.35, 40)
+    x_b = rng.normal(3, 0.35, 40)
+    y_b = rng.normal(3, 0.35, 40)
 
     for ax in axes:
         ax.set_xlim(0, 4)
@@ -125,13 +129,13 @@ def fig_learning_modes():
         ax.set_aspect("equal", adjustable="box")
 
     ax = axes[0]
-    ax.scatter(rng.normal(1, 0.35, 40), rng.normal(1, 0.35, 40), c=BLUE, s=36)
-    ax.scatter(rng.normal(3, 0.35, 40), rng.normal(3, 0.35, 40), c=ORANGE, s=36)
+    ax.scatter(x_a, y_a, c=BLUE, s=36)
+    ax.scatter(x_b, y_b, c=ORANGE, s=36)
     ax.set_title("Supervised", color=BLUE, fontweight="bold")
 
     ax = axes[1]
-    pts = rng.normal(2, 0.55, size=(80, 2))
-    ax.scatter(pts[:, 0], pts[:, 1], c=TEAL, s=28, alpha=0.85)
+    ax.scatter(x_a, y_a, c=TEAL, s=36)
+    ax.scatter(x_b, y_b, c=TEAL, s=36)
     ax.set_title("Unsupervised", color=PURPLE, fontweight="bold")
 
     ax = axes[2]
@@ -170,8 +174,8 @@ def fig_pediatric_shift():
             ax.text(cx, y, line, ha="center", va="center", fontsize=14, color=INK)
     ax.annotate("", xy=(8.15, 3.2), xytext=(5.85, 3.2), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
     ax.text(7.0, 3.55, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
-    ax.text(7.0, 5.7, "A high AUROC on adults is not a pediatric recommendation", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
-    ax.text(7.0, 0.45, "AAP PAS 2025 abstract: 6% confident AI is developed with adequate pediatric consideration", ha="center", va="center", fontsize=11, color=MUTED)
+    ax.text(7.0, 5.7, "Adult area-under-curve is an adult result", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(7.0, 0.45, "Pediatric Academic Societies 2025: 6% confident AI is developed with adequate pediatric consideration", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "pediatric_shift")
 
 
@@ -229,7 +233,7 @@ def fig_attention():
         )
 
     ax.text(7, 1.15, "the rest of the sentence", ha="center", fontsize=13, color=MUTED)
-    ax.text(7, 0.45, "A weight later says how much each word counts. That mix is context, not understanding.", ha="center", fontsize=13, color=INK)
+    ax.text(7, 0.45, "A weight later says how much each word counts. That mix is context.", ha="center", fontsize=13, color=INK)
     save(fig, "attention")
 
 
@@ -243,7 +247,7 @@ def fig_timeline():
     events = [
         (2019.2, "GPT-2", 3.3),
         (2020.4, "GPT-3\n175B", 1.0),
-        (2022.2, "InstructGPT\nRLHF", 3.5),
+        (2022.2, "InstructGPT\nhuman feedback", 3.5),
         (2022.9, "ChatGPT\n30 Nov 2022", 0.7),
         (2023.25, "GPT-4", 3.4),
         (2024.75, "o1\nreason", 0.75),
@@ -255,7 +259,6 @@ def fig_timeline():
         ax.text(yr, y, lab, ha="center", va="bottom" if y > 2.4 else "top", fontsize=11, fontweight="bold", color=INK)
     ax.text(2022.7, 5.4, "The public era starts here", ha="center", fontsize=16, fontweight="bold", color=ORANGE)
     ax.annotate("", xy=(2022.9, 2.55), xytext=(2022.7, 5.15), arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.6))
-    ax.text(2022.5, 5.75, "Dates from first-party launch posts / canonical papers  ·  cutoff 25 Aug 2026", ha="center", fontsize=10, color=MUTED)
     save(fig, "timeline")
 
 
@@ -269,12 +272,12 @@ def fig_three_boxes():
         (
             0.35,
             ORANGE,
-            "Closed API",
+            "Company app",
             ["Sol · Fable · Opus 5", "Gemini 3.7 · Muse Spark"],
             [
                 "You use these through a company",
                 "website or phone app. There is",
-                "no hospital privacy contract (BAA).",
+                "no hospital privacy contract.",
             ],
         ),
         (
@@ -284,7 +287,7 @@ def fig_three_boxes():
             ["Kimi K3 · DeepSeek V4", "Qwen-Max · GLM-5.3*"],
             [
                 "The weights can be downloaded,",
-                "but you still need a GPU cluster.",
+                "but you still need a graphics-card cluster.",
                 "A laptop cannot host these.",
             ],
         ),
@@ -294,9 +297,9 @@ def fig_three_boxes():
             "Open laptop",
             ["Qwen3.8-27B", "Muse Glimmer 30B"],
             [
-                "Small enough to run on a machine",
-                "you own. That is a privacy setup,",
-                "not a claim that it is smarter.",
+                "The vendor never sees the prompt.",
+                "You already use this laptop for",
+                "the EHR. That is reasonable.",
             ],
         ),
     ]
@@ -313,7 +316,7 @@ def fig_three_boxes():
     ax.text(
         7.1,
         6.45,
-        "August 2026 access map  ·  *GLM-5.3 weights not public as of 25 Aug 2026",
+        "*GLM-5.3 weights not public",
         ha="center",
         va="center",
         fontsize=13,
@@ -344,8 +347,8 @@ def fig_rag():
                 ax.text(cx, y, line, ha="center", va="center", color=WHITE, fontsize=11)
     for x1, x2 in [(3.85, 5.25), (8.75, 10.15)]:
         ax.annotate("", xy=(x2, 2.9), xytext=(x1, 2.9), arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3))
-    ax.text(7, 5.2, "RAG is a corpus choice, not a synonym for “true”", ha="center", va="center", fontsize=17, fontweight="bold", color=BLUE)
-    ax.text(7, 0.55, "OpenEvidence ≠ UpToDate ≠ ChatGPT with search  ·  retrieval error still looks fluent", ha="center", va="center", fontsize=11, color=MUTED)
+    ax.text(7, 5.2, "Retrieve, then generate. The corpus is the choice.", ha="center", va="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(7, 0.55, "OpenEvidence, UpToDate, and ChatGPT-with-search are different corpora", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "rag")
 
 
@@ -358,7 +361,7 @@ def fig_hallucinations():
     ax.text(
         7,
         6.25,
-        "Hallucinations changed shape. They did not vanish.",
+        "Hallucinations changed shape. They are still here.",
         ha="center",
         va="center",
         fontsize=16,
@@ -373,7 +376,7 @@ def fig_hallucinations():
             [
                 ("Invented citation", "A PubMed ID that was never assigned."),
                 ("Invented dose", "A number that sounds like a monograph."),
-                ("Sounds like a review", "Fluent prose is not a source."),
+                ("Sounds like a review", "Fluent prose still needs a source."),
             ],
         ),
         (
@@ -410,7 +413,7 @@ def fig_hallucinations():
 
 # --- 11. Test-time compute schematic ---
 def fig_ttc():
-    fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    fig, ax = plt.subplots(figsize=(14.2, 6.2))
     x = np.linspace(0.2, 8, 80)
     y = 1 - np.exp(-0.45 * x)
     ax.plot(x, y, color=PURPLE, lw=3.5)
@@ -419,9 +422,18 @@ def fig_ttc():
     ax.set_ylabel("Task success", fontsize=12)
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_title("Extra compute at answer time", fontsize=16, fontweight="bold", color=BLUE, pad=12)
-    ax.text(0.5, 0.92, "Not reasoning as we think about it. More like guess and grade.", transform=ax.transAxes, ha="center", fontsize=13, color=INK)
-    ax.text(0.4, 0.82, "o1 (Sep 2024) made this the product", transform=ax.transAxes, fontsize=11, color=MUTED)
+    ax.set_ylim(0, 1.02)
+    fig.subplots_adjust(top=0.78)
+    fig.text(0.5, 0.96, "Extra compute at answer time", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    fig.text(
+        0.5,
+        0.91,
+        "Not reasoning as we think about it. More like guess and grade.",
+        ha="center",
+        fontsize=13,
+        color=INK,
+    )
+    fig.text(0.5, 0.87, "o1 (Sep 2024) made this the product", ha="center", fontsize=11, color=MUTED)
     save(fig, "test_time_compute")
 
 
@@ -455,13 +467,13 @@ def fig_bench():
     ax.set_ylim(0, 6)
     ax.axis("off")
     rounded(ax, 0.5, 1.2, 4.2, 3.6, WHITE, TEAL, lw=3)
-    ax.text(2.6, 4.2, "In-sample", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(2.6, 2.7, "MedQA · USMLE-style\nLeaderboard Elo\nVendor tables", ha="center", fontsize=14)
+    ax.text(2.6, 4.2, "On the exam", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(2.6, 2.7, "Board-style exams\nLeaderboard ratings\nVendor tables", ha="center", fontsize=14)
     rounded(ax, 5.3, 1.2, 4.2, 3.6, WHITE, ORANGE, lw=3)
-    ax.text(7.4, 4.2, "Out-of-sample", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(7.4, 4.2, "On the ward", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
     ax.text(7.4, 2.7, "This infant\nThis hospital’s formulary\nThis family’s language", ha="center", fontsize=14)
-    ax.text(5, 5.4, "Passing a test the model has seen ≠ bedside competence", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(5, 0.45, "FDA 2026 discussion paper: open-ended GenAI is hard to premarket-test  ·  not guidance", ha="center", fontsize=11, color=MUTED)
+    ax.text(5, 5.4, "The exam and the ward", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(5, 0.45, "FDA 2026 discussion paper: open-ended generative AI is hard to premarket-test", ha="center", fontsize=11, color=MUTED)
     save(fig, "benchmark_trap")
 
 
@@ -469,10 +481,10 @@ def fig_bench():
 def fig_hardware():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
     labels = [
-        "Typical resident\nlaptop RAM\n8–16 GB",
+        "Typical resident\nlaptop memory\n8–16 GB",
         "Ollama qwen3.8\n27B download\n18 GB",
         "Glimmer 30B\n4-bit envelope\n<20 GB",
-        "Comfortable\nlocal box\n24–32 GB GPU",
+        "Comfortable\nlocal box\n24–32 GB graphics",
     ]
     vals = [12, 18, 19, 28]
     colors = [ORANGE, GOLD, TEAL, BLUE]
@@ -496,8 +508,16 @@ def fig_aap_places():
     ax.set_ylabel("% of respondents")
     for i, v in enumerate(vals):
         ax.text(i, v + 2.5, f"{v}%", ha="center", fontsize=14, fontweight="bold")
-    ax.set_title("US pediatricians and AI, 2025  ·  PAS abstract, not a full paper", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(0.5, -0.22, "AAP PAS abstract “US pediatricians’ experiences with artificial intelligence in healthcare in 2025”  ·  conference abstract only", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
+    ax.set_title("US pediatricians and AI, 2025", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(
+        0.5,
+        -0.18,
+        "Pediatric Academic Societies 2025  ·  US pediatricians’ experiences with artificial intelligence in healthcare",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=10,
+        color=MUTED,
+    )
     save(fig, "aap_places")
 
 
@@ -528,31 +548,101 @@ def fig_hajj():
     ax.set_ylabel("% fully accurate (study-defined)")
     for i, v in enumerate(vals):
         ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=16, fontweight="bold")
-    ax.set_title("Grounding is not always “more accurate”", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(0.5, -0.2, "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions. Not a pediatric study.", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
+    ax.set_title("Grounding and accuracy can diverge", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(0.5, -0.2, "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions.", transform=ax.transAxes, ha="center", fontsize=10, color=MUTED)
     save(fig, "hajj_counterexample")
 
 
 # --- 18. Policy 2026 ---
 def fig_policy():
-    fig, ax = plt.subplots(figsize=(14.2, 6.2))
-    ax.set_xlim(0.6, 9.2)
-    ax.set_ylim(0, 6.2)
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    ax.set_xlim(0.15, 9.85)
+    ax.set_ylim(0.2, 6.45)
     ax.axis("off")
-    ax.plot([1, 8.6], [1.4, 1.4], color=BLUE, lw=4, solid_capstyle="round")
+    y_line = 3.12
+    ax.plot([0.4, 9.6], [y_line, y_line], color=BLUE, lw=4, solid_capstyle="round")
     items = [
-        (1.4, "Jan 20", "AAP digital\necosystems\nAI forthcoming"),
-        (2.8, "Apr", "Grundmeier\nPediatrics\nreview, not policy"),
-        (4.2, "Apr 29", "Bergman\nJAMA\nlicensure"),
-        (5.6, "Jun 10", "AMA HOD\nassistive,\nnot replace"),
-        (7.0, "Aug", "FDA GenAI\ndevices paper\nNOT guidance"),
-        (8.3, "2026", "WHO B09667\nEIP, not\nbedside"),
+        (
+            1.00,
+            "Jan 20",
+            True,
+            ["AAP digital ecosystems", "Dedicated AI statement", "still forthcoming"],
+        ),
+        (
+            2.35,
+            "Jan",
+            False,
+            ["ICMJE journals", "Name the tool.", "Authors stay human."],
+        ),
+        (
+            3.70,
+            "Apr",
+            True,
+            ["Grundmeier, Pediatrics", "AI is a tool.", "Counsel companion chatbots."],
+        ),
+        (
+            5.05,
+            "Apr 29",
+            False,
+            ["Bergman, JAMA", "License autonomous AI", "like a clinician."],
+        ),
+        (
+            6.40,
+            "Jun 10",
+            True,
+            ["AMA", "Assistive, with oversight.", "Payer AI must be transparent."],
+        ),
+        (
+            7.75,
+            "Aug",
+            False,
+            ["FDA devices paper", "Risk = what the tool does", "× how bad an error is."],
+        ),
+        (
+            9.10,
+            "2026",
+            True,
+            ["WHO", "Speed evidence for", "policy-makers."],
+        ),
     ]
-    for x, when, lab in items:
-        ax.scatter([x], [1.4], s=110, color=GOLD, zorder=4, edgecolor=PURPLE, lw=1.2)
-        ax.text(x, 1.85, when, ha="center", fontsize=11, fontweight="bold", color=PURPLE)
-        ax.text(x, 3.55, lab, ha="center", fontsize=11, color=INK)
-    ax.text(4.9, 5.7, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    for x, when, above, lines in items:
+        ax.scatter([x], [y_line], s=120, color=GOLD, zorder=4, edgecolor=PURPLE, lw=1.2)
+        if above:
+            ax.text(
+                x,
+                y_line + 0.18,
+                when,
+                ha="center",
+                va="bottom",
+                fontsize=11,
+                fontweight="bold",
+                color=PURPLE,
+            )
+            top = y_line + 0.48 + 0.30 * len(lines)
+            for i, line in enumerate(lines):
+                ax.text(x, top - i * 0.30, line, ha="center", va="bottom", fontsize=10, color=INK)
+        else:
+            ax.text(
+                x,
+                y_line - 0.18,
+                when,
+                ha="center",
+                va="top",
+                fontsize=11,
+                fontweight="bold",
+                color=PURPLE,
+            )
+            for i, line in enumerate(lines):
+                ax.text(
+                    x,
+                    y_line - 0.48 - i * 0.30,
+                    line,
+                    ha="center",
+                    va="top",
+                    fontsize=10,
+                    color=INK,
+                )
+    ax.text(5.0, 6.15, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
     save(fig, "policy_2026")
 
 
@@ -563,31 +653,52 @@ def fig_hipaa():
     ax.set_ylim(0, 5.8)
     ax.axis("off")
     rows = [
-        (ORANGE, "Consumer ChatGPT / Claude / Gemini", "No BAA  ·  PHI = impermissible disclosure"),
-        (GOLD, "OpenEvidence “HIPAA” badge", "Vendor claim  ·  not a reason to paste identifiers"),
-        (TEAL, "Offline Ollama on your laptop", "No vendor BA  ·  stolen laptop still ePHI"),
-        (BLUE, "Hospital tool with executed BAA", "The only green light for real notes"),
+        (ORANGE, "Consumer ChatGPT / Claude / Gemini", "Prompt leaves the building"),
+        (GOLD, "OpenEvidence “HIPAA” badge", "Still a vendor cloud"),
+        (TEAL, "Offline Ollama on your laptop", "Prompt stays here · like Epic on this machine"),
+        (BLUE, "Hospital tool with a privacy contract", "The official cloud path"),
     ]
     for i, (c, t, s) in enumerate(rows):
         y = 4.35 - i * 1.15
         rounded(ax, 0.5, y, 13.1, 1.0, c, r=0.08)
         ax.text(0.9, y + 0.52, t, va="center", fontsize=15, fontweight="bold", color=WHITE if c != GOLD else INK)
         ax.text(13.2, y + 0.52, s, va="center", ha="right", fontsize=12, color=WHITE if c != GOLD else INK)
-    ax.text(7, 5.5, "HIPAA is a contract and a workstation, not a vibe", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(7, 5.5, "Where the prompt goes", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     save(fig, "hipaa")
 
 
 # --- 20. Parameter scale ---
 def fig_scale():
-    fig, ax = plt.subplots(figsize=(14.2, 6.0))
-    names = ["GPT-3\n175B", "Qwen3.8\n27B local", "Glimmer\n30B local", "DeepSeek-V4-Pro\n1.6T / 49B act.", "Qwen-Max\n2.4T", "Kimi K3\n2.8T MoE"]
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    names = [
+        "GPT-3\n175 billion",
+        "Qwen3.8\n27 billion local",
+        "Glimmer\n30 billion local",
+        "DeepSeek-V4-Pro\n1.6 trillion\n49 billion active",
+        "Qwen-Max\n2.4 trillion",
+        "Kimi K3\n2.8 trillion\nmixture of experts",
+    ]
     vals = [0.175, 0.027, 0.030, 1.6, 2.4, 2.8]
     colors = [BLUE, TEAL, TEAL, PURPLE, PURPLE, ORANGE]
     ax.bar(names, vals, color=colors, width=0.62)
     ax.set_ylabel("Total parameters (trillions, log scale)")
     ax.set_yscale("log")
-    ax.set_title("Size exploded. Active parameters and distillation matter more than the headline T.", fontsize=14, fontweight="bold", color=BLUE)
-    ax.text(0.5, -0.22, "Counts from first-party posts / reports cited in the briefing. Local 27B/30B are dense-class; Kimi/Qwen-Max/DeepSeek-Pro are MoE or sparse.", transform=ax.transAxes, ha="center", fontsize=9, color=MUTED)
+    ax.set_title(
+        "Size exploded. Active parameters and distillation matter more than a headline count in the trillions.",
+        fontsize=12,
+        fontweight="bold",
+        color=BLUE,
+    )
+    ax.tick_params(axis="x", labelsize=10)
+    ax.text(
+        0.5,
+        -0.28,
+        "Counts from first-party posts cited in the briefing. Local 27-billion and 30-billion models are dense-class; Kimi, Qwen-Max, and DeepSeek-Pro are mixture-of-experts or sparse.",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=9,
+        color=MUTED,
+    )
     save(fig, "param_scale")
 
 
@@ -599,11 +710,11 @@ def fig_workshops():
     ax.axis("off")
     rounded(ax, 0.4, 0.7, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3)
     ax.text(3.6, 4.85, "This hour", ha="center", fontsize=16, fontweight="bold", color=PURPLE_WEB)
-    ax.text(3.6, 3.3, "W1  Office files from a harness\nW4  Same question, three corpora", ha="center", fontsize=15)
-    ax.text(3.6, 1.5, "Cursor  ·  three browsers", ha="center", fontsize=13, color=MUTED)
+    ax.text(3.6, 3.15, "W1  Office files from a harness\nW6  Dosing sheet audit\nW4  Same question, three corpora\nW5  Citation autopsy", ha="center", fontsize=14)
+    ax.text(3.6, 1.35, "Cursor, then three browsers", ha="center", fontsize=13, color=MUTED)
     rounded(ax, 7.2, 0.7, 6.4, 4.7, WHITE, TEAL, lw=3)
     ax.text(10.4, 4.85, "Take-home", ha="center", fontsize=16, fontweight="bold", color=TEAL)
-    ax.text(10.4, 2.85, "W2 Pages  ·  W3 Ollama\nW5 citations  ·  W6 dosing audit\nW7 loop  ·  W8 Notebook", ha="center", fontsize=14)
+    ax.text(10.4, 2.85, "W2 Pages  ·  W3 Ollama\nW7 loop  ·  W8 Notebook", ha="center", fontsize=14)
     ax.text(7, 5.8, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
     save(fig, "workshops_split")
 
@@ -611,23 +722,44 @@ def fig_workshops():
 # --- 22. Take-homes icons ---
 def fig_takehomes():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
-    ax.set_xlim(0, 14)
+    ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.2)
     ax.axis("off")
     items = [
-        (0.5, BLUE, "1", "No PHI in consumer tools"),
-        (5.0, ORANGE, "2", "Click every citation"),
-        (9.5, PURPLE, "3", "Never copy a dose"),
-        (0.5, TEAL, "4", "Harnesses emit files"),
-        (5.0, GOLD, "5", "Local ≠ compliant"),
-        (9.5, PURPLE_WEB, "6", "AAP AI policy still forthcoming"),
+        (0.35, BLUE, "1", "No patient data\nin consumer tools"),
+        (4.95, ORANGE, "2", "Click every\ncitation"),
+        (9.55, PURPLE, "3", "Never copy\na dose"),
+        (0.35, TEAL, "4", "Harnesses\nemit files"),
+        (4.95, GOLD, "5", "Local models\nare reasonable"),
+        (9.55, PURPLE_WEB, "6", "AAP AI policy\nstill forthcoming"),
     ]
+    box_w, box_h = 4.3, 2.2
     for x, c, n, t in items:
-        y = 3.35 if n in "123" else 0.7
-        rounded(ax, x, y, 4.1, 2.15, c, r=0.1)
-        ax.text(x + 0.45, y + 1.07, n, color=WHITE if c != GOLD else INK, fontsize=22, fontweight="bold", va="center")
-        ax.text(x + 1.15, y + 1.07, t, color=WHITE if c != GOLD else INK, fontsize=14, fontweight="bold", va="center")
-    ax.text(7, 5.75, "Six things to leave with", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+        y = 3.3 if n in "123" else 0.65
+        rounded(ax, x, y, box_w, box_h, c, r=0.1)
+        ink = INK if c == GOLD else WHITE
+        ax.text(
+            x + 0.58,
+            y + box_h / 2,
+            n,
+            color=ink,
+            fontsize=26,
+            fontweight="bold",
+            va="center",
+            ha="center",
+        )
+        ax.text(
+            x + 2.55,
+            y + box_h / 2,
+            t,
+            color=ink,
+            fontsize=15,
+            fontweight="bold",
+            va="center",
+            ha="center",
+            linespacing=1.35,
+        )
+    ax.text(7.1, 5.8, "Six things to leave with", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     save(fig, "takehomes")
 
 
