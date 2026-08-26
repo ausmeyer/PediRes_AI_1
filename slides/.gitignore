@@ -1,0 +1,6 @@
+.quarto/
+_site/
+workshops/w1_out/
+
+/.quarto/
+**/*.quarto_ipynb
