@@ -1,3 +1,9 @@
+# Original research charge (August 2026)
+
+Austin Meyer’s starting prompt for this briefing. Kept as provenance, not as current instructions. The live hour is `slides/lecture.qmd`; the packet is `pediatric-resident-ai-survey.md`.
+
+---
+
 Use the scholarly-deep-research skill for this task.
 
 I am doing research for a talk that I will be giving to the Pediatric Residents at McLane Children's Hospital. The lecture will be 1 hour long and will cover a broad survey of modern AI. It will be sort of a workshop because my plan is to show them how to use certain tools for medical applications and research throughout.

@@ -112,7 +112,27 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .reveal .slides section.stack-viz img {
-  max-height: 70vh;
+  max-height: 58vh;
+}
+
+.reveal .viz-links {
+  text-align: center;
+  font-size: 0.5em;
+  line-height: 1.4;
+  margin-top: 0.15em;
+  position: relative;
+  z-index: 6;
+}
+
+.reveal .viz-links a {
+  color: $mclane-purple-web;
+  text-decoration: underline;
+  font-weight: 700;
+  padding: 0.12em 0.35em;
+}
+
+.reveal .viz-links p {
+  margin: 0;
 }
 
 .reveal .progress span {
@@ -215,6 +235,18 @@ $presentation-h2-font-size: 1.35em;
 
 .columns-tight .column {
   padding: 0 0.4em;
+}
+
+.rules-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.55em;
+  align-items: stretch;
+  margin-top: 0.35em;
+}
+
+.rules-row .box {
+  margin: 0;
 }
 
 .box {

@@ -1,6 +1,6 @@
 # Presenter kit — tools, live labs, remaining holes
 
-Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only.
+Companion to [`lecture.qmd`](lecture.qmd). If you just cloned the repo, start at the [repository README](../README.md). Synthetic cases only.
 
 ## Do we need anything else before the hour?
 
@@ -10,7 +10,7 @@ Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only.
 |---|---|
 | Your laptop on HDMI, not the podium PC as master | Cursor + Chrome + this HTML deck |
 | Cursor logged in, agent mode working, **two** empty folders | Live Lab 1 and Lab 2 |
-| `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/w1_fallback.py`](workshops/w1_fallback.py) / [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) |
+| `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/lab1_fallback.py`](workshops/lab1_fallback.py) / [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) |
 | Chrome windows already logged in: consumer ChatGPT (personal), Gemini Notebook with **public** PDFs uploaded, OpenEvidence if your NPI works, **PubMed** | Live Labs 3 and 4 |
 | Frozen `lecture.html` (self-contained) + `lecture.pdf` on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
 | Printed `SYNTHETIC TEACHING CASE` tent card | Stops a well-meaning resident from offering a real H&P |
@@ -46,7 +46,7 @@ You are already in it. Residents see a file tree, not a black terminal. Paste a 
 | Grounded notebook | Gemini Notebook with one public AAP/CDC PDF | Lab 3 arm B |
 | Licensed RAG | OpenEvidence if NPI demo works; else skip to B-only | Lab 3 arm C |
 | Citation check | PubMed | Lab 4 |
-| Fail-safe | [`workshops/w1_fallback.py`](workshops/w1_fallback.py), [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) | If the agent hangs, still show files |
+| Fail-safe | [`workshops/lab1_fallback.py`](workshops/lab1_fallback.py), [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) | If the agent hangs, still show files |
 | This lecture | Chrome fullscreen on `lecture.html` | Everything else (`F` fullscreen, `S` speaker notes) |
 
 **Codex / Claude Code / OpenCode:** same *kind* of thing as Cursor (model + tools + files). Keep them on the handout as the free/paid echo. Do not context-switch live unless Cursor is dead.
@@ -61,7 +61,7 @@ Empty folder. `STEM.md` already written (synthetic bronchiolitis — we wrote it
 
 Then open the three files. Optional sting: ChatGPT-only “add the dexamethasone dose” — it will often invent a number; the spreadsheet has no meds on purpose.
 
-If the agent stalls: `python workshops/w1_fallback.py` from this repo.
+If the agent stalls: `python workshops/lab1_fallback.py` from this repo.
 
 ### Lab 2 — dosing audit, same harness
 

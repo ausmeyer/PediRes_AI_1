@@ -95,9 +95,9 @@ def fig_hour_map():
 
 # --- 2. Three meanings of AI ---
 def fig_three_ais():
-    fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    fig, ax = plt.subplots(figsize=(14.2, 6.6))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.4)
+    ax.set_ylim(0, 6.6)
     ax.axis("off")
     cards = [
         (0.4, BLUE, "Rules & scores", "If-then · scores · order sets", "Written by people\nor split from data"),
@@ -105,12 +105,20 @@ def fig_three_ais():
         (9.6, TEAL, "Foundation models", "Next-token output", "Chat · scribes\nagents"),
     ]
     for x, c, title, mid, bot in cards:
-        rounded(ax, x, 0.6, 4.2, 5.1, WHITE, ec=c, r=0.12, lw=3)
-        ax.add_patch(Circle((x + 2.1, 4.55), 0.42, facecolor=c, zorder=3))
-        ax.text(x + 2.1, 3.7, title, ha="center", fontsize=18, fontweight="bold", color=c)
-        ax.text(x + 2.1, 2.7, mid, ha="center", fontsize=13, color=INK)
-        ax.text(x + 2.1, 1.5, bot, ha="center", fontsize=13, color=MUTED)
-    ax.text(7.1, 6.05, "Same word. Three jobs.", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+        rounded(ax, x, 0.4, 4.2, 4.9, WHITE, ec=c, r=0.12, lw=3)
+        ax.add_patch(Circle((x + 2.1, 4.38), 0.42, facecolor=c, zorder=3))
+        ax.text(x + 2.1, 3.52, title, ha="center", fontsize=18, fontweight="bold", color=c)
+        ax.text(x + 2.1, 2.52, mid, ha="center", fontsize=13, color=INK)
+        ax.text(x + 2.1, 1.32, bot, ha="center", fontsize=13, color=MUTED)
+    ax.text(7.1, 6.28, "AI is one word for three jobs", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(
+        7.1,
+        5.68,
+        "A score, an alert, and a chatbot are all called AI. They are not the same job.",
+        ha="center",
+        fontsize=14,
+        color=INK,
+    )
     save(fig, "three_ais")
 
 
@@ -205,7 +213,7 @@ def fig_pediatric_shift():
             ax.text(cx, y, line, ha="center", va="center", fontsize=14, color=INK)
     ax.annotate("", xy=(8.15, 3.2), xytext=(5.85, 3.2), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
     ax.text(7.0, 3.55, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
-    ax.text(7.0, 5.7, "Adult area-under-curve is an adult result", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(7.0, 5.7, "It worked on adults. That number is about adults.", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
     ax.text(7.0, 0.45, "Pediatric Academic Societies 2025: 6% confident AI is developed with adequate pediatric consideration", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "pediatric_shift")
 
@@ -232,13 +240,79 @@ def fig_tokens():
     save(fig, "tokens")
 
 
+# --- 5b. Next-token transformer cartoon ---
+def fig_next_token():
+    fig, ax = plt.subplots(figsize=(14.2, 6.5))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.5)
+    ax.axis("off")
+    ax.text(7.1, 6.2, "The model guesses the next token", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(
+        7.1,
+        5.72,
+        "A transformer mixes the tokens, picks the next one, adds it, and does it again.",
+        ha="center",
+        fontsize=13,
+        color=INK,
+    )
+
+    words = ["The", "infant", "wheezed", "after"]
+    xs = np.linspace(2.15, 12.05, len(words))
+    y_tok = 4.78
+    for x, w in zip(xs, words):
+        rounded(ax, x - 1.05, y_tok - 0.42, 2.1, 0.84, BLUE, r=0.08)
+        ax.text(x, y_tok, w, ha="center", va="center", color=WHITE, fontsize=14, fontweight="bold")
+    ax.text(7.1, 5.32, "tokens in", ha="center", fontsize=11, color=MUTED)
+
+    ax.annotate(
+        "",
+        xy=(7.1, 3.92),
+        xytext=(7.1, 4.28),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=2, mutation_scale=12),
+    )
+
+    rounded(ax, 0.85, 2.48, 5.9, 1.38, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.8, 3.42, "1. Attention mixes them", ha="center", fontsize=15, fontweight="bold", color=TEAL)
+    ax.text(3.8, 2.88, "Every token can look at every other token.", ha="center", fontsize=12, color=INK)
+
+    rounded(ax, 7.45, 2.48, 5.9, 1.38, WHITE, PURPLE, lw=3, r=0.1)
+    ax.text(10.4, 3.42, "2. Each token is updated", ha="center", fontsize=15, fontweight="bold", color=PURPLE)
+    ax.text(10.4, 2.88, "That stack, many times, is a transformer.", ha="center", fontsize=12, color=INK)
+
+    ax.annotate(
+        "",
+        xy=(7.45, 3.17),
+        xytext=(6.75, 3.17),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=2, mutation_scale=12),
+    )
+
+    ax.annotate(
+        "",
+        xy=(7.1, 1.82),
+        xytext=(7.1, 2.38),
+        arrowprops=dict(arrowstyle="-|>", color=INK, lw=2, mutation_scale=12),
+    )
+
+    rounded(ax, 3.85, 0.92, 6.5, 0.82, ORANGE, r=0.08)
+    ax.text(7.1, 1.33, "next guess:  feeds", ha="center", va="center", color=WHITE, fontsize=16, fontweight="bold")
+    ax.text(
+        7.1,
+        0.38,
+        "Add it to the sentence. Repeat. Cartoon, not a measured model.",
+        ha="center",
+        fontsize=12,
+        color=MUTED,
+    )
+    save(fig, "next_token")
+
+
 # --- 6. Attention schematic ---
 def fig_attention():
     fig, ax = plt.subplots(figsize=(14.2, 6.4))
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.1, "Attention: every token can look at every other token", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 6.1, "Attention: the mix step before the next-token guess", ha="center", fontsize=16, fontweight="bold", color=BLUE)
 
     words = ["The", "infant", "wheezed", "after", "feeds"]
     xs = np.linspace(1.6, 12.4, len(words))
@@ -264,7 +338,7 @@ def fig_attention():
         )
 
     ax.text(7, 1.15, "the rest of the sentence", ha="center", fontsize=13, color=MUTED)
-    ax.text(7, 0.45, "A weight later says how much each word counts. That mix is context.", ha="center", fontsize=13, color=INK)
+    ax.text(7, 0.45, "A weight later says how much each word counts. Cartoon, not a measured head.", ha="center", fontsize=13, color=INK)
     save(fig, "attention")
 
 
@@ -355,7 +429,7 @@ def fig_three_boxes():
             0.35,
             ORANGE,
             "Company app",
-            ["Sol · Fable · Opus 5", "Gemini 3.7 · Muse Spark"],
+            ["Sol", "Fable", "Opus 5", "Gemini 3.7", "Muse Spark"],
             [
                 "You use these through a company",
                 "website or phone app. There is",
@@ -366,7 +440,7 @@ def fig_three_boxes():
             4.95,
             PURPLE,
             "Open datacenter",
-            ["Kimi K3 · DeepSeek V4", "Qwen-Max · GLM-5.3"],
+            ["Kimi K3", "DeepSeek V4", "Qwen-Max", "GLM-5.3"],
             [
                 "These need a graphics-card cluster.",
                 "A laptop cannot host them.",
@@ -385,14 +459,14 @@ def fig_three_boxes():
             ],
         ),
     ]
-    model_ys = [4.52, 4.10, 3.68]
-    note_ys = [2.20, 1.75, 1.30]
+    note_ys = [2.15, 1.70, 1.25]
     for x, c, title, models, notes in cards:
         rounded(ax, x, 0.55, 4.3, 5.45, WHITE, c, lw=3.5, r=0.1)
         cx = x + 2.15
-        ax.text(cx, 5.45, title, ha="center", va="center", fontsize=18, fontweight="bold", color=c)
-        for y, line in zip(model_ys, models):
-            ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=INK)
+        ax.text(cx, 5.50, title, ha="center", va="center", fontsize=18, fontweight="bold", color=c)
+        y0 = 4.78
+        for i, line in enumerate(models):
+            ax.text(cx, y0 - i * 0.38, line, ha="center", va="center", fontsize=13, color=INK)
         for y, line in zip(note_ys, notes):
             ax.text(cx, y, line, ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "three_boxes")
@@ -501,7 +575,7 @@ def fig_ttc():
     fig.text(
         0.5,
         0.91,
-        "Not reasoning as we think about it. More like guess and grade.",
+        "Not human reasoning. Try several answers and keep one that checks out.",
         ha="center",
         fontsize=13,
         color=INK,
@@ -950,6 +1024,7 @@ def main():
     fig_learning_modes()
     fig_pediatric_shift()
     fig_tokens()
+    fig_next_token()
     fig_attention()
     fig_timeline()
     fig_three_boxes()

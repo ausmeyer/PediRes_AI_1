@@ -1,18 +1,23 @@
 # Slides
 
-**Source of truth:** [`lecture.qmd`](lecture.qmd) — Quarto Reveal.js, visual-first, McLane train + BSW palette.  
-**How to run the hour:** [`presenter-kit.md`](presenter-kit.md).  
-**Brand files:** [`assets/README.md`](assets/README.md).  
-**Figures:** [`assets/figures/`](assets/figures/) (generated from briefing facts; schematics labeled as such).
+Repo overview: [`../README.md`](../README.md). How to run the hour: [`presenter-kit.md`](presenter-kit.md).
+
+**Source of truth:** [`lecture.qmd`](lecture.qmd) — Quarto Reveal.js, McLane train + BSW palette.
 
 ```bash
 cd slides
 quarto render lecture.qmd
-# open _site/lecture.html in Chrome, fullscreen
+# Chrome fullscreen on _site/lecture.html  (F fullscreen, S speaker notes)
 ```
 
-Night-before freeze: that HTML on the laptop **and** a PDF print of the deck (`lecture.html?print-pdf` in Chrome, Print → Save as PDF, landscape). PowerPoint is a fail-safe export, not the master. The HTML is self-contained; it does not need Google Fonts or hospital Wi-Fi.
+Night-before freeze: that HTML on the laptop **and** a PDF print (`lecture.html?print-pdf` in Chrome, Print → Save as PDF, landscape). The HTML is self-contained; it does not need Google Fonts or hospital Wi-Fi. PowerPoint is a fail-safe export, not a second master.
 
-Workshop 1 fallback (if Cursor hangs): `python workshops/w1_fallback.py`. Lab 2 fallback: `python workshops/lab2_fallback.py`.
+Lab fallbacks (if Cursor hangs): [`workshops/README.md`](workshops/README.md).
 
-**Why Reveal, not PowerPoint as master.** The hour is also the teaching object for Lab 5 (Markdown → static HTML). Quarto keeps the deck in git next to the briefing. Hospital podium reality still wants a PDF (and a `.pptx` export if GME demands Office). Do not maintain a second slide master.
+```bash
+pip install -r workshops/requirements.txt
+python workshops/lab1_fallback.py
+python workshops/lab2_fallback.py
+```
+
+Brand files: [`assets/README.md`](assets/README.md). Figures: [`assets/figures/`](assets/figures/) (generated from briefing facts; schematics labeled as such).

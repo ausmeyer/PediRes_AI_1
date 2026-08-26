@@ -42,36 +42,36 @@ Open on the train. This is McLane's mark from the hospital site, not clip-art. S
 
 ---
 
-## Three rules for this hour
+## How we work today
 
-:::: {.columns}
-::: {.column width="32%"}
+:::: {.rules-row}
 ::: {.box .box-orange}
-### Invented cases
+::: {.box-label}
+Invented cases
+:::
 
 Every demo patient is made up.
 :::
-:::
-::: {.column width="32%"}
 ::: {.box .box-purple}
-### No real notes in ChatGPT
+::: {.box-label}
+No real notes in ChatGPT
+:::
 
 Consumer ChatGPT, Claude, Gemini.
 
 No names, record numbers, or pasted notes.
 :::
-:::
-::: {.column width="32%"}
 ::: {.box .box-teal}
-### Check before you copy
-
-A dose or a citation from a model stays out of the note until the source is open.
+::: {.box-label}
+Check before you copy
 :::
+
+Do not copy a dose or a citation into a note until you have opened the source.
 :::
 ::::
 
 ::: notes
-Three of the five briefing rules, in English. If someone offers a real H&P, stop and point at card 1. Consumer cloud is the problem. Local models wait for the prompt-goes-where slide.
+Ground rules for the room, not a numbered manifesto. Three of the five briefing rules, in English. If someone offers a real H&P, stop and point at card 1. Consumer cloud is the problem. Local models wait for the prompt-goes-where slide. Card 3: open the paper or the monograph before a number or a citation hits the note.
 :::
 
 ---
@@ -92,12 +92,12 @@ Three of the five briefing rules, in English. If someone offers a real H&P, stop
 
 ---
 
-## Same word. Three jobs. {.viz}
+## AI is one word for three jobs {.viz}
 
 ![](assets/figures/three_ais.png){width="100%"}
 
 ::: notes
-Rules / classical ML / foundation models. Left box is not “unlearned”: PEWS-style scores are often expert-weighted; neonatal sepsis rules were split out of data (sequential division). CAD on the middle card is computer-aided detection — a chest X-ray read. FDA does not regulate “AI as such”; it regulates devices by intended use.
+A score, an alert, and a chatbot are all called AI — that sentence is on the canvas so they do not need you. Rules / classical ML / foundation models. Left box is not “unlearned”: PEWS-style scores are often expert-weighted; neonatal sepsis rules were split out of data (sequential division). CAD on the middle card is computer-aided detection — a chest X-ray read. FDA does not regulate “AI as such”; it regulates devices by intended use.
 :::
 
 ---
@@ -112,12 +112,12 @@ Same points in the first two panels. Supervised: the colors are the labels. Unsu
 
 ---
 
-## Adult metrics, pediatric ward {.viz}
+## Adult accuracy, pediatric ward {.viz}
 
 ![](assets/figures/pediatric_shift.png){width="100%"}
 
 ::: notes
-Distribution shift. The 6% PAS number is a conference abstract. Carry it as a prior, not as a prevalence study.
+Distribution shift. Vendors often quote AUROC; say adult accuracy so they hear the population, not the metric. The 6% PAS number is a conference abstract. Carry it as a prior, not as a prevalence study.
 :::
 
 ---
@@ -132,12 +132,22 @@ A dose is several tokens. That is why numeric hallucination is easy and why "jus
 
 ---
 
+## The model guesses the next token {.viz}
+
+![](assets/figures/next_token.png){width="100%"}
+
+::: notes
+Decoder-style LLM: given the tokens so far, score the next one, add it, repeat. The mix-then-update stack is a transformer. Cartoon, not a measured head or a real softmax table. Next slide zooms on the mix.
+:::
+
+---
+
 ## Attention {.viz}
 
 ![](assets/figures/attention.png){width="100%"}
 
 ::: notes
-Self-attention, 2017. Cartoon: one token looking at the sentence with straight arrows. Not a measured attention head. Point: context, not magic understanding.
+Self-attention, 2017. This is the mix step from the last slide. Cartoon: one token looking at the sentence with straight arrows. Not a measured attention head. Point: context, not magic understanding.
 :::
 
 ---
@@ -199,7 +209,7 @@ Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start c
 ![](assets/figures/test_time_compute.png){width="100%"}
 
 ::: notes
-Not human reasoning. Sample candidates, check them, spend more tokens at answer time. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses. The curve is a cartoon, not a vendor eval.
+Not human reasoning. Try several answers at answer time and keep one that checks out. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses. The curve is a cartoon, not a vendor eval.
 :::
 
 ---
@@ -268,12 +278,16 @@ Hajj inside Artsi: ChatGPT-4o 66.7 vs OE 26.7 on 15 tricuspid questions. Do not 
 
 ---
 
-## Local models need memory {.viz}
+## Local models need memory {.viz .stack-viz}
 
 ![](assets/figures/hardware.png){width="100%"}
 
+::: {.viz-links}
+[Ollama](https://ollama.com){target="_blank"} · [Hugging Face models](https://huggingface.co/models){target="_blank"}
+:::
+
 ::: notes
-Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class. Hardware is the constraint. If it fits, local is a reasonable way to keep the prompt off a vendor.
+Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class. Hardware is the constraint. If it fits, local is a reasonable way to keep the prompt off a vendor. Click Ollama, then Hugging Face models, so they see where local weights live. Links open a new tab; the deck stays up.
 :::
 
 ---
@@ -531,7 +545,7 @@ Paste in Cursor Agent:
 
 Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, noon_conference.pptx from that stem only. No identifiers. No medication column. No invented PubMed IDs. End the letter with “this is a teaching example.”
 
-**At home, no Cursor.** `pip install python-docx openpyxl python-pptx` then `python slides/workshops/w1_fallback.py`. Or ask ChatGPT for a Python script and run it locally.
+**At home, no Cursor.** `pip install python-docx openpyxl python-pptx` then `python slides/workshops/lab1_fallback.py`. Or ask ChatGPT for a Python script and run it locally.
 :::
 ::::
 

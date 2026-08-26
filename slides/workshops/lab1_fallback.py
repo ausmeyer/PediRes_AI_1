@@ -8,7 +8,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font
 from pptx import Presentation
 
-OUT = Path(__file__).parent / "w1_out"
+OUT = Path(__file__).parent / "lab1_out"
 OUT.mkdir(exist_ok=True)
 
 
