@@ -31,7 +31,11 @@ A survey of modern AI
 :::
 
 ::: {.title-meta}
-Pediatric residency · Temple
+Austin G. Meyer, MD, PhD, MS, MPH, MS
+:::
+
+::: {.title-affil}
+Assistant Professor, Pediatrics
 :::
 
 ::: notes

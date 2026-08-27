@@ -118,11 +118,20 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .title-meta {
-  font-size: 0.72em;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: $mclane-ink;
+  letter-spacing: 0.01em;
+  margin: 0.35em 0 0;
+  text-align: inherit;
+}
+
+.title-affil {
+  font-size: 0.55em;
   font-weight: 500;
   color: $mclane-muted;
   letter-spacing: 0.01em;
-  margin: 0;
+  margin: 0.2em 0 0;
   text-align: inherit;
 }
 
@@ -244,28 +253,6 @@ $presentation-h2-font-size: 1.35em;
 
 .reveal .progress span {
   background: $mclane-gold;
-}
-
-/* McLane train-car rail */
-.reveal .slides section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 7px;
-  background: linear-gradient(
-    90deg,
-    $mclane-blue 0%,
-    $mclane-teal 22%,
-    $mclane-purple 48%,
-    $mclane-orange 74%,
-    $mclane-gold 100%
-  );
-}
-
-.reveal .title-slide::after {
-  height: 10px;
 }
 
 .reveal .title-slide h1 {
