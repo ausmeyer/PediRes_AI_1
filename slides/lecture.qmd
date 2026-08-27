@@ -233,12 +233,12 @@ Ask: which row produces something another person can inspect tomorrow? Top row i
 
 ---
 
-## A high exam score is not this infant tonight. {.viz}
+## A high exam score does not translate to clinical uncertainty in real situations. That context is almost impossible to train on directly. {.viz}
 
 ![](assets/figures/benchmark_trap.svg){width="100%"}
 
 ::: notes
-Board-style exams and vendor tables are a test with a key, comparable across models. This infant, this formulary, and this family’s language are not. Keep the phrase “this child, tonight.” High scores do not travel to weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
+Board-style exams and vendor tables are a test with a key, comparable across models. A real case has clinical uncertainty, a local formulary, and a family’s language — and that context is almost impossible to train on directly. High scores do not travel to weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
 :::
 
 ---

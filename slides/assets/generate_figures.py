@@ -714,11 +714,11 @@ def fig_bench():
         linespacing=1.45,
     )
     ax.text(7.4, 2.15, "No single key", ha="center", fontsize=12, color=MUTED)
-    ax.text(7.4, 1.78, "This child, tonight", ha="center", fontsize=11, color=MUTED)
+    ax.text(7.4, 1.78, "Cannot be trained on directly", ha="center", fontsize=11, color=MUTED)
     ax.text(
         5,
         0.85,
-        "High exam scores do not travel. The exam is comparable across models. The ward is this child, tonight.",
+        "The exam is comparable across models. The ward is this infant, this formulary, and this family’s language.",
         ha="center",
         fontsize=12,
         color=INK,
