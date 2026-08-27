@@ -165,7 +165,7 @@ Local models keep the prompt off a vendor. Offline Qwen3.8-27B is useful for dra
 
 ### Question (published teaching-case pattern)
 
-> In a previously healthy 8-week-old with fever of 38.5 °C, well-appearing, what is the current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say you cannot.
+> In a previously healthy 3-week-old with fever of 38.5 °C, well-appearing, what is the current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say you cannot.
 
 ### Three systems
 

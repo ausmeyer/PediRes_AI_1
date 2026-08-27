@@ -565,37 +565,55 @@ def fig_hallucinations():
     save(fig, "hallucinations")
 
 
-# --- 11. Test-time compute: answer once vs try → test → revise ---
+# --- 11. Test-time compute: what vendors call reasoning ---
 def fig_ttc():
-    fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.2)
+    ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7.1, 5.85, "Answer once  vs  try → test → revise", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(7.1, 6.12, "What they call reasoning", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
-        5.35,
-        "Not human reasoning. Extra compute at answer time is a loop with a check.",
-        ha="center",
-        fontsize=13,
-        color=INK,
-    )
-    rounded(ax, 0.4, 0.55, 6.3, 4.45, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.5, 0.55, 6.3, 4.45, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.55, 4.45, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.55, 3.55, "=B2*10", ha="center", fontsize=28, fontweight="bold", family="DejaVu Sans Mono", color=INK)
-    ax.text(3.55, 2.35, "Ship the formula.\n50 kg → 500 mg.\nNo cap. No test.", ha="center", fontsize=14, color=INK, linespacing=1.4)
-    ax.text(10.65, 4.45, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(
-        10.65,
-        2.55,
-        "Write the formula.\nTest the 50 kg row.\nCatch the missing cap.\nKeep =MIN(B2*10,400).",
+        5.55,
+        "The model spends tokens thinking before it answers.\nNot a pediatrician. A loop with a check.",
         ha="center",
         fontsize=14,
         color=INK,
-        linespacing=1.4,
+        linespacing=1.25,
     )
-    ax.text(7.1, 0.18, "A spreadsheet formula you can fail is the check. o1 (Sep 2024) made this the product.", ha="center", fontsize=11, color=MUTED)
+    rounded(ax, 0.4, 0.68, 6.3, 4.28, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.5, 0.68, 6.3, 4.28, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.55, 4.42, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(3.55, 3.98, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
+    ax.text(3.55, 3.22, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
+    ax.text(
+        3.55,
+        2.05,
+        "50 kg → 500 mg.\nNo cap. No test.",
+        ha="center",
+        fontsize=15,
+        color=INK,
+        linespacing=1.35,
+    )
+    ax.text(10.65, 4.42, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.65, 3.98, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
+    ax.text(
+        10.65,
+        2.25,
+        "Write 500.\nTest the cap.\nKeep 400.\nThen speak.",
+        ha="center",
+        fontsize=15,
+        color=INK,
+        linespacing=1.35,
+    )
+    ax.text(
+        7.1,
+        0.28,
+        "A formula you can fail is the checker — that is why coding came first. o1 (Sep 2024) sold thinking time as the product.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+    )
     save(fig, "test_time_compute")
 
 
@@ -1057,9 +1075,9 @@ def fig_context_age():
     ax.text(7.1, 4.95, "Same number. Different child. Context is the age.", ha="center", fontsize=15, color=INK)
     rounded(ax, 0.45, 0.55, 6.3, 4.05, WHITE, ORANGE, lw=3, r=0.1)
     rounded(ax, 7.45, 0.55, 6.3, 4.05, WHITE, BLUE, lw=3, r=0.1)
-    ax.text(3.6, 3.95, "8-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
+    ax.text(3.6, 3.95, "3-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
     ax.text(3.6, 2.35, "Fever workup.\nHours, not days.\nThe number is a trigger.", ha="center", fontsize=16, color=INK, linespacing=1.4)
-    ax.text(10.6, 3.95, "8-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
+    ax.text(10.6, 3.95, "3-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
     ax.text(10.6, 2.35, "Often watch and treat.\nSame temperature.\nDifferent meaning.", ha="center", fontsize=16, color=INK, linespacing=1.4)
     save(fig, "context_age")
 

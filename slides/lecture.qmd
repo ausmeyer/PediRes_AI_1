@@ -36,7 +36,7 @@ What it can do, where it fails, and how to check it.
 :::
 
 ::: {.title-meta}
-Austin G. Meyer, MD, PhD
+Austin G. Meyer, MD, PhD, MS, MPH, MS, FACP, FAAP
 :::
 
 ::: {.title-affil}
@@ -44,7 +44,7 @@ Assistant Professor, Pediatrics
 :::
 
 ::: notes
-Full credential string if someone asks: MD, PhD, MS, MPH, MS. Canvas stays short. One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask → verify. Take-home Labs 5–8 sit after Q&A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
+One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask → verify. Take-home Labs 5–8 sit after Q&A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
 :::
 
 ---
@@ -172,7 +172,7 @@ Spoken takeaway: it predicts plausible text; it is not retrieving a stored answe
 ![](assets/figures/context_age.svg){width="100%"}
 
 ::: notes
-This replaces transformer anatomy. 38.5 °C in an 8-week-old is a workup clock. In an 8-year-old it is often watch-and-treat. Models need that context the same way you do. If they ask how attention works, the backup slide is after Q&A.
+This replaces transformer anatomy. 38.5 °C in a 3-week-old is a workup clock. In a 3-year-old it is often watch-and-treat. Models need that context the same way you do. If they ask how attention works, the backup slide is after Q&A.
 :::
 
 ---
@@ -213,12 +213,12 @@ Retrieve then generate. The corpus is the choice — that line is already on the
 
 ---
 
-## Extra compute at answer time {.viz}
+## What they call reasoning {.viz}
 
 ![](assets/figures/test_time_compute.svg){width="100%"}
 
 ::: notes
-Not human reasoning. Left column is “answer once”: ship =B2*10. Right column is try → test → revise, the way you want a harness to behave in Lab 2. o1 (Sep 2024) made that loop the product. Coding evals moved because you can grade code.
+Vendors mean extra tokens before the answer — a try → test → revise loop you usually do not see. Not a pediatrician. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, a checker, then one answer. The spreadsheet is a toy because a formula can fail; that is why coding evals moved and why a febrile infant is a worse fit. Do not turn this into Lab 2. Files and tools are the next slide — a different loop. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
 :::
 
 ---
@@ -375,7 +375,7 @@ Ask → verify · browser
 :::
 
 ::: {.lab-prompt}
-Previously healthy 8-week-old, 38.5 °C, well-appearing. Current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say so.
+Previously healthy 3-week-old, 38.5 °C, well-appearing. Current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say so.
 :::
 
 :::: {.lab-arms}
