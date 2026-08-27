@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:44:26.867978</dc:date>
+    <dc:date>2026-08-27T20:50:14.046365</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 32.562 101.95223 32.562 105.27863
 L 32.562 176.88937 
 Q 32.562 180.21577 38.142 180.21577 
 z
-" clip-path="url(#pb1ccb4f167)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pdde64c5abd)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 292.032 180.21577 
@@ -53,7 +53,7 @@ Q 286.452 101.95223 286.452 105.27863
 L 286.452 176.88937 
 Q 286.452 180.21577 292.032 180.21577 
 z
-" clip-path="url(#pb1ccb4f167)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pdde64c5abd)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 545.922 180.21577 
@@ -66,7 +66,7 @@ Q 540.342 101.95223 540.342 105.27863
 L 540.342 176.88937 
 Q 540.342 180.21577 545.922 180.21577 
 z
-" clip-path="url(#pb1ccb4f167)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pdde64c5abd)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Airplane mode -->
@@ -1473,7 +1473,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pb1ccb4f167">
+  <clipPath id="pdde64c5abd">
    <rect x="10.8" y="10.8" width="792.36" height="255.024"/>
   </clipPath>
  </defs>
