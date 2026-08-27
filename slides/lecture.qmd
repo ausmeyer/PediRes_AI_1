@@ -36,7 +36,7 @@ What it can do, where it fails, and how to check it.
 :::
 
 ::: {.title-meta}
-Austin G. Meyer, MD, PhD
+Austin G. Meyer, MD, PhD, MS, MPH, MS, FACP, FAAP
 :::
 
 ::: {.title-affil}
@@ -44,7 +44,7 @@ Assistant Professor, Pediatrics
 :::
 
 ::: notes
-Full credential string if someone asks: MD, PhD, MS, MPH, MS. Canvas stays short. One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask → verify. Take-home Labs 5–8 sit after Q&A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
+One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask → verify. Take-home Labs 5–8 sit after Q&A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
 :::
 
 ---
