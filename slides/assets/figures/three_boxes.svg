@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T19:41:12.870086</dc:date>
+    <dc:date>2026-08-27T20:17:00.971364</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,47 +30,47 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 35.352 357.63264 
-L 265.248 357.63264 
-Q 270.828 357.63264 270.828 354.30624 
-L 270.828 58.14576 
-Q 270.828 54.81936 265.248 54.81936 
-L 35.352 54.81936 
-Q 29.772 54.81936 29.772 58.14576 
-L 29.772 354.30624 
-Q 29.772 357.63264 35.352 357.63264 
+    <path d="M 35.352 245.20032 
+L 265.248 245.20032 
+Q 270.828 245.20032 270.828 241.87392 
+L 270.828 162.26208 
+Q 270.828 158.93568 265.248 158.93568 
+L 35.352 158.93568 
+Q 29.772 158.93568 29.772 162.26208 
+L 29.772 241.87392 
+Q 29.772 245.20032 35.352 245.20032 
 z
-" clip-path="url(#p80bd88abb0)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p2e03a227bf)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 292.032 357.63264 
-L 521.928 357.63264 
-Q 527.508 357.63264 527.508 354.30624 
-L 527.508 58.14576 
-Q 527.508 54.81936 521.928 54.81936 
-L 292.032 54.81936 
-Q 286.452 54.81936 286.452 58.14576 
-L 286.452 354.30624 
-Q 286.452 357.63264 292.032 357.63264 
+    <path d="M 292.032 245.20032 
+L 521.928 245.20032 
+Q 527.508 245.20032 527.508 241.87392 
+L 527.508 162.26208 
+Q 527.508 158.93568 521.928 158.93568 
+L 292.032 158.93568 
+Q 286.452 158.93568 286.452 162.26208 
+L 286.452 241.87392 
+Q 286.452 245.20032 292.032 245.20032 
 z
-" clip-path="url(#p80bd88abb0)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p2e03a227bf)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 548.712 357.63264 
-L 778.608 357.63264 
-Q 784.188 357.63264 784.188 354.30624 
-L 784.188 58.14576 
-Q 784.188 54.81936 778.608 54.81936 
-L 548.712 54.81936 
-Q 543.132 54.81936 543.132 58.14576 
-L 543.132 354.30624 
-Q 543.132 357.63264 548.712 357.63264 
+    <path d="M 548.712 245.20032 
+L 778.608 245.20032 
+Q 784.188 245.20032 784.188 241.87392 
+L 784.188 162.26208 
+Q 784.188 158.93568 778.608 158.93568 
+L 548.712 158.93568 
+Q 543.132 158.93568 543.132 162.26208 
+L 543.132 241.87392 
+Q 543.132 245.20032 548.712 245.20032 
 z
-" clip-path="url(#p80bd88abb0)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p2e03a227bf)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Consumer cloud -->
-    <g style="fill: #ff4d00" transform="translate(77.88625 151.537422) scale(0.16 -0.16)">
+    <g style="fill: #ff4d00" transform="translate(77.88625 177.65188) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-26" d="M 4288 256 
 Q 3956 84 3597 -3 
@@ -338,7 +338,7 @@ z
    </g>
    <g id="text_2">
     <!-- ChatGPT · Claude · Gemini -->
-    <g style="fill: #281241" transform="translate(64.118125 182.45388) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(64.118125 193.220882) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-26" d="M 4122 4306 
 L 4122 3641 
@@ -671,7 +671,7 @@ z
    </g>
    <g id="text_3">
     <!-- Phone or laptop browser. -->
-    <g style="fill: #586f78" transform="translate(69.275469 218.174094) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(69.275469 207.152067) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-52" d="M 1959 3097 
 Q 1497 3097 1228 2736 
@@ -846,7 +846,7 @@ z
    </g>
    <g id="text_4">
     <!-- No hospital privacy contract. -->
-    <g style="fill: #586f78" transform="translate(56.592344 245.174483) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(56.592344 222.342627) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-31" d="M 628 4666 
 L 1478 4666 
@@ -943,7 +943,7 @@ z
    </g>
    <g id="text_5">
     <!-- The prompt leaves the building. -->
-    <g style="fill: #586f78" transform="translate(46.519375 272.174871) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(46.519375 237.533187) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-4a" d="M 2906 1791 
 Q 2906 2416 2648 2759 
@@ -1015,7 +1015,7 @@ z
    </g>
    <g id="text_6">
     <!-- Hospital-governed cloud -->
-    <g style="fill: #691f74" transform="translate(296.43 149.924922) scale(0.16 -0.16)">
+    <g style="fill: #691f74" transform="translate(296.43 176.03938) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-2b" d="M 588 4666 
 L 1791 4666 
@@ -1204,7 +1204,7 @@ z
    </g>
    <g id="text_7">
     <!-- EHR tool with a contract -->
-    <g style="fill: #281241" transform="translate(328.127891 182.45388) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(328.127891 193.220882) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-28" d="M 628 4666 
 L 3578 4666 
@@ -1293,7 +1293,7 @@ z
    </g>
    <g id="text_8">
     <!-- The official cloud path. -->
-    <g style="fill: #586f78" transform="translate(332.817031 218.174094) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(332.817031 207.152067) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-13b1" d="M 2375 4863 
 L 2375 4384 
@@ -1366,7 +1366,7 @@ z
    </g>
    <g id="text_9">
     <!-- A business associate agreement -->
-    <g style="fill: #586f78" transform="translate(301.727734 245.174483) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(301.727734 222.342627) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-24" d="M 2188 4044 
 L 1331 1722 
@@ -1419,7 +1419,7 @@ z
    </g>
    <g id="text_10">
     <!-- is what makes it the hospital’s. -->
-    <g style="fill: #586f78" transform="translate(305.968984 272.174871) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(305.968984 237.533187) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-4e" d="M 581 4863 
 L 1159 4863 
@@ -1481,7 +1481,7 @@ z
    </g>
    <g id="text_11">
     <!-- Local laptop -->
-    <g style="fill: #00c4b3" transform="translate(608.48375 149.987422) scale(0.16 -0.16)">
+    <g style="fill: #00c4b3" transform="translate(608.48375 176.10188) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-2f" d="M 588 4666 
 L 1791 4666 
@@ -1509,7 +1509,7 @@ z
    </g>
    <g id="text_12">
     <!-- Ollama on this machine -->
-    <g style="fill: #281241" transform="translate(586.547656 182.45388) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(586.547656 193.220882) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-32" d="M 2522 4238 
 Q 1834 4238 1429 3725 
@@ -1559,7 +1559,7 @@ z
    </g>
    <g id="text_13">
     <!-- The vendor never sees the prompt. -->
-    <g style="fill: #586f78" transform="translate(548.719688 218.174094) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(548.719688 207.152067) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-37"/>
      <use xlink:href="#DejaVuSans-4b" transform="translate(61.078125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(124.453125 0)"/>
@@ -1597,7 +1597,7 @@ z
    </g>
    <g id="text_14">
     <!-- You already use this laptop -->
-    <g style="fill: #586f78" transform="translate(575.987188 245.174483) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(575.987188 222.342627) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-3c" d="M -13 4666 
 L 666 4666 
@@ -1643,7 +1643,7 @@ z
    </g>
    <g id="text_15">
     <!-- for the EHR. That is reasonable. -->
-    <g style="fill: #586f78" transform="translate(560.592344 273.434247) scale(0.13 -0.13)">
+    <g style="fill: #586f78" transform="translate(560.592344 238.792563) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-49" d="M 2375 4863 
 L 2375 4384 
@@ -1703,7 +1703,7 @@ z
    </g>
    <g id="text_16">
     <!-- A business associate agreement is what separates the first box from the second. -->
-    <g style="fill: #586f78" transform="translate(163.982813 375.5952) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(163.982813 372.2688) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-13af" d="M 3431 3500 
 L 3431 0 
@@ -1833,7 +1833,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p80bd88abb0">
+  <clipPath id="p2e03a227bf">
    <rect x="10.8" y="10.8" width="792.36" height="376.992"/>
   </clipPath>
  </defs>

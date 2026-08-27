@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="813.96pt" height="365.328pt" viewBox="0 0 813.96 365.328" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="813.96pt" height="332.064pt" viewBox="0 0 813.96 332.064" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T19:41:12.376467</dc:date>
+    <dc:date>2026-08-27T20:17:00.498056</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,43 +21,43 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 365.328 
-L 813.96 365.328 
-L 813.96 0 
-L 0 0 
+   <path d="M 0 332.064 
+L 813.96 332.064 
+L 813.96 -0 
+L 0 -0 
 z
 " style="fill: #faf9f7"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 40.796486 282.78864 
-L 331.7058 282.78864 
-Q 333.969686 282.78864 333.969686 281.45808 
-L 333.969686 72.78192 
-Q 333.969686 71.45136 331.7058 71.45136 
-L 40.796486 71.45136 
-Q 38.5326 71.45136 38.5326 72.78192 
-L 38.5326 281.45808 
-Q 38.5326 282.78864 40.796486 282.78864 
+    <path d="M 44.192314 200.29392 
+L 328.309971 200.29392 
+Q 333.969686 200.29392 333.969686 196.96752 
+L 333.969686 129.55248 
+Q 333.969686 126.22608 328.309971 126.22608 
+L 44.192314 126.22608 
+Q 38.5326 126.22608 38.5326 129.55248 
+L 38.5326 196.96752 
+Q 38.5326 200.29392 44.192314 200.29392 
 z
-" clip-path="url(#p49f6f99043)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pc8bedfe059)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 482.2542 282.78864 
-L 773.163514 282.78864 
-Q 775.4274 282.78864 775.4274 281.45808 
-L 775.4274 72.78192 
-Q 775.4274 71.45136 773.163514 71.45136 
-L 482.2542 71.45136 
-Q 479.990314 71.45136 479.990314 72.78192 
-L 479.990314 281.45808 
-Q 479.990314 282.78864 482.2542 282.78864 
+    <path d="M 485.650029 200.29392 
+L 769.767686 200.29392 
+Q 775.4274 200.29392 775.4274 196.96752 
+L 775.4274 129.55248 
+Q 775.4274 126.22608 769.767686 126.22608 
+L 485.650029 126.22608 
+Q 479.990314 126.22608 479.990314 129.55248 
+L 479.990314 196.96752 
+Q 479.990314 200.29392 485.650029 200.29392 
 z
-" clip-path="url(#p49f6f99043)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pc8bedfe059)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Trained here -->
-    <g style="fill: #003da6" transform="translate(129.461143 133.94631) scale(0.16 -0.16)">
+    <g style="fill: #003da6" transform="translate(129.461143 144.94228) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-37" d="M 31 4666 
 L 4331 4666 
@@ -246,7 +246,7 @@ z
    </g>
    <g id="text_2">
     <!-- Adult notes -->
-    <g style="fill: #281241" transform="translate(146.374112 169.685749) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(146.374112 161.383055) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-24" d="M 2188 4044 
 L 1331 1722 
@@ -453,7 +453,7 @@ z
    </g>
    <g id="text_3">
     <!-- Adult creatinine -->
-    <g style="fill: #281241" transform="translate(130.808955 201.151276) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(130.808955 177.571535) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-46" d="M 3122 3366 
 L 3122 2828 
@@ -560,7 +560,7 @@ z
    </g>
    <g id="text_4">
     <!-- Adult vital-sign ranges -->
-    <g style="fill: #281241" transform="translate(107.502237 231.260552) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(107.502237 192.403765) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-59" d="M 191 3500 
 L 800 3500 
@@ -641,7 +641,7 @@ z
    </g>
    <g id="text_5">
     <!-- Deployed here -->
-    <g style="fill: #ff4d00" transform="translate(562.031357 132.33381) scale(0.16 -0.16)">
+    <g style="fill: #ff4d00" transform="translate(562.031357 143.32978) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-27" d="M 1791 3756 
 L 1791 909 
@@ -755,7 +755,7 @@ z
    </g>
    <g id="text_6">
     <!-- Weight-based dosing -->
-    <g style="fill: #281241" transform="translate(554.24167 168.329499) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(554.24167 160.026805) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-3a" d="M 213 4666 
 L 850 4666 
@@ -842,7 +842,7 @@ z
    </g>
    <g id="text_7">
     <!-- Caregiver by proxy -->
-    <g style="fill: #281241" transform="translate(561.226357 199.795026) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(561.226357 176.215285) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-26" d="M 4122 4306 
 L 4122 3641 
@@ -946,7 +946,7 @@ z
    </g>
    <g id="text_8">
     <!-- Rare disease + development -->
-    <g style="fill: #281241" transform="translate(526.374013 231.260552) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(526.374013 192.403765) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-35" d="M 2841 2188 
 Q 3044 2119 3236 1894 
@@ -1051,18 +1051,18 @@ z
     </g>
    </g>
    <g id="patch_4">
-    <path d="M 343.891492 177.12 
-Q 406.97969 177.12 466.713786 177.12 
+    <path d="M 343.891492 163.26 
+Q 406.97969 163.26 466.713786 163.26 
 " style="fill: none; stroke: #691f74; stroke-width: 3; stroke-linecap: round"/>
-    <path d="M 462.713786 175.12 
-L 466.713786 177.12 
-L 462.713786 179.12 
+    <path d="M 462.713786 161.26 
+L 466.713786 163.26 
+L 462.713786 165.26 
 z
 " style="fill: #691f74; stroke: #691f74; stroke-width: 3; stroke-linecap: round"/>
    </g>
    <g id="text_9">
     <!-- shift -->
-    <g style="fill: #691f74" transform="translate(391.603125 160.833656) scale(0.12 -0.12)">
+    <g style="fill: #691f74" transform="translate(391.603125 146.973656) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-Bold-56" d="M 3272 3391 
 L 3272 2541 
@@ -1147,7 +1147,7 @@ z
    </g>
    <g id="text_10">
     <!-- The training data are mostly adults. -->
-    <g style="fill: #281241" transform="translate(244.02875 42.676875) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(244.02875 39.904875) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-4a" d="M 2919 594 
 Q 2688 288 2409 144 
@@ -1286,7 +1286,7 @@ z
    </g>
    <g id="text_11">
     <!-- Pediatric Academic Societies 2025: 6% confident AI is developed with adequate pediatric consideration -->
-    <g style="fill: #586f78" transform="translate(122.232969 332.437852) scale(0.11 -0.11)">
+    <g style="fill: #586f78" transform="translate(122.232969 304.717852) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-33" d="M 1259 4147 
 L 1259 2394 
@@ -1684,8 +1684,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p49f6f99043">
-   <rect x="10.8" y="10.8" width="792.36" height="343.728"/>
+  <clipPath id="pc8bedfe059">
+   <rect x="10.8" y="10.8" width="792.36" height="310.464"/>
   </clipPath>
  </defs>
 </svg>

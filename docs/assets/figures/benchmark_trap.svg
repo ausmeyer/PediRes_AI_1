@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="813.96pt" height="384.732pt" viewBox="0 0 813.96 384.732" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="813.96pt" height="365.328pt" viewBox="0 0 813.96 365.328" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T19:41:13.409539</dc:date>
+    <dc:date>2026-08-27T20:17:01.483779</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,8 +21,8 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 384.732 
-L 813.96 384.732 
+   <path d="M 0 365.328 
+L 813.96 365.328 
 L 813.96 0 
 L 0 0 
 z
@@ -30,34 +30,34 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 44.87148 260.61264 
-L 384.79392 260.61264 
-Q 387.96336 260.61264 387.96336 259.28208 
-L 387.96336 53.37792 
-Q 387.96336 52.04736 384.79392 52.04736 
-L 44.87148 52.04736 
-Q 41.70204 52.04736 41.70204 53.37792 
-L 41.70204 259.28208 
-Q 41.70204 260.61264 44.87148 260.61264 
+    <path d="M 49.62564 180.670378 
+L 380.03976 180.670378 
+Q 387.96336 180.670378 387.96336 177.343978 
+L 387.96336 104.824022 
+Q 387.96336 101.497622 380.03976 101.497622 
+L 49.62564 101.497622 
+Q 41.70204 101.497622 41.70204 104.824022 
+L 41.70204 177.343978 
+Q 41.70204 180.670378 49.62564 180.670378 
 z
-" clip-path="url(#p6aa3c8e69c)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0b2fea5cee)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 429.16608 260.61264 
-L 769.08852 260.61264 
-Q 772.25796 260.61264 772.25796 259.28208 
-L 772.25796 53.37792 
-Q 772.25796 52.04736 769.08852 52.04736 
-L 429.16608 52.04736 
-Q 425.99664 52.04736 425.99664 53.37792 
-L 425.99664 259.28208 
-Q 425.99664 260.61264 429.16608 260.61264 
+    <path d="M 433.92024 186.558106 
+L 764.33436 186.558106 
+Q 772.25796 186.558106 772.25796 183.231706 
+L 772.25796 98.936294 
+Q 772.25796 95.609894 764.33436 95.609894 
+L 433.92024 95.609894 
+Q 425.99664 95.609894 425.99664 98.936294 
+L 425.99664 183.231706 
+Q 425.99664 186.558106 433.92024 186.558106 
 z
-" clip-path="url(#p6aa3c8e69c)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0b2fea5cee)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- On the exam -->
-    <g style="fill: #00c4b3" transform="translate(150.333638 125.279887) scale(0.18 -0.18)">
+    <g style="fill: #00c4b3" transform="translate(150.333638 121.957367) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-32" d="M 2719 3878 
 Q 2169 3878 1866 3472 
@@ -267,7 +267,7 @@ z
    </g>
    <g id="text_2">
     <!-- Board-style items -->
-    <g style="fill: #281241" transform="translate(153.261137 161.229763) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(153.261137 138.517205) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-25" d="M 1259 2228 
 L 1259 519 
@@ -570,7 +570,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(827.5 0)"/>
     </g>
     <!-- Leaderboard ratings -->
-    <g style="fill: #281241" transform="translate(144.005825 181.529763) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(144.005825 155.037205) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-2f" d="M 628 4666 
 L 1259 4666 
@@ -682,7 +682,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(959.71875 0)"/>
     </g>
     <!-- Vendor tables -->
-    <g style="fill: #281241" transform="translate(166.638794 203.186013) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(166.638794 172.913455) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-39" d="M 1831 0 
 L 50 4666 
@@ -712,7 +712,7 @@ z
    </g>
    <g id="text_3">
     <!-- On the ward -->
-    <g style="fill: #ff4d00" transform="translate(536.720738 120.998477) scale(0.18 -0.18)">
+    <g style="fill: #ff4d00" transform="translate(536.720738 116.069639) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-5a" d="M 225 3500 
 L 1313 3500 
@@ -789,7 +789,7 @@ z
    </g>
    <g id="text_4">
     <!-- Specific patient -->
-    <g style="fill: #281241" transform="translate(548.630425 152.177826) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(548.630425 131.751267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-36" d="M 3425 4513 
 L 3425 3897 
@@ -916,7 +916,7 @@ z
      <use xlink:href="#DejaVuSans-57" transform="translate(737.671875 0)"/>
     </g>
     <!-- Specific hospital formulary -->
-    <g style="fill: #281241" transform="translate(512.360425 170.637826) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(512.360425 147.091267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-4b" d="M 3513 2113 
 L 3513 0 
@@ -1009,7 +1009,7 @@ z
      <use xlink:href="#DejaVuSans-5c" transform="translate(1275.6875 0)"/>
     </g>
     <!-- Specific language -->
-    <g style="fill: #281241" transform="translate(541.497691 189.097826) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(541.497691 162.431267) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-36"/>
      <use xlink:href="#DejaVuSans-53" transform="translate(63.484375 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(126.96875 0)"/>
@@ -1028,7 +1028,7 @@ z
      <use xlink:href="#DejaVuSans-48" transform="translate(825.078125 0)"/>
     </g>
     <!-- Specific cultural context -->
-    <g style="fill: #281241" transform="translate(520.567691 207.557826) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(520.567691 177.771267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-5b" d="M 3513 3500 
 L 2247 1797 
@@ -1074,7 +1074,7 @@ z
    </g>
    <g id="text_5">
     <!-- The exam is comparable across models, and many of the exam questions -->
-    <g style="fill: #281241" transform="translate(185.3325 274.0632) scale(0.12 -0.12)">
+    <g style="fill: #281241" transform="translate(185.3325 252.996) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-37" d="M -19 4666 
 L 3928 4666 
@@ -1193,7 +1193,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(3642.03125 0)"/>
     </g>
     <!-- are in the training data. -->
-    <g style="fill: #281241" transform="translate(335.668125 289.6632) scale(0.12 -0.12)">
+    <g style="fill: #281241" transform="translate(335.668125 268.596) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-11" d="M 684 794 
 L 1344 794 
@@ -1232,7 +1232,7 @@ z
    </g>
    <g id="text_6">
     <!-- The context of a specific patient, in a specific hospital, and with a specific set of -->
-    <g style="fill: #281241" transform="translate(166.400625 315.0888) scale(0.12 -0.12)">
+    <g style="fill: #281241" transform="translate(166.400625 293.4672) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-5a" d="M 269 3500 
 L 844 3500 
@@ -1335,7 +1335,7 @@ z
      <use xlink:href="#DejaVuSans-49" transform="translate(3974.453125 0)"/>
     </g>
     <!-- preferences and limitations, will likely always be a challenging application for models. -->
-    <g style="fill: #281241" transform="translate(148.780313 330.6888) scale(0.12 -0.12)">
+    <g style="fill: #281241" transform="translate(148.780313 309.0672) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-4e" d="M 581 4863 
 L 1159 4863 
@@ -1444,7 +1444,7 @@ z
    </g>
    <g id="text_7">
     <!-- FDA 2026 discussion paper: open-ended generative AI is hard to premarket-test -->
-    <g style="fill: #586f78" transform="translate(186.637969 361.7352) scale(0.11 -0.11)">
+    <g style="fill: #586f78" transform="translate(186.637969 340.668) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-29" d="M 628 4666 
 L 3309 4666 
@@ -1682,8 +1682,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6aa3c8e69c">
-   <rect x="10.8" y="10.8" width="792.36" height="363.132"/>
+  <clipPath id="p0b2fea5cee">
+   <rect x="10.8" y="10.8" width="792.36" height="343.728"/>
   </clipPath>
  </defs>
 </svg>

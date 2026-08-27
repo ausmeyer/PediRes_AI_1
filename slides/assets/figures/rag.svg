@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T19:41:12.972776</dc:date>
+    <dc:date>2026-08-27T20:17:01.072159</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 32.872886 96.39936 32.872886 97.72992
 L 32.872886 245.42208 
 Q 32.872886 246.75264 35.136771 246.75264 
 z
-" clip-path="url(#pe140183abc)" style="fill: #003da6; stroke: #003da6; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#pa7b579658f)" style="fill: #003da6; stroke: #003da6; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 312.462771 246.75264 
@@ -53,7 +53,7 @@ Q 310.198886 96.39936 310.198886 97.72992
 L 310.198886 245.42208 
 Q 310.198886 246.75264 312.462771 246.75264 
 z
-" clip-path="url(#pe140183abc)" style="fill: #691f74; stroke: #691f74; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#pa7b579658f)" style="fill: #691f74; stroke: #691f74; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 589.788771 246.75264 
@@ -66,11 +66,11 @@ Q 587.524886 96.39936 587.524886 97.72992
 L 587.524886 245.42208 
 Q 587.524886 246.75264 589.788771 246.75264 
 z
-" clip-path="url(#pe140183abc)" style="fill: #00c4b3; stroke: #00c4b3; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#pa7b579658f)" style="fill: #00c4b3; stroke: #00c4b3; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Corpus -->
-    <g style="fill: #ffffff" transform="translate(98.159 140.42858) scale(0.16 -0.16)">
+    <g style="fill: #ffffff" transform="translate(98.159 156.05767) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-26" d="M 4288 256 
 Q 3956 84 3597 -3 
@@ -222,7 +222,7 @@ z
    </g>
    <g id="text_2">
     <!-- journals -->
-    <g style="fill: #ffffff" transform="translate(107.861109 170.0863) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(107.861109 170.508753) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-4d" d="M 603 3500 
 L 1178 3500 
@@ -406,7 +406,7 @@ z
    </g>
    <g id="text_3">
     <!-- guidelines -->
-    <g style="fill: #ffffff" transform="translate(101.481969 191.482813) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(101.481969 183.703473) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-4a" d="M 2906 1791 
 Q 2906 2416 2648 2759 
@@ -521,7 +521,7 @@ z
    </g>
    <g id="text_4">
     <!-- PDFs you uploaded -->
-    <g style="fill: #ffffff" transform="translate(76.863453 212.879327) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(76.863453 196.898193) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-33" d="M 1259 4147 
 L 1259 2394 
@@ -642,7 +642,7 @@ z
    </g>
    <g id="text_5">
     <!-- Retrieve -->
-    <g style="fill: #ffffff" transform="translate(368.815 152.818086) scale(0.16 -0.16)">
+    <g style="fill: #ffffff" transform="translate(368.815 164.34628) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-35" d="M 2297 2597 
 Q 2675 2597 2839 2737 
@@ -754,7 +754,7 @@ z
    </g>
    <g id="text_6">
     <!-- nearest chunks -->
-    <g style="fill: #ffffff" transform="translate(364.915313 181.850182) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(364.915313 178.171738) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-57" d="M 1172 4494 
 L 1172 3500 
@@ -850,7 +850,7 @@ z
    </g>
    <g id="text_7">
     <!-- not the whole library -->
-    <g style="fill: #ffffff" transform="translate(349.746484 202.18107) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(349.746484 190.300833) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-5a" d="M 269 3500 
 L 844 3500 
@@ -920,7 +920,7 @@ z
    </g>
    <g id="text_8">
     <!-- Generate -->
-    <g style="fill: #ffffff" transform="translate(642.5985 141.97858) scale(0.16 -0.16)">
+    <g style="fill: #ffffff" transform="translate(642.5985 157.60767) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-2a" d="M 4781 347 
 Q 4331 128 3847 18 
@@ -1015,7 +1015,7 @@ z
    </g>
    <g id="text_9">
     <!-- answer + citations -->
-    <g style="fill: #ffffff" transform="translate(632.857797 171.151925) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(632.857797 171.574378) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-e" d="M 2944 4013 
 L 2944 2272 
@@ -1055,7 +1055,7 @@ z
    </g>
    <g id="text_10">
     <!-- that still must -->
-    <g style="fill: #ffffff" transform="translate(646.172094 192.548438) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(646.172094 184.769098) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-50" d="M 3328 2828 
 Q 3544 3216 3844 3400 
@@ -1107,7 +1107,7 @@ z
    </g>
    <g id="text_11">
     <!-- be opened -->
-    <g style="fill: #ffffff" transform="translate(655.079516 212.879327) scale(0.11 -0.11)">
+    <g style="fill: #ffffff" transform="translate(655.079516 196.898193) scale(0.11 -0.11)">
      <use xlink:href="#DejaVuSans-45"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(63.484375 0)"/>
      <use xlink:href="#DejaVuSans-3" transform="translate(125.015625 0)"/>
@@ -1597,7 +1597,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pe140183abc">
+  <clipPath id="pa7b579658f">
    <rect x="10.8" y="10.8" width="792.36" height="332.64"/>
   </clipPath>
  </defs>
