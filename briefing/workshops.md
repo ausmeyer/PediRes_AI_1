@@ -351,7 +351,7 @@ If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, ru
 
 - [ ] Synthetic banner on every slide and terminal  
 - [ ] No Epic, no email with real names, no photo of a child  
-- [ ] Two live blocks in the hour (Make → inspect, Ask → verify); 18 minutes on the clock  
+- [ ] Two live blocks in the hour containing four lessons (Make → inspect = Labs 1–2, Ask → verify = Labs 3–4); 18 minutes on the clock  
 - [ ] Hardware story for Lab 6 (Ollama) told only if someone asks; it is take-home  
 - [ ] Lab 2 answer key on paper, not generated live as “truth”  
 - [ ] Handout QR to this markdown (or PDF export)

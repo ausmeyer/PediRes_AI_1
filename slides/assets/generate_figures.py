@@ -78,7 +78,7 @@ def fig_hour_map():
         (10, 8, TEAL, "How AI\nanswers\n8 min", 9),
         (18, 8, PURPLE, "Files &\nchecks\n8 min", 9),
         (26, 8, ORANGE, "Evidence\n8 min", 11),
-        (34, 18, PURPLE_WEB, "Live labs\n18 min", 12),
+        (34, 18, PURPLE_WEB, "Live blocks\n18 min", 12),
         (52, 8, GOLD, "Takeaways\n8 min", 11),
     ]
     for x, w, c, lab, fs in blocks:
@@ -966,7 +966,7 @@ def fig_workshops():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.05, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 6.05, "Live blocks vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
 
     rounded(ax, 0.35, 0.45, 6.5, 5.15, WHITE, PURPLE_WEB, lw=3)
     ax.text(3.6, 5.22, "This hour  ·  Labs 1–4", ha="center", fontsize=15, fontweight="bold", color=PURPLE_WEB)
