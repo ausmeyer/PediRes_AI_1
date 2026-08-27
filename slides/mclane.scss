@@ -155,7 +155,7 @@ $presentation-h2-font-size: 1.35em;
   text-align: center;
 }
 
-/* Prose lists: one centered column, lines still flush left. */
+/* Prose lists: one column. Default is centered; .align-end docks it right. */
 .reveal .copy-block {
   display: inline-block;
   text-align: left;
@@ -168,6 +168,28 @@ $presentation-h2-font-size: 1.35em;
 .reveal .copy-block ul,
 .reveal .copy-block ol {
   text-align: left;
+}
+
+.reveal .slides section.align-end {
+  text-align: right;
+}
+
+.reveal .slides section.align-end .copy-block {
+  display: block;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.reveal .slides section.align-end .copy-block p,
+.reveal .slides section.align-end .copy-block ul,
+.reveal .slides section.align-end .copy-block ol {
+  text-align: right;
+}
+
+.reveal .slides section.align-end ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 /* Standalone bullets sit as a centered column; recipe lists stay full-width. */
