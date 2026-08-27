@@ -262,7 +262,7 @@ Three places a prompt can live. Consumer ChatGPT, Claude, and Gemini send the pr
 ![](assets/figures/artsi_eleven.svg){width="100%"}
 
 ::: notes
-Artsi 2026 OpenEvidence systematic review. 11 studies, none synthesized as pediatric. The appropriate use they found is guideline-style look-up; it often reinforces rather than changes a plan, and is weaker on complex cases. Not for acting without opening the source. End on: search assistant, not pediatric guideline. Company “40% of US physicians” is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
+Artsi 2026 OpenEvidence systematic review. 11 studies, none synthesized as pediatric. The appropriate use they found is guideline-style look-up; it often reinforces rather than changes a plan, and is weaker on complex cases. Not for acting without opening the source. The gray line is the vendor gap: the About page does not name a base model, say whether this is a fine-tuned medical model or a general model with retrieval, or publish a model card. They do advertise in-chat clinical calculators and DeepConsult, a literature agent. Public pages do not describe a coding sandbox. Do not invent LoRA or a GPT version from blogs. End on: search assistant, not pediatric guideline. Company “40% of US physicians” is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
 :::
 
 ---

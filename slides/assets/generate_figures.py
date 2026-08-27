@@ -807,22 +807,22 @@ def fig_artsi():
         color=INK,
         linespacing=1.3,
     )
-    rounded(ax, 0.4, 0.72, 6.4, 2.55, WHITE, TEAL, lw=2.5, r=0.1)
-    rounded(ax, 7.2, 0.72, 6.4, 2.55, WHITE, ORANGE, lw=2.5, r=0.1)
-    ax.text(3.6, 2.88, "Appropriate use in that review", ha="center", fontsize=13, fontweight="bold", color=TEAL)
+    rounded(ax, 0.4, 0.95, 6.4, 2.35, WHITE, TEAL, lw=2.5, r=0.1)
+    rounded(ax, 7.2, 0.95, 6.4, 2.35, WHITE, ORANGE, lw=2.5, r=0.1)
+    ax.text(3.6, 2.95, "Appropriate use in that review", ha="center", fontsize=13, fontweight="bold", color=TEAL)
     ax.text(
         3.6,
-        1.75,
+        1.95,
         "Guideline-style look-up.\nOften reinforces a plan you already had.",
         ha="center",
         fontsize=13,
         color=INK,
         linespacing=1.4,
     )
-    ax.text(10.4, 2.88, "Not the use case they found", ha="center", fontsize=13, fontweight="bold", color=ORANGE)
+    ax.text(10.4, 2.95, "Not the use case they found", ha="center", fontsize=13, fontweight="bold", color=ORANGE)
     ax.text(
         10.4,
-        1.75,
+        1.95,
         "Complex cases, or changing the plan.\nActing without opening the source.",
         ha="center",
         fontsize=13,
@@ -831,7 +831,16 @@ def fig_artsi():
     )
     ax.text(
         7,
-        0.28,
+        0.58,
+        "OpenEvidence does not say how the product is built.",
+        ha="center",
+        fontsize=14,
+        fontweight="bold",
+        color=INK,
+    )
+    ax.text(
+        7,
+        0.22,
         "Artsi et al. 2026  ·  npj Digit Med  ·  PROSPERO CRD420261289103",
         ha="center",
         fontsize=11,
