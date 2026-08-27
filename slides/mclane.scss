@@ -156,17 +156,23 @@ $presentation-h2-font-size: 1.35em;
   text-align: center;
 }
 
-/* Keep h2 in the DOM for the slide menu; figures already carry the title. */
+/* Assertion titles (Wilke / assertion–evidence): a short complete sentence,
+   left-aligned, at most two lines. The figure is the evidence. */
 .reveal .viz h2 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+  position: static;
+  width: auto;
+  height: auto;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  margin: 0 0 0.18em;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
   border: 0;
+  font-size: 0.82em;
+  line-height: 1.22;
+  text-align: left;
+  max-width: 24em;
+  letter-spacing: -0.02em;
 }
 
 /* Matplotlib SVGs as <img>: Reveal r-stretch often runs before intrinsic
@@ -175,7 +181,7 @@ $presentation-h2-font-size: 1.35em;
   width: 100% !important;
   height: auto !important;
   max-width: 100%;
-  max-height: 72vh;
+  max-height: 62vh;
   object-fit: contain;
   object-position: center center;
 }
@@ -183,9 +189,10 @@ $presentation-h2-font-size: 1.35em;
 .reveal .slides section.viz:not(.stack-viz) {
   display: flex !important;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   box-sizing: border-box;
+  text-align: left;
 }
 
 .reveal .viz p {
@@ -272,7 +279,7 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .reveal .slides section.stack-viz img {
-  max-height: 58vh;
+  max-height: 52vh;
 }
 
 .reveal .viz-links {

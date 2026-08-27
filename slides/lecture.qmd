@@ -49,7 +49,7 @@ One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask
 
 ---
 
-## Hands up {.viz}
+## Four questions, then the national numbers {.viz}
 
 ![](assets/figures/poll_open.svg){width="100%"}
 
@@ -59,7 +59,7 @@ Do this before you show the national bars. Four show-of-hands: used AI at work i
 
 ---
 
-## They are already using it {.viz}
+## They use AI. Almost none trust it for children. {.viz}
 
 ![](assets/figures/aap_places.svg){width="100%"}
 
@@ -69,7 +69,7 @@ PAS 2025. Punchline is 6%. The room just voted. Point at the gap between “I us
 
 ---
 
-## How we work today
+## Three ground rules for tonight.
 
 :::: {.rules-row}
 ::: {.box .box-orange}
@@ -103,7 +103,7 @@ Ground rules for the room, not a numbered manifesto. Verbally repeat one line: �
 
 ---
 
-## Where the prompt goes {.viz}
+## Where the prompt goes is the privacy question. {.viz}
 
 ![](assets/figures/hipaa.svg){width="100%"}
 
@@ -113,7 +113,7 @@ This is the clinically actionable privacy slide. Consumer ChatGPT: the prompt le
 
 ---
 
-## The live hour {.viz}
+## Sixty minutes on the clock. Take-home labs sit after Q&A. {.viz}
 
 ![](assets/figures/hour_map.svg){width="100%"}
 
@@ -123,7 +123,7 @@ This is the clinically actionable privacy slide. Consumer ChatGPT: the prompt le
 
 ---
 
-## AI is one word for three jobs {.viz}
+## AI is one word for three jobs. {.viz}
 
 ![](assets/figures/three_ais.svg){width="100%"}
 
@@ -133,7 +133,7 @@ Ask which kind they have already encountered this month. A score, an alert, and 
 
 ---
 
-## Adult accuracy, pediatric ward {.viz}
+## Adult accuracy does not travel to this ward. {.viz}
 
 ![](assets/figures/pediatric_shift.svg){width="100%"}
 
@@ -147,7 +147,7 @@ Distribution shift. Vendors often quote AUROC; say adult accuracy so they hear t
 
 ---
 
-## Tokens, not letters {.viz}
+## A dose is several tokens, not one number. {.viz}
 
 ![](assets/figures/tokens.svg){width="100%"}
 
@@ -157,7 +157,7 @@ A dose is several tokens. That is why numeric hallucination is easy and why “j
 
 ---
 
-## The model guesses the next token {.viz}
+## The model guesses the next token. It is not looking up an answer. {.viz}
 
 ![](assets/figures/next_token.svg){width="100%"}
 
@@ -167,7 +167,7 @@ Spoken takeaway: it predicts plausible text; it is not retrieving a stored answe
 
 ---
 
-## Same number, different child {.viz}
+## The same 38.5 °C is a workup at 3 weeks and often watch-and-treat at 3 years. {.viz}
 
 ![](assets/figures/context_age.svg){width="100%"}
 
@@ -177,7 +177,7 @@ This replaces transformer anatomy. 38.5 °C in a 3-week-old is a workup clock. I
 
 ---
 
-## Hallucinations changed shape {.viz}
+## Hallucinations changed shape. They are still here. {.viz}
 
 ![](assets/figures/hallucinations.svg){width="100%"}
 
@@ -187,7 +187,7 @@ Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start c
 
 ---
 
-## Three eras {.viz}
+## Names change. Autocomplete, chat, and tools do not. {.viz}
 
 ![](assets/figures/three_eras.svg){width="100%"}
 
@@ -203,27 +203,27 @@ What can the model check before it answers?
 
 ---
 
-## Retrieve, then generate {.viz}
+## RAG looks a corpus up, then writes. Gemini Notebook is the version they have. {.viz}
 
 ![](assets/figures/rag.svg){width="100%"}
 
 ::: notes
-Retrieve then generate. The corpus is the choice — that line is already on the artwork; point at it. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater. OpenEvidence, UpToDate, and ChatGPT-with-search are different libraries.
+Spell RAG once: retrieval-augmented generation — they have heard the acronym. Point at the corpus card — that is the choice. Gemini Notebook is the retrieve-then-generate tool most of them already have (public PDFs, citation chips). Do not claim a measured market share. OpenEvidence and UpToDate are other corpora. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.
 :::
 
 ---
 
-## What they call reasoning {.viz}
+## What they call reasoning we might call guess and check. {.viz}
 
 ![](assets/figures/test_time_compute.svg){width="100%"}
 
 ::: notes
-Vendors mean extra tokens before the answer — a try → test → revise loop you usually do not see. Not a pediatrician. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, a checker, then one answer. The spreadsheet is a toy because a formula can fail; that is why coding evals moved and why a febrile infant is a worse fit. Do not turn this into Lab 2. Files and tools are the next slide — a different loop. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
+Vendors mean extra tokens before the answer — a try → test → revise loop you usually do not see. We might call it guess and check. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, a checker, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. That is why coding evals moved — a formula can fail. A febrile infant is a worse fit. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
 :::
 
 ---
 
-## Chat vs harness {.viz}
+## A chatbot returns a paragraph. A harness returns a file. {.viz}
 
 ![](assets/figures/harness_loop.svg){width="100%"}
 
@@ -233,7 +233,7 @@ Ask: which row produces something another person can inspect tomorrow? Top row i
 
 ---
 
-## The exam and the ward {.viz}
+## A high exam score is not this infant tonight. {.viz}
 
 ![](assets/figures/benchmark_trap.svg){width="100%"}
 
@@ -247,42 +247,42 @@ Board-style exams and vendor tables are a test with a key, comparable across mod
 
 ---
 
-## Three boxes {.viz}
+## Only a hospital cloud or this laptop is plausible for real notes. {.viz}
 
 ![](assets/figures/three_boxes.svg){width="100%"}
 
 ::: notes
-Consumer cloud / hospital-governed cloud / local laptop. Do not recatalog model names. Phone app = no BAA. Hospital tool with a contract is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR.
+Three places a prompt can live. The title is the takeaway: consumer ChatGPT, Claude, and Gemini send the prompt off-site with no hospital privacy contract. Hospital tool with a business associate agreement is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR. Do not recatalog model names.
 :::
 
 ---
 
-## 11 studies. Zero pediatric. {.viz}
+## OpenEvidence is a search assistant, not a pediatric guideline. {.viz}
 
 ![](assets/figures/artsi_eleven.svg){width="100%"}
 
 ::: notes
-Artsi 2026 OpenEvidence systematic review. End on the line already on the figure: search assistant, not pediatric guideline. Company “40% of US physicians” is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
+Artsi 2026 OpenEvidence systematic review. 11 studies, none synthesized as pediatric. The appropriate use they found is guideline-style look-up; it often reinforces rather than changes a plan, and is weaker on complex cases. Not for acting without opening the source. End on: search assistant, not pediatric guideline. Company “40% of US physicians” is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
 :::
 
 ---
 
-## A citation is not proof of correctness {.viz}
+## A real citation can still be the wrong answer. {.viz}
 
 ![](assets/figures/hajj_counterexample.svg){width="100%"}
 
 ::: notes
-Hajj inside Artsi: ChatGPT-4o 66.7 vs OpenEvidence 26.7 on 15 adult transcatheter tricuspid questions. n=15 is the whole study. Do not present it as pediatric. Heuristic: OE for journals, UpToDate for the editorial corpus you already pay for, neither for “what do I do without looking.”
+Hajj inside Artsi: same 15 adult transcatheter tricuspid questions. Bars are the share scored fully accurate by the study’s own definition: ChatGPT-4o 10 of 15 (66.7%) vs OpenEvidence 4 of 15 (26.7%). n=15 is the whole study — gray footer, not a headline. OpenEvidence still cited papers; those citations did not make the answers correct. Do not present it as pediatric. Heuristic: OE for journals, UpToDate for the editorial corpus you already pay for, neither for “what do I do without looking.”
 :::
 
 ---
 
-## Settled / unsettled {.viz}
+## Authorship and judgment are decided. Pediatric bedside rules are not. {.viz}
 
 ![](assets/figures/settled.svg){width="100%"}
 
 ::: notes
-As of August 2026. Humans remain accountable. Transparency is increasing. Pediatric-specific policy is incomplete — do not invent an AAP clinical AI guideline. The dated chronology is in backup if someone wants January-to-August names.
+Goal of the slide: what already binds them versus what is still open — not a pediatric protocol. As of August 2026. Settled because journals and the AMA already named the human: ICMJE Jan 2026 and COPE 2023, humans accountable, chatbots cannot be authors; AMA House of Delegates 10 Jun 2026, AI must not replace physician judgment. Unsettled because AAP Jan 2026 digital-ecosystems policy still says a dedicated clinical AI statement is forthcoming; FDA Aug 2026 discussion paper is still asking how to test open-ended generative tools; pediatric-specific evidence is thin (Artsi 11 OpenEvidence studies, none synthesized as pediatric). Do not invent an AAP clinical AI guideline. The dated chronology is in backup.
 :::
 
 ---
@@ -291,7 +291,7 @@ As of August 2026. Humans remain accountable. Transparency is increasing. Pediat
 
 ---
 
-## Two live blocks {.viz}
+## Two live blocks, four lessons — not four separate shows. {.viz}
 
 ![](assets/figures/two_blocks.svg){width="100%"}
 
@@ -363,7 +363,7 @@ Before: what will fail? · After: name one check.
 :::
 
 ::: notes
-Do not show the error list on the projector first. KEY.md is in the folder: teachicillin, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose; weight under 2 kg → TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Room predicts. Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency. Fallback python slides/workshops/lab2_fallback.py omits the 400 mg cap on purpose.
+Do not show the error list on the projector first. KEY.md is in the folder: teachicillin, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose; weight under 2 kg → TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Room predicts. Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency. Fallback python slides/workshops/lab2_fallback.py omits the 400 mg maximum on purpose.
 :::
 
 ---
@@ -467,7 +467,7 @@ Stochastic. Keep a frozen rehearsal output on the USB. If the live model refuses
 
 ---
 
-## Six things to leave with {.viz}
+## Six checks to leave with. Not a protocol. {.viz}
 
 ![](assets/figures/takehomes.svg){width="100%"}
 
@@ -477,7 +477,7 @@ Repeat. Point at the briefing packet and workshops.md. Local changes privacy, no
 
 ---
 
-## Check the answer {.qa-close .nostretch}
+## Three questions before you copy. {.qa-close .nostretch}
 
 :::: {.qa-three}
 ::: {.box .box-orange}
@@ -592,7 +592,7 @@ If someone asks. Not on the clock.
 
 ---
 
-## How the model is taught {.viz}
+## Three ways a model is taught: labels, structure, or a score. {.viz}
 
 ![](assets/figures/learning_modes.svg){width="100%"}
 
@@ -602,7 +602,7 @@ Forty-five seconds if you use it at all. Supervised: x goes with y. Unsupervised
 
 ---
 
-## Attention {.viz}
+## Attention is the mix step before the next-token guess. {.viz}
 
 ![](assets/figures/attention.svg){width="100%"}
 
@@ -612,7 +612,7 @@ Self-attention, 2017. One token looking at the sentence. The live hour uses the 
 
 ---
 
-## How we got here {.viz}
+## ChatGPT was the public rupture. o1 made thinking time a product. {.viz}
 
 ![](assets/figures/timeline.svg){width="100%"}
 
@@ -622,7 +622,7 @@ Full chronology. GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT
 
 ---
 
-## Size and what still matters {.viz}
+## Headline parameter counts are not a quality score. {.viz}
 
 ![](assets/figures/param_scale.svg){width="100%"}
 
@@ -632,7 +632,7 @@ Parameter counts do not help a resident decide whether to trust an answer. Mixtu
 
 ---
 
-## Local models need memory {.viz .stack-viz}
+## Local models need memory your laptop may not have. {.viz .stack-viz}
 
 ![](assets/figures/hardware.svg){width="100%"}
 
@@ -646,7 +646,7 @@ Use with Lab 6 if someone asks. Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–
 
 ---
 
-## Judge the work {.nostretch}
+## Judge the claims, not the fluency. {.nostretch}
 
 ::: {.copy-block}
 **Judge the claims, data, code, and citations—not the fluency or confession.**
@@ -660,7 +660,7 @@ One-line backup, not a second lecture. An adult creatinine in a pediatrics manus
 
 ---
 
-## 2026, on a line {.viz}
+## 2026 statements with a public citation, on one line. {.viz}
 
 ::: {.kicker}
 as of August 2026

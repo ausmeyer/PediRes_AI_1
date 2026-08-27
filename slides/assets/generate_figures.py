@@ -89,7 +89,6 @@ def fig_hour_map():
     for t in range(0, 61, 10):
         ax.plot([t, t], [0.82, 0.95], color=INK, lw=1.5)
         ax.text(t, 0.52, f"{t}m", ha="center", fontsize=11, color=MUTED)
-    ax.text(30, 3.05, "The live hour", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     ax.text(
         30,
         0.12,
@@ -119,10 +118,9 @@ def fig_three_ais():
         ax.text(x + 2.1, 3.52, title, ha="center", fontsize=18, fontweight="bold", color=c)
         ax.text(x + 2.1, 2.52, mid, ha="center", fontsize=13, color=INK)
         ax.text(x + 2.1, 1.32, bot, ha="center", fontsize=13, color=MUTED)
-    ax.text(7.1, 6.28, "AI is one word for three jobs", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
-        5.68,
+        5.95,
         "A score, an alert, and a chatbot are all called AI. They are not the same job.",
         ha="center",
         fontsize=14,
@@ -198,7 +196,6 @@ def fig_learning_modes():
         ax.set_xlabel(lab, fontsize=11, color=MUTED, labelpad=12)
 
     fig.align_xlabels(axes)
-    fig.suptitle("How the model is taught", fontsize=18, fontweight="bold", color=BLUE, y=1.02)
     save(fig, "learning_modes")
 
 
@@ -233,7 +230,6 @@ def fig_tokens():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 5)
     ax.axis("off")
-    ax.text(7, 4.45, "Models do not read letters. They read tokens.", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     sentence = "fever 38.5 °C"
     ax.text(7, 3.55, sentence, ha="center", fontsize=28, fontweight="bold", color=INK, family="DejaVu Sans")
     pieces = [("fev", BLUE), ("er", TEAL), ("38", PURPLE), (".5", ORANGE), ("°C", GOLD)]
@@ -255,13 +251,12 @@ def fig_next_token():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.5)
     ax.axis("off")
-    ax.text(7.1, 6.2, "The model guesses the next token", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
-        5.72,
+        5.85,
         "A transformer mixes the tokens, picks the next one, adds it, and does it again.",
         ha="center",
-        fontsize=13,
+        fontsize=14,
         color=INK,
     )
 
@@ -321,7 +316,6 @@ def fig_attention():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.1, "Attention: the mix step before the next-token guess", ha="center", fontsize=16, fontweight="bold", color=BLUE)
 
     words = ["The", "infant", "wheezed", "after", "feeds"]
     xs = np.linspace(1.6, 12.4, len(words))
@@ -358,7 +352,6 @@ def fig_timeline():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 5.8)
     ax.axis("off")
-    ax.text(7.1, 5.22, "How we got here", ha="center", va="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
         0.52,
@@ -476,33 +469,67 @@ def fig_three_boxes():
         ax.text(cx, 4.45, kicker, ha="center", va="center", fontsize=13, color=INK)
         for y, line in zip(note_ys, notes):
             ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=MUTED)
+    ax.text(
+        7.1,
+        0.22,
+        "A business associate agreement is what separates the first box from the second.",
+        ha="center",
+        fontsize=12,
+        color=MUTED,
+    )
     save(fig, "three_boxes")
 
 
 # --- 9. RAG ---
 def fig_rag():
-    fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    fig, ax = plt.subplots(figsize=(14.2, 6.0))
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 5.8)
+    ax.set_ylim(0, 6.0)
     ax.axis("off")
     cards = [
-        (0.4, BLUE, "Corpus", ["journals", "guidelines", "PDFs in the corpus"]),
+        (0.4, BLUE, "Corpus", ["journals", "guidelines", "PDFs you uploaded"]),
         (5.3, PURPLE, "Retrieve", ["nearest chunks", "not the whole library", ""]),
         (10.2, TEAL, "Generate", ["answer + citations", "that still must", "be opened"]),
     ]
-    title_y = 3.35
-    line_ys = [2.70, 2.30, 1.90]
+    title_y = 3.55
+    line_ys = [2.90, 2.50, 2.10]
     for x, c, title, lines in cards:
-        rounded(ax, x, 1.6, 3.4, 2.6, c)
+        rounded(ax, x, 1.75, 3.4, 2.7, c)
         cx = x + 1.7
         ax.text(cx, title_y, title, ha="center", va="center", color=WHITE, fontsize=16, fontweight="bold")
         for y, line in zip(line_ys, lines):
             if line:
                 ax.text(cx, y, line, ha="center", va="center", color=WHITE, fontsize=11)
     for x1, x2 in [(3.85, 5.25), (8.75, 10.15)]:
-        ax.annotate("", xy=(x2, 2.9), xytext=(x1, 2.9), arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3))
-    ax.text(7, 5.2, "Retrieve, then generate. The corpus is the choice.", ha="center", va="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(7, 0.55, "OpenEvidence, UpToDate, and ChatGPT-with-search are different corpora", ha="center", va="center", fontsize=11, color=MUTED)
+        ax.annotate("", xy=(x2, 3.1), xytext=(x1, 3.1), arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3))
+    ax.text(
+        7,
+        5.45,
+        "RAG = retrieval-augmented generation",
+        ha="center",
+        va="center",
+        fontsize=15,
+        fontweight="bold",
+        color=BLUE,
+    )
+    ax.text(
+        7,
+        0.95,
+        "Gemini Notebook is the retrieve-then-generate tool most of you already have.",
+        ha="center",
+        va="center",
+        fontsize=14,
+        color=INK,
+    )
+    ax.text(
+        7,
+        0.45,
+        "OpenEvidence and UpToDate are other corpora. The source still has to be opened.",
+        ha="center",
+        va="center",
+        fontsize=12,
+        color=MUTED,
+    )
     save(fig, "rag")
 
 
@@ -512,16 +539,6 @@ def fig_hallucinations():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.6)
     ax.axis("off")
-    ax.text(
-        7,
-        6.25,
-        "Hallucinations changed shape. They are still here.",
-        ha="center",
-        va="center",
-        fontsize=16,
-        fontweight="bold",
-        color=BLUE,
-    )
     cards = [
         (
             0.4,
@@ -571,45 +588,43 @@ def fig_ttc():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7.1, 6.12, "What they call reasoning", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     ax.text(
         7.1,
-        5.55,
-        "The model spends tokens thinking before it answers.\nNot a pediatrician. A loop with a check.",
+        5.75,
+        "The model spends tokens trying an answer, testing it, and revising before it speaks.",
         ha="center",
-        fontsize=14,
+        fontsize=13,
         color=INK,
-        linespacing=1.25,
     )
-    rounded(ax, 0.4, 0.68, 6.3, 4.28, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.5, 0.68, 6.3, 4.28, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.55, 4.42, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.55, 3.98, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
+    rounded(ax, 0.4, 0.68, 6.3, 4.35, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.5, 0.68, 6.3, 4.35, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.55, 4.48, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(3.55, 4.02, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
     ax.text(3.55, 3.22, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
     ax.text(
         3.55,
         2.05,
-        "50 kg → 500 mg.\nNo cap. No test.",
+        "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
         ha="center",
-        fontsize=15,
+        fontsize=14,
         color=INK,
         linespacing=1.35,
     )
-    ax.text(10.65, 4.42, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.65, 3.98, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
+    ax.text(10.65, 4.48, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.65, 4.02, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
     ax.text(
         10.65,
         2.25,
-        "Write 500.\nTest the cap.\nKeep 400.\nThen speak.",
+        "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
         ha="center",
-        fontsize=15,
+        fontsize=14,
         color=INK,
         linespacing=1.35,
     )
     ax.text(
         7.1,
         0.28,
-        "A formula you can fail is the checker — that is why coding came first. o1 (Sep 2024) sold thinking time as the product.",
+        "A dose rule you can fail is the checker — that is why coding came first. o1 (Sep 2024) sold thinking time as the product.",
         ha="center",
         fontsize=12,
         color=INK,
@@ -623,7 +638,6 @@ def fig_harness():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.12, "A chatbot returns paragraphs. A harness returns files.", ha="center", fontsize=16, fontweight="bold", color=BLUE)
 
     # Chatbot row — a dead end
     rounded(ax, 0.28, 4.42, 2.15, 0.82, MUTED, r=0.08)
@@ -701,7 +715,6 @@ def fig_bench():
     )
     ax.text(7.4, 2.15, "No single key", ha="center", fontsize=12, color=MUTED)
     ax.text(7.4, 1.78, "This child, tonight", ha="center", fontsize=11, color=MUTED)
-    ax.text(5, 5.55, "The exam and the ward", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     ax.text(
         5,
         0.85,
@@ -738,8 +751,7 @@ def fig_hardware():
     ax.set_xlim(0, 36)
     ax.axvline(16, color=ORANGE, ls="--", lw=1.4)
     ax.text(16.3, 3.45, "many laptops stop here", color=ORANGE, fontsize=10, va="center")
-    ax.set_position([0.22, 0.14, 0.72, 0.68])
-    fig.text(0.5, 0.93, "Local models: hardware honesty", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.set_position([0.22, 0.14, 0.72, 0.72])
     save(fig, "hardware", tight=False)
 
 
@@ -755,8 +767,7 @@ def fig_aap_places():
     ax.set_ylabel("% of respondents")
     for i, v in enumerate(vals):
         ax.text(i, v + 2.5, f"{v}%", ha="center", fontsize=14, fontweight="bold")
-    ax.set_position([0.10, 0.18, 0.82, 0.62])
-    fig.text(0.5, 0.93, "US pediatricians and AI, 2025", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.set_position([0.10, 0.18, 0.82, 0.68])
     fig.text(
         0.5,
         0.05,
@@ -770,25 +781,70 @@ def fig_aap_places():
 
 # --- 16. Artsi evidence ---
 def fig_artsi():
-    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    fig, ax = plt.subplots(figsize=(14.2, 6.4))
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 6)
+    ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 5.55, "OpenEvidence independent evidence  ·  Artsi et al. 2026", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    ax.text(3.5, 3.35, "11", ha="center", va="center", fontsize=110, fontweight="bold", color=TEAL)
-    ax.text(3.5, 1.45, "independent studies", ha="center", va="center", fontsize=16, color=INK)
-    ax.text(10.5, 3.35, "0", ha="center", va="center", fontsize=110, fontweight="bold", color=ORANGE)
-    ax.text(10.5, 1.45, "synthesized as pediatric", ha="center", va="center", fontsize=16, color=INK)
-    ax.text(7, 0.62, "Search assistant, not pediatric guideline.", ha="center", fontsize=16, fontweight="bold", color=INK)
-    ax.text(7, 0.22, "PROSPERO CRD420261289103  ·  npj Digit Med doi:10.1038/s41746-026-03077-4", ha="center", fontsize=10, color=MUTED)
+    ax.text(3.5, 5.35, "11", ha="center", va="center", fontsize=72, fontweight="bold", color=TEAL)
+    ax.text(
+        3.5,
+        4.28,
+        "independent studies\nof OpenEvidence",
+        ha="center",
+        va="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(10.5, 5.35, "0", ha="center", va="center", fontsize=72, fontweight="bold", color=ORANGE)
+    ax.text(
+        10.5,
+        4.28,
+        "of those 11 synthesized\nas pediatric",
+        ha="center",
+        va="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.3,
+    )
+    rounded(ax, 0.4, 0.72, 6.4, 2.55, WHITE, TEAL, lw=2.5, r=0.1)
+    rounded(ax, 7.2, 0.72, 6.4, 2.55, WHITE, ORANGE, lw=2.5, r=0.1)
+    ax.text(3.6, 2.88, "Appropriate use in that review", ha="center", fontsize=13, fontweight="bold", color=TEAL)
+    ax.text(
+        3.6,
+        1.75,
+        "Guideline-style look-up.\nOften reinforces a plan you already had.",
+        ha="center",
+        fontsize=13,
+        color=INK,
+        linespacing=1.4,
+    )
+    ax.text(10.4, 2.88, "Not the use case they found", ha="center", fontsize=13, fontweight="bold", color=ORANGE)
+    ax.text(
+        10.4,
+        1.75,
+        "Complex cases, or changing the plan.\nActing without opening the source.",
+        ha="center",
+        fontsize=13,
+        color=INK,
+        linespacing=1.4,
+    )
+    ax.text(
+        7,
+        0.28,
+        "Artsi et al. 2026  ·  npj Digit Med  ·  PROSPERO CRD420261289103",
+        ha="center",
+        fontsize=11,
+        color=MUTED,
+    )
     save(fig, "artsi_eleven")
 
 
 # --- 17. Hajj counterexample ---
 def fig_hajj():
-    fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    fig, ax = plt.subplots(figsize=(14.2, 6.15))
     fig.set_tight_layout(False)
-    ax.set_position([0.10, 0.16, 0.48, 0.62])
+    ax.set_position([0.09, 0.24, 0.44, 0.60])
     labs = ["ChatGPT-4o", "OpenEvidence"]
     vals = [66.7, 26.7]
     ax.bar(labs, vals, color=[ORANGE, TEAL], width=0.42)
@@ -796,22 +852,48 @@ def fig_hajj():
     ax.set_ylabel("% fully accurate (study-defined)")
     ax.set_xlim(-0.7, 1.7)
     for i, v in enumerate(vals):
-        ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=16, fontweight="bold")
-    fig.text(0.5, 0.93, "A citation is not proof of correctness", ha="center", fontsize=18, fontweight="bold", color=BLUE)
-    fig.text(0.78, 0.62, "n = 15", ha="center", fontsize=42, fontweight="bold", color=ORANGE)
+        ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=15, fontweight="bold")
+    rx = 0.78
     fig.text(
-        0.78,
-        0.42,
-        "adult transcatheter\ntricuspid questions",
+        rx,
+        0.80,
+        "What the bars show",
         ha="center",
-        fontsize=14,
+        fontsize=15,
+        fontweight="bold",
+        color=INK,
+    )
+    fig.text(
+        rx,
+        0.68,
+        "Same 15 questions about adult\ntranscatheter tricuspid therapy.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+        linespacing=1.35,
+    )
+    fig.text(
+        rx,
+        0.50,
+        "Height is the share scored fully\naccurate by the study’s own rule.\nChatGPT-4o: 10 of 15 (66.7%).\nOpenEvidence: 4 of 15 (26.7%).",
+        ha="center",
+        fontsize=12,
+        color=INK,
+        linespacing=1.35,
+    )
+    fig.text(
+        rx,
+        0.30,
+        "OpenEvidence still cited papers.\nThose citations did not make\nthe answers correct.",
+        ha="center",
+        fontsize=12,
         color=INK,
         linespacing=1.35,
     )
     fig.text(
         0.5,
-        0.05,
-        "Hajj et al. as reported in Artsi 2026. Do not read this as a pediatric result.",
+        0.07,
+        "Hajj et al., as reported in Artsi 2026. n = 15 is the whole sample. Adult cardiology — not a pediatric result.",
         ha="center",
         fontsize=11,
         color=MUTED,
@@ -906,7 +988,6 @@ def fig_policy():
                 fontsize=10,
                 color=INK,
             )
-    ax.text(5.0, 6.10, "2026 statements with a public citation", ha="center", fontsize=17, fontweight="bold", color=BLUE)
     save(fig, "policy_2026", tight=False)
 
 
@@ -927,7 +1008,6 @@ def fig_hipaa():
         rounded(ax, 0.5, y, 13.1, 1.0, c, r=0.08)
         ax.text(0.9, y + 0.52, t, va="center", fontsize=15, fontweight="bold", color=WHITE if c != GOLD else INK)
         ax.text(13.2, y + 0.52, s, va="center", ha="right", fontsize=12, color=WHITE if c != GOLD else INK)
-    ax.text(7, 5.5, "Where the prompt goes", ha="center", fontsize=16, fontweight="bold", color=BLUE)
     save(fig, "hipaa")
 
 
@@ -949,11 +1029,10 @@ def fig_scale():
     ax.set_ylabel("Total parameters (trillions, log scale)")
     ax.set_yscale("log")
     ax.tick_params(axis="x", labelsize=10)
-    ax.set_position([0.10, 0.22, 0.82, 0.56])
-    fig.text(0.5, 0.92, "Size exploded.", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.set_position([0.10, 0.22, 0.82, 0.62])
     fig.text(
         0.5,
-        0.86,
+        0.90,
         "Active parameters and distillation matter more than a headline count in the trillions.",
         ha="center",
         fontsize=12,
@@ -1062,7 +1141,6 @@ def fig_takehomes():
             ha="center",
             linespacing=1.35,
         )
-    ax.text(7.1, 5.8, "Six things to leave with", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     save(fig, "takehomes")
 
 
@@ -1087,7 +1165,6 @@ def fig_three_eras():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 5.4)
     ax.axis("off")
-    ax.text(7.1, 5.05, "Three eras", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     eras = [
         (0.4, BLUE, "1", "Autocomplete", "Finishes the next\nword or line."),
         (4.95, PURPLE, "2", "Chat", "Holds a conversation.\nStill next-token."),
@@ -1102,18 +1179,95 @@ def fig_three_eras():
 
 
 def fig_settled():
-    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    fig, ax = plt.subplots(figsize=(14.2, 6.55))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.0)
+    ax.set_ylim(0, 6.55)
     ax.axis("off")
-    ax.text(7.1, 5.6, "Settled / unsettled", ha="center", fontsize=18, fontweight="bold", color=BLUE)
-    ax.text(13.7, 5.55, "as of August 2026", ha="right", fontsize=12, color=MUTED, fontstyle="italic")
-    rounded(ax, 0.4, 0.5, 6.4, 4.55, WHITE, TEAL, lw=3, r=0.1)
-    rounded(ax, 7.4, 0.5, 6.4, 4.55, WHITE, ORANGE, lw=3, r=0.1)
-    ax.text(3.6, 4.4, "Settled", ha="center", fontsize=24, fontweight="bold", color=TEAL)
-    ax.text(3.6, 2.45, "Humans remain\naccountable for\nwhat is written\nand ordered.", ha="center", fontsize=17, color=INK, linespacing=1.4)
-    ax.text(10.6, 4.4, "Unsettled", ha="center", fontsize=24, fontweight="bold", color=ORANGE)
-    ax.text(10.6, 2.55, "Transparency is\nincreasing.\nPediatric-specific\npolicy is incomplete.", ha="center", fontsize=17, color=INK, linespacing=1.4)
+    ax.text(13.85, 6.32, "as of August 2026", ha="right", fontsize=11, color=MUTED, fontstyle="italic")
+    rounded(ax, 0.28, 0.48, 6.72, 5.58, WHITE, TEAL, lw=3, r=0.1)
+    rounded(ax, 7.20, 0.48, 6.72, 5.58, WHITE, ORANGE, lw=3, r=0.1)
+    ax.text(3.64, 5.68, "Settled", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(3.64, 5.28, "These already bind you.", ha="center", va="center", fontsize=12, color=MUTED)
+    ax.text(10.56, 5.68, "Unsettled", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(10.56, 5.28, "Still open for this ward.", ha="center", va="center", fontsize=12, color=MUTED)
+
+    left_x = 0.58
+    ax.text(left_x, 4.78, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(
+        left_x,
+        4.42,
+        "Authors must be humans who can take\nresponsibility. A chatbot cannot be an author.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(left_x, 3.28, "AMA House of Delegates, 10 Jun 2026", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(
+        left_x,
+        2.92,
+        "AI must not replace physician judgment.\nAssistive, with a physician still in charge.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(left_x, 1.78, "Why this is settled", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(
+        left_x,
+        1.42,
+        "Journals and the AMA already named the\nhuman. That is authorship and judgment,\nnot a pediatric protocol.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+
+    right_x = 7.50
+    ax.text(right_x, 4.78, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(
+        right_x,
+        4.42,
+        "A dedicated clinical AI statement is still\nforthcoming. Do not invent one.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(right_x, 3.42, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(
+        right_x,
+        3.06,
+        "Still asking how to test open-ended\ngenerative tools. Not a cleared playbook.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(right_x, 2.06, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(
+        right_x,
+        1.70,
+        "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies; none\nsynthesized as pediatric.",
+        ha="left",
+        va="top",
+        fontsize=13,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(
+        7.1,
+        0.22,
+        "This is authorship and professional rule, not a pediatric protocol. Dated list in backup.",
+        ha="center",
+        fontsize=11,
+        color=MUTED,
+    )
     save(fig, "settled")
 
 
@@ -1122,7 +1276,6 @@ def fig_poll_open():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.2)
     ax.axis("off")
-    ax.text(7.1, 5.85, "Hands up", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     cards = [
         (0.4, 3.05, BLUE, "1", "Used AI at work\nin the last year?"),
         (7.3, 3.05, TEAL, "2", "Used an AI scribe?"),
@@ -1142,7 +1295,6 @@ def fig_two_blocks():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.0)
     ax.axis("off")
-    ax.text(7.1, 5.6, "Two live blocks", ha="center", fontsize=18, fontweight="bold", color=BLUE)
     rounded(ax, 0.4, 0.45, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3, r=0.1)
     rounded(ax, 7.4, 0.45, 6.4, 4.7, WHITE, TEAL, lw=3, r=0.1)
     ax.text(3.6, 4.5, "Make → inspect", ha="center", fontsize=24, fontweight="bold", color=PURPLE_WEB)
@@ -1162,7 +1314,14 @@ def fig_formula_bug():
     rounded(ax, 1.5, 0.45, 11.2, 3.7, WHITE, ORANGE, lw=3, r=0.12)
     ax.text(7.1, 3.45, "Cell C2", ha="center", fontsize=14, color=MUTED)
     ax.text(7.1, 2.25, "=B2*10", ha="center", fontsize=48, fontweight="bold", family="DejaVu Sans Mono", color=INK)
-    ax.text(7.1, 1.05, "Weight in B2. Ten milligrams per kilogram. No cap.", ha="center", fontsize=15, color=INK)
+    ax.text(
+        7.1,
+        1.05,
+        "Weight in B2. Ten milligrams per kilogram. No 400 mg maximum.",
+        ha="center",
+        fontsize=15,
+        color=INK,
+    )
     save(fig, "formula_bug")
 
 

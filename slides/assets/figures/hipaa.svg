@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-26T03:33:46.874919</dc:date>
+    <dc:date>2026-08-27T17:26:54.016334</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 38.5326 35.41536 38.5326 38.07648
 L 38.5326 88.85952 
 Q 38.5326 91.52064 43.060371 91.52064 
 z
-" clip-path="url(#p71ca85f1b5)" style="fill: #ff4d00; stroke: #ff4d00; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p7b84bb4731)" style="fill: #ff4d00; stroke: #ff4d00; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 43.060371 155.27664 
@@ -53,7 +53,7 @@ Q 38.5326 99.17136 38.5326 101.83248
 L 38.5326 152.61552 
 Q 38.5326 155.27664 43.060371 155.27664 
 z
-" clip-path="url(#p71ca85f1b5)" style="fill: #ffb71b; stroke: #ffb71b; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p7b84bb4731)" style="fill: #ffb71b; stroke: #ffb71b; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 43.060371 219.03264 
@@ -66,7 +66,7 @@ Q 38.5326 162.92736 38.5326 165.58848
 L 38.5326 216.37152 
 Q 38.5326 219.03264 43.060371 219.03264 
 z
-" clip-path="url(#p71ca85f1b5)" style="fill: #00c4b3; stroke: #00c4b3; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p7b84bb4731)" style="fill: #00c4b3; stroke: #00c4b3; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 43.060371 282.78864 
@@ -79,7 +79,7 @@ Q 38.5326 226.68336 38.5326 229.34448
 L 38.5326 280.12752 
 Q 38.5326 282.78864 43.060371 282.78864 
 z
-" clip-path="url(#p71ca85f1b5)" style="fill: #003da6; stroke: #003da6; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p7b84bb4731)" style="fill: #003da6; stroke: #003da6; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Consumer ChatGPT / Claude / Gemini -->
@@ -1609,54 +1609,10 @@ z
      <use xlink:href="#DejaVuSans-4b" transform="translate(1045.8125 0)"/>
     </g>
    </g>
-   <g id="text_9">
-    <!-- Where the prompt goes -->
-    <g style="fill: #003da6" transform="translate(299.9 27.432) scale(0.16 -0.16)">
-     <defs>
-      <path id="DejaVuSans-Bold-3a" d="M 191 4666 
-L 1344 4666 
-L 2150 1275 
-L 2950 4666 
-L 4109 4666 
-L 4909 1275 
-L 5716 4666 
-L 6859 4666 
-L 5759 0 
-L 4372 0 
-L 3525 3547 
-L 2688 0 
-L 1300 0 
-L 191 4666 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#DejaVuSans-Bold-3a"/>
-     <use xlink:href="#DejaVuSans-Bold-4b" transform="translate(110.296875 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-48" transform="translate(181.484375 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-55" transform="translate(249.3125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-48" transform="translate(298.625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-3" transform="translate(366.453125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-57" transform="translate(401.265625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-4b" transform="translate(449.0625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-48" transform="translate(520.25 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-3" transform="translate(588.078125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-53" transform="translate(622.890625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-55" transform="translate(694.46875 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-52" transform="translate(743.78125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-50" transform="translate(812.484375 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-53" transform="translate(916.6875 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-57" transform="translate(988.265625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-3" transform="translate(1036.0625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-4a" transform="translate(1070.875 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-52" transform="translate(1142.453125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-48" transform="translate(1211.15625 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-56" transform="translate(1278.984375 0)"/>
-    </g>
-   </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p71ca85f1b5">
+  <clipPath id="p7b84bb4731">
    <rect x="10.8" y="10.8" width="792.36" height="321.552"/>
   </clipPath>
  </defs>
