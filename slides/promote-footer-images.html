@@ -1,0 +1,13 @@
+<script>
+(function () {
+  function promoteFooterImages() {
+    document.querySelectorAll(".footer img[data-src]").forEach(function (img) {
+      if (!img.getAttribute("src")) {
+        img.setAttribute("src", img.getAttribute("data-src"));
+      }
+    });
+  }
+  promoteFooterImages();
+  document.addEventListener("DOMContentLoaded", promoteFooterImages);
+})();
+</script>
