@@ -255,28 +255,6 @@ $presentation-h2-font-size: 1.35em;
   background: $mclane-gold;
 }
 
-/* McLane train-car rail */
-.reveal .slides section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 7px;
-  background: linear-gradient(
-    90deg,
-    $mclane-blue 0%,
-    $mclane-teal 22%,
-    $mclane-purple 48%,
-    $mclane-orange 74%,
-    $mclane-gold 100%
-  );
-}
-
-.reveal .title-slide::after {
-  height: 10px;
-}
-
 .reveal .title-slide h1 {
   color: #fff;
   font-size: 2.15em;
