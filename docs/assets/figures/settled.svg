@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:17:02.862699</dc:date>
+    <dc:date>2026-08-27T20:50:13.719824</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,30 +30,30 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 31.446 270.999878 
-L 396.378 270.999878 
-Q 401.958 270.999878 401.958 267.673478 
-L 401.958 108.742522 
-Q 401.958 105.416122 396.378 105.416122 
-L 31.446 105.416122 
-Q 25.866 105.416122 25.866 108.742522 
-L 25.866 267.673478 
-Q 25.866 270.999878 31.446 270.999878 
+    <path d="M 31.446 280.979078 
+L 396.378 280.979078 
+Q 401.958 280.979078 401.958 277.652678 
+L 401.958 98.763322 
+Q 401.958 95.436922 396.378 95.436922 
+L 31.446 95.436922 
+Q 25.866 95.436922 25.866 98.763322 
+L 25.866 277.652678 
+Q 25.866 280.979078 31.446 280.979078 
 z
-" clip-path="url(#p6eedfcf594)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p89836782f5)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 417.582 270.999878 
-L 782.514 270.999878 
-Q 788.094 270.999878 788.094 267.673478 
-L 788.094 108.742522 
-Q 788.094 105.416122 782.514 105.416122 
-L 417.582 105.416122 
-Q 412.002 105.416122 412.002 108.742522 
-L 412.002 267.673478 
-Q 412.002 270.999878 417.582 270.999878 
+    <path d="M 417.582 280.979078 
+L 782.514 280.979078 
+Q 788.094 280.979078 788.094 277.652678 
+L 788.094 98.763322 
+Q 788.094 95.436922 782.514 95.436922 
+L 417.582 95.436922 
+Q 412.002 95.436922 412.002 98.763322 
+L 412.002 277.652678 
+Q 412.002 280.979078 417.582 280.979078 
 z
-" clip-path="url(#p6eedfcf594)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p89836782f5)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- as of August 2026 -->
@@ -385,7 +385,7 @@ z
    </g>
    <g id="text_2">
     <!-- Already in writing -->
-    <g style="fill: #00c4b3" transform="translate(123.103406 124.061804) scale(0.18 -0.18)">
+    <g style="fill: #00c4b3" transform="translate(123.103406 117.409004) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-24" d="M 3419 850 
 L 1538 850 
@@ -658,7 +658,7 @@ z
    </g>
    <g id="text_3">
     <!-- ICMJE Recommendations, Jan 2026  ·  COPE, 2023 -->
-    <g style="fill: #00c4b3" transform="translate(43.164 138.930963) scale(0.11 -0.11)">
+    <g style="fill: #00c4b3" transform="translate(43.164 134.495763) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-2c" d="M 628 4666 
 L 1259 4666 
@@ -1217,7 +1217,7 @@ z
    </g>
    <g id="text_4">
     <!-- Authors have to be humans who can take -->
-    <g style="fill: #281241" transform="translate(43.164 156.043497) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 153.825897) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-24" d="M 2188 4044 
 L 1331 1722 
@@ -1400,7 +1400,7 @@ z
      <use xlink:href="#DejaVuSans-48" transform="translate(2023.71875 0)"/>
     </g>
     <!-- responsibility. A chatbot cannot be an author. -->
-    <g style="fill: #281241" transform="translate(43.164 170.124122) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 167.906522) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-53" d="M 1159 525 
 L 1159 -1331 
@@ -1655,7 +1655,7 @@ z
    </g>
    <g id="text_6">
     <!-- AI must not replace physician judgment. -->
-    <g style="fill: #281241" transform="translate(43.164 200.812628) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 203.030228) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-4d" d="M 603 3500 
 L 1178 3500 
@@ -1718,7 +1718,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(1995.140625 0)"/>
     </g>
     <!-- A physician stays in charge. -->
-    <g style="fill: #281241" transform="translate(43.164 216.152627) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 218.370227) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-24"/>
      <use xlink:href="#DejaVuSans-3" transform="translate(68.40625 0)"/>
      <use xlink:href="#DejaVuSans-53" transform="translate(100.1875 0)"/>
@@ -1751,7 +1751,7 @@ z
    </g>
    <g id="text_7">
     <!-- What that means for you -->
-    <g style="fill: #00c4b3" transform="translate(43.164 230.945005) scale(0.11 -0.11)">
+    <g style="fill: #00c4b3" transform="translate(43.164 235.380205) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-3a" d="M 213 4666 
 L 850 4666 
@@ -1797,7 +1797,7 @@ z
    </g>
    <g id="text_8">
     <!-- You remain the author. You remain -->
-    <g style="fill: #281241" transform="translate(43.164 248.100508) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 254.753308) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-3c" d="M -13 4666 
 L 666 4666 
@@ -1847,7 +1847,7 @@ z
      <use xlink:href="#DejaVuSans-51" transform="translate(1657.0625 0)"/>
     </g>
     <!-- the one making the call. -->
-    <g style="fill: #281241" transform="translate(43.164 262.181133) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(43.164 268.833933) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-57"/>
      <use xlink:href="#DejaVuSans-4b" transform="translate(39.203125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(102.578125 0)"/>
@@ -1876,7 +1876,7 @@ z
    </g>
    <g id="text_9">
     <!-- Still missing in pediatrics -->
-    <g style="fill: #ff4d00" transform="translate(471.342375 124.061804) scale(0.18 -0.18)">
+    <g style="fill: #ff4d00" transform="translate(471.342375 117.409004) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-36" d="M 3834 4519 
 L 3834 3531 
@@ -2051,7 +2051,7 @@ z
    </g>
    <g id="text_10">
     <!-- AAP, Jan 2026 (digital-ecosystems policy) -->
-    <g style="fill: #ff4d00" transform="translate(429.3 138.887994) scale(0.11 -0.11)">
+    <g style="fill: #ff4d00" transform="translate(429.3 134.452794) scale(0.11 -0.11)">
      <defs>
       <path id="DejaVuSans-b" d="M 1984 4856 
 Q 1566 4138 1362 3434 
@@ -2132,7 +2132,7 @@ z
    </g>
    <g id="text_11">
     <!-- A dedicated clinical AI statement is still forthcoming. -->
-    <g style="fill: #281241" transform="translate(429.3 154.784122) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 152.566522) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-24"/>
      <use xlink:href="#DejaVuSans-3" transform="translate(68.40625 0)"/>
      <use xlink:href="#DejaVuSans-47" transform="translate(100.1875 0)"/>
@@ -2190,7 +2190,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(2608.9375 0)"/>
     </g>
     <!-- There is no AAP bedside AI policy to follow yet. -->
-    <g style="fill: #281241" transform="translate(429.3 170.124122) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 167.906522) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-37" d="M -19 4666 
 L 3928 4666 
@@ -2308,7 +2308,7 @@ z
    </g>
    <g id="text_13">
     <!-- The FDA is still asking how to test -->
-    <g style="fill: #281241" transform="translate(429.3 200.812628) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 203.030228) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-37"/>
      <use xlink:href="#DejaVuSans-4b" transform="translate(61.078125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(124.453125 0)"/>
@@ -2346,7 +2346,7 @@ z
      <use xlink:href="#DejaVuSans-57" transform="translate(1649.625 0)"/>
     </g>
     <!-- chatbot-style tools. -->
-    <g style="fill: #281241" transform="translate(429.3 216.152627) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 218.370227) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-46"/>
      <use xlink:href="#DejaVuSans-4b" transform="translate(54.984375 0)"/>
      <use xlink:href="#DejaVuSans-44" transform="translate(118.359375 0)"/>
@@ -2371,7 +2371,7 @@ z
    </g>
    <g id="text_14">
     <!-- Independent literature -->
-    <g style="fill: #ff4d00" transform="translate(429.3 230.945005) scale(0.11 -0.11)">
+    <g style="fill: #ff4d00" transform="translate(429.3 235.380205) scale(0.11 -0.11)">
      <use xlink:href="#DejaVuSans-2c"/>
      <use xlink:href="#DejaVuSans-51" transform="translate(29.5 0)"/>
      <use xlink:href="#DejaVuSans-47" transform="translate(92.875 0)"/>
@@ -2398,7 +2398,7 @@ z
    </g>
    <g id="text_15">
     <!-- Pediatric-specific evidence is thin. -->
-    <g style="fill: #281241" transform="translate(429.3 246.841133) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 253.493933) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-13af" d="M 3431 3500 
 L 3431 0 
@@ -2467,7 +2467,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(1670.171875 0)"/>
     </g>
     <!-- Artsi: 11 OpenEvidence studies, none pediatric. -->
-    <g style="fill: #281241" transform="translate(429.3 262.181133) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(429.3 268.833933) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-1d" d="M 750 794 
 L 1409 794 
@@ -2535,7 +2535,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6eedfcf594">
+  <clipPath id="p89836782f5">
    <rect x="10.8" y="10.8" width="792.36" height="343.728"/>
   </clipPath>
  </defs>
