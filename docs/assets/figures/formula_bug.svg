@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T17:26:55.047994</dc:date>
+    <dc:date>2026-08-27T19:41:15.129107</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,11 +40,11 @@ Q 93.942 35.41536 93.942 39.40704
 L 93.942 237.21696 
 Q 93.942 241.20864 100.638 241.20864 
 z
-" clip-path="url(#p566f54af2c)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p50d414cceb)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Cell C2 -->
-    <g style="fill: #586f78" transform="translate(382.329063 74.556) scale(0.14 -0.14)">
+    <g style="fill: #586f78" transform="translate(382.329063 86.871141) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-26" d="M 4122 4306 
 L 4122 3641 
@@ -136,7 +136,7 @@ z
    </g>
    <g id="text_2">
     <!-- =B2*10 -->
-    <g style="fill: #281241" transform="translate(320.2875 141.084) scale(0.48 -0.48)">
+    <g style="fill: #281241" transform="translate(320.2875 153.827881) scale(0.48 -0.48)">
      <defs>
       <path id="DejaVuSansMono-Bold-20" d="M 275 1663 
 L 3578 1663 
@@ -284,7 +284,7 @@ z
    </g>
    <g id="text_3">
     <!-- Weight in B2. Ten milligrams per kilogram. No 400 mg maximum. -->
-    <g style="fill: #281241" transform="translate(161.466328 207.612) scale(0.15 -0.15)">
+    <g style="fill: #281241" transform="translate(161.466328 198.541928) scale(0.15 -0.15)">
      <defs>
       <path id="DejaVuSans-3a" d="M 213 4666 
 L 850 4666 
@@ -787,7 +787,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p566f54af2c">
+  <clipPath id="p50d414cceb">
    <rect x="10.8" y="10.8" width="792.36" height="255.024"/>
   </clipPath>
  </defs>
