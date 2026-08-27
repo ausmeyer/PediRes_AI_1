@@ -12,7 +12,7 @@ Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only. Residents use t
 | Cursor logged in, agent mode working, **two** empty folders | Live Lab 1 and Lab 2 |
 | `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/lab1_fallback.py`](workshops/lab1_fallback.py) / [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) |
 | Chrome windows already logged in: consumer ChatGPT (personal), Gemini Notebook with **public** PDFs uploaded, OpenEvidence if your NPI works, **PubMed** | Live Labs 3 and 4 |
-| Frozen `docs/index.html` (self-contained) + PDF print on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
+| Frozen `docs/` folder (or `./render.sh --self-contained`) + PDF print on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
 | Printed `SYNTHETIC TEACHING CASE` tent card | Stops a well-meaning resident from offering a real H&P |
 
 **Nice, not blocking**
