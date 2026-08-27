@@ -584,37 +584,30 @@ def fig_hallucinations():
 
 # --- 11. Test-time compute: what vendors call reasoning ---
 def fig_ttc():
-    fig, ax = plt.subplots(figsize=(14.2, 6.4))
+    fig, ax = plt.subplots(figsize=(14.2, 6.15))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.4)
+    ax.set_ylim(0, 6.15)
     ax.axis("off")
-    ax.text(
-        7.1,
-        5.75,
-        "The model spends tokens trying an answer, testing it, and revising before it speaks.",
-        ha="center",
-        fontsize=13,
-        color=INK,
-    )
-    rounded(ax, 0.4, 0.68, 6.3, 4.35, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.5, 0.68, 6.3, 4.35, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.55, 4.48, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.55, 4.02, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
-    ax.text(3.55, 3.22, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
+    # Leave a caption band under the boxes so the check sentence cannot sit on the border.
+    rounded(ax, 0.4, 1.12, 6.3, 4.72, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.5, 1.12, 6.3, 4.72, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.55, 5.22, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(3.55, 4.72, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
+    ax.text(3.55, 3.72, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
     ax.text(
         3.55,
-        2.05,
+        2.52,
         "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
         ha="center",
         fontsize=14,
         color=INK,
         linespacing=1.35,
     )
-    ax.text(10.65, 4.48, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.65, 4.02, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
+    ax.text(10.65, 5.22, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.65, 4.72, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
     ax.text(
         10.65,
-        2.25,
+        2.78,
         "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
         ha="center",
         fontsize=14,
@@ -623,12 +616,12 @@ def fig_ttc():
     )
     ax.text(
         7.1,
-        0.32,
-        "A first guess of 500 mg fails the 400 mg maximum, so the model revises.\nCoding tests had a check like that first.",
+        0.48,
+        "The 400 mg maximum is the check. 500 mg fails it, so the model revises to 400 mg.",
         ha="center",
-        fontsize=12,
+        va="center",
+        fontsize=13,
         color=MUTED,
-        linespacing=1.3,
     )
     save(fig, "test_time_compute")
 
@@ -724,7 +717,7 @@ def fig_bench():
     ax.text(
         5,
         0.78,
-        "The context of a specific patient, in a specific hospital, with a specific set of\npreferences and limitations, will likely always be a challenging application for models.",
+        "The context of a specific patient, in a specific hospital, and with a specific set of\npreferences and limitations, will likely always be a challenging application for models.",
         ha="center",
         fontsize=12,
         color=INK,
@@ -1200,16 +1193,16 @@ def fig_settled():
     ax.set_ylim(0, 6.55)
     ax.axis("off")
     ax.text(13.85, 6.32, "as of August 2026", ha="right", fontsize=11, color=MUTED, fontstyle="italic")
-    rounded(ax, 0.28, 0.22, 6.72, 5.84, WHITE, TEAL, lw=3, r=0.1)
-    rounded(ax, 7.20, 0.22, 6.72, 5.84, WHITE, ORANGE, lw=3, r=0.1)
-    ax.text(3.64, 5.62, "Already in writing", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.56, 5.62, "Still missing in pediatrics", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
+    rounded(ax, 0.28, 0.18, 6.72, 5.90, WHITE, TEAL, lw=3, r=0.1)
+    rounded(ax, 7.20, 0.18, 6.72, 5.90, WHITE, ORANGE, lw=3, r=0.1)
+    ax.text(3.64, 5.68, "Already in writing", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.56, 5.68, "Still missing in pediatrics", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
 
     left_x = 0.58
-    ax.text(left_x, 5.05, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(left_x, 5.18, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        4.62,
+        4.78,
         "Authors have to be humans who can take\nresponsibility. A chatbot cannot be an author.",
         ha="left",
         va="top",
@@ -1217,10 +1210,10 @@ def fig_settled():
         color=INK,
         linespacing=1.3,
     )
-    ax.text(left_x, 3.48, "AMA House of Delegates, 10 Jun 2026", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(left_x, 3.78, "AMA House of Delegates, 10 Jun 2026", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        3.05,
+        3.38,
         "AI must not replace physician judgment.\nA physician stays in charge.",
         ha="left",
         va="top",
@@ -1228,10 +1221,10 @@ def fig_settled():
         color=INK,
         linespacing=1.3,
     )
-    ax.text(left_x, 2.18, "What that means for you", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(left_x, 2.38, "What that means for you", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        1.75,
+        1.98,
         "You remain the author. You remain\nthe one making the call.",
         ha="left",
         va="top",
@@ -1241,21 +1234,21 @@ def fig_settled():
     )
 
     right_x = 7.50
-    ax.text(right_x, 5.05, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 5.18, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        4.62,
-        "A dedicated clinical AI statement is still\nforthcoming. There is no AAP bedside AI\npolicy to follow yet.",
+        4.78,
+        "A dedicated clinical AI statement is still forthcoming.\nThere is no AAP bedside AI policy to follow yet.",
         ha="left",
         va="top",
         fontsize=13,
         color=INK,
         linespacing=1.3,
     )
-    ax.text(right_x, 3.48, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 3.78, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        3.05,
+        3.38,
         "The FDA is still asking how to test\nchatbot-style tools.",
         ha="left",
         va="top",
@@ -1263,11 +1256,11 @@ def fig_settled():
         color=INK,
         linespacing=1.3,
     )
-    ax.text(right_x, 2.18, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 2.38, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        1.75,
-        "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies; none\nsynthesized as pediatric.",
+        1.98,
+        "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies, none pediatric.",
         ha="left",
         va="top",
         fontsize=13,
