@@ -1057,9 +1057,9 @@ def fig_context_age():
     ax.text(7.1, 4.95, "Same number. Different child. Context is the age.", ha="center", fontsize=15, color=INK)
     rounded(ax, 0.45, 0.55, 6.3, 4.05, WHITE, ORANGE, lw=3, r=0.1)
     rounded(ax, 7.45, 0.55, 6.3, 4.05, WHITE, BLUE, lw=3, r=0.1)
-    ax.text(3.6, 3.95, "8-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
+    ax.text(3.6, 3.95, "3-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
     ax.text(3.6, 2.35, "Fever workup.\nHours, not days.\nThe number is a trigger.", ha="center", fontsize=16, color=INK, linespacing=1.4)
-    ax.text(10.6, 3.95, "8-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
+    ax.text(10.6, 3.95, "3-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
     ax.text(10.6, 2.35, "Often watch and treat.\nSame temperature.\nDifferent meaning.", ha="center", fontsize=16, color=INK, linespacing=1.4)
     save(fig, "context_age")
 
