@@ -842,33 +842,37 @@ def fig_bench():
     ]
     pad = 0.14
     y_mid = 3.85
-    white_card(ax, 0.40, 4.35, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
-    white_card(ax, 5.25, 4.35, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
+    left_box = white_card(ax, 0.40, 4.35, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
+    right_box = white_card(ax, 5.25, 4.35, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
+    diagram_bottom = min(left_box[1], right_box[1])
     ax.text(
-        5,
-        1.55,
-        "The exam is comparable across models, and many of the exam questions\nare in the training data.",
-        ha="center",
-        fontsize=12,
-        color=INK,
-        linespacing=1.3,
-    )
-    ax.text(
-        5,
-        0.82,
-        "The context of a specific patient, in a specific hospital, and with a specific set of\npreferences and limitations, will likely always be a challenging application for models.",
-        ha="center",
-        fontsize=12,
-        color=INK,
-        linespacing=1.3,
-    )
-    ax.text(
-        5,
-        0.25,
+        0.40,
+        diagram_bottom - 0.18,
         "FDA 2026 discussion paper: open-ended generative AI is hard to premarket-test",
-        ha="center",
+        ha="left",
+        va="top",
         fontsize=11,
         color=MUTED,
+    )
+    ax.text(
+        0.40,
+        diagram_bottom - 0.52,
+        "The exam is comparable across models, and many of the exam questions\nare in the training data.",
+        ha="left",
+        va="top",
+        fontsize=12,
+        color=INK,
+        linespacing=1.3,
+    )
+    ax.text(
+        0.40,
+        diagram_bottom - 1.12,
+        "The context of a specific patient, in a specific hospital, and with a specific set of\npreferences and limitations, will likely always be a challenging application for models.",
+        ha="left",
+        va="top",
+        fontsize=12,
+        color=INK,
+        linespacing=1.3,
     )
     save(fig, "benchmark_trap")
 
@@ -1330,9 +1334,9 @@ def fig_three_eras():
     ax.set_ylim(0, 4.6)
     ax.axis("off")
     eras = [
-        (0.4, BLUE, "1", "Autocomplete", "Finishes the next\nword or line."),
-        (4.95, PURPLE, "2", "Chat", "Holds a conversation.\nStill next-token."),
-        (9.5, TEAL, "3", "Tools / checking", "Looks things up.\nRuns code. Still wrong."),
+        (0.4, BLUE, "1", "Autocomplete", "Completes the next\nword or line."),
+        (4.95, PURPLE, "2", "Chat", "You ask. It answers\nin a conversation."),
+        (9.5, TEAL, "3", "Tools", "Looks things up.\nRuns a check."),
     ]
     stacks = []
     for x, c, n, title, body in eras:

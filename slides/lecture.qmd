@@ -192,7 +192,7 @@ Old failure: invented PubMed ID. Usual failure now: a real paper with the wrong 
 ![](assets/figures/three_eras.svg){width="100%"}
 
 ::: notes
-The goal is a taxonomy they can keep when the posters change. Autocomplete, chat, and tools. Product names change quickly; these three jobs are what to remember. Tools still look things up and still get it wrong. Full chronology is in backup if someone wants GPT-2 through Fable.
+The goal is a taxonomy they can keep when the posters change. Autocomplete finishes the next word. Chat is a conversation. Tools look things up or run a check. Product names change quickly; these three jobs are what to remember. Full chronology is in backup if someone wants GPT-2 through Fable.
 :::
 
 ---
