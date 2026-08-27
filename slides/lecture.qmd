@@ -501,12 +501,28 @@ What did I verify?
 :::
 ::::
 
+::: notes
+These three checks before they copy. Then thank them and take questions. Do not invent an AAP clinical AI guideline.
+:::
+
+---
+
+## {background-color="#FAF9F7" .title-open .nostretch}
+
+::: {.deck-title}
+The End.
+:::
+
+::: {.title-sub}
+Thank you.
+:::
+
 ::: {.qa-ask}
-Questions
+Questions?
 :::
 
 ::: notes
-Stop here for the live hour. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.
+Stop here for the live hour. Thank them. Take questions. Do not invent an AAP clinical AI guideline. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.
 :::
 
 ---
