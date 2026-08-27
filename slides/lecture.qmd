@@ -1,5 +1,5 @@
 ---
-pagetitle: "A survey of modern AI"
+pagetitle: "AI on the pediatric ward"
 output-file: index.html
 format:
   revealjs:
@@ -27,11 +27,15 @@ format:
 ## {background-color="#FAF9F7" .title-open .nostretch}
 
 ::: {.deck-title}
-A survey of modern AI
+AI on the pediatric ward
+:::
+
+::: {.title-sub}
+What it can do, where it fails, and how to check it.
 :::
 
 ::: {.title-meta}
-Austin G. Meyer, MD, PhD, MS, MPH, MS
+Austin G. Meyer, MD, PhD
 :::
 
 ::: {.title-affil}
@@ -39,7 +43,27 @@ Assistant Professor, Pediatrics
 :::
 
 ::: notes
-One hour, two live labs, a written briefing for everything we skip. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
+Full credential string if someone asks: MD, PhD, MS, MPH, MS. Canvas stays short. One hour. Live work is two blocks, not four separate shows. Take-home Labs 5–8 sit after Q&A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
+:::
+
+---
+
+## Hands up {.viz}
+
+![](assets/figures/poll_open.png){width="100%"}
+
+::: notes
+Do this before you show the national bars. Four show-of-hands: used AI at work in the last year; used an AI scribe; worried if no human checks the output; trust these tools for pediatric care. Then advance.
+:::
+
+---
+
+## They are already using it {.viz}
+
+![](assets/figures/aap_places.png){width="100%"}
+
+::: notes
+PAS 2025. Punchline is 6%. The room just voted. Point at the gap between “I use it” and “I trust it for children.”
 :::
 
 ---
@@ -73,7 +97,17 @@ Do not copy a dose or a citation into a note until you have opened the source.
 ::::
 
 ::: notes
-Ground rules for the room, not a numbered manifesto. Three of the five briefing rules, in English. If someone offers a real H&P, stop and point at card 1. Consumer cloud is the problem. Local models wait for the prompt-goes-where slide. Card 3: open the paper or the monograph before a number or a citation hits the note.
+Ground rules for the room, not a numbered manifesto. Verbally repeat one line: “No real patient data in consumer tools.” If someone offers a real H&P, stop and point at card 1. Consumer cloud is the problem. Local models wait for the next slide. Card 3: open the paper or the monograph before a number or a citation hits the note.
+:::
+
+---
+
+## Where the prompt goes {.viz}
+
+![](assets/figures/hipaa.png){width="100%"}
+
+::: notes
+This is the clinically actionable privacy slide. Consumer ChatGPT: the prompt leaves the building. OpenEvidence’s HIPAA badge is still a vendor cloud. Local Ollama: the prompt stays on the laptop they already use for the EHR. That is a reasonable path. Hospital BAA tools are the official cloud path.
 :::
 
 ---
@@ -83,14 +117,8 @@ Ground rules for the room, not a numbered manifesto. Three of the five briefing 
 ![](assets/figures/hour_map.png){width="100%"}
 
 ::: notes
-10-8-8-8-8-18. Q&A eats slack. Live labs are 1–4. Take-home is 5–8 in the handout. Do not read the 40-page packet.
+10-8-8-8-18-8. Take-home Labs 5–8 are not on this clock — say that out loud. Q&A eats slack at the end of the hour, after Lab 4. Live work is two blocks: Make → inspect, Ask → verify.
 :::
-
----
-
-## Foundations {background-color="#003DA6" .section-break}
-
-10 minutes
 
 ---
 
@@ -99,17 +127,7 @@ Ground rules for the room, not a numbered manifesto. Three of the five briefing 
 ![](assets/figures/three_ais.png){width="100%"}
 
 ::: notes
-A score, an alert, and a chatbot are all called AI — that sentence is on the canvas so they do not need you. Rules / classical ML / foundation models. Left box is not “unlearned”: PEWS-style scores are often expert-weighted; neonatal sepsis rules were split out of data (sequential division). CAD on the middle card is computer-aided detection — a chest X-ray read. FDA does not regulate “AI as such”; it regulates devices by intended use.
-:::
-
----
-
-## How the model is taught {.viz}
-
-![](assets/figures/learning_modes.png){width="100%"}
-
-::: notes
-Same points in the first two panels. Supervised: x goes with y; the colors are group labels. Unsupervised: the colors are gone; the model only sees structure. Reinforcement is a roundabout: try an answer, get scored (a human +/−, or a unit test), nudge the weights, try again. LLMs are mostly self-supervised pretraining plus later alignment. Pediatric labels are often billing codes, not truth.
+Ask which kind they have already encountered this month. A score, an alert, and a chatbot are all called AI — that sentence is on the canvas. Left box: PEWS and a febrile-infant pathway. Middle: sepsis alert and a chest X-ray read. Right: a parent letter and an AI scribe. FDA does not regulate “AI as such”; it regulates devices by intended use.
 :::
 
 ---
@@ -124,12 +142,16 @@ Distribution shift. Vendors often quote AUROC; say adult accuracy so they hear t
 
 ---
 
+## How AI answers {background-color="#00C4B3" .section-break}
+
+---
+
 ## Tokens, not letters {.viz}
 
 ![](assets/figures/tokens.png){width="100%"}
 
 ::: notes
-A dose is several tokens. That is why numeric hallucination is easy and why "just one number" is not a simple object inside the net.
+A dose is several tokens. That is why numeric hallucination is easy and why “just one number” is not a simple object inside the net. The split on the canvas is a cartoon and varies by model. Say that, then move on.
 :::
 
 ---
@@ -139,59 +161,17 @@ A dose is several tokens. That is why numeric hallucination is easy and why "jus
 ![](assets/figures/next_token.png){width="100%"}
 
 ::: notes
-Decoder-style LLM: given the tokens so far, score the next one, add it, repeat. The mix-then-update stack is a transformer. Next slide zooms on the mix.
+Spoken takeaway: it predicts plausible text; it is not retrieving a stored answer. Decoder-style LLM: given the tokens so far, score the next one, add it, repeat.
 :::
 
 ---
 
-## Attention {.viz}
+## Same number, different child {.viz}
 
-![](assets/figures/attention.png){width="100%"}
-
-::: notes
-Self-attention, 2017. This is the mix step from the last slide. One token looking at the sentence. Point: context, not magic understanding.
-:::
-
----
-
-## Timeline {background-color="#00C4B3" .section-break}
-
-8 minutes
-
----
-
-## How we got here {.viz}
-
-![](assets/figures/timeline.png){width="100%"}
+![](assets/figures/context_age.png){width="100%"}
 
 ::: notes
-GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT Nov 2022 is the public rupture — point at that orange line, not a long arrow. GPT-4 multimodal. Llama 2 (Jul 2023) is why a laptop path exists. o1 Sep 2024 is test-time compute as a product. DeepSeek-R1 Jan 2025 is the public proof that reasoning-style RL was not OpenAI-only. 2026 names are access classes, not Elo to memorize.
-:::
-
----
-
-## Size and what still matters {.viz}
-
-![](assets/figures/param_scale.png){width="100%"}
-
-::: notes
-Mixture-of-experts vs dense. Laptop 27-billion and 30-billion models vs trillion-parameter datacenter models. Counts from first-party posts in the briefing. Do not treat the y-axis as quality.
-:::
-
----
-
-## Reasoning and tools {background-color="#691F74" .section-break}
-
-8 minutes
-
----
-
-## Retrieve, then generate {.viz}
-
-![](assets/figures/rag.png){width="100%"}
-
-::: notes
-Retrieve then generate. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.
+This replaces transformer anatomy. 38.5 °C in an 8-week-old is a workup clock. In an 8-year-old it is often watch-and-treat. Models need that context the same way you do. If they ask how attention works, the backup slide is after Q&A.
 :::
 
 ---
@@ -201,7 +181,33 @@ Retrieve then generate. Reduces some hallucinations. Does not stop wrong-paper, 
 ![](assets/figures/hallucinations.png){width="100%"}
 
 ::: notes
-Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. Artsi: interpretive error even with real citations.
+Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. This is why citations and tool use do not eliminate checking. Artsi: interpretive error even with real citations.
+:::
+
+---
+
+## Three eras {.viz}
+
+![](assets/figures/three_eras.png){width="100%"}
+
+::: notes
+Autocomplete → chat → tools/checking. Names age quickly; these three jobs do not. Full chronology is in backup if someone wants GPT-2 through Fable.
+:::
+
+---
+
+## Files and checks {background-color="#691F74" .section-break}
+
+What can the model check before it answers?
+
+---
+
+## Retrieve, then generate {.viz}
+
+![](assets/figures/rag.png){width="100%"}
+
+::: notes
+Retrieve then generate. The corpus is the choice — that line is already on the artwork; point at it. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater. OpenEvidence, UpToDate, and ChatGPT-with-search are different libraries.
 :::
 
 ---
@@ -211,7 +217,7 @@ Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start c
 ![](assets/figures/test_time_compute.png){width="100%"}
 
 ::: notes
-Not human reasoning. Try several answers at answer time and keep one that checks out. o1 (Sep 2024) made that the product. Coding evals moved because you can grade code. That pulled computer-use and harnesses.
+Not human reasoning. Left column is “answer once”: ship =B2*10. Right column is try → test → revise, the way you want a harness to behave in Lab 2. o1 (Sep 2024) made that loop the product. Coding evals moved because you can grade code.
 :::
 
 ---
@@ -221,7 +227,7 @@ Not human reasoning. Try several answers at answer time and keep one that checks
 ![](assets/figures/harness_loop.png){width="100%"}
 
 ::: notes
-Top row is a chatbot: prompt in, a paragraph out, you copy it — nothing is a file. Bottom row is a harness: prompt, files it can see, tools (search, code, browser), an artifact you can open, then edit and run again. Cursor is one harness. Codex, Claude Code, OpenCode are the same genus. Point: Labs 1 and 2 only make sense if they believe the file is the product.
+Ask: which row produces something another person can inspect tomorrow? Top row is a chatbot: prompt in, a paragraph out, you copy it. Bottom row is a harness: prompt, files, tools, an artifact you can open. Cursor, Codex, Claude Code, OpenCode: same genus. Labs 1 and 2 only make sense if the file is the product.
 :::
 
 ---
@@ -231,14 +237,12 @@ Top row is a chatbot: prompt in, a paragraph out, you copy it — nothing is a f
 ![](assets/figures/benchmark_trap.png){width="100%"}
 
 ::: notes
-Board-style exams and vendor tables are a test with a key, comparable across models. This infant, this formulary, and this family’s language are not. High scores do not travel to weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
+Board-style exams and vendor tables are a test with a key, comparable across models. This infant, this formulary, and this family’s language are not. Keep the phrase “this child, tonight.” High scores do not travel to weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
 :::
 
 ---
 
-## Frontier and privacy {background-color="#FF4D00" .section-break}
-
-8 minutes
+## Evidence {background-color="#FF4D00" .section-break}
 
 ---
 
@@ -247,287 +251,59 @@ Board-style exams and vendor tables are a test with a key, comparable across mod
 ![](assets/figures/three_boxes.png){width="100%"}
 
 ::: notes
-Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 3, and that is a reasonable setup: the vendor never sees the prompt, and they already use that laptop for the EHR. Gemma 4 31B is Google’s current open-weight flagship in that hardware class (Apr 2026; 4-bit ~17.5 GB on Google’s card). Mythos is restricted — do not tell them to just use it.
+Consumer cloud / hospital-governed cloud / local laptop. Do not recatalog model names. Phone app = no BAA. Hospital tool with a contract is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR.
 :::
 
 ---
 
-## 11 studies. Zero pediatric. {.align-start}
+## 11 studies. Zero pediatric. {.viz}
 
-::: {.copy-block}
-**Artsi et al., 2026** — independent systematic review of OpenEvidence. *npj Digital Medicine*, article-in-press.
-
-- 11 studies, through January 2026
-- None synthesized as pediatric
-- Where measured, fewer invented citations than general chatbots
-- More often reinforces a decision than changes it
-- The product is still moving
-
-Company line “>40% of US physicians daily” is vendor-reported.
-:::
+![](assets/figures/artsi_eleven.png){width="100%"}
 
 ::: notes
-Artsi 2026 OpenEvidence systematic review. Click citations. Reinforces rather than changes decisions. Company "40% of US physicians" is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
+Artsi 2026 OpenEvidence systematic review. End on the line already on the figure: search assistant, not pediatric guideline. Company “40% of US physicians” is vendor-reported. Registry: PROSPERO CRD420261289103. Do not invent a pediatric evidence base from 11 adult-leaning studies.
 :::
 
 ---
 
-## Grounding and accuracy {.viz}
+## A citation is not proof of correctness {.viz}
 
 ![](assets/figures/hajj_counterexample.png){width="100%"}
 
 ::: notes
-Hajj inside Artsi: ChatGPT-4o 66.7 vs OE 26.7 on 15 tricuspid questions. Do not over-read. Heuristic: OE for journals, UpToDate for the editorial corpus you already pay for, neither for "what do I do without looking."
+Hajj inside Artsi: ChatGPT-4o 66.7 vs OpenEvidence 26.7 on 15 adult transcatheter tricuspid questions. n=15 is the whole study. Do not present it as pediatric. Heuristic: OE for journals, UpToDate for the editorial corpus you already pay for, neither for “what do I do without looking.”
 :::
 
 ---
 
-## Local models need memory {.viz .stack-viz}
+## Settled / unsettled {.viz}
 
-![](assets/figures/hardware.png){width="100%"}
-
-::: {.viz-links}
-[Ollama](https://ollama.com){target="_blank"} · [Hugging Face models](https://huggingface.co/models){target="_blank"}
-:::
+![](assets/figures/settled.png){width="100%"}
 
 ::: notes
-Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class. Hardware is the constraint. If it fits, local is a reasonable way to keep the prompt off a vendor. Click Ollama, then Hugging Face models, so they see where local weights live. Links open a new tab; the deck stays up.
-:::
-
----
-
-## Where the prompt goes {.viz}
-
-![](assets/figures/hipaa.png){width="100%"}
-
-::: notes
-Consumer ChatGPT: the prompt leaves the building. OpenEvidence’s HIPAA badge is still a vendor cloud. Local Ollama: the prompt stays on the laptop they already use for the EHR. That is a reasonable path. Hospital BAA tools are the official cloud path.
-:::
-
----
-
-## Policy {background-color="#691F74" .section-break}
-
-8 minutes
-
----
-
-## They are already using it {.viz}
-
-![](assets/figures/aap_places.png){width="100%"}
-
-::: notes
-PAS 2025. Punchline is 6%.
-:::
-
----
-
-## 2026, on a line {.viz}
-
-![](assets/figures/policy_2026.png){width="100%"}
-
-::: notes
-Walk left to right. AAP January: digital-ecosystems policy; the dedicated AI statement is still forthcoming — do not invent one. ICMJE January: name the tool, chatbots cannot be authors, humans stay accountable; Pediatrics follows this. Grundmeier April is a CHOP state-of-the-art review in Pediatrics: AI is a tool; counsel teens using companion chatbots; it is a review. Bergman JAMA Viewpoint: license autonomous clinical AI more like a clinician; opinion, not a statute. AMA 10 June: assistive, physician review of coverage denials, transparency when models change — this is the one they feel on prior-auth. FDA August: discussion paper, two-axis risk (what the tool does × how bad an error is), comments docket. WHO B09667: evidence-informed policy for policy-makers, not a pediatric practice guideline. No AAP clinical AI policy in this window.
-:::
-
----
-
-## Judge the work
-
-::: {.kicker}
-A position on journal AI rules
-:::
-
-::: {.judge-lede}
-Evaluate the project on its merits. The manuscript carries the claims.
-:::
-
-:::: {.judge-grid}
-::: {.box .box-orange .box-prose}
-::: {.box-label}
-Confession theater
-:::
-
-Naming the tools does not make the science more true. Grammar help and a fabricated table are different acts.
-:::
-::: {.box .box-purple .box-prose}
-::: {.box-label}
-The paper is the record
-:::
-
-A Slack thread with a colleague is not the paper. Prompts are that kind of working chat. Share the numbers, the code, and a citation you can open.
-:::
-::: {.box .box-teal .box-prose}
-::: {.box-label}
-Many tools, one paper
-:::
-
-A harness can call several models and tools. People switch for the job. Citing every hop is not a feasible methods section.
-:::
-::: {.box .box-blue .box-prose}
-::: {.box-label}
-Models in the pipeline
-:::
-
-Use LLMs for drafting, checking, review, and evaluation. Reviewers can use them to check claims.
-:::
-::: {.box .box-gold .box-prose}
-::: {.box-label}
-Taste stays human
-:::
-
-Importance stays with authors and reviewers. Models are tuned more for engineering than for scientific taste or creativity.
-:::
-::: {.box .box-web .box-prose}
-::: {.box-label}
-Pedantry is not the argument
-:::
-
-They stall on reproducibility theater — pedantic checks that do not carry the result. Those checks are not the scientific claim.
-:::
-::::
-
-::: notes
-ICMJE and Pediatrics still ask authors to name the tool and forbid chatbot authors. Say that once so they are not surprised at submission. Then the 3×2: naming the tools does no epistemic work; grammar help ≠ a fabricated table; a Slack thread with a colleague is not the paper, and neither is a prompt log — share numbers, code, and a citation you can open; a session may have used Cursor plus two models plus a browser tool — listing every hop is not a methods standard; let models into review as checkers; keep importance with people; LLMs are tuned more for engineering than for scientific taste, so they get stuck on pedantic reproducibility theater that does not carry the scientific claim. An adult creatinine in a pediatrics manuscript is a scientific failure, not a missing disclosure checkbox. This is a position, not a journal’s current rulebook.
+As of August 2026. Humans remain accountable. Transparency is increasing. Pediatric-specific policy is incomplete — do not invent an AAP clinical AI guideline. The dated chronology is in backup if someone wants January-to-August names.
 :::
 
 ---
 
 ## Live labs {background-color="#5F277E" .section-break}
 
-18 minutes
-
 ---
 
-## This hour vs take-home
+## Two live blocks {.viz}
 
-::: {.kicker}
-Live hour is Labs 1–4, in order. Labs 5–8 are take-home. Each slide is the recipe.
-:::
-
-:::: {.lab-catalog}
-::: {.box .box-web}
-::: {.box-label}
-This hour · Labs 1–4
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-1
-:::
-::: {.lab-row-text}
-Files from a harness
-
-Word, Excel, slides from a stem we wrote
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-2
-:::
-::: {.lab-row-text}
-Audit the dose sheet
-
-Fictional teachicillin. Formula view.
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-3
-:::
-::: {.lab-row-text}
-One question, three corpora
-
-Same febrile-infant question
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-4
-:::
-::: {.lab-row-text}
-Citation autopsy
-
-Open PubMed on the first three IDs
-:::
-:::
-
-::: {.lab-catalog-foot}
-Cursor, then the browser. You watch. Repeat later on the free path.
-:::
-:::
-::: {.box .box-teal}
-::: {.box-label}
-Take-home · Labs 5–8
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-5
-:::
-::: {.lab-row-text}
-GitHub Pages journal club
-
-Markdown → a URL that works on a phone
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-6
-:::
-::: {.lab-row-text}
-Local model on your laptop
-
-Ollama, airplane mode
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-7
-:::
-::: {.lab-row-text}
-Harness loop vs chatbot
-
-Same request. Files vs a paragraph.
-:::
-:::
-
-::: {.lab-row}
-::: {.lab-num}
-8
-:::
-::: {.lab-row-text}
-Gemini Notebook
-
-Your PDFs. Grounded Q&A.
-:::
-:::
-
-::: {.lab-catalog-foot}
-Recipes on the next slides. Free path for each.
-:::
-:::
-::::
+![](assets/figures/two_blocks.png){width="100%"}
 
 ::: notes
-Walk the two columns in order. Labs 1–2 Cursor, 3–4 browser. Do not run 5–8 live. Fallback Python if the agent dies.
+Four lessons, two context switches. Make → inspect is Labs 1 and 2 in one Cursor stretch. Ask → verify is Labs 3 and 4 in the browser. Take-home 5–8 live after Q&A as an appendix; point at the handout, do not run them. Recurring ritual: before each demo, the room predicts what will fail. After, one resident names the check they would perform.
 :::
 
 ---
 
-## Lab 1 — files, not paragraphs
+## Lab 1 — files, not paragraphs {.nostretch}
 
 ::: {.kicker}
-Live · 1 of 4 · Cursor
-:::
-
-::: {.lab-goal}
-Goal: one synthetic stem in a file becomes Word, Excel, and PowerPoint you can open. A chatbot would return three paragraphs. The harness should return three files. That is the whole point.
+Make → inspect · Cursor
 :::
 
 :::: {.lab-split}
@@ -536,84 +312,65 @@ Goal: one synthetic stem in a file becomes Word, Excel, and PowerPoint you can o
 STEM.md — we wrote this
 :::
 
-Not model output. We wrote it so the agent has a bounded case and cannot “helpfully” add identifiers, meds, or invented PubMed IDs.
-
-**What it says.** 6-month-old former 36-week infant, day 2 of RSV bronchiolitis. SpO2 nadir 88% on room air, now 94% on 0.5 L NC. Taking 50% of feeds. Family wants a plain-language update. Night team wants a wean tracker.
+6-month-old former 36-week infant, day 2 of RSV bronchiolitis. SpO2 nadir 88% on room air, now 94% on 0.5 L NC. Taking 50% of feeds. Family wants a plain-language update. Night team wants a wean tracker.
 :::
-::: {.box .box-teal .box-prose}
+::: {.file-trio}
+::: {.box .box-teal}
 ::: {.box-label}
-How · empty folder, STEM.md already in it
+family_update.docx
 :::
 
-Paste in Cursor Agent:
+Plain-language letter
+:::
+::: {.box .box-orange}
+::: {.box-label}
+oxygen_wean_tracker.xlsx
+:::
 
-Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, noon_conference.pptx from that stem only. No identifiers. No medication column. No invented PubMed IDs. End the letter with “this is a teaching example.”
+No medication column
+:::
+::: {.box .box-blue}
+::: {.box-label}
+noon_conference.pptx
+:::
 
-**At home, no Cursor.** `pip install python-docx openpyxl python-pptx` then `python slides/workshops/lab1_fallback.py`. Or ask ChatGPT for a Python script and run it locally.
+Citations not yet verified
+:::
 :::
 ::::
 
-::: {.lab-done}
-Done when three files open, the tracker has no meds, and the letter ends with the teaching line. Optional sting: same stem in ChatGPT, “add a dexamethasone dose” — it will often invent a number; the spreadsheet has no meds on purpose.
+::: {.predict-strip}
+Before: what will fail? · After: name one check.
 :::
 
 ::: notes
-Paste. Open the three files. Residents can repeat with the fallback script. Do not live-compose the prompt.
+Full prompt, already on the clipboard: Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, noon_conference.pptx from that stem only. No identifiers. No medication column. No invented PubMed IDs. End the letter with “this is a teaching example.” Predict first: a paragraph instead of files, a meds column, an invented PMID. Then paste. Open the three files. One resident names the check. At home: python slides/workshops/lab1_fallback.py. Optional sting: same stem in ChatGPT, “add a dexamethasone dose.”
 :::
 
 ---
 
-## Lab 2 — audit the dose sheet
+## Lab 2 — spot the bug {.stack-viz .nostretch}
 
 ::: {.kicker}
-Live · 2 of 4 · same Cursor window, new folder
+Make → inspect · same Cursor window
 :::
 
-::: {.lab-goal}
-Goal: the model writes Excel that looks official. You audit formulas, not the pretty numbers. Fictional drug only.
-:::
+![](assets/figures/formula_bug.png){width="88%"}
 
-:::: {.lab-split}
-::: {.box .box-orange .box-prose}
-::: {.box-label}
-KEY.md — we wrote this too
-:::
-
-The key is the answer sheet, written by us, not a model. It exists so “correct” is defined before the agent runs.
-
-**Rules.** `teachicillin`, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose. Weight under 2 kg → TOO_SMALL. Age is recorded; it does not change the dose.
-:::
-::: {.box .box-teal .box-prose}
-::: {.box-label}
-How · paste in Cursor Agent
-:::
-
-Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README.
-
-Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency.
-
-**At home.** `python slides/workshops/lab2_fallback.py` — that sheet omits the 400 mg cap on purpose so you still have something to catch.
-:::
-::::
-
-::: {.lab-done}
-Done when formula view is on the projector and the room has named at least one error. Repeat later with any made-up key you write yourself.
+::: {.predict-strip}
+Before: what will fail? · After: name one check.
 :::
 
 ::: notes
-KEY.md already in the folder. Fallback is wrong on purpose.
+Do not show the error list on the projector first. KEY.md is in the folder: teachicillin, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose; weight under 2 kg → TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Room predicts. Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency. Fallback python slides/workshops/lab2_fallback.py omits the 400 mg cap on purpose.
 :::
 
 ---
 
-## Lab 3 — one question, three corpora
+## Lab 3 — one question, three corpora {.nostretch}
 
 ::: {.kicker}
-Live · 3 of 4 · browser
-:::
-
-::: {.lab-goal}
-Goal: the same pediatric question, three sources. Retrieve-then-generate is a corpus choice. Score what you would actually act on.
+Ask → verify · browser
 :::
 
 ::: {.lab-prompt}
@@ -644,24 +401,48 @@ Licensed journals, if your NPI works. Click through. If blocked, B is enough.
 :::
 ::::
 
-::: {.lab-done}
-Whiteboard: quoted? clickable? pediatric? would I act? Arm A often mashups febrile-infant algorithms. Repeat tonight with any public guideline PDF you are allowed to upload.
+:::: {.scorecard}
+::: {.box .box-blue}
+::: {.box-label}
+Quoted?
+:::
+:::
+::: {.box .box-teal}
+::: {.box-label}
+Clickable?
+:::
+:::
+::: {.box .box-purple}
+::: {.box-label}
+Pediatric?
+:::
+:::
+::: {.box .box-orange}
+::: {.box-label}
+Asked for missing data?
+:::
+:::
+::: {.box .box-gold}
+::: {.box-label}
+Would I act?
+:::
+:::
+::::
+
+::: {.predict-strip}
+Before: what will fail? · After: name one check.
 :::
 
 ::: notes
-Stay in the browser for Labs 3 and 4. If OpenEvidence is blocked, skip C without apology.
+The stem is deliberately missing urinalysis and inflammatory markers. That is the test — do not fill them in. Whiteboard now includes “Did it ask for missing data?” Arm A often mashups febrile-infant algorithms and never asks. If OpenEvidence is blocked, skip C without apology. Stay in the browser for Labs 3 and 4.
 :::
 
 ---
 
-## Lab 4 — citation autopsy
+## Lab 4 — citation autopsy {.nostretch}
 
 ::: {.kicker}
-Live · 4 of 4 · same ChatGPT tab, search still off
-:::
-
-::: {.lab-goal}
-Goal: fluent references still need a click. The sting is one dead or mismatched identifier, not a perfect eight.
+Ask → verify · same ChatGPT tab, search still off
 :::
 
 ::: {.lab-prompt}
@@ -675,145 +456,12 @@ Eight Vancouver-style references on high-flow vs CPAP for bronchiolitis, 2018–
 4. Stop. Do not chase all eight.
 :::
 
-::: {.lab-done}
-Grounded mode still needs a click — say that if there is time. Repeat at home with any topic you already know. Then go to take-home Labs 5–8; do not run them in this hour.
+::: {.predict-strip}
+Before: what will fail? · After: name one check.
 :::
 
 ::: notes
-Paste. Open PubMed. One miss is the teaching point. Then stop. Do not run Labs 5–8 live.
-:::
-
----
-
-## Take-home labs {background-color="#00C4B3" .section-break}
-
-The slides are the recipe
-
----
-
-## Lab 5 — journal club on a URL
-
-::: {.kicker}
-Take-home · 5 of 8 · GitHub Pages
-:::
-
-::: {.lab-goal}
-Goal: Markdown (or HTML) journal-club slides become a link that works on a phone. Versioned teaching beats emailing `final_v7.pptx`.
-:::
-
-::: {.lab-steps}
-**What you need.** One published open paper or open guideline (not a paywalled PDF you do not have rights to post). A GitHub account, or just a zip of `index.html`.
-
-**How.**
-
-1. Empty folder. Put notes from the paper in `PAPER.md`.
-2. Ask a harness — or ChatGPT for HTML — for eight Reveal (or similar) slides in `docs/index.html`. MIT license. README: teaching fork.
-3. `git init`, new public repo, push. Settings → Pages → deploy from `main` / `docs`.
-4. Open the URL on your phone.
-
-**If GitHub is blocked.** Zip `index.html` and open it locally. The lesson is static hosting, not a particular site.
-:::
-
-::: {.lab-done}
-Done when the link (or the local file) opens on a phone. Do not enable Pages until citations are verified — Lab 4 still applies on a public URL.
-:::
-
-::: notes
-Do not run live. Point at the slide. Handout Workshop 2 is the long recipe.
-:::
-
----
-
-## Lab 6 — local model, airplane mode
-
-::: {.kicker}
-Take-home · 6 of 8 · Ollama
-:::
-
-::: {.lab-goal}
-Goal: summarize a synthetic H&P with the network off. The vendor never sees the prompt.
-:::
-
-::: {.lab-steps}
-**What fits.** 8–16 GB laptop: 8B-class, slowly. 24–32 GB box: Qwen3.8-27B, Muse Glimmer 30B, or Gemma 4 31B (4-bit ~17.5 GB).
-
-**How.**
-
-1. Install [ollama.com](https://ollama.com). `ollama pull qwen3.8` or `ollama pull qwen3:8b` if memory is tight.
-2. Airplane mode. Confirm Wi-Fi is off.
-3. Paste a synthetic H&P.
-4. Prompt: list problems, overnight contingencies, three questions for the family. Do not invent labs. If a value is missing, say MISSING.
-
-**Then, while online.** Paste the same synthetic note into consumer ChatGPT. That is the vendor you do not have a contract with.
-:::
-
-::: {.lab-done}
-Done when Wi-Fi is off the whole time and the model still answers.
-:::
-
-::: notes
-Hardware honesty before anyone tries 27B on 8 GB. Gemma 4 31B is the Google open-weight flagship in this class.
-:::
-
----
-
-## Lab 7 — harness loop vs chatbot
-
-::: {.kicker}
-Take-home · 7 of 8 · files vs a paragraph
-:::
-
-::: {.lab-goal}
-Goal: the same request in ChatGPT and in a harness. The product you want is the loop (files, tools, a check), not the chat box.
-:::
-
-::: {.lab-prompt}
-In an empty folder, create a single `index.html` that plots WHO-style weight-for-age synthetic curves for 0–24 months and lets me type a weight to see a labeled teaching z-score using an explicit formula in a comment. No external APIs. Then confirm the file opens.
-:::
-
-::: {.lab-steps}
-1. **Arm A · ChatGPT.** Paste the request. Try to copy files by hand. Notice where you stall (“where do I put this”).
-2. **Arm B · harness.** Cursor, Codex, Claude Code, or OpenCode + Ollama in an empty folder. Same request. Let it write and open the file.
-3. Open `index.html` in a browser.
-:::
-
-::: {.lab-done}
-Done when the harness file opens. Paid Cursor is optional; OpenCode + a local model is the free echo.
-:::
-
-::: notes
-Do not run live. Ties back to the chatbot-vs-harness figure.
-:::
-
----
-
-## Lab 8 — Gemini Notebook
-
-::: {.kicker}
-Take-home · 8 of 8 · your PDFs
-:::
-
-::: {.lab-goal}
-Goal: grounded Q&A over files you chose. Right tool for journal club and policy. Wrong tool for the census.
-:::
-
-::: {.lab-steps}
-**What to upload (public only).** AAP digital-ecosystems policy. Grundmeier 2026 *Pediatrics* review. ICMJE Recommendations. Artsi 2026 OpenEvidence review. Optional: a CDC/AAP open bronchiolitis PDF.
-
-**How.**
-
-1. New Gemini Notebook. Upload only those files.
-2. Ask: what does AAP say it is **not** covering regarding AI? (Dedicated AI statement still forthcoming.) Contrast Grundmeier: useful counseling review, not that policy.
-3. Ask a question **outside** the corpus. The right behavior is refusal or “not in sources.”
-4. Click every citation chip. Optional: audio overview for a commute.
-:::
-
-::: {.lab-done}
-Done when a chip opens *your* PDF, and an off-corpus question is declined. NotebookLM was renamed Gemini Notebook (16 Jul 2026).
-:::
-
-::: notes
-Public papers only. Do not upload real notes.
+Stochastic. Keep a frozen rehearsal output on the USB. If the live model refuses, or all three IDs are valid, say “good behavior today” and inspect the saved example. Do not invent PubMed IDs to force a miss. One dead or mismatched identifier is the teaching point. Then stop. Do not run Labs 5–8 live. Summary and Q&A are next; take-home is after questions.
 :::
 
 ---
@@ -823,13 +471,202 @@ Public papers only. Do not upload real notes.
 ![](assets/figures/takehomes.png){width="100%"}
 
 ::: notes
-Repeat. Point at the briefing packet and workshops.md. Pocket card is in the briefing appendix if you printed it.
+Repeat. Point at the briefing packet and workshops.md. Local changes privacy, not accuracy — that is the laptop story, not a quality claim. Pediatric context is not optional — do not invent an AAP clinical AI policy to fill the last box.
 :::
 
 ---
 
-## Questions {background-color="#003DA6" .section-break}
+## Check the answer {.qa-close .nostretch}
+
+:::: {.qa-three}
+::: {.box .box-orange}
+::: {.box-label}
+Where did the prompt go?
+:::
+:::
+::: {.box .box-purple}
+::: {.box-label}
+What source did it use?
+:::
+:::
+::: {.box .box-teal}
+::: {.box-label}
+What did I verify?
+:::
+:::
+::::
+
+::: {.qa-ask}
+Questions
+:::
 
 ::: notes
-Stop. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Train mark is BSW/McLane, internal teaching use.
+Stop here for the live hour. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.
+:::
+
+---
+
+## Take-home labs {background-color="#00C4B3" .section-break}
+
+After the hour. Recipes in the handout.
+
+---
+
+## Lab 5 — journal club on a URL {.stack-viz .nostretch}
+
+::: {.kicker}
+Take-home · 5 of 8
+:::
+
+![](assets/figures/lab5_flow.png){width="100%"}
+
+::: notes
+Do not run live. Visible lesson is the four-step flow. Full recipe is in briefing/workshops.md: PAPER.md → eight Reveal slides in docs/index.html → verify citations → GitHub Pages or a local zip. Do not enable Pages until citations are verified. Lab 5 is a resident journal-club fork, not this repo’s docs/.
+:::
+
+---
+
+## Lab 6 — local model, airplane mode {.stack-viz .nostretch}
+
+::: {.kicker}
+Take-home · 6 of 8
+:::
+
+![](assets/figures/lab6_rules.png){width="100%"}
+
+::: notes
+Slide is the constraints. Commands live in the written recipe: ollama.com, ollama pull qwen3.8 or qwen3:8b if memory is tight. 8–16 GB laptop: 8B-class, slowly. 24–32 GB box: Qwen3.8-27B, Muse Glimmer 30B, or Gemma 4 31B (4-bit ~17.5 GB). Synthetic H&P only. Hardware figure is in backup.
+:::
+
+---
+
+## Lab 7 — harness loop vs chatbot {.nostretch}
+
+::: {.kicker}
+Take-home · 7 of 8 · files vs a paragraph
+:::
+
+::: {.lab-goal}
+Same request in ChatGPT and in a harness. The product you want is the loop (files, tools, a check), not the chat box.
+:::
+
+::: {.lab-prompt}
+In an empty folder, create a single `index.html` that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then confirm the file opens.
+:::
+
+::: {.lab-steps}
+1. **Arm A · ChatGPT.** Paste the request. Try to copy files by hand.
+2. **Arm B · harness.** Cursor, Codex, Claude Code, or OpenCode in an empty folder. Same request. Let it write and open the file.
+:::
+
+::: notes
+Nonclinical on purpose. Do not ship a fake pediatric growth z-score that someone could reuse. Full recipe in the handout. Paid Cursor is optional; OpenCode + a local model is the free echo.
+:::
+
+---
+
+## Lab 8 — source-grounded notebook {.nostretch}
+
+::: {.kicker}
+Take-home · 8 of 8 · public PDFs
+:::
+
+::: {.lab-goal}
+Grounded Q&A over files you chose. Right tool for journal club and policy. Wrong tool for the census.
+:::
+
+::: {.lab-steps}
+Upload public papers only. Ask something in the corpus. Ask something outside it — it should refuse. Click every citation chip.
+:::
+
+::: notes
+NotebookLM was renamed Gemini Notebook (16 Jul 2026); that rename belongs in the handout, not as the punch. Public papers only. Do not upload real notes.
+:::
+
+---
+
+## Backup {background-color="#281241" .section-break}
+
+If someone asks. Not on the clock.
+
+---
+
+## How the model is taught {.viz}
+
+![](assets/figures/learning_modes.png){width="100%"}
+
+::: notes
+Forty-five seconds if you use it at all. Supervised: x goes with y. Unsupervised: structure, no labels. Reinforcement is a roundabout: try, get scored, nudge, try again. Unlikely to change what they do tomorrow.
+:::
+
+---
+
+## Attention {.viz}
+
+![](assets/figures/attention.png){width="100%"}
+
+::: notes
+Self-attention, 2017. One token looking at the sentence. The live hour uses the 38.5 °C age example instead.
+:::
+
+---
+
+## How we got here {.viz}
+
+![](assets/figures/timeline.png){width="100%"}
+
+::: notes
+Full chronology. GPT-2 unsupervised. GPT-3 in-context. InstructGPT RLHF. ChatGPT Nov 2022 is the public rupture. Llama 2 is why a laptop path exists. o1 Sep 2024 is test-time compute as a product. DeepSeek-R1 Jan 2025 showed reasoning-style RL was not OpenAI-only. 2026 names are access classes, not Elo to memorize.
+:::
+
+---
+
+## Size and what still matters {.viz}
+
+![](assets/figures/param_scale.png){width="100%"}
+
+::: notes
+Parameter counts do not help a resident decide whether to trust an answer. Mixture-of-experts vs dense. Laptop 27-billion and 30-billion models vs trillion-parameter datacenter models. Do not treat the y-axis as quality.
+:::
+
+---
+
+## Local models need memory {.viz .stack-viz}
+
+![](assets/figures/hardware.png){width="100%"}
+
+::: {.viz-links}
+[Ollama](https://ollama.com){target="_blank"} · [Hugging Face models](https://huggingface.co/models){target="_blank"}
+:::
+
+::: notes
+Use with Lab 6 if someone asks. Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class.
+:::
+
+---
+
+## Judge the work {.nostretch}
+
+::: {.copy-block}
+**Judge the claims, data, code, and citations—not the fluency or confession.**
+
+ICMJE and *Pediatrics* still ask authors to name the tool. Naming it does not make the science more true.
+:::
+
+::: notes
+One-line backup, not a second lecture. An adult creatinine in a pediatrics manuscript is a scientific failure, not a missing disclosure checkbox.
+:::
+
+---
+
+## 2026, on a line {.viz}
+
+::: {.kicker}
+as of August 2026
+:::
+
+![](assets/figures/policy_2026.png){width="100%"}
+
+::: notes
+Walk left to right only if someone asks for names. AAP January: digital-ecosystems policy; the dedicated AI statement is still forthcoming — do not invent one. ICMJE January: name the tool; humans stay accountable. Grundmeier April is a CHOP state-of-the-art review. Bergman JAMA Viewpoint is opinion, not a statute. AMA 10 June: assistive, transparency when models change. FDA August: discussion paper, two-axis risk. WHO B09667: evidence-informed policy for policy-makers, not a pediatric practice guideline.
 :::

@@ -5,7 +5,7 @@ Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md
 
 **Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
 
-**Lecture numbering.** Live hour is Labs 1–4, in this order. Take-home is Labs 5–8. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win. Residents repeating Labs 1–2 at home can use [`../slides/workshops/`](../slides/workshops/README.md).
+**Lecture numbering.** Live hour is Labs 1–4, in two blocks: Make → inspect (1–2) then Ask → verify (3–4). Take-home is Labs 5–8, after Q&A. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win. Residents repeating Labs 1–2 at home can use [`../slides/workshops/`](../slides/workshops/README.md).
 
 | Lab | When | What | Recipe in this file |
 |---|---|---|---|
@@ -180,11 +180,13 @@ Local models keep the prompt off a vendor. Offline Qwen3.8-27B is useful for dra
 1. Run A. Highlight any guideline-sounding sentence. Demand a PMID/DOI. Try to open it.  
 2. Run B. Require a quote with page/section. Click the citation chip.  
 3. Run C if available. Click through to the partner journal.  
-4. Score on a whiteboard: *quoted? clickable? pediatric-specific? would I act?*
+4. Score on a whiteboard: *quoted? clickable? pediatric-specific? did it ask for missing data? would I act?*
+
+The stem is missing urinalysis and inflammatory markers **on purpose**. Do not fill them in. The test is whether the tool asks.
 
 ### Intentional failure
 
-Arm A will often emit a confident 2021-vs-2021 febrile infant algorithm mashup with a real-looking citation.
+Arm A will often emit a confident 2021-vs-2021 febrile infant algorithm mashup with a real-looking citation, and will often never ask for the missing labs.
 
 ### Teaching point
 
@@ -262,12 +264,12 @@ Numeric hallucination plus official formatting is how a model kills someone. FDA
 
 **Time (live):** 8–10 minutes  
 **Goal:** Same request in ChatGPT paste vs an agent in an empty git repo.  
-**Surprising artifact:** A running local HTML growth-chart **teaching toy** (synthetic data) vs a blob of code that does not run.  
-**HIPAA:** Synthetic points only.
+**Surprising artifact:** A running local HTML **noon-conference attendance** plot (synthetic counts) vs a blob of code that does not run.  
+**HIPAA:** Made-up counts. Not real residents. Not a clinical calculator.
 
 ### Request (identical in both arms)
 
-> In an empty folder, create a single `index.html` that plots WHO-style weight-for-age **synthetic** curves for 0–24 months and lets me type a weight to see a labeled teaching z-score **using an explicit formula in a comment**. No external APIs. Then run a basic check that the file opens.
+> In an empty folder, create a single `index.html` that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then run a basic check that the file opens.
 
 ### Arm A — Chatbot
 
@@ -349,7 +351,7 @@ If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, ru
 
 - [ ] Synthetic banner on every slide and terminal  
 - [ ] No Epic, no email with real names, no photo of a child  
-- [ ] Four live demos in the hour (Labs 1, 2, 3, 4); 18 minutes on the clock  
+- [ ] Two live blocks in the hour (Make → inspect, Ask → verify); 18 minutes on the clock  
 - [ ] Hardware story for Lab 6 (Ollama) told only if someone asks; it is take-home  
 - [ ] Lab 2 answer key on paper, not generated live as “truth”  
 - [ ] Handout QR to this markdown (or PDF export)
