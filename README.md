@@ -22,18 +22,18 @@ You do not need a paid AI subscription for any of this.
 
 ## Labs
 
-Labs **1–4** were live. **5–8** are take-home. Full recipes are in [`briefing/workshops.md`](briefing/workshops.md).
+Labs **1–4** were live, in two blocks: **Make → inspect** (1–2) and **Ask → verify** (3–4). **5–8** are take-home, after Q&A. Full recipes are in [`briefing/workshops.md`](briefing/workshops.md).
 
 | Lab | When | What you do |
 |---|---|---|
 | 1 | Live; repeat at home | Turn a fake bronchiolitis stem into Word, Excel, and PowerPoint |
 | 2 | Live; repeat at home | Audit a fake dosing sheet (`teachicillin` is not a real drug) |
-| 3 | Live | Same febrile-infant LP question in three tools |
+| 3 | Live | Same febrile-infant LP question in three tools. Score whether it asked for missing data. |
 | 4 | Live | Check whether ChatGPT’s PubMed IDs exist |
 | 5 | Take-home | Put journal-club slides on a URL (or open a local `index.html`) |
 | 6 | Take-home | Summarize a **synthetic** H&P in [Ollama](https://ollama.com) with Wi-Fi off |
 | 7 | Take-home | Same file request in ChatGPT vs a harness (Cursor, OpenCode, or similar) |
-| 8 | Take-home | Ask Gemini Notebook (formerly NotebookLM) over **public** PDFs only |
+| 8 | Take-home | Ask a source-grounded notebook over **public** PDFs only |
 
 ## Repeat Labs 1 and 2 on your laptop
 
@@ -54,8 +54,8 @@ Or skip the scripts: paste the stem into ChatGPT **with no identifiers**, ask fo
 
 - **Lab 5.** One open paper → eight slides in `docs/index.html` → GitHub Pages, or zip the file and open it on your phone. Do not publish unverified citations.
 - **Lab 6.** Install [Ollama](https://ollama.com). Pull a model that fits (`qwen3.8` or `qwen3:8b` on a small laptop). Airplane mode. Synthetic note only. Weights also live on [Hugging Face](https://huggingface.co/models).
-- **Lab 7.** Ask ChatGPT for an `index.html`. Then ask a harness to write the file in an empty folder and open it.
-- **Lab 8.** Upload only public papers. Click every citation. Ask something off-corpus; it should refuse.
+- **Lab 7.** Ask ChatGPT for an `index.html` that plots **synthetic noon-conference attendance** (made-up counts, not real people). Then ask a harness to write the file in an empty folder and open it.
+- **Lab 8.** Upload only public papers. Click every citation. Ask something off-corpus; it should refuse. Gemini Notebook is the current product name (formerly NotebookLM).
 
 Never use tonight’s patients, even “just the assessment.”
 

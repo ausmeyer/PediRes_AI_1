@@ -118,11 +118,11 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .title-meta {
-  font-size: 0.78em;
+  font-size: 0.62em;
   font-weight: 600;
   color: $mclane-ink;
   letter-spacing: 0.01em;
-  margin: 0.35em 0 0;
+  margin: 0.45em 0 0;
   text-align: inherit;
 }
 
@@ -168,6 +168,25 @@ $presentation-h2-font-size: 1.35em;
   border: 0;
 }
 
+/* Matplotlib SVGs as <img>: Reveal r-stretch often runs before intrinsic
+   size exists and writes height:0. Size from the viewBox, cap to the frame. */
+.reveal .slides section.viz img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.reveal .slides section.viz:not(.stack-viz) {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .reveal .viz p {
   margin: 0.15em 0 0.35em;
 }
@@ -175,6 +194,14 @@ $presentation-h2-font-size: 1.35em;
 .reveal .section-break h2 {
   color: #fff !important;
   font-size: 2.35em;
+}
+
+.reveal .section-break p {
+  color: #fff;
+  font-size: 0.72em;
+  font-weight: 500;
+  opacity: 0.92;
+  margin-top: 0.35em;
 }
 
 .reveal .section-break .column {
@@ -218,13 +245,29 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .deck-title {
-  font-size: 2.15em;
+  font-size: 1.95em;
   font-weight: 700;
   color: $mclane-blue;
   letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0.2em 0 0.35em;
+  line-height: 1.12;
+  margin: 0.1em 0 0.25em;
   text-align: inherit;
+  max-width: 14em;
+}
+
+.title-sub {
+  font-size: 0.68em;
+  font-weight: 600;
+  color: $mclane-ink;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin: 0 0 0.55em;
+  max-width: 16em;
+  text-align: inherit;
+}
+
+.title-sub p {
+  margin: 0;
 }
 
 .reveal .slides section.stack-viz img {
@@ -670,4 +713,103 @@ $presentation-h2-font-size: 1.35em;
   border-radius: 12px;
   padding: 0.6em 0.9em;
   border: 1px solid #e8e4ef;
+}
+
+.file-trio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4em;
+  align-content: stretch;
+}
+
+.file-trio .box {
+  margin: 0;
+  padding: 0.55em 0.7em;
+}
+
+.file-trio .box-label {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.62em;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.12em;
+}
+
+.file-trio .box p {
+  margin: 0;
+  font-size: 0.48em;
+  color: $mclane-muted;
+}
+
+.predict-strip {
+  margin-top: 0.45em;
+  font-size: 0.48em;
+  font-weight: 700;
+  color: $mclane-purple-web;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.predict-strip p {
+  margin: 0;
+}
+
+.scorecard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.35em;
+  margin: 0.35em 0 0.2em;
+}
+
+.scorecard .box {
+  margin: 0;
+  padding: 0.45em 0.3em;
+  text-align: center;
+}
+
+.scorecard .box-label {
+  font-size: 0.48em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.qa-three {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.45em;
+  margin: 0.4em 0 0.7em;
+  text-align: left;
+}
+
+.qa-three .box {
+  margin: 0;
+  padding: 0.55em 0.75em;
+}
+
+.qa-three .box-label {
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.qa-ask {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: $mclane-blue;
+  margin-top: 0.35em;
+  text-align: left;
+}
+
+.qa-ask p {
+  margin: 0;
+}
+
+.reveal .slides section.qa-close {
+  text-align: left;
+}
+
+.lab6-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5em;
+  margin-top: 0.4em;
 }

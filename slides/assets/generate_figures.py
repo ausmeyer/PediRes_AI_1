@@ -69,27 +69,36 @@ def rounded(ax, x, y, w, h, fc, ec=None, r=0.04, lw=1.5, z=1):
 
 # --- 1. Hour map ---
 def fig_hour_map():
-    fig, ax = plt.subplots(figsize=(14.2, 4.2))
+    fig, ax = plt.subplots(figsize=(14.2, 4.55))
     ax.set_xlim(0, 60)
-    ax.set_ylim(0, 3.2)
+    ax.set_ylim(-0.08, 3.35)
     ax.axis("off")
     blocks = [
-        (0, 10, BLUE, "Foundations\n10 min", 12),
-        (10, 8, TEAL, "Timeline\n8 min", 11),
-        (18, 8, PURPLE, "Reasoning\n+ tools\n8 min", 9),
-        (26, 8, ORANGE, "Frontier\n+ HIPAA\n8 min", 9),
-        (34, 8, GOLD, "Policy\n8 min", 11),
-        (42, 18, PURPLE_WEB, "Live labs\n18 min", 12),
+        (0, 10, BLUE, "Why tonight\n10 min", 12),
+        (10, 8, TEAL, "How AI\nanswers\n8 min", 9),
+        (18, 8, PURPLE, "Files &\nchecks\n8 min", 9),
+        (26, 8, ORANGE, "Evidence\n8 min", 11),
+        (34, 18, PURPLE_WEB, "Live blocks\n18 min", 12),
+        (52, 8, GOLD, "Takeaways\n8 min", 11),
     ]
     for x, w, c, lab, fs in blocks:
-        rounded(ax, x + 0.3, 1.08, w - 0.6, 1.48, c, r=0.15)
+        rounded(ax, x + 0.3, 1.18, w - 0.6, 1.48, c, r=0.15)
         color = INK if c == GOLD else WHITE
-        ax.text(x + w / 2, 1.82, lab, ha="center", va="center", color=color, fontsize=fs, fontweight="bold", linespacing=1.15)
-    ax.plot([0, 60], [0.85, 0.85], color=INK, lw=2)
+        ax.text(x + w / 2, 1.92, lab, ha="center", va="center", color=color, fontsize=fs, fontweight="bold", linespacing=1.15)
+    ax.plot([0, 60], [0.95, 0.95], color=INK, lw=2)
     for t in range(0, 61, 10):
-        ax.plot([t, t], [0.72, 0.85], color=INK, lw=1.5)
-        ax.text(t, 0.42, f"{t}m", ha="center", fontsize=11, color=MUTED)
-    ax.text(30, 2.9, "The live hour", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+        ax.plot([t, t], [0.82, 0.95], color=INK, lw=1.5)
+        ax.text(t, 0.52, f"{t}m", ha="center", fontsize=11, color=MUTED)
+    ax.text(30, 3.05, "The live hour", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    ax.text(
+        30,
+        0.12,
+        "Take-home Labs 5–8 are not on this clock.",
+        ha="center",
+        fontsize=12,
+        color=INK,
+        fontstyle="italic",
+    )
     save(fig, "hour_map")
 
 
@@ -100,9 +109,9 @@ def fig_three_ais():
     ax.set_ylim(0, 6.6)
     ax.axis("off")
     cards = [
-        (0.4, BLUE, "Rules & scores", "If-then · scores · order sets", "Written by people\nor split from data"),
+        (0.4, BLUE, "Rules & scores", "If-then · scores · order sets", "PEWS\nfebrile-infant pathway"),
         (5.0, PURPLE, "Classical ML", "Labels in → class / risk out", "Sepsis alert\nchest X-ray read"),
-        (9.6, TEAL, "Foundation models", "Next-token output", "Chat · scribes\nagents"),
+        (9.6, TEAL, "Foundation models", "Next-token output", "Parent letter\nAI scribe"),
     ]
     for x, c, title, mid, bot in cards:
         rounded(ax, x, 0.4, 4.2, 4.9, WHITE, ec=c, r=0.12, lw=3)
@@ -428,47 +437,45 @@ def fig_three_boxes():
         (
             0.35,
             ORANGE,
-            "Company app",
-            ["Sol", "Fable", "Opus 5", "Gemini 3.7", "Muse Spark"],
+            "Consumer cloud",
+            "ChatGPT · Claude · Gemini",
             [
-                "You use these through a company",
-                "website or phone app. There is",
-                "no hospital privacy contract.",
+                "Phone or laptop browser.",
+                "No hospital privacy contract.",
+                "The prompt leaves the building.",
             ],
         ),
         (
             4.95,
             PURPLE,
-            "Open datacenter",
-            ["Kimi K3", "DeepSeek V4", "Qwen-Max", "GLM-5.3"],
+            "Hospital-governed cloud",
+            "EHR tool with a contract",
             [
-                "These need a graphics-card cluster.",
-                "A laptop cannot host them.",
-                "Hosted prompts can still leave the building.",
+                "The official cloud path.",
+                "A business associate agreement",
+                "is what makes it the hospital’s.",
             ],
         ),
         (
             9.55,
             TEAL,
-            "Open laptop",
-            ["Qwen3.8-27B", "Muse Glimmer 30B", "Gemma 4 31B"],
+            "Local laptop",
+            "Ollama on this machine",
             [
                 "The vendor never sees the prompt.",
-                "You already use this laptop for",
-                "the EHR. That is reasonable.",
+                "You already use this laptop",
+                "for the EHR. That is reasonable.",
             ],
         ),
     ]
-    note_ys = [2.15, 1.70, 1.25]
-    for x, c, title, models, notes in cards:
+    note_ys = [2.35, 1.85, 1.35]
+    for x, c, title, kicker, notes in cards:
         rounded(ax, x, 0.55, 4.3, 5.45, WHITE, c, lw=3.5, r=0.1)
         cx = x + 2.15
-        ax.text(cx, 5.50, title, ha="center", va="center", fontsize=18, fontweight="bold", color=c)
-        y0 = 4.78
-        for i, line in enumerate(models):
-            ax.text(cx, y0 - i * 0.38, line, ha="center", va="center", fontsize=13, color=INK)
+        ax.text(cx, 5.35, title, ha="center", va="center", fontsize=16, fontweight="bold", color=c)
+        ax.text(cx, 4.45, kicker, ha="center", va="center", fontsize=13, color=INK)
         for y, line in zip(note_ys, notes):
-            ax.text(cx, y, line, ha="center", va="center", fontsize=11, color=MUTED)
+            ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=MUTED)
     save(fig, "three_boxes")
 
 
@@ -558,31 +565,38 @@ def fig_hallucinations():
     save(fig, "hallucinations")
 
 
-# --- 11. Test-time compute schematic ---
+# --- 11. Test-time compute: answer once vs try → test → revise ---
 def fig_ttc():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
-    fig.set_tight_layout(False)
-    x = np.linspace(0.2, 8, 80)
-    y = 1 - np.exp(-0.45 * x)
-    ax.plot(x, y, color=PURPLE, lw=3.5)
-    ax.fill_between(x, 0, y, color=TEAL, alpha=0.18)
-    ax.set_xlabel("Test-time compute  (thinking tokens / tool steps)", fontsize=12)
-    ax.set_ylabel("Task success", fontsize=12)
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.set_ylim(0, 1.02)
-    ax.set_position([0.12, 0.16, 0.78, 0.58])
-    fig.text(0.5, 0.93, "Extra compute at answer time", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    fig.text(
-        0.5,
-        0.87,
-        "Not human reasoning. Try several answers and keep one that checks out.",
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.2)
+    ax.axis("off")
+    ax.text(7.1, 5.85, "Answer once  vs  try → test → revise", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(
+        7.1,
+        5.35,
+        "Not human reasoning. Extra compute at answer time is a loop with a check.",
         ha="center",
         fontsize=13,
         color=INK,
     )
-    fig.text(0.5, 0.82, "o1 (Sep 2024) made this the product", ha="center", fontsize=11, color=MUTED)
-    save(fig, "test_time_compute", tight=False)
+    rounded(ax, 0.4, 0.55, 6.3, 4.45, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.5, 0.55, 6.3, 4.45, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.55, 4.45, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(3.55, 3.55, "=B2*10", ha="center", fontsize=28, fontweight="bold", family="DejaVu Sans Mono", color=INK)
+    ax.text(3.55, 2.35, "Ship the formula.\n50 kg → 500 mg.\nNo cap. No test.", ha="center", fontsize=14, color=INK, linespacing=1.4)
+    ax.text(10.65, 4.45, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(
+        10.65,
+        2.55,
+        "Write the formula.\nTest the 50 kg row.\nCatch the missing cap.\nKeep =MIN(B2*10,400).",
+        ha="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.4,
+    )
+    ax.text(7.1, 0.18, "A spreadsheet formula you can fail is the check. o1 (Sep 2024) made this the product.", ha="center", fontsize=11, color=MUTED)
+    save(fig, "test_time_compute")
 
 
 # --- 12. Harness loop ---
@@ -742,38 +756,46 @@ def fig_artsi():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6)
     ax.axis("off")
-    # 11 squares
     ax.text(7, 5.55, "OpenEvidence independent evidence  ·  Artsi et al. 2026", ha="center", fontsize=16, fontweight="bold", color=BLUE)
-    for i in range(11):
-        r, c = divmod(i, 6)
-        rounded(ax, 1.2 + c * 2.0, 3.15 - r * 1.35, 1.7, 1.1, TEAL if i < 11 else WHITE)
-        ax.text(1.2 + c * 2.0 + 0.85, 3.15 - r * 1.35 + 0.55, "study", ha="center", va="center", color=WHITE, fontsize=11, fontweight="bold")
-    ax.text(7, 0.7, "11 studies  ·  0 synthesized as pediatric  ·  product still moving  ·  article-in-press", ha="center", fontsize=13, color=MUTED)
-    ax.text(7, 0.25, "PROSPERO CRD420261289103  ·  npj Digit Med doi:10.1038/s41746-026-03077-4", ha="center", fontsize=10, color=MUTED)
+    ax.text(3.5, 3.35, "11", ha="center", va="center", fontsize=110, fontweight="bold", color=TEAL)
+    ax.text(3.5, 1.45, "independent studies", ha="center", va="center", fontsize=16, color=INK)
+    ax.text(10.5, 3.35, "0", ha="center", va="center", fontsize=110, fontweight="bold", color=ORANGE)
+    ax.text(10.5, 1.45, "synthesized as pediatric", ha="center", va="center", fontsize=16, color=INK)
+    ax.text(7, 0.62, "Search assistant, not pediatric guideline.", ha="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(7, 0.22, "PROSPERO CRD420261289103  ·  npj Digit Med doi:10.1038/s41746-026-03077-4", ha="center", fontsize=10, color=MUTED)
     save(fig, "artsi_eleven")
 
 
 # --- 17. Hajj counterexample ---
 def fig_hajj():
     fig, ax = plt.subplots(figsize=(14.2, 5.8))
-    # Plot occupies the middle quarter of the frame (half of a previous 50% plot).
     fig.set_tight_layout(False)
-    ax.set_position([0.36, 0.22, 0.28, 0.62])
+    ax.set_position([0.10, 0.16, 0.48, 0.62])
     labs = ["ChatGPT-4o", "OpenEvidence"]
     vals = [66.7, 26.7]
-    ax.bar(labs, vals, color=[ORANGE, TEAL], width=0.32)
+    ax.bar(labs, vals, color=[ORANGE, TEAL], width=0.42)
     ax.set_ylim(0, 100)
     ax.set_ylabel("% fully accurate (study-defined)")
     ax.set_xlim(-0.7, 1.7)
     for i, v in enumerate(vals):
         ax.text(i, v + 2, f"{v:.1f}%", ha="center", fontsize=16, fontweight="bold")
-    fig.text(0.5, 0.93, "Grounding and accuracy can diverge", ha="center", fontsize=16, fontweight="bold", color=BLUE)
+    fig.text(0.5, 0.93, "A citation is not proof of correctness", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    fig.text(0.78, 0.62, "n = 15", ha="center", fontsize=42, fontweight="bold", color=ORANGE)
+    fig.text(
+        0.78,
+        0.42,
+        "adult transcatheter\ntricuspid questions",
+        ha="center",
+        fontsize=14,
+        color=INK,
+        linespacing=1.35,
+    )
     fig.text(
         0.5,
-        0.08,
-        "Hajj et al. as reported in Artsi 2026: 15 clinician-facing transcatheter tricuspid questions.",
+        0.05,
+        "Hajj et al. as reported in Artsi 2026. Do not read this as a pediatric result.",
         ha="center",
-        fontsize=10,
+        fontsize=11,
         color=MUTED,
     )
     save(fig, "hajj_counterexample", tight=False)
@@ -944,7 +966,7 @@ def fig_workshops():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 6.4)
     ax.axis("off")
-    ax.text(7, 6.05, "Live labs vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
+    ax.text(7, 6.05, "Live blocks vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
 
     rounded(ax, 0.35, 0.45, 6.5, 5.15, WHITE, PURPLE_WEB, lw=3)
     ax.text(3.6, 5.22, "This hour  ·  Labs 1–4", ha="center", fontsize=15, fontweight="bold", color=PURPLE_WEB)
@@ -993,8 +1015,8 @@ def fig_takehomes():
         (4.95, ORANGE, "2", "Click every\ncitation"),
         (9.55, PURPLE, "3", "Never copy\na dose"),
         (0.35, TEAL, "4", "Harnesses\nemit files"),
-        (4.95, GOLD, "5", "Local models\nare reasonable"),
-        (9.55, PURPLE_WEB, "6", "AAP AI policy\nstill forthcoming"),
+        (4.95, GOLD, "5", "Local changes privacy\n— not accuracy"),
+        (9.55, PURPLE_WEB, "6", "Pediatric context\nis not optional"),
     ]
     box_w, box_h = 4.3, 2.2
     for x, c, n, t in items:
@@ -1026,6 +1048,141 @@ def fig_takehomes():
     save(fig, "takehomes")
 
 
+def fig_context_age():
+    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.0)
+    ax.axis("off")
+    ax.text(7.1, 5.55, "38.5 °C", ha="center", fontsize=42, fontweight="bold", color=GOLD)
+    ax.text(7.1, 4.95, "Same number. Different child. Context is the age.", ha="center", fontsize=15, color=INK)
+    rounded(ax, 0.45, 0.55, 6.3, 4.05, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.45, 0.55, 6.3, 4.05, WHITE, BLUE, lw=3, r=0.1)
+    ax.text(3.6, 3.95, "8-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
+    ax.text(3.6, 2.35, "Fever workup.\nHours, not days.\nThe number is a trigger.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    ax.text(10.6, 3.95, "8-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
+    ax.text(10.6, 2.35, "Often watch and treat.\nSame temperature.\nDifferent meaning.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    save(fig, "context_age")
+
+
+def fig_three_eras():
+    fig, ax = plt.subplots(figsize=(14.2, 5.4))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 5.4)
+    ax.axis("off")
+    ax.text(7.1, 5.05, "Three eras", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    eras = [
+        (0.4, BLUE, "1", "Autocomplete", "Finishes the next\nword or line."),
+        (4.95, PURPLE, "2", "Chat", "Holds a conversation.\nStill next-token."),
+        (9.5, TEAL, "3", "Tools / checking", "Looks things up.\nRuns code. Still wrong."),
+    ]
+    for x, c, n, title, body in eras:
+        rounded(ax, x, 0.55, 4.25, 4.05, WHITE, c, lw=3, r=0.1)
+        ax.text(x + 0.35, 3.95, n, fontsize=16, fontweight="bold", color=c)
+        ax.text(x + 2.12, 3.15, title, ha="center", fontsize=20, fontweight="bold", color=c)
+        ax.text(x + 2.12, 1.75, body, ha="center", fontsize=15, color=INK, linespacing=1.35)
+    save(fig, "three_eras")
+
+
+def fig_settled():
+    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.0)
+    ax.axis("off")
+    ax.text(7.1, 5.6, "Settled / unsettled", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    ax.text(13.7, 5.55, "as of August 2026", ha="right", fontsize=12, color=MUTED, fontstyle="italic")
+    rounded(ax, 0.4, 0.5, 6.4, 4.55, WHITE, TEAL, lw=3, r=0.1)
+    rounded(ax, 7.4, 0.5, 6.4, 4.55, WHITE, ORANGE, lw=3, r=0.1)
+    ax.text(3.6, 4.4, "Settled", ha="center", fontsize=24, fontweight="bold", color=TEAL)
+    ax.text(3.6, 2.45, "Humans remain\naccountable for\nwhat is written\nand ordered.", ha="center", fontsize=17, color=INK, linespacing=1.4)
+    ax.text(10.6, 4.4, "Unsettled", ha="center", fontsize=24, fontweight="bold", color=ORANGE)
+    ax.text(10.6, 2.55, "Transparency is\nincreasing.\nPediatric-specific\npolicy is incomplete.", ha="center", fontsize=17, color=INK, linespacing=1.4)
+    save(fig, "settled")
+
+
+def fig_poll_open():
+    fig, ax = plt.subplots(figsize=(14.2, 6.2))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.2)
+    ax.axis("off")
+    ax.text(7.1, 5.85, "Hands up", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    cards = [
+        (0.4, 3.05, BLUE, "1", "Used AI at work\nin the last year?"),
+        (7.3, 3.05, TEAL, "2", "Used an AI scribe?"),
+        (0.4, 0.4, ORANGE, "3", "Worried if no human\nchecks the output?"),
+        (7.3, 0.4, PURPLE, "4", "Trust these tools for\npediatric care?"),
+    ]
+    for x, y, c, n, label in cards:
+        rounded(ax, x, y, 6.5, 2.4, WHITE, c, lw=3, r=0.1)
+        ax.add_patch(Circle((x + 0.85, y + 1.2), 0.42, facecolor=c, zorder=3))
+        ax.text(x + 0.85, y + 1.2, n, ha="center", va="center", color=WHITE, fontsize=18, fontweight="bold", zorder=4)
+        ax.text(x + 3.55, y + 1.2, label, ha="center", va="center", fontsize=20, fontweight="bold", color=INK, linespacing=1.25)
+    save(fig, "poll_open")
+
+
+def fig_two_blocks():
+    fig, ax = plt.subplots(figsize=(14.2, 6.0))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 6.0)
+    ax.axis("off")
+    ax.text(7.1, 5.6, "Two live blocks", ha="center", fontsize=18, fontweight="bold", color=BLUE)
+    rounded(ax, 0.4, 0.45, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3, r=0.1)
+    rounded(ax, 7.4, 0.45, 6.4, 4.7, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.6, 4.5, "Make → inspect", ha="center", fontsize=24, fontweight="bold", color=PURPLE_WEB)
+    ax.text(3.6, 3.85, "Labs 1 and 2", ha="center", fontsize=14, fontweight="bold", color=GOLD)
+    ax.text(3.6, 2.25, "Files you can open tomorrow.\nThen find what is wrong.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    ax.text(10.6, 4.5, "Ask → verify", ha="center", fontsize=24, fontweight="bold", color=TEAL)
+    ax.text(10.6, 3.85, "Labs 3 and 4", ha="center", fontsize=14, fontweight="bold", color=GOLD)
+    ax.text(10.6, 2.25, "A febrile-infant question.\nThen check whether the\ncitations are real.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    save(fig, "two_blocks")
+
+
+def fig_formula_bug():
+    fig, ax = plt.subplots(figsize=(14.2, 4.6))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 4.6)
+    ax.axis("off")
+    rounded(ax, 1.5, 0.45, 11.2, 3.7, WHITE, ORANGE, lw=3, r=0.12)
+    ax.text(7.1, 3.45, "Cell C2", ha="center", fontsize=14, color=MUTED)
+    ax.text(7.1, 2.25, "=B2*10", ha="center", fontsize=48, fontweight="bold", family="DejaVu Sans Mono", color=INK)
+    ax.text(7.1, 1.05, "Weight in B2. Ten milligrams per kilogram. No cap.", ha="center", fontsize=15, color=INK)
+    save(fig, "formula_bug")
+
+
+def fig_lab5_flow():
+    fig, ax = plt.subplots(figsize=(14.2, 4.6))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 4.6)
+    ax.axis("off")
+    steps = [
+        (0.4, BLUE, "Paper", "One open paper\nor guideline."),
+        (3.85, PURPLE, "Eight slides", "A deck you can\nhost or zip."),
+        (7.3, ORANGE, "Verify", "Open every\ncitation first."),
+        (10.75, TEAL, "Share", "A URL, or a zip\non a phone."),
+    ]
+    for x, c, title, body in steps:
+        rounded(ax, x, 0.7, 3.2, 3.35, WHITE, c, lw=3, r=0.1)
+        ax.text(x + 1.6, 3.35, title, ha="center", fontsize=18, fontweight="bold", color=c)
+        ax.text(x + 1.6, 1.85, body, ha="center", fontsize=14, color=INK, linespacing=1.35)
+    save(fig, "lab5_flow")
+
+
+def fig_lab6_rules():
+    fig, ax = plt.subplots(figsize=(14.2, 5.4))
+    ax.set_xlim(0, 14.2)
+    ax.set_ylim(0, 5.4)
+    ax.axis("off")
+    cards = [
+        (0.4, ORANGE, "Airplane mode", "Wi-Fi off the\nwhole time."),
+        (4.95, PURPLE, "Synthetic data", "Invented H&P.\nNever tonight’s census."),
+        (9.5, TEAL, "Hardware limits", "8–16 GB runs 8B-class.\n27B needs more RAM."),
+    ]
+    for x, c, title, body in cards:
+        rounded(ax, x, 0.7, 4.25, 4.05, WHITE, c, lw=3, r=0.1)
+        ax.text(x + 2.12, 3.85, title, ha="center", fontsize=20, fontweight="bold", color=c)
+        ax.text(x + 2.12, 2.15, body, ha="center", fontsize=16, color=INK, linespacing=1.4)
+    save(fig, "lab6_rules")
+
+
 def main():
     fig_hour_map()
     fig_three_ais()
@@ -1050,6 +1207,14 @@ def main():
     fig_scale()
     fig_workshops()
     fig_takehomes()
+    fig_context_age()
+    fig_three_eras()
+    fig_settled()
+    fig_poll_open()
+    fig_two_blocks()
+    fig_formula_bug()
+    fig_lab5_flow()
+    fig_lab6_rules()
     print("wrote", len(list(OUT.glob("*.png"))), "pngs to", OUT)
 
 

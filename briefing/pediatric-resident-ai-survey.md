@@ -14,7 +14,7 @@ Document type: source briefing (not slides). The live hour is [`../slides/lectur
 
 The intended audience is pediatric residents with mixed technical literacy. Most do not pay for a frontier subscription. Most have never used an **agent harness** (a program that lets a model read files, run commands, and write artifacts, rather than only chatting). The lecture is a survey of modern machine learning and large language models, followed by live demonstrations of tools that are useful for research, teaching, and low-risk administrative work.
 
-The one-hour live spine cannot cover this briefing. A workable compression is:
+The one-hour live spine cannot cover this briefing. The projector clock is in [`../slides/lecture.qmd`](../slides/lecture.qmd): two live **blocks** containing four **lessons** (Labs 1–4), then take-home Labs 5–8 after Q&A. A workable briefing-length compression is:
 
 | Block | Minutes | Content |
 |---|---|---|
@@ -23,8 +23,8 @@ The one-hour live spine cannot cover this briefing. A workable compression is:
 | Reasoning and tools | 10 | Test-time compute, RAG, harnesses, MCP, skills |
 | Frontier and privacy | 8 | August 2026 map; local models; HIPAA |
 | Policy | 8 | ICMJE / AAP digital ecosystems vs Grundmeier review / AMA 10 Jun 2026 / FDA / WHO; journal-policy gaps |
-| Live workshops | 12 | Two from-scratch demos (Office files + grounded vs ungrounded) |
-| Q&A | remainder | Handout covers the other six recipes |
+| Live blocks | 12 | Four lessons in two blocks: Make → inspect (Labs 1–2), Ask → verify (Labs 3–4) |
+| Q&A | remainder | Handout covers Labs 5–8 |
 
 ### 0.2 Methods
 
