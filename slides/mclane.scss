@@ -118,11 +118,20 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .title-meta {
-  font-size: 0.72em;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: $mclane-ink;
+  letter-spacing: 0.01em;
+  margin: 0.35em 0 0;
+  text-align: inherit;
+}
+
+.title-affil {
+  font-size: 0.55em;
   font-weight: 500;
   color: $mclane-muted;
   letter-spacing: 0.01em;
-  margin: 0;
+  margin: 0.2em 0 0;
   text-align: inherit;
 }
 
