@@ -199,6 +199,27 @@ $presentation-h2-font-size: 1.35em;
   margin: 0.15em 0 0.35em;
 }
 
+.reveal .viz-caption {
+  color: $mclane-muted;
+  font-size: 0.42em;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0.12em 0 0;
+  max-width: 100%;
+}
+
+.reveal .viz-caption p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  text-align: inherit;
+}
+
+.reveal .slides section.viz:has(.viz-caption) img {
+  max-height: 56vh;
+}
+
 .reveal .section-break h2 {
   color: #fff !important;
   font-size: 2.35em;

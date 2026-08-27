@@ -217,8 +217,12 @@ Spell RAG once: retrieval-augmented generation — they have heard the acronym. 
 
 ![](assets/figures/test_time_compute.svg){width="100%"}
 
+::: {.viz-caption}
+The 400 mg maximum is the check. 500 mg fails it, so the model revises to 400 mg.
+:::
+
 ::: notes
-Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The gray line is that in English: the 400 mg maximum is the check. Coding tests had a unit-test check like that first; keep that history off the canvas unless someone asks. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
+Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The line under the boxes is that in English. Coding tests had a unit-test check like that first; keep that history off the canvas unless someone asks. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
 :::
 
 ---

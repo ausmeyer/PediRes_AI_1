@@ -584,44 +584,34 @@ def fig_hallucinations():
 
 # --- 11. Test-time compute: what vendors call reasoning ---
 def fig_ttc():
-    fig, ax = plt.subplots(figsize=(14.2, 6.15))
+    fig, ax = plt.subplots(figsize=(14.2, 5.45))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 6.15)
+    ax.set_ylim(0, 5.45)
     ax.axis("off")
-    # Leave a caption band under the boxes so the check sentence cannot sit on the border.
-    rounded(ax, 0.4, 1.12, 6.3, 4.72, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.5, 1.12, 6.3, 4.72, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.55, 5.22, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.55, 4.72, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
-    ax.text(3.55, 3.72, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
+    rounded(ax, 0.4, 0.16, 6.3, 5.08, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, 7.5, 0.16, 6.3, 5.08, WHITE, TEAL, lw=3, r=0.1)
+    ax.text(3.55, 4.72, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
+    ax.text(3.55, 4.22, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
+    ax.text(3.55, 3.22, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
     ax.text(
         3.55,
-        2.52,
+        2.05,
         "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
         ha="center",
         fontsize=14,
         color=INK,
         linespacing=1.35,
     )
-    ax.text(10.65, 5.22, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.65, 4.72, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
+    ax.text(10.65, 4.72, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.65, 4.22, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
     ax.text(
         10.65,
-        2.78,
+        2.22,
         "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
         ha="center",
         fontsize=14,
         color=INK,
         linespacing=1.35,
-    )
-    ax.text(
-        7.1,
-        0.48,
-        "The 400 mg maximum is the check. 500 mg fails it, so the model revises to 400 mg.",
-        ha="center",
-        va="center",
-        fontsize=13,
-        color=MUTED,
     )
     save(fig, "test_time_compute")
 
