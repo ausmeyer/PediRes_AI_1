@@ -84,12 +84,12 @@ def stack_metrics(items):
             heights.append(it["fontsize"] * _PT * 1.0)
         else:
             heights.append(nlines * it["fontsize"] * ls * _PT)
-        default_gap = 0.06 if i < len(items) - 1 else 0.0
+        default_gap = 0.08 if i < len(items) - 1 else 0.0
         gaps.append(it.get("gap_after", default_gap))
     return heights, gaps, sum(heights) + sum(gaps)
 
 
-def stack_in_box(ax, box_x, box_y, box_w, box_h, items, pad=0.08, ha="center", valign="center"):
+def stack_in_box(ax, box_x, box_y, box_w, box_h, items, pad=0.14, ha="center", valign="center"):
     """Place a stack of text items inside a box.
 
     valign: \"center\" (default) or \"top\" (pack from the top pad — tighter
@@ -128,7 +128,7 @@ def stack_in_box(ax, box_x, box_y, box_w, box_h, items, pad=0.08, ha="center", v
         y_cursor = y_cursor - h - g
 
 
-def white_card(ax, x, w, items, ec, y_mid=None, y=None, pad=0.08, r=0.1, lw=3, ha="center", h=None):
+def white_card(ax, x, w, items, ec, y_mid=None, y=None, pad=0.14, r=0.1, lw=3, ha="center", h=None):
     """White fill + colored frame, height sized to the text (unless h is set).
 
     Place by vertical center ``y_mid`` or bottom ``y``. Returns (x, y, w, h).
@@ -146,7 +146,7 @@ def white_card(ax, x, w, items, ec, y_mid=None, y=None, pad=0.08, r=0.1, lw=3, h
     return (x, by, w, bh)
 
 
-def matched_height(*item_lists, pad=0.08):
+def matched_height(*item_lists, pad=0.14):
     """Tallest content+pad height across several stacks (for paired cards)."""
     return max(stack_metrics(items)[2] + 2 * pad for items in item_lists)
 
@@ -187,30 +187,30 @@ def fig_hour_map():
 
 # --- 2. Three meanings of AI ---
 def fig_three_ais():
-    fig, ax = plt.subplots(figsize=(14.2, 5.8))
+    fig, ax = plt.subplots(figsize=(14.2, 6.2))
     ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 5.8)
+    ax.set_ylim(0, 6.2)
     ax.axis("off")
     cards = [
-        (0.4, BLUE, "Rules & scores", "If-then · scores · order sets", "PEWS\nfebrile-infant pathway"),
+        (0.4, BLUE, "Rules & scores", "If-then\nscores\norder sets", "PEWS\nfebrile-infant pathway"),
         (5.0, PURPLE, "Classical ML", "Labels in → class / risk out", "Sepsis alert\nchest X-ray read"),
         (9.6, TEAL, "Foundation models", "Next-token output", "Parent letter\nAI scribe"),
     ]
-    pad = 0.08
+    pad = 0.14
     stacks = []
     for x, c, title, mid, bot in cards:
         stacks.append(
             [
-                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.04},
-                {"text": mid, "fontsize": 13, "color": INK, "gap_after": 0.04},
-                {"text": bot, "fontsize": 13, "color": MUTED, "linespacing": 1.18},
+                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.08},
+                {"text": mid, "fontsize": 13, "color": INK, "gap_after": 0.16, "linespacing": 1.25},
+                {"text": bot, "fontsize": 13, "color": MUTED, "linespacing": 1.25},
             ]
         )
     # Dot band above the text; size the card to text + that band.
     dot = 0.78
     text_h = matched_height(*stacks, pad=pad)
     bh = text_h + dot
-    y_mid = 2.55
+    y_mid = 2.75
     for (x, c, *_), items in zip(cards, stacks):
         by = y_mid - bh / 2
         rounded(ax, x, by, 4.2, bh, WHITE, ec=c, r=0.12, lw=3)
@@ -218,7 +218,7 @@ def fig_three_ais():
         stack_in_box(ax, x, by, 4.2, text_h, items, pad=pad)
     ax.text(
         7.1,
-        5.35,
+        5.75,
         "A score, an alert, and a chatbot are all called AI. Those are three different jobs.",
         ha="center",
         fontsize=14,
@@ -309,18 +309,18 @@ def fig_pediatric_shift():
     ]
     stacks = []
     for x, c, title, lines in cards:
-        items = [{"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.04}]
+        items = [{"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.08}]
         for i, line in enumerate(lines):
             items.append(
                 {
                     "text": line,
                     "fontsize": 14,
                     "color": INK,
-                    "gap_after": 0.04 if i < len(lines) - 1 else 0.0,
+                    "gap_after": 0.08 if i < len(lines) - 1 else 0.0,
                 }
             )
         stacks.append(items)
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.85
     for (x, c, *_), items in zip(cards, stacks):
         white_card(ax, x, 5.2, items, c, y_mid=y_mid, pad=pad, lw=3)
@@ -383,14 +383,14 @@ def fig_next_token():
     )
 
     left_items = [
-        {"text": "1. Attention mixes them", "fontsize": 15, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "1. Attention mixes them", "fontsize": 15, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
         {"text": "Every token can look at every other token.", "fontsize": 12, "color": INK},
     ]
     right_items = [
-        {"text": "2. Each token is updated", "fontsize": 15, "color": PURPLE, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "2. Each token is updated", "fontsize": 15, "color": PURPLE, "fontweight": "bold", "gap_after": 0.08},
         {"text": "That stack, many times, is a transformer.", "fontsize": 12, "color": INK},
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 3.17
     white_card(ax, 0.85, 5.9, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 7.45, 5.9, right_items, PURPLE, y_mid=y_mid, pad=pad, lw=3)
@@ -578,8 +578,8 @@ def fig_three_boxes():
     xs = []
     for x, c, title, kicker, notes in cards:
         items = [
-            {"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.04},
-            {"text": kicker, "fontsize": 13, "color": INK, "gap_after": 0.04},
+            {"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.08},
+            {"text": kicker, "fontsize": 13, "color": INK, "gap_after": 0.08},
         ]
         for i, line in enumerate(notes):
             items.append(
@@ -587,13 +587,13 @@ def fig_three_boxes():
                     "text": line,
                     "fontsize": 13,
                     "color": MUTED,
-                    "gap_after": 0.04 if i < len(notes) - 1 else 0.0,
+                    "gap_after": 0.08 if i < len(notes) - 1 else 0.0,
                 }
             )
         stacks.append(items)
         colors.append(c)
         xs.append(x)
-    pad = 0.08
+    pad = 0.14
     y_mid = 3.35
     for x, c, items in zip(xs, colors, stacks):
         white_card(ax, x, 4.3, items, c, y_mid=y_mid, pad=pad, lw=3.5)
@@ -622,14 +622,14 @@ def fig_rag():
     for x, c, title, lines in cards:
         by, bw, bh = 1.75, 3.4, 2.7
         rounded(ax, x, by, bw, bh, c)
-        items = [{"text": title, "fontsize": 16, "color": WHITE, "fontweight": "bold", "gap_after": 0.04}]
+        items = [{"text": title, "fontsize": 16, "color": WHITE, "fontweight": "bold", "gap_after": 0.08}]
         for i, line in enumerate(lines):
             items.append(
                 {
                     "text": line,
                     "fontsize": 11,
                     "color": WHITE,
-                    "gap_after": 0.04 if i < len(lines) - 1 else 0.0,
+                    "gap_after": 0.08 if i < len(lines) - 1 else 0.0,
                 }
             )
         stack_in_box(ax, x, by, bw, bh, items, pad=0.28)
@@ -696,19 +696,19 @@ def fig_hallucinations():
     ]
     stacks = []
     for x, c, title, rows in cards:
-        items = [{"text": title, "fontsize": 17, "color": c, "fontweight": "bold", "gap_after": 0.04}]
+        items = [{"text": title, "fontsize": 17, "color": c, "fontweight": "bold", "gap_after": 0.08}]
         for i, (head, expl) in enumerate(rows):
-            items.append({"text": head, "fontsize": 14, "color": INK, "fontweight": "bold", "gap_after": 0.04})
+            items.append({"text": head, "fontsize": 14, "color": INK, "fontweight": "bold", "gap_after": 0.08})
             items.append(
                 {
                     "text": expl,
                     "fontsize": 12,
                     "color": MUTED,
-                    "gap_after": 0.04 if i < len(rows) - 1 else 0.0,
+                    "gap_after": 0.08 if i < len(rows) - 1 else 0.0,
                 }
             )
         stacks.append((x, c, items))
-    pad = 0.08
+    pad = 0.14
     y_mid = 3.35
     for x, c, items in stacks:
         white_card(ax, x, 6.4, items, c, y_mid=y_mid, pad=pad, lw=3)
@@ -731,15 +731,15 @@ def fig_ttc():
     ax.set_ylim(0, 4.8)
     ax.axis("off")
     left_items = [
-        {"text": "Answer once", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "First fluent sentence. Ship it.", "fontsize": 13, "color": MUTED, "gap_after": 0.04},
+        {"text": "Answer once", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "First fluent sentence. Ship it.", "fontsize": 13, "color": MUTED, "gap_after": 0.08},
         {
             "text": "=B2*10",
             "fontsize": 26,
             "color": INK,
             "fontweight": "bold",
             "family": "DejaVu Sans Mono",
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
         {
             "text": "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
@@ -749,8 +749,8 @@ def fig_ttc():
         },
     ]
     right_items = [
-        {"text": "Try → test → revise", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "Hidden scratch. Then one answer.", "fontsize": 13, "color": MUTED, "gap_after": 0.04},
+        {"text": "Try → test → revise", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "Hidden scratch. Then one answer.", "fontsize": 13, "color": MUTED, "gap_after": 0.08},
         {
             "text": "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
             "fontsize": 14,
@@ -758,7 +758,7 @@ def fig_ttc():
             "linespacing": 1.15,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.4
     white_card(ax, 0.4, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 7.5, 6.3, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
@@ -823,7 +823,7 @@ def fig_bench():
     ax.set_ylim(0, 6.2)
     ax.axis("off")
     left_items = [
-        {"text": "On the exam", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "On the exam", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Board-style items\nLeaderboard ratings\nVendor tables",
             "fontsize": 14,
@@ -832,7 +832,7 @@ def fig_bench():
         },
     ]
     right_items = [
-        {"text": "On the ward", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "On the ward", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Specific patient\nSpecific hospital formulary\nSpecific language\nSpecific cultural context",
             "fontsize": 13,
@@ -840,7 +840,7 @@ def fig_bench():
             "linespacing": 1.18,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 3.85
     white_card(ax, 0.40, 4.35, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 5.25, 4.35, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
@@ -947,7 +947,7 @@ def fig_artsi():
         linespacing=1.3,
     )
     left_items = [
-        {"text": "Appropriate use in that review", "fontsize": 13, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "Appropriate use in that review", "fontsize": 13, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Guideline-style look-up.\nOften reinforces a plan you already had.",
             "fontsize": 13,
@@ -956,7 +956,7 @@ def fig_artsi():
         },
     ]
     right_items = [
-        {"text": "Not the use case they found", "fontsize": 13, "color": ORANGE, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "Not the use case they found", "fontsize": 13, "color": ORANGE, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Complex cases, or changing the plan.\nActing without opening the source.",
             "fontsize": 13,
@@ -964,7 +964,7 @@ def fig_artsi():
             "linespacing": 1.18,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.05
     white_card(ax, 0.4, 6.4, left_items, TEAL, y_mid=y_mid, pad=pad, lw=2.5)
     white_card(ax, 7.2, 6.4, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=2.5)
@@ -1300,7 +1300,7 @@ def fig_context_age():
     ax.text(7.1, 5.05, "38.5 °C", ha="center", fontsize=42, fontweight="bold", color=GOLD)
     ax.text(7.1, 4.45, "Same number. Different child. Context is the age.", ha="center", fontsize=15, color=INK)
     left_items = [
-        {"text": "3-week-old", "fontsize": 22, "color": ORANGE, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "3-week-old", "fontsize": 22, "color": ORANGE, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Fever workup.\nHours, not days.\nThe number is a trigger.",
             "fontsize": 16,
@@ -1309,7 +1309,7 @@ def fig_context_age():
         },
     ]
     right_items = [
-        {"text": "3-year-old", "fontsize": 22, "color": BLUE, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "3-year-old", "fontsize": 22, "color": BLUE, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Often watch and treat.\nSame temperature.\nDifferent meaning.",
             "fontsize": 16,
@@ -1317,7 +1317,7 @@ def fig_context_age():
             "linespacing": 1.18,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.15
     white_card(ax, 0.45, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 7.45, 6.3, right_items, BLUE, y_mid=y_mid, pad=pad, lw=3)
@@ -1338,12 +1338,12 @@ def fig_three_eras():
     for x, c, n, title, body in eras:
         stacks.append(
             [
-                {"text": n, "fontsize": 16, "color": c, "fontweight": "bold", "ha": "left", "x": x + 0.35, "gap_after": 0.04},
-                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.04},
+                {"text": n, "fontsize": 16, "color": c, "fontweight": "bold", "ha": "left", "x": x + 0.35, "gap_after": 0.08},
+                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.08},
                 {"text": body, "fontsize": 15, "color": INK, "linespacing": 1.15},
             ]
         )
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.25
     for (x, c, *_), items in zip(eras, stacks):
         white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3)
@@ -1359,8 +1359,8 @@ def fig_settled():
     left_x = 0.58
     right_x = 7.50
     left_items = [
-        {"text": "Already in writing", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.04},
+        {"text": "Already in writing", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.08},
         {
             "text": "Authors have to be humans who can take\nresponsibility. A chatbot cannot be an author.",
             "fontsize": 13,
@@ -1368,9 +1368,9 @@ def fig_settled():
             "ha": "left",
             "x": left_x,
             "linespacing": 1.18,
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
-        {"text": "AMA House of Delegates, 10 Jun 2026", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.04},
+        {"text": "AMA House of Delegates, 10 Jun 2026", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.08},
         {
             "text": "AI must not replace physician judgment.\nA physician stays in charge.",
             "fontsize": 13,
@@ -1378,9 +1378,9 @@ def fig_settled():
             "ha": "left",
             "x": left_x,
             "linespacing": 1.18,
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
-        {"text": "What that means for you", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.04},
+        {"text": "What that means for you", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.08},
         {
             "text": "You remain the author. You remain\nthe one making the call.",
             "fontsize": 13,
@@ -1391,8 +1391,8 @@ def fig_settled():
         },
     ]
     right_items = [
-        {"text": "Still missing in pediatrics", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "AAP, Jan 2026 (digital-ecosystems policy)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.04},
+        {"text": "Still missing in pediatrics", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "AAP, Jan 2026 (digital-ecosystems policy)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.08},
         {
             "text": "A dedicated clinical AI statement is still forthcoming.\nThere is no AAP bedside AI policy to follow yet.",
             "fontsize": 13,
@@ -1400,9 +1400,9 @@ def fig_settled():
             "ha": "left",
             "x": right_x,
             "linespacing": 1.18,
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
-        {"text": "FDA, Aug 2026 (discussion paper)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.04},
+        {"text": "FDA, Aug 2026 (discussion paper)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.08},
         {
             "text": "The FDA is still asking how to test\nchatbot-style tools.",
             "fontsize": 13,
@@ -1410,9 +1410,9 @@ def fig_settled():
             "ha": "left",
             "x": right_x,
             "linespacing": 1.18,
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
-        {"text": "Independent literature", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.04},
+        {"text": "Independent literature", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.08},
         {
             "text": "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies, none pediatric.",
             "fontsize": 13,
@@ -1422,7 +1422,7 @@ def fig_settled():
             "linespacing": 1.18,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 3.0
     white_card(ax, 0.28, 6.72, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 7.20, 6.72, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
@@ -1454,8 +1454,8 @@ def fig_two_blocks():
     ax.set_ylim(0, 5.2)
     ax.axis("off")
     left_items = [
-        {"text": "Make → inspect", "fontsize": 24, "color": PURPLE_WEB, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "Labs 1 and 2", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "Make → inspect", "fontsize": 24, "color": PURPLE_WEB, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "Labs 1 and 2", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "Files you can open tomorrow.\nThen find what is wrong.",
             "fontsize": 16,
@@ -1464,8 +1464,8 @@ def fig_two_blocks():
         },
     ]
     right_items = [
-        {"text": "Ask → verify", "fontsize": 24, "color": TEAL, "fontweight": "bold", "gap_after": 0.04},
-        {"text": "Labs 3 and 4", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.04},
+        {"text": "Ask → verify", "fontsize": 24, "color": TEAL, "fontweight": "bold", "gap_after": 0.08},
+        {"text": "Labs 3 and 4", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.08},
         {
             "text": "A febrile-infant question.\nThen check whether the\ncitations are real.",
             "fontsize": 16,
@@ -1473,7 +1473,7 @@ def fig_two_blocks():
             "linespacing": 1.18,
         },
     ]
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.55
     white_card(ax, 0.4, 6.4, left_items, PURPLE_WEB, y_mid=y_mid, pad=pad, lw=3)
     white_card(ax, 7.4, 6.4, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
@@ -1486,14 +1486,14 @@ def fig_formula_bug():
     ax.set_ylim(0, 4.0)
     ax.axis("off")
     items = [
-        {"text": "Cell C2", "fontsize": 14, "color": MUTED, "gap_after": 0.04},
+        {"text": "Cell C2", "fontsize": 14, "color": MUTED, "gap_after": 0.08},
         {
             "text": "=B2*10",
             "fontsize": 48,
             "color": INK,
             "fontweight": "bold",
             "family": "DejaVu Sans Mono",
-            "gap_after": 0.04,
+            "gap_after": 0.08,
         },
         {
             "text": "Weight in B2. Ten milligrams per kilogram. No 400 mg maximum.",
@@ -1501,7 +1501,7 @@ def fig_formula_bug():
             "color": INK,
         },
     ]
-    white_card(ax, 1.5, 11.2, items, ORANGE, y_mid=2.0, pad=0.08, r=0.12, lw=3)
+    white_card(ax, 1.5, 11.2, items, ORANGE, y_mid=2.0, pad=0.14, r=0.12, lw=3)
     save(fig, "formula_bug")
 
 
@@ -1520,11 +1520,11 @@ def fig_lab5_flow():
     for x, c, title, body in steps:
         stacks.append(
             [
-                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.04},
+                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.08},
                 {"text": body, "fontsize": 14, "color": INK, "linespacing": 1.15},
             ]
         )
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.0
     for (x, c, *_), items in zip(steps, stacks):
         white_card(ax, x, 3.2, items, c, y_mid=y_mid, pad=pad, lw=3)
@@ -1545,11 +1545,11 @@ def fig_lab6_rules():
     for x, c, title, body in cards:
         stacks.append(
             [
-                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.04},
+                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.08},
                 {"text": body, "fontsize": 16, "color": INK, "linespacing": 1.18},
             ]
         )
-    pad = 0.08
+    pad = 0.14
     y_mid = 2.25
     for (x, c, *_), items in zip(cards, stacks):
         white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3)

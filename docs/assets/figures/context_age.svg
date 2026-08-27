@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:17:02.668292</dc:date>
+    <dc:date>2026-08-27T20:44:26.335378</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,30 +30,30 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 40.932 248.601011 
-L 382.428 248.601011 
-Q 388.008 248.601011 388.008 245.274611 
-L 388.008 161.697702 
-Q 388.008 158.371302 382.428 158.371302 
-L 40.932 158.371302 
-Q 35.352 158.371302 35.352 161.697702 
-L 35.352 245.274611 
-Q 35.352 248.601011 40.932 248.601011 
+    <path d="M 40.932 253.036211 
+L 382.428 253.036211 
+Q 388.008 253.036211 388.008 249.709811 
+L 388.008 157.262502 
+Q 388.008 153.936102 382.428 153.936102 
+L 40.932 153.936102 
+Q 35.352 153.936102 35.352 157.262502 
+L 35.352 249.709811 
+Q 35.352 253.036211 40.932 253.036211 
 z
-" clip-path="url(#p2155edfcab)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p6784c39dcc)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 431.532 248.601011 
-L 773.028 248.601011 
-Q 778.608 248.601011 778.608 245.274611 
-L 778.608 161.697702 
-Q 778.608 158.371302 773.028 158.371302 
-L 431.532 158.371302 
-Q 425.952 158.371302 425.952 161.697702 
-L 425.952 245.274611 
-Q 425.952 248.601011 431.532 248.601011 
+    <path d="M 431.532 253.036211 
+L 773.028 253.036211 
+Q 778.608 253.036211 778.608 249.709811 
+L 778.608 157.262502 
+Q 778.608 153.936102 773.028 153.936102 
+L 431.532 153.936102 
+Q 425.952 153.936102 425.952 157.262502 
+L 425.952 249.709811 
+Q 425.952 253.036211 431.532 253.036211 
 z
-" clip-path="url(#p2155edfcab)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p6784c39dcc)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 38.5 °C -->
@@ -770,7 +770,7 @@ z
    </g>
    <g id="text_3">
     <!-- 3-week-old -->
-    <g style="fill: #ff4d00" transform="translate(143.294375 182.318137) scale(0.22 -0.22)">
+    <g style="fill: #ff4d00" transform="translate(143.294375 181.209337) scale(0.22 -0.22)">
      <defs>
       <path id="DejaVuSans-Bold-10" d="M 347 2297 
 L 2309 2297 
@@ -903,7 +903,7 @@ z
    </g>
    <g id="text_4">
     <!-- Fever workup. -->
-    <g style="fill: #281241" transform="translate(155.30125 201.107076) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(155.30125 202.215876) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-29" d="M 628 4666 
 L 3309 4666 
@@ -1000,7 +1000,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(672.953125 0)"/>
     </g>
     <!-- Hours, not days. -->
-    <g style="fill: #281241" transform="translate(146.0875 219.987076) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(146.0875 221.095876) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-2b" d="M 628 4666 
 L 1259 4666 
@@ -1062,7 +1062,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(788.125 0)"/>
     </g>
     <!-- The number is a trigger. -->
-    <g style="fill: #281241" transform="translate(115.29125 238.867076) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(115.29125 239.975876) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-37" d="M -19 4666 
 L 3928 4666 
@@ -1104,7 +1104,7 @@ z
    </g>
    <g id="text_5">
     <!-- 3-year-old -->
-    <g style="fill: #003da6" transform="translate(538.815156 180.100949) scale(0.22 -0.22)">
+    <g style="fill: #003da6" transform="translate(538.815156 178.992149) scale(0.22 -0.22)">
      <defs>
       <path id="DejaVuSans-Bold-5c" d="M 78 3500 
 L 1197 3500 
@@ -1188,7 +1188,7 @@ z
    </g>
    <g id="text_6">
     <!-- Often watch and treat. -->
-    <g style="fill: #281241" transform="translate(511.69625 202.657076) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(511.69625 203.765876) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-32" d="M 2522 4238 
 Q 1834 4238 1429 3725 
@@ -1257,7 +1257,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(1100.515625 0)"/>
     </g>
     <!-- Same temperature. -->
-    <g style="fill: #281241" transform="translate(524.21375 219.845826) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(524.21375 220.954626) scale(0.16 -0.16)">
      <use xlink:href="#DejaVuSans-36"/>
      <use xlink:href="#DejaVuSans-44" transform="translate(63.484375 0)"/>
      <use xlink:href="#DejaVuSans-50" transform="translate(124.765625 0)"/>
@@ -1277,7 +1277,7 @@ z
      <use xlink:href="#DejaVuSans-11" transform="translate(944.046875 0)"/>
     </g>
     <!-- Different meaning. -->
-    <g style="fill: #281241" transform="translate(527.07875 238.867076) scale(0.16 -0.16)">
+    <g style="fill: #281241" transform="translate(527.07875 239.975876) scale(0.16 -0.16)">
      <use xlink:href="#DejaVuSans-27"/>
      <use xlink:href="#DejaVuSans-4c" transform="translate(77 0)"/>
      <use xlink:href="#DejaVuSans-13ae" transform="translate(104.78125 0)"/>
@@ -1300,7 +1300,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p2155edfcab">
+  <clipPath id="p6784c39dcc">
    <rect x="10.8" y="23.306156" width="792.36" height="299.376"/>
   </clipPath>
  </defs>

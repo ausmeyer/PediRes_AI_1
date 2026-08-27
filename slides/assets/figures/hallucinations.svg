@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:17:01.185594</dc:date>
+    <dc:date>2026-08-27T20:44:24.789930</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,34 +30,34 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 38.5326 249.80184 
-L 390.566829 249.80184 
-Q 396.226543 249.80184 396.226543 246.47544 
-L 396.226543 135.48456 
-Q 396.226543 132.15816 390.566829 132.15816 
-L 38.5326 132.15816 
-Q 32.872886 132.15816 32.872886 135.48456 
-L 32.872886 246.47544 
-Q 32.872886 249.80184 38.5326 249.80184 
+    <path d="M 38.5326 259.78104 
+L 390.566829 259.78104 
+Q 396.226543 259.78104 396.226543 256.45464 
+L 396.226543 125.50536 
+Q 396.226543 122.17896 390.566829 122.17896 
+L 38.5326 122.17896 
+Q 32.872886 122.17896 32.872886 125.50536 
+L 32.872886 256.45464 
+Q 32.872886 259.78104 38.5326 259.78104 
 z
-" clip-path="url(#pf3219056fb)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p9f2d0af851)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 423.393171 249.80184 
-L 775.4274 249.80184 
-Q 781.087114 249.80184 781.087114 246.47544 
-L 781.087114 135.48456 
-Q 781.087114 132.15816 775.4274 132.15816 
-L 423.393171 132.15816 
-Q 417.733457 132.15816 417.733457 135.48456 
-L 417.733457 246.47544 
-Q 417.733457 249.80184 423.393171 249.80184 
+    <path d="M 423.393171 259.78104 
+L 775.4274 259.78104 
+Q 781.087114 259.78104 781.087114 256.45464 
+L 781.087114 125.50536 
+Q 781.087114 122.17896 775.4274 122.17896 
+L 423.393171 122.17896 
+Q 417.733457 122.17896 417.733457 125.50536 
+L 417.733457 256.45464 
+Q 417.733457 259.78104 423.393171 259.78104 
 z
-" clip-path="url(#pf3219056fb)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p9f2d0af851)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Chatbots, 2022–23 -->
-    <g style="fill: #ff4d00" transform="translate(125.493621 150.659726) scale(0.17 -0.17)">
+    <g style="fill: #ff4d00" transform="translate(125.493621 144.006926) scale(0.17 -0.17)">
      <defs>
       <path id="DejaVuSans-Bold-26" d="M 4288 256 
 Q 3956 84 3597 -3 
@@ -348,7 +348,7 @@ z
    </g>
    <g id="text_2">
     <!-- Invented citation -->
-    <g style="fill: #281241" transform="translate(146.970183 168.313055) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(146.970183 163.877855) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-Bold-2c" d="M 588 4666 
 L 1791 4666 
@@ -496,7 +496,7 @@ z
    </g>
    <g id="text_3">
     <!-- A PubMed ID that was never assigned. -->
-    <g style="fill: #586f78" transform="translate(99.100339 181.59549) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(99.100339 179.37789) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-24" d="M 2188 4044 
 L 1331 1722 
@@ -956,7 +956,7 @@ z
    </g>
    <g id="text_5">
     <!-- A number that sounds like a monograph. -->
-    <g style="fill: #586f78" transform="translate(91.643464 211.97661) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(91.643464 214.19421) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-50" d="M 3328 2828 
 Q 3544 3216 3844 3400 
@@ -1099,7 +1099,7 @@ z
    </g>
    <g id="text_6">
     <!-- Sounds like a review -->
-    <g style="fill: #281241" transform="translate(133.129871 229.075295) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(133.129871 233.510495) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-Bold-36" d="M 3834 4519 
 L 3834 3531 
@@ -1234,7 +1234,7 @@ z
    </g>
    <g id="text_7">
     <!-- Fluent prose still needs a source. -->
-    <g style="fill: #586f78" transform="translate(115.508464 242.35773) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(115.508464 249.01053) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-29" d="M 628 4666 
 L 3309 4666 
@@ -1309,7 +1309,7 @@ z
    </g>
    <g id="text_8">
     <!-- With tools, 2025–26 -->
-    <g style="fill: #00c4b3" transform="translate(504.410833 150.659726) scale(0.17 -0.17)">
+    <g style="fill: #00c4b3" transform="translate(504.410833 144.006926) scale(0.17 -0.17)">
      <defs>
       <path id="DejaVuSans-Bold-3a" d="M 191 4666 
 L 1344 4666 
@@ -1406,7 +1406,7 @@ z
    </g>
    <g id="text_9">
     <!-- Real paper, wrong claim -->
-    <g style="fill: #281241" transform="translate(504.574504 166.902118) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(504.574504 162.466917) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-Bold-35" d="M 2297 2597 
 Q 2675 2597 2839 2737 
@@ -1556,7 +1556,7 @@ z
    </g>
    <g id="text_10">
     <!-- The article exists. That sentence is not in it. -->
-    <g style="fill: #586f78" transform="translate(467.893098 182.75799) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(467.893098 180.54039) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-37" d="M -19 4666 
 L 3928 4666 
@@ -1678,7 +1678,7 @@ z
    </g>
    <g id="text_12">
     <!-- “No meds” at the start can be gone by the end. -->
-    <g style="fill: #586f78" transform="translate(455.972786 211.97661) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(455.972786 214.19421) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-afe" d="M 1203 3128 
 L 544 3128 
@@ -1795,7 +1795,7 @@ z
    </g>
    <g id="text_13">
     <!-- Citation theater -->
-    <g style="fill: #281241" transform="translate(536.482473 229.075295) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(536.482473 233.510495) scale(0.14 -0.14)">
      <use xlink:href="#DejaVuSans-Bold-26"/>
      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(73.390625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(107.671875 0)"/>
@@ -1816,7 +1816,7 @@ z
    </g>
    <g id="text_14">
     <!-- A chip or URL can still dress up the wrong sentence. -->
-    <g style="fill: #586f78" transform="translate(442.928411 242.35773) scale(0.12 -0.12)">
+    <g style="fill: #586f78" transform="translate(442.928411 249.01053) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-38" d="M 556 4666 
 L 1191 4666 
@@ -2030,7 +2030,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pf3219056fb">
+  <clipPath id="p9f2d0af851">
    <rect x="10.8" y="10.8" width="792.36" height="365.904"/>
   </clipPath>
  </defs>
