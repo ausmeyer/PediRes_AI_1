@@ -11,5 +11,6 @@ __pycache__/
 /*.jpeg
 /*.webp
 
-# Quarto copies figures next to the Pages HTML; the deck is embed-resources.
-docs/assets/
+# Quarto scratch (also listed under slides/)
+.quarto/
+**/*.quarto_ipynb

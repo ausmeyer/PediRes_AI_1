@@ -7,13 +7,13 @@ Residents: start at the [repository README](../README.md). This folder is the de
 ```bash
 cd slides
 ./render.sh
-# or: quarto render lecture.qmd && touch ../docs/.nojekyll
 # Chrome fullscreen on ../docs/index.html  (F fullscreen, S speaker notes)
+# Optional USB freeze with no supporting files: ./render.sh --self-contained
 ```
 
-That render writes the self-contained deck to [`docs/index.html`](../docs/index.html), which is what GitHub Pages serves. In the GitHub repo: **Settings → Pages → GitHub Actions**, or **Deploy from a branch → `main` → `/docs`**. The site root is then the lecture (not the resident README). Lab 5 is a separate journal-club exercise in an empty folder; do not overwrite this `docs/index.html` for that lab.
+That render writes [`docs/index.html`](../docs/index.html) plus `docs/assets/` and `docs/lecture_files/` (Reveal, theme, figures). GitHub Pages: **Settings → Pages → GitHub Actions**, or **Deploy from a branch → `main` → `/docs`**. The site root is then the lecture (not the resident README). Lab 5 is a separate journal-club exercise in an empty folder; do not overwrite this `docs/` tree for that lab.
 
-Night-before freeze: that HTML on the laptop **and** a PDF print (`index.html?print-pdf` in Chrome, Print → Save as PDF, landscape). The HTML is self-contained; it does not need Google Fonts or hospital Wi-Fi. PowerPoint is a fail-safe export, not a second master.
+Night-before freeze: copy the `docs/` folder to the laptop **and** a PDF print (`index.html?print-pdf` in Chrome, Print → Save as PDF, landscape). `./render.sh --self-contained` is the one-file variant if you do not want a folder. PowerPoint is a fail-safe export, not a second master.
 
 Lab 1–2 scripts: [`workshops/README.md`](workshops/README.md).
 

@@ -61,4 +61,4 @@ Never use tonight’s patients, even “just the assessment.”
 
 ## This lecture as a webpage
 
-[`docs/index.html`](docs/index.html) is the hour’s Reveal deck (source: [`slides/lecture.qmd`](slides/lecture.qmd)). GitHub Pages: **Settings → Pages → GitHub Actions**, or **Deploy from a branch → `main` → `/docs`**. Re-render after you edit the lecture (`cd slides && ./render.sh`) and commit `docs/index.html`. Lab 5 is your own journal-club fork in a different repo, not this file.
+[`docs/index.html`](docs/index.html) is the hour’s Reveal deck (source: [`slides/lecture.qmd`](slides/lecture.qmd)). GitHub Pages: **Settings → Pages → GitHub Actions**, or **Deploy from a branch → `main` → `/docs`**. Re-render after you edit the lecture (`cd slides && ./render.sh`). Lab 5 is your own journal-club fork in a different repo, not this file.
