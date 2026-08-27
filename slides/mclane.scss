@@ -73,6 +73,8 @@ $presentation-h2-font-size: 1.35em;
   display: flex !important;
   flex-direction: column;
   justify-content: center;
+  padding-top: 5.2em;
+  box-sizing: border-box;
 }
 
 .reveal .slides > section.title-open > h2 {
@@ -87,9 +89,9 @@ $presentation-h2-font-size: 1.35em;
   border: 0;
 }
 
-.reveal .slides > section.title-open img.title-wordmark {
+.reveal .slides > section.title-open img {
   position: absolute;
-  top: 22px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: auto !important;
