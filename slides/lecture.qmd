@@ -192,7 +192,7 @@ Old failure: invented PubMed ID. Usual failure now: a real paper with the wrong 
 ![](assets/figures/three_eras.svg){width="100%"}
 
 ::: notes
-The goal is a taxonomy they can keep when the posters change. Autocomplete, chat, and tools. Product names change quickly; these three jobs are what to remember. Tools still look things up and still get it wrong. Full chronology is in backup if someone wants GPT-2 through Fable.
+The goal is a taxonomy they can keep when the posters change. Autocomplete finishes the next word. Chat is a conversation. Tools look things up or run a check. Product names change quickly; these three jobs are what to remember. Full chronology is in backup if someone wants GPT-2 through Fable.
 :::
 
 ---
@@ -501,12 +501,28 @@ What did I verify?
 :::
 ::::
 
+::: notes
+These three checks before they copy. Then thank them and take questions. Do not invent an AAP clinical AI guideline.
+:::
+
+---
+
+## {background-color="#FAF9F7" .title-open .nostretch}
+
+::: {.deck-title}
+The End.
+:::
+
+::: {.title-sub}
+Thank you.
+:::
+
 ::: {.qa-ask}
-Questions
+Questions?
 :::
 
 ::: notes
-Stop here for the live hour. Do not invent an AAP clinical AI guideline in Q&A. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.
+Stop here for the live hour. Thank them. Take questions. Do not invent an AAP clinical AI guideline. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.
 :::
 
 ---

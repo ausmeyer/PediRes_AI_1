@@ -2,7 +2,7 @@
 
 Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only. Residents use the [repository README](../README.md); this file is the stage stack.
 
-The live hour is **two blocks containing four lessons** (Labs 1–4), then **six takeaways → three questions → Q&A**. Labs 5–8 are an appendix after questions. Backup (learning modes, attention, named timeline, parameter counts, hardware, manuscript disclosure, 2026 chronology) is after that. Linear navigation: stop at Q&A.
+The live hour is **two blocks containing four lessons** (Labs 1–4), then **six takeaways → three questions → The End / Q&A**. Labs 5–8 are an appendix after questions. Backup (learning modes, attention, named timeline, parameter counts, hardware, manuscript disclosure, 2026 chronology) is after that. Linear navigation: stop at The End.
 
 ## Do we need anything else before the hour?
 
