@@ -187,12 +187,12 @@ Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start c
 
 ---
 
-## Names change. Autocomplete, chat, and tools do not. {.viz}
+## This week's product name will age. Autocomplete, chat, and tools will not. {.viz}
 
 ![](assets/figures/three_eras.svg){width="100%"}
 
 ::: notes
-Autocomplete → chat → tools/checking. Names age quickly; these three jobs do not. Full chronology is in backup if someone wants GPT-2 through Fable.
+The goal is a taxonomy they can keep when the posters change. Autocomplete → chat → tools/checking. Product names age quickly; these three jobs do not. Tools still look things up and still get it wrong. Full chronology is in backup if someone wants GPT-2 through Fable.
 :::
 
 ---
