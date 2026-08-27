@@ -56,29 +56,34 @@ $presentation-h2-font-size: 1.35em;
 
 .reveal .footer {
   color: $mclane-muted;
-  font-size: 13px;
   letter-spacing: 0.01em;
-  bottom: 14px;
-  z-index: 6;
+  bottom: 10px !important;
+  height: auto !important;
+  overflow: visible !important;
+  z-index: 6 !important;
+  font-size: 0 !important;
 }
 
 .reveal .footer p {
-  margin: 0;
+  margin: 0 !important;
   display: inline-block;
   background: $mclane-paper;
   padding: 6px 10px 5px;
   border-radius: 8px;
-  line-height: 0;
+  line-height: normal;
+  font-size: 0;
 }
 
 .reveal .footer img,
 .reveal .footer .footer-wordmark {
-  display: block;
-  width: auto !important;
-  height: auto !important;
-  max-width: 250px;
-  max-height: 60px;
+  display: inline-block !important;
+  width: 246px !important;
+  height: 60px !important;
+  max-width: 250px !important;
+  max-height: 60px !important;
+  object-fit: contain;
   margin: 0;
+  vertical-align: middle;
   background: transparent;
 }
 
