@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:14:06.823466</dc:date>
+    <dc:date>2026-08-27T20:17:01.483779</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,17 +30,17 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 49.62564 186.558106 
-L 380.03976 186.558106 
-Q 387.96336 186.558106 387.96336 183.231706 
-L 387.96336 98.936294 
-Q 387.96336 95.609894 380.03976 95.609894 
-L 49.62564 95.609894 
-Q 41.70204 95.609894 41.70204 98.936294 
-L 41.70204 183.231706 
-Q 41.70204 186.558106 49.62564 186.558106 
+    <path d="M 49.62564 180.670378 
+L 380.03976 180.670378 
+Q 387.96336 180.670378 387.96336 177.343978 
+L 387.96336 104.824022 
+Q 387.96336 101.497622 380.03976 101.497622 
+L 49.62564 101.497622 
+Q 41.70204 101.497622 41.70204 104.824022 
+L 41.70204 177.343978 
+Q 41.70204 180.670378 49.62564 180.670378 
 z
-" clip-path="url(#p213da621f9)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0b2fea5cee)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 433.92024 186.558106 
@@ -53,11 +53,11 @@ Q 425.99664 95.609894 425.99664 98.936294
 L 425.99664 183.231706 
 Q 425.99664 186.558106 433.92024 186.558106 
 z
-" clip-path="url(#p213da621f9)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0b2fea5cee)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- On the exam -->
-    <g style="fill: #00c4b3" transform="translate(150.333638 117.708359) scale(0.18 -0.18)">
+    <g style="fill: #00c4b3" transform="translate(150.333638 121.957367) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-32" d="M 2719 3878 
 Q 2169 3878 1866 3472 
@@ -267,7 +267,7 @@ z
    </g>
    <g id="text_2">
     <!-- Board-style items -->
-    <g style="fill: #281241" transform="translate(153.261137 132.681019) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(153.261137 138.517205) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-25" d="M 1259 2228 
 L 1259 519 
@@ -570,7 +570,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(827.5 0)"/>
     </g>
     <!-- Leaderboard ratings -->
-    <g style="fill: #281241" transform="translate(144.005825 149.201019) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(144.005825 155.037205) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-2f" d="M 628 4666 
 L 1259 4666 
@@ -682,7 +682,7 @@ z
      <use xlink:href="#DejaVuSans-56" transform="translate(959.71875 0)"/>
     </g>
     <!-- Vendor tables -->
-    <g style="fill: #281241" transform="translate(166.638794 167.077269) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(166.638794 172.913455) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-39" d="M 1831 0 
 L 50 4666 
@@ -712,7 +712,7 @@ z
    </g>
    <g id="text_3">
     <!-- On the ward -->
-    <g style="fill: #ff4d00" transform="translate(536.720738 117.708359) scale(0.18 -0.18)">
+    <g style="fill: #ff4d00" transform="translate(536.720738 116.069639) scale(0.18 -0.18)">
      <defs>
       <path id="DejaVuSans-Bold-5a" d="M 225 3500 
 L 1313 3500 
@@ -789,7 +789,7 @@ z
    </g>
    <g id="text_4">
     <!-- Specific patient -->
-    <g style="fill: #281241" transform="translate(548.630425 131.815082) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(548.630425 131.751267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-36" d="M 3425 4513 
 L 3425 3897 
@@ -916,7 +916,7 @@ z
      <use xlink:href="#DejaVuSans-57" transform="translate(737.671875 0)"/>
     </g>
     <!-- Specific hospital formulary -->
-    <g style="fill: #281241" transform="translate(512.360425 147.155082) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(512.360425 147.091267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-4b" d="M 3513 2113 
 L 3513 0 
@@ -1009,7 +1009,7 @@ z
      <use xlink:href="#DejaVuSans-5c" transform="translate(1275.6875 0)"/>
     </g>
     <!-- Specific language -->
-    <g style="fill: #281241" transform="translate(541.497691 162.495082) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(541.497691 162.431267) scale(0.13 -0.13)">
      <use xlink:href="#DejaVuSans-36"/>
      <use xlink:href="#DejaVuSans-53" transform="translate(63.484375 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(126.96875 0)"/>
@@ -1028,7 +1028,7 @@ z
      <use xlink:href="#DejaVuSans-48" transform="translate(825.078125 0)"/>
     </g>
     <!-- Specific cultural context -->
-    <g style="fill: #281241" transform="translate(520.567691 177.835082) scale(0.13 -0.13)">
+    <g style="fill: #281241" transform="translate(520.567691 177.771267) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-5b" d="M 3513 3500 
 L 2247 1797 
@@ -1682,7 +1682,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p213da621f9">
+  <clipPath id="p0b2fea5cee">
    <rect x="10.8" y="10.8" width="792.36" height="343.728"/>
   </clipPath>
  </defs>

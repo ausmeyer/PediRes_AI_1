@@ -321,10 +321,9 @@ def fig_pediatric_shift():
             )
         stacks.append(items)
     pad = 0.08
-    h = matched_height(*stacks, pad=pad)
     y_mid = 2.85
     for (x, c, *_), items in zip(cards, stacks):
-        white_card(ax, x, 5.2, items, c, y_mid=y_mid, pad=pad, lw=3, h=h)
+        white_card(ax, x, 5.2, items, c, y_mid=y_mid, pad=pad, lw=3)
     ax.annotate("", xy=(8.15, y_mid), xytext=(5.85, y_mid), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
     ax.text(7.0, y_mid + 0.35, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
     ax.text(7.0, 5.15, "The training data are mostly adults.", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
@@ -392,10 +391,9 @@ def fig_next_token():
         {"text": "That stack, many times, is a transformer.", "fontsize": 12, "color": INK},
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 3.17
-    white_card(ax, 0.85, 5.9, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 7.45, 5.9, right_items, PURPLE, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.85, 5.9, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 7.45, 5.9, right_items, PURPLE, y_mid=y_mid, pad=pad, lw=3)
 
     ax.annotate(
         "",
@@ -596,10 +594,9 @@ def fig_three_boxes():
         colors.append(c)
         xs.append(x)
     pad = 0.08
-    h = matched_height(*stacks, pad=pad)
     y_mid = 3.35
     for x, c, items in zip(xs, colors, stacks):
-        white_card(ax, x, 4.3, items, c, y_mid=y_mid, pad=pad, lw=3.5, h=h)
+        white_card(ax, x, 4.3, items, c, y_mid=y_mid, pad=pad, lw=3.5)
     ax.text(
         7.1,
         0.28,
@@ -712,10 +709,9 @@ def fig_hallucinations():
             )
         stacks.append((x, c, items))
     pad = 0.08
-    h = matched_height(*(s[2] for s in stacks), pad=pad)
     y_mid = 3.35
     for x, c, items in stacks:
-        white_card(ax, x, 6.4, items, c, y_mid=y_mid, pad=pad, lw=3, h=h)
+        white_card(ax, x, 6.4, items, c, y_mid=y_mid, pad=pad, lw=3)
     ax.text(
         7,
         0.4,
@@ -763,10 +759,9 @@ def fig_ttc():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 2.4
-    white_card(ax, 0.4, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 7.5, 6.3, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.4, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 7.5, 6.3, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "test_time_compute")
 
 
@@ -846,10 +841,9 @@ def fig_bench():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 3.85
-    white_card(ax, 0.40, 4.35, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 5.25, 4.35, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.40, 4.35, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 5.25, 4.35, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
     ax.text(
         5,
         1.55,
@@ -971,10 +965,9 @@ def fig_artsi():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 2.05
-    white_card(ax, 0.4, 6.4, left_items, TEAL, y_mid=y_mid, pad=pad, lw=2.5, h=h)
-    white_card(ax, 7.2, 6.4, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=2.5, h=h)
+    white_card(ax, 0.4, 6.4, left_items, TEAL, y_mid=y_mid, pad=pad, lw=2.5)
+    white_card(ax, 7.2, 6.4, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=2.5)
     ax.text(
         7,
         0.58,
@@ -1325,10 +1318,9 @@ def fig_context_age():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 2.15
-    white_card(ax, 0.45, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 7.45, 6.3, right_items, BLUE, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.45, 6.3, left_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 7.45, 6.3, right_items, BLUE, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "context_age")
 
 
@@ -1352,10 +1344,9 @@ def fig_three_eras():
             ]
         )
     pad = 0.08
-    h = matched_height(*stacks, pad=pad)
     y_mid = 2.25
     for (x, c, *_), items in zip(eras, stacks):
-        white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3, h=h)
+        white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "three_eras")
 
 
@@ -1432,10 +1423,9 @@ def fig_settled():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 3.0
-    white_card(ax, 0.28, 6.72, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 7.20, 6.72, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.28, 6.72, left_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 7.20, 6.72, right_items, ORANGE, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "settled")
 
 
@@ -1484,10 +1474,9 @@ def fig_two_blocks():
         },
     ]
     pad = 0.08
-    h = matched_height(left_items, right_items, pad=pad)
     y_mid = 2.55
-    white_card(ax, 0.4, 6.4, left_items, PURPLE_WEB, y_mid=y_mid, pad=pad, lw=3, h=h)
-    white_card(ax, 7.4, 6.4, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3, h=h)
+    white_card(ax, 0.4, 6.4, left_items, PURPLE_WEB, y_mid=y_mid, pad=pad, lw=3)
+    white_card(ax, 7.4, 6.4, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "two_blocks")
 
 
@@ -1536,10 +1525,9 @@ def fig_lab5_flow():
             ]
         )
     pad = 0.08
-    h = matched_height(*stacks, pad=pad)
     y_mid = 2.0
     for (x, c, *_), items in zip(steps, stacks):
-        white_card(ax, x, 3.2, items, c, y_mid=y_mid, pad=pad, lw=3, h=h)
+        white_card(ax, x, 3.2, items, c, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "lab5_flow")
 
 
@@ -1562,10 +1550,9 @@ def fig_lab6_rules():
             ]
         )
     pad = 0.08
-    h = matched_height(*stacks, pad=pad)
     y_mid = 2.25
     for (x, c, *_), items in zip(cards, stacks):
-        white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3, h=h)
+        white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3)
     save(fig, "lab6_rules")
 
 

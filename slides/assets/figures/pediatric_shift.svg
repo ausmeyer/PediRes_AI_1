@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:14:05.827909</dc:date>
+    <dc:date>2026-08-27T20:17:00.498056</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 38.5326 126.22608 38.5326 129.55248
 L 38.5326 196.96752 
 Q 38.5326 200.29392 44.192314 200.29392 
 z
-" clip-path="url(#p2eab52f153)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pc8bedfe059)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 485.650029 200.29392 
@@ -53,11 +53,11 @@ Q 479.990314 126.22608 479.990314 129.55248
 L 479.990314 196.96752 
 Q 479.990314 200.29392 485.650029 200.29392 
 z
-" clip-path="url(#p2eab52f153)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pc8bedfe059)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Trained here -->
-    <g style="fill: #003da6" transform="translate(129.461143 146.39892) scale(0.16 -0.16)">
+    <g style="fill: #003da6" transform="translate(129.461143 144.94228) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-37" d="M 31 4666 
 L 4331 4666 
@@ -246,7 +246,7 @@ z
    </g>
    <g id="text_2">
     <!-- Adult notes -->
-    <g style="fill: #281241" transform="translate(146.374112 162.657615) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(146.374112 161.383055) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-24" d="M 2188 4044 
 L 1331 1722 
@@ -453,7 +453,7 @@ z
    </g>
    <g id="text_3">
     <!-- Adult creatinine -->
-    <g style="fill: #281241" transform="translate(130.808955 178.846095) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(130.808955 177.571535) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-46" d="M 3122 3366 
 L 3122 2828 
@@ -560,7 +560,7 @@ z
    </g>
    <g id="text_4">
     <!-- Adult vital-sign ranges -->
-    <g style="fill: #281241" transform="translate(107.502237 193.678325) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(107.502237 192.403765) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-59" d="M 191 3500 
 L 800 3500 
@@ -641,7 +641,7 @@ z
    </g>
    <g id="text_5">
     <!-- Deployed here -->
-    <g style="fill: #ff4d00" transform="translate(562.031357 144.78642) scale(0.16 -0.16)">
+    <g style="fill: #ff4d00" transform="translate(562.031357 143.32978) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-Bold-27" d="M 1791 3756 
 L 1791 909 
@@ -755,7 +755,7 @@ z
    </g>
    <g id="text_6">
     <!-- Weight-based dosing -->
-    <g style="fill: #281241" transform="translate(554.24167 161.301365) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(554.24167 160.026805) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-3a" d="M 213 4666 
 L 850 4666 
@@ -842,7 +842,7 @@ z
    </g>
    <g id="text_7">
     <!-- Caregiver by proxy -->
-    <g style="fill: #281241" transform="translate(561.226357 177.489845) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(561.226357 176.215285) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-26" d="M 4122 4306 
 L 4122 3641 
@@ -946,7 +946,7 @@ z
    </g>
    <g id="text_8">
     <!-- Rare disease + development -->
-    <g style="fill: #281241" transform="translate(526.374013 193.678325) scale(0.14 -0.14)">
+    <g style="fill: #281241" transform="translate(526.374013 192.403765) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-35" d="M 2841 2188 
 Q 3044 2119 3236 1894 
@@ -1684,7 +1684,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p2eab52f153">
+  <clipPath id="pc8bedfe059">
    <rect x="10.8" y="10.8" width="792.36" height="310.464"/>
   </clipPath>
  </defs>

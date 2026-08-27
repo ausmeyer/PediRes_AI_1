@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:14:05.608421</dc:date>
+    <dc:date>2026-08-27T20:17:00.282310</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 32.562 131.597107 32.562 135.588787
 L 32.562 246.371213 
 Q 32.562 250.362893 39.258 250.362893 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #ffffff; stroke: #003da6; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 295.938 250.362893 
@@ -53,7 +53,7 @@ Q 289.242 131.597107 289.242 135.588787
 L 289.242 246.371213 
 Q 289.242 250.362893 295.938 250.362893 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #ffffff; stroke: #691f74; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 552.618 250.362893 
@@ -66,7 +66,7 @@ Q 545.922 131.597107 545.922 135.588787
 L 545.922 246.371213 
 Q 545.922 250.362893 552.618 250.362893 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 150.3 171.846547 
@@ -79,7 +79,7 @@ C 134.325421 144.887985 132.444 149.400832 132.444 154.105747
 C 132.444 158.810662 134.325421 163.32351 137.673901 166.650387 
 C 141.022382 169.977265 145.564533 171.846547 150.3 171.846547 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #003da6"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #003da6"/>
    </g>
    <g id="text_1">
     <!-- Rules &amp; scores -->
@@ -865,7 +865,7 @@ C 391.005421 144.887985 389.124 149.400832 389.124 154.105747
 C 389.124 158.810662 391.005421 163.32351 394.353901 166.650387 
 C 397.702382 169.977265 402.244533 171.846547 406.98 171.846547 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #691f74"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #691f74"/>
    </g>
    <g id="text_4">
     <!-- Classical ML -->
@@ -1142,7 +1142,7 @@ C 647.685421 144.887985 645.804 149.400832 645.804 154.105747
 C 645.804 158.810662 647.685421 163.32351 651.033901 166.650387 
 C 654.382382 169.977265 658.924533 171.846547 663.66 171.846547 
 z
-" clip-path="url(#p6a112fa8d7)" style="fill: #00c4b3"/>
+" clip-path="url(#p0853e4ea5f)" style="fill: #00c4b3"/>
    </g>
    <g id="text_7">
     <!-- Foundation models -->
@@ -1555,7 +1555,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6a112fa8d7">
+  <clipPath id="p0853e4ea5f">
    <rect x="10.8" y="10.8" width="792.36" height="321.552"/>
   </clipPath>
  </defs>
