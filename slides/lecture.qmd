@@ -133,12 +133,12 @@ Ask which kind they have already encountered this month. A score, an alert, and 
 
 ---
 
-## Adult accuracy does not travel to the pediatric ward. {.viz}
+## A model that is accurate on adults can still fail on children. {.viz}
 
 ![](assets/figures/pediatric_shift.svg){width="100%"}
 
 ::: notes
-Distribution shift. Vendors often quote AUROC; say adult accuracy so they hear the population, not the metric. The 6% PAS number is a conference abstract. Carry it as a prior, not as a prevalence study.
+Distribution shift. Vendors often quote AUROC; say the model was accurate on adults so they hear the population, not the metric. The 6% PAS number is a conference abstract. Carry it as a prior, not as a prevalence study.
 :::
 
 ---
@@ -177,22 +177,22 @@ This replaces transformer anatomy. 38.5 °C in a 3-week-old is a workup clock. I
 
 ---
 
-## Hallucinations changed shape. They are still here. {.viz}
+## The usual mistake now is a real paper with the wrong claim. {.viz}
 
 ![](assets/figures/hallucinations.svg){width="100%"}
 
 ::: notes
-Old: invented PubMed ID. New: real paper, wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. This is why citations and tool use do not eliminate checking. Artsi: interpretive error even with real citations.
+Old failure: invented PubMed ID. Usual failure now: a real paper with the wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. Citations and tool use do not eliminate checking. Artsi: interpretive error even with real citations.
 :::
 
 ---
 
-## This week's product name will age. Autocomplete, chat, and tools will not. {.viz}
+## The jobs to remember are autocomplete, chat, and tools. {.viz}
 
 ![](assets/figures/three_eras.svg){width="100%"}
 
 ::: notes
-The goal is a taxonomy they can keep when the posters change. Autocomplete → chat → tools/checking. Product names age quickly; these three jobs do not. Tools still look things up and still get it wrong. Full chronology is in backup if someone wants GPT-2 through Fable.
+The goal is a taxonomy they can keep when the posters change. Autocomplete, chat, and tools. Product names change quickly; these three jobs are what to remember. Tools still look things up and still get it wrong. Full chronology is in backup if someone wants GPT-2 through Fable.
 :::
 
 ---
@@ -213,12 +213,12 @@ Spell RAG once: retrieval-augmented generation — they have heard the acronym. 
 
 ---
 
-## What they call reasoning we might call guess and check. {.viz}
+## These models try an answer, check it, and try again. {.viz}
 
 ![](assets/figures/test_time_compute.svg){width="100%"}
 
 ::: notes
-Vendors mean extra tokens before the answer — a try → test → revise loop you usually do not see. We might call it guess and check. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, a checker, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. That is why coding evals moved — a formula can fail. A febrile infant is a worse fit. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
+Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, a checker, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. That is why coding evals moved — a formula can fail. A febrile infant is a worse fit. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
 :::
 
 ---
@@ -233,12 +233,12 @@ Ask: which row produces something another person can inspect tomorrow? Top row i
 
 ---
 
-## A high exam score does not translate to clinical uncertainty in real situations. That context is almost impossible to train on directly. {.viz}
+## A high board score does not mean the model can handle a real patient. {.viz}
 
 ![](assets/figures/benchmark_trap.svg){width="100%"}
 
 ::: notes
-Board-style exams and vendor tables are a test with a key, comparable across models. A real case has clinical uncertainty, a local formulary, and a family’s language — and that context is almost impossible to train on directly. High scores do not travel to weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
+Board-style exams and vendor tables are a test with a key, comparable across models. A real case has this infant, this formulary, and this family’s language. That kind of context is almost impossible to train on directly. A high board score does not mean the model can handle weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
 :::
 
 ---
@@ -247,12 +247,12 @@ Board-style exams and vendor tables are a test with a key, comparable across mod
 
 ---
 
-## Only a hospital cloud or this laptop is plausible for real notes. {.viz}
+## For real notes, use a hospital-approved cloud or this laptop. {.viz}
 
 ![](assets/figures/three_boxes.svg){width="100%"}
 
 ::: notes
-Three places a prompt can live. The title is the takeaway: consumer ChatGPT, Claude, and Gemini send the prompt off-site with no hospital privacy contract. Hospital tool with a business associate agreement is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR. Do not recatalog model names.
+Three places a prompt can live. Consumer ChatGPT, Claude, and Gemini send the prompt off-site with no hospital privacy contract. A hospital tool with a business associate agreement is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR. Do not recatalog model names.
 :::
 
 ---
@@ -277,12 +277,12 @@ Hajj inside Artsi: same 15 adult transcatheter tricuspid questions. Bars are the
 
 ---
 
-## Authorship and judgment are decided. Pediatric bedside rules are not. {.viz}
+## You cannot list a chatbot as an author. AAP has not written a pediatric AI policy. {.viz}
 
 ![](assets/figures/settled.svg){width="100%"}
 
 ::: notes
-Goal of the slide: what already binds them versus what is still open — not a pediatric protocol. As of August 2026. Settled because journals and the AMA already named the human: ICMJE Jan 2026 and COPE 2023, humans accountable, chatbots cannot be authors; AMA House of Delegates 10 Jun 2026, AI must not replace physician judgment. Unsettled because AAP Jan 2026 digital-ecosystems policy still says a dedicated clinical AI statement is forthcoming; FDA Aug 2026 discussion paper is still asking how to test open-ended generative tools; pediatric-specific evidence is thin (Artsi 11 OpenEvidence studies, none synthesized as pediatric). Do not invent an AAP clinical AI guideline. The dated chronology is in backup.
+As of August 2026. Left column is already in writing: ICMJE January 2026 and COPE 2023 — authors have to be humans who can take responsibility; a chatbot cannot be an author. AMA House of Delegates 10 June 2026 — AI must not replace physician judgment. Right column is what pediatrics still does not have: AAP’s January 2026 digital-ecosystems policy says a dedicated clinical AI statement is forthcoming, so do not invent one; the FDA August 2026 discussion paper is still asking how to test open-ended generative tools; Artsi reviewed 11 OpenEvidence studies and none were synthesized as pediatric. Dated list in backup.
 :::
 
 ---
@@ -291,7 +291,7 @@ Goal of the slide: what already binds them versus what is still open — not a p
 
 ---
 
-## Two live blocks, four lessons — not four separate shows. {.viz}
+## Labs 1 through 4 run in two live blocks. {.viz}
 
 ![](assets/figures/two_blocks.svg){width="100%"}
 
@@ -467,12 +467,12 @@ Stochastic. Keep a frozen rehearsal output on the USB. If the live model refuses
 
 ---
 
-## Six checks to leave with. Not a protocol. {.viz}
+## Six checks to take home. {.viz}
 
 ![](assets/figures/takehomes.svg){width="100%"}
 
 ::: notes
-Repeat. Point at the briefing packet and workshops.md. Local changes privacy, not accuracy — that is the laptop story, not a quality claim. Pediatric context is not optional — do not invent an AAP clinical AI policy to fill the last box.
+Repeat. Point at the briefing packet and workshops.md. A local model keeps the prompt on the laptop; it does not make the answer more accurate. Last box: you still need the child’s age and context. Do not invent an AAP clinical AI policy.
 :::
 
 ---

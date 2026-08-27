@@ -121,7 +121,7 @@ def fig_three_ais():
     ax.text(
         7.1,
         5.95,
-        "A score, an alert, and a chatbot are all called AI. They are not the same job.",
+        "A score, an alert, and a chatbot are all called AI. Those are three different jobs.",
         ha="center",
         fontsize=14,
         color=INK,
@@ -219,7 +219,7 @@ def fig_pediatric_shift():
             ax.text(cx, y, line, ha="center", va="center", fontsize=14, color=INK)
     ax.annotate("", xy=(8.15, 3.2), xytext=(5.85, 3.2), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
     ax.text(7.0, 3.55, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
-    ax.text(7.0, 5.7, "It worked on adults. That number is about adults.", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(7.0, 5.7, "The training data are mostly adults.", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
     ax.text(7.0, 0.45, "Pediatric Academic Societies 2025: 6% confident AI is developed with adequate pediatric consideration", ha="center", va="center", fontsize=11, color=MUTED)
     save(fig, "pediatric_shift")
 
@@ -1112,8 +1112,8 @@ def fig_takehomes():
         (4.95, ORANGE, "2", "Click every\ncitation"),
         (9.55, PURPLE, "3", "Never copy\na dose"),
         (0.35, TEAL, "4", "Harnesses\nemit files"),
-        (4.95, GOLD, "5", "Local changes privacy\n— not accuracy"),
-        (9.55, PURPLE_WEB, "6", "Pediatric context\nis not optional"),
+        (4.95, GOLD, "5", "Local keeps the prompt\non the laptop"),
+        (9.55, PURPLE_WEB, "6", "You still need the\nchild’s age and context"),
     ]
     box_w, box_h = 4.3, 2.2
     for x, c, n, t in items:
@@ -1186,17 +1186,15 @@ def fig_settled():
     ax.text(13.85, 6.32, "as of August 2026", ha="right", fontsize=11, color=MUTED, fontstyle="italic")
     rounded(ax, 0.28, 0.48, 6.72, 5.58, WHITE, TEAL, lw=3, r=0.1)
     rounded(ax, 7.20, 0.48, 6.72, 5.58, WHITE, ORANGE, lw=3, r=0.1)
-    ax.text(3.64, 5.68, "Settled", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(3.64, 5.28, "These already bind you.", ha="center", va="center", fontsize=12, color=MUTED)
-    ax.text(10.56, 5.68, "Unsettled", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(10.56, 5.28, "Still open for this ward.", ha="center", va="center", fontsize=12, color=MUTED)
+    ax.text(3.64, 5.62, "Already in writing", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
+    ax.text(10.56, 5.62, "Still missing in pediatrics", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
 
     left_x = 0.58
-    ax.text(left_x, 4.78, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(left_x, 4.95, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        4.42,
-        "Authors must be humans who can take\nresponsibility. A chatbot cannot be an author.",
+        4.52,
+        "Authors have to be humans who can take\nresponsibility. A chatbot cannot be an author.",
         ha="left",
         va="top",
         fontsize=13,
@@ -1206,19 +1204,19 @@ def fig_settled():
     ax.text(left_x, 3.28, "AMA House of Delegates, 10 Jun 2026", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        2.92,
-        "AI must not replace physician judgment.\nAssistive, with a physician still in charge.",
+        2.85,
+        "AI must not replace physician judgment.\nA physician stays in charge.",
         ha="left",
         va="top",
         fontsize=13,
         color=INK,
         linespacing=1.3,
     )
-    ax.text(left_x, 1.78, "Why this is settled", ha="left", va="top", fontsize=11, color=TEAL)
+    ax.text(left_x, 1.72, "What that means for you", ha="left", va="top", fontsize=11, color=TEAL)
     ax.text(
         left_x,
-        1.42,
-        "Journals and the AMA already named the\nhuman. That is authorship and judgment,\nnot a pediatric protocol.",
+        1.29,
+        "You remain the author. You remain\nthe one making the call.",
         ha="left",
         va="top",
         fontsize=13,
@@ -1227,32 +1225,32 @@ def fig_settled():
     )
 
     right_x = 7.50
-    ax.text(right_x, 4.78, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 4.95, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        4.42,
-        "A dedicated clinical AI statement is still\nforthcoming. Do not invent one.",
+        4.52,
+        "A dedicated clinical AI statement is still\nforthcoming. There is no AAP bedside\nAI policy to follow yet.",
         ha="left",
         va="top",
         fontsize=13,
         color=INK,
         linespacing=1.3,
     )
-    ax.text(right_x, 3.42, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 3.28, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        3.06,
-        "Still asking how to test open-ended\ngenerative tools. Not a cleared playbook.",
+        2.85,
+        "The FDA is still asking how to test\nchatbot-style tools.",
         ha="left",
         va="top",
         fontsize=13,
         color=INK,
         linespacing=1.3,
     )
-    ax.text(right_x, 2.06, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
+    ax.text(right_x, 1.72, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
     ax.text(
         right_x,
-        1.70,
+        1.29,
         "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies; none\nsynthesized as pediatric.",
         ha="left",
         va="top",
@@ -1263,7 +1261,7 @@ def fig_settled():
     ax.text(
         7.1,
         0.22,
-        "This is authorship and professional rule, not a pediatric protocol. Dated list in backup.",
+        "Dated list in backup.",
         ha="center",
         fontsize=11,
         color=MUTED,
