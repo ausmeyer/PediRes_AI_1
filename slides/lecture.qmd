@@ -133,7 +133,7 @@ Ask which kind they have already encountered this month. A score, an alert, and 
 
 ---
 
-## Adult accuracy does not travel to this ward. {.viz}
+## Adult accuracy does not travel to the pediatric ward. {.viz}
 
 ![](assets/figures/pediatric_shift.svg){width="100%"}
 
