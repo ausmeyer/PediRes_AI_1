@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-8d7a13e57bddb1e08c94088e8e4d7160.css">
+  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-9582d8763679a491d4844a4cf801636b.css">
   <link href="lecture_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -442,6 +442,10 @@
 <section class="slide level2 viz">
 <h2>A high board score does not mean the model can handle a real patient.</h2>
 <p><img data-src="assets/figures/benchmark_trap.svg" style="width:100.0%"></p>
+<div class="viz-explanatory">
+<p>The exam is comparable across models, and many of the exam questions are in the training data.</p>
+<p>The context of a specific patient, in a specific hospital, and with a specific set of preferences and limitations, will likely always be a challenging application for models.</p>
+</div>
 <aside class="notes">
 <p>Board-style exams and vendor tables are comparable across models, and many of those items are already in the training data. A real case is a specific patient, in a specific hospital, with a specific set of preferences and limitations — language and cultural context included. That will likely always be a hard job for these models. A high board score does not mean the model can handle weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.</p>
 <style type="text/css">

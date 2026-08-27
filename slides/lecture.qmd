@@ -241,6 +241,12 @@ Ask: which row produces something another person can inspect tomorrow? Top row i
 
 ![](assets/figures/benchmark_trap.svg){width="100%"}
 
+::: {.viz-explanatory}
+The exam is comparable across models, and many of the exam questions are in the training data.
+
+The context of a specific patient, in a specific hospital, and with a specific set of preferences and limitations, will likely always be a challenging application for models.
+:::
+
 ::: notes
 Board-style exams and vendor tables are comparable across models, and many of those items are already in the training data. A real case is a specific patient, in a specific hospital, with a specific set of preferences and limitations — language and cultural context included. That will likely always be a hard job for these models. A high board score does not mean the model can handle weight-based dosing. FDA 2026 paper is still asking how to test open-ended generative AI.
 :::

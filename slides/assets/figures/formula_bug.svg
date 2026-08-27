@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:50:13.927862</dc:date>
+    <dc:date>2026-08-27T21:23:08.974993</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,21 +30,21 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 100.638 172.62936 
-L 713.322 172.62936 
-Q 720.018 172.62936 720.018 168.63768 
-L 720.018 74.72232 
-Q 720.018 70.73064 713.322 70.73064 
-L 100.638 70.73064 
-Q 93.942 70.73064 93.942 74.72232 
-L 93.942 168.63768 
-Q 93.942 172.62936 100.638 172.62936 
+    <path d="M 100.638 174.84696 
+L 713.322 174.84696 
+Q 720.018 174.84696 720.018 170.85528 
+L 720.018 72.50472 
+Q 720.018 68.51304 713.322 68.51304 
+L 100.638 68.51304 
+Q 93.942 68.51304 93.942 72.50472 
+L 93.942 170.85528 
+Q 93.942 174.84696 100.638 174.84696 
 z
-" clip-path="url(#pbfa08eecc6)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#p0aef8fc011)" style="fill: #ffffff; stroke: #ff4d00; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Cell C2 -->
-    <g style="fill: #586f78" transform="translate(382.329063 91.029695) scale(0.14 -0.14)">
+    <g style="fill: #586f78" transform="translate(382.329063 88.812095) scale(0.14 -0.14)">
      <defs>
       <path id="DejaVuSans-26" d="M 4122 4306 
 L 4122 3641 
@@ -284,7 +284,7 @@ z
    </g>
    <g id="text_3">
     <!-- Weight in B2. Ten milligrams per kilogram. No 400 mg maximum. -->
-    <g style="fill: #281241" transform="translate(161.466328 161.189782) scale(0.15 -0.15)">
+    <g style="fill: #281241" transform="translate(161.466328 163.407382) scale(0.15 -0.15)">
      <defs>
       <path id="DejaVuSans-3a" d="M 213 4666 
 L 850 4666 
@@ -787,7 +787,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pbfa08eecc6">
+  <clipPath id="p0aef8fc011">
    <rect x="10.8" y="10.8" width="792.36" height="221.76"/>
   </clipPath>
  </defs>
