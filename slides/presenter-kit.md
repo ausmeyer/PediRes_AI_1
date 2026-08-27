@@ -12,7 +12,7 @@ Companion to [`lecture.qmd`](lecture.qmd). Synthetic cases only. Residents use t
 | Cursor logged in, agent mode working, **two** empty folders | Live Lab 1 and Lab 2 |
 | `python-docx`, `openpyxl`, `python-pptx` on that laptop | Agent writes a script, or you run [`workshops/lab1_fallback.py`](workshops/lab1_fallback.py) / [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) |
 | Chrome windows already logged in: consumer ChatGPT (personal), Gemini Notebook with **public** PDFs uploaded, OpenEvidence if your NPI works, **PubMed** | Live Labs 3 and 4 |
-| Frozen `lecture.html` (self-contained) + `lecture.pdf` on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
+| Frozen `docs/index.html` (self-contained) + PDF print on the laptop **and** a USB | Hospital Wi-Fi or Quarto missing |
 | Printed `SYNTHETIC TEACHING CASE` tent card | Stops a well-meaning resident from offering a real H&P |
 
 **Nice, not blocking**
@@ -47,7 +47,7 @@ You are already in it. Residents see a file tree, not a black terminal. Paste a 
 | Licensed RAG | OpenEvidence if NPI demo works; else skip to B-only | Lab 3 arm C |
 | Citation check | PubMed | Lab 4 |
 | Fail-safe | [`workshops/lab1_fallback.py`](workshops/lab1_fallback.py), [`workshops/lab2_fallback.py`](workshops/lab2_fallback.py) | If the agent hangs, still show files |
-| This lecture | Chrome fullscreen on `lecture.html` | Everything else (`F` fullscreen, `S` speaker notes) |
+| This lecture | Chrome fullscreen on `docs/index.html` | Everything else (`F` fullscreen, `S` speaker notes) |
 
 **Codex / Claude Code / OpenCode:** same *kind* of thing as Cursor (model + tools + files). Keep them on the handout as the free/paid echo. Do not context-switch live unless Cursor is dead.
 
@@ -96,4 +96,4 @@ Each of Labs 5–8 is a recipe on the projector. Point, do not demo.
 
 ## Theme
 
-McLane cartoon train + BSW wordmark from **official bswhealth.com CDN assets**, palette from those SVGs (`#003DA6` `#00C4B3` `#691F74` `#FF4D00` `#FFB71B`). Content slides stay paper/navy so the room still looks like noon conference, not a birthday party. Provenance: [`assets/README.md`](assets/README.md).
+McLane cartoon train + BSW wordmark from **official bswhealth.com CDN assets**, palette from those SVGs (`#003DA6` `#00C4B3` `#691F74` `#FF4D00` `#FFB71B`). Content slides stay paper/navy so the room still looks like noon conference, not a birthday party. Provenance: [`assets/README.md`](assets/README.md). GitHub Pages for *this* lecture: [`docs/index.html`](../docs/index.html); Settings → Pages → GitHub Actions, or `main` → `/docs`. Lab 5 is a resident journal-club repo, not that file.
