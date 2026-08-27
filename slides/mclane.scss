@@ -220,6 +220,31 @@ $presentation-h2-font-size: 1.35em;
   max-height: 56vh;
 }
 
+.reveal .viz-explanatory {
+  color: $mclane-ink;
+  font-size: 0.42em;
+  line-height: 1.38;
+  text-align: left;
+  margin: 0.18em 0 0;
+  max-width: 100%;
+}
+
+.reveal .viz-explanatory p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0 0 0.42em;
+  text-align: left;
+}
+
+.reveal .viz-explanatory p:last-child {
+  margin-bottom: 0;
+}
+
+.reveal .slides section.viz:has(.viz-explanatory) img {
+  max-height: 52vh;
+}
+
 .reveal .section-break h2 {
   color: #fff !important;
   font-size: 2.35em;

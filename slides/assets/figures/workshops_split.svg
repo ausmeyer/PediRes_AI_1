@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-27T20:50:13.312635</dc:date>
+    <dc:date>2026-08-27T21:23:08.368557</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 30.043029 82.53936 30.043029 83.86992
 L 30.043029 334.12608 
 Q 30.043029 335.45664 32.306914 335.45664 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #ffffff; stroke: #5f277e; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #ffffff; stroke: #5f277e; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 417.167486 335.45664 
@@ -53,7 +53,7 @@ Q 414.9036 82.53936 414.9036 83.86992
 L 414.9036 334.12608 
 Q 414.9036 335.45664 417.167486 335.45664 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #ffffff; stroke: #00c4b3; stroke-width: 3; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Live blocks vs take-home labs -->
@@ -522,7 +522,7 @@ C 65.432538 139.714678 64.001314 143.099314 64.001314 146.628
 C 64.001314 150.156686 65.432538 153.541322 67.979775 156.03648 
 C 70.527012 158.531638 73.982292 159.9336 77.584629 159.9336 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #5f277e"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #5f277e"/>
    </g>
    <g id="text_3">
     <!-- Files from a harness -->
@@ -990,7 +990,7 @@ C 65.432538 182.957878 64.001314 186.342514 64.001314 189.8712
 C 64.001314 193.399886 65.432538 196.784522 67.979775 199.27968 
 C 70.527012 201.774838 73.982292 203.1768 77.584629 203.1768 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #5f277e"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #5f277e"/>
    </g>
    <g id="text_5">
     <!-- Audit the dose sheet -->
@@ -1223,7 +1223,7 @@ C 65.432538 226.201078 64.001314 229.585714 64.001314 233.1144
 C 64.001314 236.643086 65.432538 240.027722 67.979775 242.52288 
 C 70.527012 245.018038 73.982292 246.42 77.584629 246.42 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #5f277e"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #5f277e"/>
    </g>
    <g id="text_7">
     <!-- One question, three corpora -->
@@ -1468,7 +1468,7 @@ C 65.432538 269.444278 64.001314 272.828914 64.001314 276.3576
 C 64.001314 279.886286 65.432538 283.270922 67.979775 285.76608 
 C 70.527012 288.261238 73.982292 289.6632 77.584629 289.6632 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #5f277e"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #5f277e"/>
    </g>
    <g id="text_9">
     <!-- Citation autopsy -->
@@ -1907,7 +1907,7 @@ C 450.293109 139.714678 448.861886 143.099314 448.861886 146.628
 C 448.861886 150.156686 450.293109 153.541322 452.840346 156.03648 
 C 455.387583 158.531638 458.842863 159.9336 462.4452 159.9336 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #00c4b3"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #00c4b3"/>
    </g>
    <g id="text_13">
     <!-- GitHub Pages journal club -->
@@ -2192,7 +2192,7 @@ C 450.293109 182.957878 448.861886 186.342514 448.861886 189.8712
 C 448.861886 193.399886 450.293109 196.784522 452.840346 199.27968 
 C 455.387583 201.774838 458.842863 203.1768 462.4452 203.1768 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #00c4b3"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #00c4b3"/>
    </g>
    <g id="text_15">
     <!-- Local model on your laptop -->
@@ -2262,7 +2262,7 @@ C 450.293109 226.201078 448.861886 229.585714 448.861886 233.1144
 C 448.861886 236.643086 450.293109 240.027722 452.840346 242.52288 
 C 455.387583 245.018038 458.842863 246.42 462.4452 246.42 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #00c4b3"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #00c4b3"/>
    </g>
    <g id="text_17">
     <!-- Harness loop vs chatbot -->
@@ -2389,7 +2389,7 @@ C 450.293109 269.444278 448.861886 272.828914 448.861886 276.3576
 C 448.861886 279.886286 450.293109 283.270922 452.840346 285.76608 
 C 455.387583 288.261238 458.842863 289.6632 462.4452 289.6632 
 z
-" clip-path="url(#pb783ddb8ec)" style="fill: #00c4b3"/>
+" clip-path="url(#pe8b3c510a0)" style="fill: #00c4b3"/>
    </g>
    <g id="text_19">
     <!-- Gemini Notebook -->
@@ -2777,7 +2777,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pb783ddb8ec">
+  <clipPath id="pe8b3c510a0">
    <rect x="10.8" y="10.8" width="792.36" height="354.816"/>
   </clipPath>
  </defs>
