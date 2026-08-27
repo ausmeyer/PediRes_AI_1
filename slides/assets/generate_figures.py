@@ -67,6 +67,46 @@ def rounded(ax, x, y, w, h, fc, ec=None, r=0.04, lw=1.5, z=1):
     return p
 
 
+def stack_in_box(ax, box_x, box_y, box_w, box_h, items, pad=0.28, ha="center"):
+    """Vertically center a stack of text items inside a box.
+
+    Each item is a dict with text, fontsize, color, and optional
+    fontweight, linespacing, family, ha, x, gap_after.
+    """
+    # Points → data units for these ~6-inch-tall axes.
+    pt = 0.0158
+    heights = []
+    gaps = []
+    for i, it in enumerate(items):
+        ls = it.get("linespacing", 1.3)
+        nlines = it["text"].count("\n") + 1
+        heights.append(nlines * it["fontsize"] * ls * pt)
+        default_gap = 0.22 if i < len(items) - 1 else 0.0
+        gaps.append(it.get("gap_after", default_gap))
+    total = sum(heights) + sum(gaps)
+    inner_bottom = box_y + pad
+    inner_top = box_y + box_h - pad
+    y_cursor = (inner_bottom + inner_top) / 2 + total / 2
+    cx = box_x + box_w / 2
+    for it, h, g in zip(items, heights, gaps):
+        y_mid = y_cursor - h / 2
+        item_ha = it.get("ha", ha)
+        x = it.get("x", cx if item_ha == "center" else box_x + pad)
+        kw = dict(
+            ha=item_ha,
+            va="center",
+            fontsize=it["fontsize"],
+            color=it["color"],
+            linespacing=it.get("linespacing", 1.3),
+        )
+        if "fontweight" in it:
+            kw["fontweight"] = it["fontweight"]
+        if it.get("family"):
+            kw["family"] = it["family"]
+        ax.text(x, y_mid, it["text"], **kw)
+        y_cursor = y_cursor - h - g
+
+
 # --- 1. Hour map ---
 def fig_hour_map():
     fig, ax = plt.subplots(figsize=(14.2, 4.55))
@@ -113,11 +153,23 @@ def fig_three_ais():
         (9.6, TEAL, "Foundation models", "Next-token output", "Parent letter\nAI scribe"),
     ]
     for x, c, title, mid, bot in cards:
-        rounded(ax, x, 0.4, 4.2, 4.9, WHITE, ec=c, r=0.12, lw=3)
-        ax.add_patch(Circle((x + 2.1, 4.38), 0.42, facecolor=c, zorder=3))
-        ax.text(x + 2.1, 3.52, title, ha="center", fontsize=18, fontweight="bold", color=c)
-        ax.text(x + 2.1, 2.52, mid, ha="center", fontsize=13, color=INK)
-        ax.text(x + 2.1, 1.32, bot, ha="center", fontsize=13, color=MUTED)
+        by, bh = 0.4, 4.9
+        rounded(ax, x, by, 4.2, bh, WHITE, ec=c, r=0.12, lw=3)
+        # Dot sits above the centered text stack.
+        ax.add_patch(Circle((x + 2.1, by + bh - 0.72), 0.42, facecolor=c, zorder=3))
+        stack_in_box(
+            ax,
+            x,
+            by,
+            4.2,
+            bh - 1.05,
+            [
+                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.32},
+                {"text": mid, "fontsize": 13, "color": INK, "gap_after": 0.32},
+                {"text": bot, "fontsize": 13, "color": MUTED, "linespacing": 1.3},
+            ],
+            pad=0.2,
+        )
     ax.text(
         7.1,
         5.95,
@@ -209,14 +261,20 @@ def fig_pediatric_shift():
         (0.5, BLUE, "Trained here", ["Adult notes", "Adult creatinine", "Adult vital-sign ranges"]),
         (8.3, ORANGE, "Deployed here", ["Weight-based dosing", "Caregiver by proxy", "Rare disease + development"]),
     ]
-    title_y = 4.45
-    line_ys = [3.55, 2.95, 2.35]
     for x, c, title, lines in cards:
-        rounded(ax, x, 1.3, 5.2, 3.8, WHITE, c, lw=3)
-        cx = x + 2.6
-        ax.text(cx, title_y, title, ha="center", va="center", fontsize=16, fontweight="bold", color=c)
-        for y, line in zip(line_ys, lines):
-            ax.text(cx, y, line, ha="center", va="center", fontsize=14, color=INK)
+        by, bw, bh = 1.3, 5.2, 3.8
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3)
+        items = [{"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.35}]
+        for i, line in enumerate(lines):
+            items.append(
+                {
+                    "text": line,
+                    "fontsize": 14,
+                    "color": INK,
+                    "gap_after": 0.28 if i < len(lines) - 1 else 0.0,
+                }
+            )
+        stack_in_box(ax, x, by, bw, bh, items, pad=0.35)
     ax.annotate("", xy=(8.15, 3.2), xytext=(5.85, 3.2), arrowprops=dict(arrowstyle="-|>", color=PURPLE, lw=3))
     ax.text(7.0, 3.55, "shift", ha="center", va="center", color=PURPLE, fontsize=12, fontweight="bold")
     ax.text(7.0, 5.7, "The training data are mostly adults.", ha="center", va="center", fontsize=16, fontweight="bold", color=INK)
@@ -276,12 +334,32 @@ def fig_next_token():
     )
 
     rounded(ax, 0.85, 2.48, 5.9, 1.38, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.8, 3.42, "1. Attention mixes them", ha="center", fontsize=15, fontweight="bold", color=TEAL)
-    ax.text(3.8, 2.88, "Every token can look at every other token.", ha="center", fontsize=12, color=INK)
+    stack_in_box(
+        ax,
+        0.85,
+        2.48,
+        5.9,
+        1.38,
+        [
+            {"text": "1. Attention mixes them", "fontsize": 15, "color": TEAL, "fontweight": "bold", "gap_after": 0.18},
+            {"text": "Every token can look at every other token.", "fontsize": 12, "color": INK},
+        ],
+        pad=0.18,
+    )
 
     rounded(ax, 7.45, 2.48, 5.9, 1.38, WHITE, PURPLE, lw=3, r=0.1)
-    ax.text(10.4, 3.42, "2. Each token is updated", ha="center", fontsize=15, fontweight="bold", color=PURPLE)
-    ax.text(10.4, 2.88, "That stack, many times, is a transformer.", ha="center", fontsize=12, color=INK)
+    stack_in_box(
+        ax,
+        7.45,
+        2.48,
+        5.9,
+        1.38,
+        [
+            {"text": "2. Each token is updated", "fontsize": 15, "color": PURPLE, "fontweight": "bold", "gap_after": 0.18},
+            {"text": "That stack, many times, is a transformer.", "fontsize": 12, "color": INK},
+        ],
+        pad=0.18,
+    )
 
     ax.annotate(
         "",
@@ -461,14 +539,23 @@ def fig_three_boxes():
             ],
         ),
     ]
-    note_ys = [2.35, 1.85, 1.35]
     for x, c, title, kicker, notes in cards:
-        rounded(ax, x, 0.55, 4.3, 5.45, WHITE, c, lw=3.5, r=0.1)
-        cx = x + 2.15
-        ax.text(cx, 5.35, title, ha="center", va="center", fontsize=16, fontweight="bold", color=c)
-        ax.text(cx, 4.45, kicker, ha="center", va="center", fontsize=13, color=INK)
-        for y, line in zip(note_ys, notes):
-            ax.text(cx, y, line, ha="center", va="center", fontsize=13, color=MUTED)
+        by, bw, bh = 0.55, 4.3, 5.45
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3.5, r=0.1)
+        items = [
+            {"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.28},
+            {"text": kicker, "fontsize": 13, "color": INK, "gap_after": 0.4},
+        ]
+        for i, line in enumerate(notes):
+            items.append(
+                {
+                    "text": line,
+                    "fontsize": 13,
+                    "color": MUTED,
+                    "gap_after": 0.22 if i < len(notes) - 1 else 0.0,
+                }
+            )
+        stack_in_box(ax, x, by, bw, bh, items, pad=0.4)
     ax.text(
         7.1,
         0.22,
@@ -488,18 +575,23 @@ def fig_rag():
     ax.axis("off")
     cards = [
         (0.4, BLUE, "Corpus", ["journals", "guidelines", "PDFs you uploaded"]),
-        (5.3, PURPLE, "Retrieve", ["nearest chunks", "not the whole library", ""]),
+        (5.3, PURPLE, "Retrieve", ["nearest chunks", "not the whole library"]),
         (10.2, TEAL, "Generate", ["answer + citations", "that still must", "be opened"]),
     ]
-    title_y = 3.55
-    line_ys = [2.90, 2.50, 2.10]
     for x, c, title, lines in cards:
-        rounded(ax, x, 1.75, 3.4, 2.7, c)
-        cx = x + 1.7
-        ax.text(cx, title_y, title, ha="center", va="center", color=WHITE, fontsize=16, fontweight="bold")
-        for y, line in zip(line_ys, lines):
-            if line:
-                ax.text(cx, y, line, ha="center", va="center", color=WHITE, fontsize=11)
+        by, bw, bh = 1.75, 3.4, 2.7
+        rounded(ax, x, by, bw, bh, c)
+        items = [{"text": title, "fontsize": 16, "color": WHITE, "fontweight": "bold", "gap_after": 0.28}]
+        for i, line in enumerate(lines):
+            items.append(
+                {
+                    "text": line,
+                    "fontsize": 11,
+                    "color": WHITE,
+                    "gap_after": 0.16 if i < len(lines) - 1 else 0.0,
+                }
+            )
+        stack_in_box(ax, x, by, bw, bh, items, pad=0.28)
     for x1, x2 in [(3.85, 5.25), (8.75, 10.15)]:
         ax.annotate("", xy=(x2, 3.1), xytext=(x1, 3.1), arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3))
     ax.text(
@@ -561,15 +653,21 @@ def fig_hallucinations():
             ],
         ),
     ]
-    title_y = 5.15
-    pair_ys = [(4.35, 3.95), (3.15, 2.75), (1.95, 1.55)]
     for x, c, title, rows in cards:
-        rounded(ax, x, 0.85, 6.4, 4.7, WHITE, c, lw=3)
-        cx = x + 3.2
-        ax.text(cx, title_y, title, ha="center", va="center", fontsize=17, fontweight="bold", color=c)
-        for (y1, y2), (head, expl) in zip(pair_ys, rows):
-            ax.text(cx, y1, head, ha="center", va="center", fontsize=14, fontweight="bold", color=INK)
-            ax.text(cx, y2, expl, ha="center", va="center", fontsize=12, color=MUTED)
+        by, bw, bh = 0.85, 6.4, 4.7
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3)
+        items = [{"text": title, "fontsize": 17, "color": c, "fontweight": "bold", "gap_after": 0.38}]
+        for i, (head, expl) in enumerate(rows):
+            items.append({"text": head, "fontsize": 14, "color": INK, "fontweight": "bold", "gap_after": 0.12})
+            items.append(
+                {
+                    "text": expl,
+                    "fontsize": 12,
+                    "color": MUTED,
+                    "gap_after": 0.32 if i < len(rows) - 1 else 0.0,
+                }
+            )
+        stack_in_box(ax, x, by, bw, bh, items, pad=0.35)
     ax.text(
         7,
         0.4,
@@ -588,30 +686,47 @@ def fig_ttc():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 5.45)
     ax.axis("off")
-    rounded(ax, 0.4, 0.16, 6.3, 5.08, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.5, 0.16, 6.3, 5.08, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.55, 4.72, "Answer once", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(3.55, 4.22, "First fluent sentence. Ship it.", ha="center", fontsize=13, color=MUTED)
-    ax.text(3.55, 3.22, "=B2*10", ha="center", fontsize=26, fontweight="bold", family="DejaVu Sans Mono", color=INK)
-    ax.text(
-        3.55,
-        2.05,
-        "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
-        ha="center",
-        fontsize=14,
-        color=INK,
-        linespacing=1.35,
+    left = (0.4, 0.16, 6.3, 5.08)
+    right = (7.5, 0.16, 6.3, 5.08)
+    rounded(ax, *left, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, *right, WHITE, TEAL, lw=3, r=0.1)
+    stack_in_box(
+        ax,
+        *left,
+        [
+            {"text": "Answer once", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.22},
+            {"text": "First fluent sentence. Ship it.", "fontsize": 13, "color": MUTED, "gap_after": 0.4},
+            {
+                "text": "=B2*10",
+                "fontsize": 26,
+                "color": INK,
+                "fontweight": "bold",
+                "family": "DejaVu Sans Mono",
+                "gap_after": 0.35,
+            },
+            {
+                "text": "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
+                "fontsize": 14,
+                "color": INK,
+                "linespacing": 1.35,
+            },
+        ],
+        pad=0.35,
     )
-    ax.text(10.65, 4.72, "Try → test → revise", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.65, 4.22, "Hidden scratch. Then one answer.", ha="center", fontsize=13, color=MUTED)
-    ax.text(
-        10.65,
-        2.22,
-        "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
-        ha="center",
-        fontsize=14,
-        color=INK,
-        linespacing=1.35,
+    stack_in_box(
+        ax,
+        *right,
+        [
+            {"text": "Try → test → revise", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.22},
+            {"text": "Hidden scratch. Then one answer.", "fontsize": 13, "color": MUTED, "gap_after": 0.4},
+            {
+                "text": "Write 500 mg.\nTest the 400 mg maximum.\nKeep 400 mg.\nThen speak.",
+                "fontsize": 14,
+                "color": INK,
+                "linespacing": 1.35,
+            },
+        ],
+        pad=0.35,
     )
     save(fig, "test_time_compute")
 
@@ -673,27 +788,37 @@ def fig_bench():
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 6.55)
     ax.axis("off")
-    rounded(ax, 0.40, 2.05, 4.35, 3.75, WHITE, TEAL, lw=3)
-    ax.text(2.58, 5.28, "On the exam", ha="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(
-        2.58,
-        3.65,
-        "Board-style items\nLeaderboard ratings\nVendor tables",
-        ha="center",
-        fontsize=14,
-        color=INK,
-        linespacing=1.45,
+    left = (0.40, 2.05, 4.35, 3.75)
+    right = (5.25, 2.05, 4.35, 3.75)
+    rounded(ax, *left, WHITE, TEAL, lw=3)
+    stack_in_box(
+        ax,
+        *left,
+        [
+            {"text": "On the exam", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.4},
+            {
+                "text": "Board-style items\nLeaderboard ratings\nVendor tables",
+                "fontsize": 14,
+                "color": INK,
+                "linespacing": 1.45,
+            },
+        ],
+        pad=0.4,
     )
-    rounded(ax, 5.25, 2.05, 4.35, 3.75, WHITE, ORANGE, lw=3)
-    ax.text(7.42, 5.28, "On the ward", ha="center", fontsize=18, fontweight="bold", color=ORANGE)
-    ax.text(
-        7.42,
-        3.55,
-        "Specific patient\nSpecific hospital formulary\nSpecific language\nSpecific cultural context",
-        ha="center",
-        fontsize=13,
-        color=INK,
-        linespacing=1.42,
+    rounded(ax, *right, WHITE, ORANGE, lw=3)
+    stack_in_box(
+        ax,
+        *right,
+        [
+            {"text": "On the ward", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.35},
+            {
+                "text": "Specific patient\nSpecific hospital formulary\nSpecific language\nSpecific cultural context",
+                "fontsize": 13,
+                "color": INK,
+                "linespacing": 1.42,
+            },
+        ],
+        pad=0.35,
     )
     ax.text(
         5,
@@ -799,25 +924,39 @@ def fig_artsi():
     )
     rounded(ax, 0.4, 0.95, 6.4, 2.35, WHITE, TEAL, lw=2.5, r=0.1)
     rounded(ax, 7.2, 0.95, 6.4, 2.35, WHITE, ORANGE, lw=2.5, r=0.1)
-    ax.text(3.6, 2.95, "Appropriate use in that review", ha="center", fontsize=13, fontweight="bold", color=TEAL)
-    ax.text(
-        3.6,
-        1.95,
-        "Guideline-style look-up.\nOften reinforces a plan you already had.",
-        ha="center",
-        fontsize=13,
-        color=INK,
-        linespacing=1.4,
+    stack_in_box(
+        ax,
+        0.4,
+        0.95,
+        6.4,
+        2.35,
+        [
+            {"text": "Appropriate use in that review", "fontsize": 13, "color": TEAL, "fontweight": "bold", "gap_after": 0.22},
+            {
+                "text": "Guideline-style look-up.\nOften reinforces a plan you already had.",
+                "fontsize": 13,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.28,
     )
-    ax.text(10.4, 2.95, "Not the use case they found", ha="center", fontsize=13, fontweight="bold", color=ORANGE)
-    ax.text(
-        10.4,
-        1.95,
-        "Complex cases, or changing the plan.\nActing without opening the source.",
-        ha="center",
-        fontsize=13,
-        color=INK,
-        linespacing=1.4,
+    stack_in_box(
+        ax,
+        7.2,
+        0.95,
+        6.4,
+        2.35,
+        [
+            {"text": "Not the use case they found", "fontsize": 13, "color": ORANGE, "fontweight": "bold", "gap_after": 0.22},
+            {
+                "text": "Complex cases, or changing the plan.\nActing without opening the source.",
+                "fontsize": 13,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.28,
     )
     ax.text(
         7,
@@ -1150,12 +1289,38 @@ def fig_context_age():
     ax.axis("off")
     ax.text(7.1, 5.55, "38.5 °C", ha="center", fontsize=42, fontweight="bold", color=GOLD)
     ax.text(7.1, 4.95, "Same number. Different child. Context is the age.", ha="center", fontsize=15, color=INK)
-    rounded(ax, 0.45, 0.55, 6.3, 4.05, WHITE, ORANGE, lw=3, r=0.1)
-    rounded(ax, 7.45, 0.55, 6.3, 4.05, WHITE, BLUE, lw=3, r=0.1)
-    ax.text(3.6, 3.95, "3-week-old", ha="center", fontsize=22, fontweight="bold", color=ORANGE)
-    ax.text(3.6, 2.35, "Fever workup.\nHours, not days.\nThe number is a trigger.", ha="center", fontsize=16, color=INK, linespacing=1.4)
-    ax.text(10.6, 3.95, "3-year-old", ha="center", fontsize=22, fontweight="bold", color=BLUE)
-    ax.text(10.6, 2.35, "Often watch and treat.\nSame temperature.\nDifferent meaning.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    left = (0.45, 0.55, 6.3, 4.05)
+    right = (7.45, 0.55, 6.3, 4.05)
+    rounded(ax, *left, WHITE, ORANGE, lw=3, r=0.1)
+    rounded(ax, *right, WHITE, BLUE, lw=3, r=0.1)
+    stack_in_box(
+        ax,
+        *left,
+        [
+            {"text": "3-week-old", "fontsize": 22, "color": ORANGE, "fontweight": "bold", "gap_after": 0.4},
+            {
+                "text": "Fever workup.\nHours, not days.\nThe number is a trigger.",
+                "fontsize": 16,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.4,
+    )
+    stack_in_box(
+        ax,
+        *right,
+        [
+            {"text": "3-year-old", "fontsize": 22, "color": BLUE, "fontweight": "bold", "gap_after": 0.4},
+            {
+                "text": "Often watch and treat.\nSame temperature.\nDifferent meaning.",
+                "fontsize": 16,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.4,
+    )
     save(fig, "context_age")
 
 
@@ -1170,10 +1335,21 @@ def fig_three_eras():
         (9.5, TEAL, "3", "Tools / checking", "Looks things up.\nRuns code. Still wrong."),
     ]
     for x, c, n, title, body in eras:
-        rounded(ax, x, 0.55, 4.25, 4.05, WHITE, c, lw=3, r=0.1)
-        ax.text(x + 0.35, 3.95, n, fontsize=16, fontweight="bold", color=c)
-        ax.text(x + 2.12, 3.15, title, ha="center", fontsize=20, fontweight="bold", color=c)
-        ax.text(x + 2.12, 1.75, body, ha="center", fontsize=15, color=INK, linespacing=1.35)
+        by, bw, bh = 0.55, 4.25, 4.05
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3, r=0.1)
+        stack_in_box(
+            ax,
+            x,
+            by,
+            bw,
+            bh,
+            [
+                {"text": n, "fontsize": 16, "color": c, "fontweight": "bold", "ha": "left", "x": x + 0.35, "gap_after": 0.35},
+                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.35},
+                {"text": body, "fontsize": 15, "color": INK, "linespacing": 1.35},
+            ],
+            pad=0.4,
+        )
     save(fig, "three_eras")
 
 
@@ -1183,79 +1359,85 @@ def fig_settled():
     ax.set_ylim(0, 6.55)
     ax.axis("off")
     ax.text(13.85, 6.32, "as of August 2026", ha="right", fontsize=11, color=MUTED, fontstyle="italic")
-    rounded(ax, 0.28, 0.18, 6.72, 5.90, WHITE, TEAL, lw=3, r=0.1)
-    rounded(ax, 7.20, 0.18, 6.72, 5.90, WHITE, ORANGE, lw=3, r=0.1)
-    ax.text(3.64, 5.68, "Already in writing", ha="center", va="center", fontsize=18, fontweight="bold", color=TEAL)
-    ax.text(10.56, 5.68, "Still missing in pediatrics", ha="center", va="center", fontsize=18, fontweight="bold", color=ORANGE)
-
+    left = (0.28, 0.18, 6.72, 5.90)
+    right = (7.20, 0.18, 6.72, 5.90)
+    rounded(ax, *left, WHITE, TEAL, lw=3, r=0.1)
+    rounded(ax, *right, WHITE, ORANGE, lw=3, r=0.1)
     left_x = 0.58
-    ax.text(left_x, 5.18, "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", ha="left", va="top", fontsize=11, color=TEAL)
-    ax.text(
-        left_x,
-        4.78,
-        "Authors have to be humans who can take\nresponsibility. A chatbot cannot be an author.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
-    )
-    ax.text(left_x, 3.78, "AMA House of Delegates, 10 Jun 2026", ha="left", va="top", fontsize=11, color=TEAL)
-    ax.text(
-        left_x,
-        3.38,
-        "AI must not replace physician judgment.\nA physician stays in charge.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
-    )
-    ax.text(left_x, 2.38, "What that means for you", ha="left", va="top", fontsize=11, color=TEAL)
-    ax.text(
-        left_x,
-        1.98,
-        "You remain the author. You remain\nthe one making the call.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
-    )
-
     right_x = 7.50
-    ax.text(right_x, 5.18, "AAP, Jan 2026 (digital-ecosystems policy)", ha="left", va="top", fontsize=11, color=ORANGE)
-    ax.text(
-        right_x,
-        4.78,
-        "A dedicated clinical AI statement is still forthcoming.\nThere is no AAP bedside AI policy to follow yet.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
+    stack_in_box(
+        ax,
+        *left,
+        [
+            {"text": "Already in writing", "fontsize": 18, "color": TEAL, "fontweight": "bold", "gap_after": 0.35},
+            {"text": "ICMJE Recommendations, Jan 2026  ·  COPE, 2023", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.12},
+            {
+                "text": "Authors have to be humans who can take\nresponsibility. A chatbot cannot be an author.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": left_x,
+                "linespacing": 1.3,
+                "gap_after": 0.32,
+            },
+            {"text": "AMA House of Delegates, 10 Jun 2026", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.12},
+            {
+                "text": "AI must not replace physician judgment.\nA physician stays in charge.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": left_x,
+                "linespacing": 1.3,
+                "gap_after": 0.32,
+            },
+            {"text": "What that means for you", "fontsize": 11, "color": TEAL, "ha": "left", "x": left_x, "gap_after": 0.12},
+            {
+                "text": "You remain the author. You remain\nthe one making the call.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": left_x,
+                "linespacing": 1.3,
+            },
+        ],
+        pad=0.32,
     )
-    ax.text(right_x, 3.78, "FDA, Aug 2026 (discussion paper)", ha="left", va="top", fontsize=11, color=ORANGE)
-    ax.text(
-        right_x,
-        3.38,
-        "The FDA is still asking how to test\nchatbot-style tools.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
-    )
-    ax.text(right_x, 2.38, "Independent literature", ha="left", va="top", fontsize=11, color=ORANGE)
-    ax.text(
-        right_x,
-        1.98,
-        "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies, none pediatric.",
-        ha="left",
-        va="top",
-        fontsize=13,
-        color=INK,
-        linespacing=1.3,
+    stack_in_box(
+        ax,
+        *right,
+        [
+            {"text": "Still missing in pediatrics", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.35},
+            {"text": "AAP, Jan 2026 (digital-ecosystems policy)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.12},
+            {
+                "text": "A dedicated clinical AI statement is still forthcoming.\nThere is no AAP bedside AI policy to follow yet.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": right_x,
+                "linespacing": 1.3,
+                "gap_after": 0.32,
+            },
+            {"text": "FDA, Aug 2026 (discussion paper)", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.12},
+            {
+                "text": "The FDA is still asking how to test\nchatbot-style tools.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": right_x,
+                "linespacing": 1.3,
+                "gap_after": 0.32,
+            },
+            {"text": "Independent literature", "fontsize": 11, "color": ORANGE, "ha": "left", "x": right_x, "gap_after": 0.12},
+            {
+                "text": "Pediatric-specific evidence is thin.\nArtsi: 11 OpenEvidence studies, none pediatric.",
+                "fontsize": 13,
+                "color": INK,
+                "ha": "left",
+                "x": right_x,
+                "linespacing": 1.3,
+            },
+        ],
+        pad=0.32,
     )
     save(fig, "settled")
 
@@ -1284,14 +1466,40 @@ def fig_two_blocks():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.0)
     ax.axis("off")
-    rounded(ax, 0.4, 0.45, 6.4, 4.7, WHITE, PURPLE_WEB, lw=3, r=0.1)
-    rounded(ax, 7.4, 0.45, 6.4, 4.7, WHITE, TEAL, lw=3, r=0.1)
-    ax.text(3.6, 4.5, "Make → inspect", ha="center", fontsize=24, fontweight="bold", color=PURPLE_WEB)
-    ax.text(3.6, 3.85, "Labs 1 and 2", ha="center", fontsize=14, fontweight="bold", color=GOLD)
-    ax.text(3.6, 2.25, "Files you can open tomorrow.\nThen find what is wrong.", ha="center", fontsize=16, color=INK, linespacing=1.4)
-    ax.text(10.6, 4.5, "Ask → verify", ha="center", fontsize=24, fontweight="bold", color=TEAL)
-    ax.text(10.6, 3.85, "Labs 3 and 4", ha="center", fontsize=14, fontweight="bold", color=GOLD)
-    ax.text(10.6, 2.25, "A febrile-infant question.\nThen check whether the\ncitations are real.", ha="center", fontsize=16, color=INK, linespacing=1.4)
+    left = (0.4, 0.45, 6.4, 4.7)
+    right = (7.4, 0.45, 6.4, 4.7)
+    rounded(ax, *left, WHITE, PURPLE_WEB, lw=3, r=0.1)
+    rounded(ax, *right, WHITE, TEAL, lw=3, r=0.1)
+    stack_in_box(
+        ax,
+        *left,
+        [
+            {"text": "Make → inspect", "fontsize": 24, "color": PURPLE_WEB, "fontweight": "bold", "gap_after": 0.22},
+            {"text": "Labs 1 and 2", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.4},
+            {
+                "text": "Files you can open tomorrow.\nThen find what is wrong.",
+                "fontsize": 16,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.45,
+    )
+    stack_in_box(
+        ax,
+        *right,
+        [
+            {"text": "Ask → verify", "fontsize": 24, "color": TEAL, "fontweight": "bold", "gap_after": 0.22},
+            {"text": "Labs 3 and 4", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.4},
+            {
+                "text": "A febrile-infant question.\nThen check whether the\ncitations are real.",
+                "fontsize": 16,
+                "color": INK,
+                "linespacing": 1.4,
+            },
+        ],
+        pad=0.45,
+    )
     save(fig, "two_blocks")
 
 
@@ -1300,16 +1508,28 @@ def fig_formula_bug():
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 4.6)
     ax.axis("off")
-    rounded(ax, 1.5, 0.45, 11.2, 3.7, WHITE, ORANGE, lw=3, r=0.12)
-    ax.text(7.1, 3.45, "Cell C2", ha="center", fontsize=14, color=MUTED)
-    ax.text(7.1, 2.25, "=B2*10", ha="center", fontsize=48, fontweight="bold", family="DejaVu Sans Mono", color=INK)
-    ax.text(
-        7.1,
-        1.05,
-        "Weight in B2. Ten milligrams per kilogram. No 400 mg maximum.",
-        ha="center",
-        fontsize=15,
-        color=INK,
+    box = (1.5, 0.45, 11.2, 3.7)
+    rounded(ax, *box, WHITE, ORANGE, lw=3, r=0.12)
+    stack_in_box(
+        ax,
+        *box,
+        [
+            {"text": "Cell C2", "fontsize": 14, "color": MUTED, "gap_after": 0.35},
+            {
+                "text": "=B2*10",
+                "fontsize": 48,
+                "color": INK,
+                "fontweight": "bold",
+                "family": "DejaVu Sans Mono",
+                "gap_after": 0.4,
+            },
+            {
+                "text": "Weight in B2. Ten milligrams per kilogram. No 400 mg maximum.",
+                "fontsize": 15,
+                "color": INK,
+            },
+        ],
+        pad=0.4,
     )
     save(fig, "formula_bug")
 
@@ -1326,9 +1546,20 @@ def fig_lab5_flow():
         (10.75, TEAL, "Share", "A URL, or a zip\non a phone."),
     ]
     for x, c, title, body in steps:
-        rounded(ax, x, 0.7, 3.2, 3.35, WHITE, c, lw=3, r=0.1)
-        ax.text(x + 1.6, 3.35, title, ha="center", fontsize=18, fontweight="bold", color=c)
-        ax.text(x + 1.6, 1.85, body, ha="center", fontsize=14, color=INK, linespacing=1.35)
+        by, bw, bh = 0.7, 3.2, 3.35
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3, r=0.1)
+        stack_in_box(
+            ax,
+            x,
+            by,
+            bw,
+            bh,
+            [
+                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.35},
+                {"text": body, "fontsize": 14, "color": INK, "linespacing": 1.35},
+            ],
+            pad=0.4,
+        )
     save(fig, "lab5_flow")
 
 
@@ -1343,9 +1574,20 @@ def fig_lab6_rules():
         (9.5, TEAL, "Hardware limits", "8–16 GB runs 8B-class.\n27B needs more RAM."),
     ]
     for x, c, title, body in cards:
-        rounded(ax, x, 0.7, 4.25, 4.05, WHITE, c, lw=3, r=0.1)
-        ax.text(x + 2.12, 3.85, title, ha="center", fontsize=20, fontweight="bold", color=c)
-        ax.text(x + 2.12, 2.15, body, ha="center", fontsize=16, color=INK, linespacing=1.4)
+        by, bw, bh = 0.7, 4.25, 4.05
+        rounded(ax, x, by, bw, bh, WHITE, c, lw=3, r=0.1)
+        stack_in_box(
+            ax,
+            x,
+            by,
+            bw,
+            bh,
+            [
+                {"text": title, "fontsize": 20, "color": c, "fontweight": "bold", "gap_after": 0.4},
+                {"text": body, "fontsize": 16, "color": INK, "linespacing": 1.4},
+            ],
+            pad=0.45,
+        )
     save(fig, "lab6_rules")
 
 
