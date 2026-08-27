@@ -203,12 +203,12 @@ What can the model check before it answers?
 
 ---
 
-## RAG looks a corpus up, then writes. Gemini Notebook is the version they have. {.viz}
+## RAG looks a corpus up, then writes. Gemini Notebook is the best-known example. {.viz}
 
 ![](assets/figures/rag.svg){width="100%"}
 
 ::: notes
-Spell RAG once: retrieval-augmented generation — they have heard the acronym. Point at the corpus card — that is the choice. Gemini Notebook is the retrieve-then-generate tool most of them already have (public PDFs, citation chips). Do not claim a measured market share. OpenEvidence and UpToDate are other corpora. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.
+Spell RAG once: retrieval-augmented generation — they have heard the acronym. Point at the corpus card — that is the choice. Gemini Notebook is the best-known example (public PDFs, citation chips). Do not claim a measured market share. OpenEvidence and UpToDate are other corpora. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.
 :::
 
 ---

@@ -515,7 +515,7 @@ def fig_rag():
     ax.text(
         7,
         0.95,
-        "Gemini Notebook is the retrieve-then-generate tool most of you already have.",
+        "Gemini Notebook is the best-known example.",
         ha="center",
         va="center",
         fontsize=14,
