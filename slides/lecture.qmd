@@ -22,9 +22,9 @@ format:
     fig-align: center
 ---
 
-## {background-color="#FAF9F7"}
+## {background-color="#FAF9F7" .title-open .nostretch}
 
-![](assets/mclane-wordmark.svg){width="70%"}
+![](assets/mclane-wordmark.svg){.title-wordmark}
 
 ::: {.kicker}
 Pediatric residency workshop-lecture · Temple
@@ -250,7 +250,7 @@ Phone = closed API, no BAA. Hospital EHR someday = governed box 1. Laptop = box 
 
 ---
 
-## 11 studies. Zero pediatric.
+## 11 studies. Zero pediatric. {.align-start}
 
 ::: {.copy-block}
 **Artsi et al., 2026** — independent systematic review of OpenEvidence. *npj Digital Medicine*, article-in-press.

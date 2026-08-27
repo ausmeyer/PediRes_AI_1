@@ -63,8 +63,42 @@ $presentation-h2-font-size: 1.35em;
 }
 
 /* Wordmark already carries the train on the title slide. */
-.reveal .slides > section:first-child .slide-logo {
+.reveal .slides > section:first-child .slide-logo,
+.reveal .slides > section.title-open .slide-logo {
   display: none;
+}
+
+/* Small brand mark at the top. The lecture title is the slide. */
+.reveal .slides > section.title-open {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5.2em;
+  box-sizing: border-box;
+}
+
+.reveal .slides > section.title-open > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.reveal .slides > section.title-open img {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto !important;
+  height: auto !important;
+  max-width: 250px;
+  max-height: 60px;
+  margin: 0;
 }
 
 .reveal.has-dark-background .footer {
@@ -121,7 +155,7 @@ $presentation-h2-font-size: 1.35em;
   text-align: center;
 }
 
-/* Prose lists: one centered column, lines still flush left. */
+/* Prose lists: one column. Default is centered; .align-start docks it left. */
 .reveal .copy-block {
   display: inline-block;
   text-align: left;
@@ -134,6 +168,17 @@ $presentation-h2-font-size: 1.35em;
 .reveal .copy-block ul,
 .reveal .copy-block ol {
   text-align: left;
+}
+
+.reveal .slides section.align-start {
+  text-align: left;
+}
+
+.reveal .slides section.align-start .copy-block {
+  display: block;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /* Standalone bullets sit as a centered column; recipe lists stay full-width. */
