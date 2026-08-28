@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fallback for Lab 2 if the live agent hangs. Synthetic only.
+"""Fallback for Workshop 6 if the agent hangs. Synthetic only.
 
 The sheet is wrong on purpose: it omits the 400 mg cap so the room
 still has something to catch in formula view.

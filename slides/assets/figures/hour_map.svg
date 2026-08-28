@@ -717,7 +717,7 @@ z
      <use xlink:href="#DejaVuSans-Bold-3" transform="translate(264.21875 0)"/>
      <use xlink:href="#DejaVuSans-Bold-9" transform="translate(299.03125 0)"/>
     </g>
-    <!-- checks -->
+    <!-- verification -->
     <g style="fill: #ffffff" transform="translate(292.927 119.321598) scale(0.09 -0.09)">
      <defs>
       <path id="DejaVuSans-Bold-46" d="M 3366 3391 
@@ -762,6 +762,10 @@ z
      <use xlink:href="#DejaVuSans-Bold-46" transform="translate(198.296875 0)"/>
      <use xlink:href="#DejaVuSans-Bold-4e" transform="translate(257.578125 0)"/>
      <use xlink:href="#DejaVuSans-Bold-56" transform="translate(324.078125 0)"/>
+    </g>
+    <g id="text_3_plain_language_replacement">
+     <rect x="276" y="110" width="72" height="13" fill="#691f74"/>
+     <text x="312" y="119.3" text-anchor="middle" style="font: 700 8.5px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">verification</text>
     </g>
     <!-- 8 min -->
     <g style="fill: #ffffff" transform="translate(296.055906 129.671598) scale(0.09 -0.09)">

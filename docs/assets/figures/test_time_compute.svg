@@ -244,7 +244,7 @@ z
     </g>
    </g>
    <g id="text_2">
-    <!-- First fluent sentence. Ship it. -->
+    <!-- First fluent sentence. Stop there. -->
     <g style="fill: #586f78" transform="translate(115.659687 119.168787) scale(0.13 -0.13)">
      <defs>
       <path id="DejaVuSans-29" d="M 628 4666 
@@ -568,6 +568,10 @@ z
      <use xlink:href="#DejaVuSans-57" transform="translate(1363.328125 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(1402.53125 0)"/>
     </g>
+   </g>
+   <g id="text_2_plain_language_replacement">
+    <rect x="78" y="104" width="262" height="20" fill="#ffffff"/>
+    <text x="209" y="119.2" text-anchor="middle" style="font: 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #586f78">First fluent sentence. Stop there.</text>
    </g>
    <g id="text_3">
     <!-- =B2*10 -->

@@ -15,7 +15,7 @@ That render writes [`docs/index.html`](../docs/index.html) plus `docs/assets/` a
 
 Night-before freeze: copy the `docs/` folder to the laptop **and** a PDF print (`index.html?print-pdf` in Chrome, Print → Save as PDF, landscape). `./render.sh --self-contained` is the one-file variant if you do not want a folder. PowerPoint is a fail-safe export, not a second master.
 
-Lab 1–2 scripts: [`workshops/README.md`](workshops/README.md).
+Workshop 1 and 6 fallback scripts: [`workshops/README.md`](workshops/README.md).
 
 ```bash
 pip install -r workshops/requirements.txt

@@ -5,18 +5,18 @@ Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md
 
 **Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
 
-**Lecture numbering.** Live hour is Labs 1–4, in two blocks: Make → inspect (1–2) then Ask → verify (3–4). Take-home is Labs 5–8, after Q&A. Older “Workshop N” headings in this file are the recipes; the live labels on the slides win. Residents repeating Labs 1–2 at home can use [`../slides/workshops/`](../slides/workshops/README.md).
+**Lecture order.** The lecture follows the recipe numbers in this file directly. All eight workshops appear before the summary and closing slides. Fallback materials for Workshops 1 and 6 are in [`../slides/workshops/`](../slides/workshops/README.md).
 
-| Lab | When | What | Recipe in this file |
-|---|---|---|---|
-| 1 | Live | Office files from a harness | Workshop 1 |
-| 2 | Live | Dosing-sheet audit | Workshop 6 |
-| 3 | Live | One question, three corpora | Workshop 4 |
-| 4 | Live | Citation autopsy | Workshop 5 |
-| 5 | Take-home | GitHub Pages journal club | Workshop 2 |
-| 6 | Take-home | Local Ollama | Workshop 3 |
-| 7 | Take-home | Harness loop vs chatbot | Workshop 7 |
-| 8 | Take-home | Gemini Notebook | Workshop 8 |
+| Workshop | What | Recipe in this file |
+|---|---|---|
+| 1 | Office files from a harness | Workshop 1 |
+| 2 | GitHub Pages journal club | Workshop 2 |
+| 3 | Local Ollama | Workshop 3 |
+| 4 | One question, three systems | Workshop 4 |
+| 5 | Citation autopsy | Workshop 5 |
+| 6 | Dosing-sheet audit | Workshop 6 |
+| 7 | Harness versus chatbot | Workshop 7 |
+| 8 | Gemini Notebook | Workshop 8 |
 
 **Shared setup (2 minutes, once).**
 
@@ -29,7 +29,7 @@ Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md
 
 ## Workshop 1 — Office files without Microsoft 365
 
-**Time (live):** 10–12 minutes  
+**Time:** 10–12 minutes  
 **Goal:** Produce a real Word letter, Excel tracker, and PowerPoint noon-conference deck from a synthetic bronchiolitis admission.  
 **Surprising artifact:** Three files residents can open on their phones.  
 **HIPAA:** Synthetic only. Still do not use a consumer cloud account as a habit for real notes.
@@ -45,7 +45,7 @@ Empty folder. In Claude Code, Codex, Cursor, or OpenCode:
 > Create three files in this folder from the synthetic stem in STEM.md (I will paste it). Do not add any real identifiers.
 > 1. `family_update.docx` — 1-page family letter, 6th-grade reading level, no dose recommendations, ends with “this is a teaching example.”
 > 2. `oxygen_wean_tracker.xlsx` — columns: datetime, SpO2, NC L/min, work of breathing (0–3), feeds %, comments. Pre-fill 6 synthetic rows. Add a formula for hours since last wean attempt.
-> 3. `noon_conference.pptx` — 8 slides: title, objectives, pathophysiology cartoon-level, evidence bullets with PLACEHOLDER citations (not invented PMIDs), wean principles, discharge criteria, take-home, references slide that says “citations not yet verified.”
+> 3. `noon_conference.pptx` — 8 slides: title, objectives, pathophysiology cartoon-level, evidence bullets with PLACEHOLDER citations (not invented PMIDs), wean principles, discharge criteria, summary, references slide that says “citations not yet verified.”
 
 If the harness has **Skills** for docx/xlsx/pptx (Claude’s document skills; or `python-docx` / `openpyxl` / `python-pptx` in the environment), let it run. If not, ask it to write a `build_files.py` and execute it.
 
@@ -68,7 +68,7 @@ Chatbots return paragraphs. Harnesses return **artifacts you can version and aud
 
 ## Workshop 2 — Journal club on GitHub Pages, no coding by the resident
 
-**Time (live):** 8–10 minutes  
+**Time:** 8–10 minutes  
 **Goal:** Markdown slides → Reveal.js (or similar static HTML) → GitHub repo → public URL.  
 **Surprising artifact:** A shareable link that works on a phone in the back row.  
 **HIPAA:** Public repo. Only synthetic or published, cited material.
@@ -111,7 +111,7 @@ Versioned teaching materials beat emailing `final_v7.pptx`. “I don’t code”
 
 ## Workshop 3 — Air-gapped local model (zero vendor)
 
-**Time (live):** 10 minutes (plus pre-download)  
+**Time:** 10 minutes (plus pre-download)  
 **Goal:** Summarize a synthetic H&P with Ollama while the laptop is in airplane mode.  
 **Surprising artifact:** A competent summary with the network off.  
 **HIPAA:** Closest no-vendor-BA demo. Do not use real notes.
@@ -158,7 +158,7 @@ Local models keep the prompt off a vendor. Offline Qwen3.8-27B is useful for dra
 
 ## Workshop 4 — Same question, three systems
 
-**Time (live):** 12 minutes  
+**Time:** 12 minutes  
 **Goal:** One pediatric question, three corpora.  
 **Surprising artifact:** Side-by-side citations: fabricated vs quoted vs editorial.  
 **HIPAA:** Public sources only. No patient detail.
@@ -196,7 +196,7 @@ RAG is a **corpus choice**. OpenEvidence ≠ UpToDate ≠ ChatGPT. Artsi et al. 
 
 ## Workshop 5 — Citation autopsy
 
-**Time (live hour):** 4 minutes (full recipe 8)  
+**Time:** 8 minutes  
 **Goal:** Verify five identifiers from a model-written reference list.  
 **Surprising artifact:** At least one dead or mismatched citation in a fluent list (very often).  
 **HIPAA:** None.
@@ -225,7 +225,7 @@ ICMJE: authors must ensure attribution of quoted material and that AI text is no
 
 ## Workshop 6 — Spreadsheet that looks official and can harm if trusted
 
-**Time (live hour):** 5 minutes (full recipe 10)  
+**Time:** 10 minutes  
 **Goal:** Agent builds a weight-based dosing sheet; residents audit every formula.  
 **Surprising artifact:** A pretty Excel file with at least one wrong formula or unit.  
 **HIPAA:** Synthetic weights only.
@@ -262,7 +262,7 @@ Numeric hallucination plus official formatting is how a model kills someone. FDA
 
 ## Workshop 7 — Harness vs chatbot (the loop is the product)
 
-**Time (live):** 8–10 minutes  
+**Time:** 8–10 minutes  
 **Goal:** Same request in ChatGPT paste vs an agent in an empty git repo.  
 **Surprising artifact:** A running local HTML **noon-conference attendance** plot (synthetic counts) vs a blob of code that does not run.  
 **HIPAA:** Made-up counts. Not real residents. Not a clinical calculator.
@@ -291,7 +291,7 @@ The product residents should learn is the **loop** (files, tools, tests), not th
 
 ## Workshop 8 — Gemini Notebook as a research notebook
 
-**Time (live):** 8 minutes  
+**Time:** 8 minutes  
 **Goal:** Four public sources → grounded Q&A ± audio/slide overview.  
 **Surprising artifact:** Questions that cite **your** PDFs.  
 **HIPAA:** Google’s “we don’t train on your uploaded data” (Workspace product copy) is **not** a hospital BAA. Public papers only.
@@ -351,7 +351,7 @@ If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, ru
 
 - [ ] Synthetic banner on every slide and terminal  
 - [ ] No Epic, no email with real names, no photo of a child  
-- [ ] Two live blocks in the hour containing four lessons (Make → inspect = Labs 1–2, Ask → verify = Labs 3–4); 18 minutes on the clock  
-- [ ] Hardware story for Lab 6 (Ollama) told only if someone asks; it is take-home  
-- [ ] Lab 2 answer key on paper, not generated live as “truth”  
+- [ ] All eight workshops appear in numerical order before the summary and closing slides  
+- [ ] Workshop 3 model downloaded and tested before airplane mode  
+- [ ] Workshop 6 answer key on paper, not generated as “truth”  
 - [ ] Handout QR to this markdown (or PDF export)

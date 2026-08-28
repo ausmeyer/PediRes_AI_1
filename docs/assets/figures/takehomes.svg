@@ -536,7 +536,7 @@ z
     </g>
    </g>
    <g id="text_4">
-    <!-- Click every -->
+    <!-- Open every -->
     <g style="fill: #ffffff" transform="translate(382.958203 104.547469) scale(0.15 -0.15)">
      <defs>
       <path id="DejaVuSans-Bold-26" d="M 4288 256 
@@ -614,7 +614,7 @@ z
      <use xlink:href="#DejaVuSans-Bold-55" transform="translate(503.390625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-5c" transform="translate(552.703125 0)"/>
     </g>
-    <!-- citation -->
+    <!-- citation link -->
     <g style="fill: #ffffff" transform="translate(396.989063 126.309187) scale(0.15 -0.15)">
      <use xlink:href="#DejaVuSans-Bold-46"/>
      <use xlink:href="#DejaVuSans-Bold-4c" transform="translate(59.28125 0)"/>
@@ -1059,6 +1059,35 @@ z
      <use xlink:href="#DejaVuSans-Bold-48" transform="translate(1136.65625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-5b" transform="translate(1204.484375 0)"/>
      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(1268.984375 0)"/>
+    </g>
+   </g>
+   <g id="takehomes_layout_replacement">
+    <rect x="28" y="48" width="758" height="272" fill="#faf9f7"/>
+    <rect x="29.772" y="49.275" width="241.056" height="122.634" rx="6" fill="#003da6"/>
+    <rect x="286.452" y="49.275" width="241.056" height="122.634" rx="6" fill="#ff4d00"/>
+    <rect x="543.132" y="49.275" width="241.056" height="122.634" rx="6" fill="#691f74"/>
+    <rect x="29.772" y="196.191" width="241.056" height="122.634" rx="6" fill="#00c4b3"/>
+    <rect x="286.452" y="196.191" width="241.056" height="122.634" rx="6" fill="#ffb71b"/>
+    <rect x="543.132" y="196.191" width="241.056" height="122.634" rx="6" fill="#5f277e"/>
+
+    <g>
+     <text x="48" y="76" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">1</text>
+     <text x="150.5" y="107" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff"><tspan x="150.5">No patient data</tspan><tspan x="150.5" dy="17">in consumer tools</tspan></text>
+
+     <text x="304.5" y="76" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">2</text>
+     <text x="407" y="107" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff"><tspan x="407">Open every</tspan><tspan x="407" dy="17">citation link</tspan></text>
+
+     <text x="561" y="76" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">3</text>
+     <text x="663.5" y="107" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff"><tspan x="663.5">Never copy</tspan><tspan x="663.5" dy="17">a dose</tspan></text>
+
+     <text x="48" y="223" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">4</text>
+     <text x="150.5" y="254" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff"><tspan x="150.5">Harnesses</tspan><tspan x="150.5" dy="17">emit files</tspan></text>
+
+     <text x="304.5" y="223" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241">5</text>
+     <text x="407" y="245" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241"><tspan x="407">Local keeps</tspan><tspan x="407" dy="17">the prompt</tspan><tspan x="407" dy="17">on the laptop</tspan></text>
+
+     <text x="561" y="223" style="font: 700 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff">6</text>
+     <text x="663.5" y="245" text-anchor="middle" style="font: 700 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff"><tspan x="663.5">You still need</tspan><tspan x="663.5" dy="17">the child’s age</tspan><tspan x="663.5" dy="17">and context</tspan></text>
     </g>
    </g>
   </g>

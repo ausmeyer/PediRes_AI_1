@@ -1815,7 +1815,7 @@ z
     </g>
    </g>
    <g id="text_14">
-    <!-- A chip or URL can still dress up the wrong sentence. -->
+    <!-- A citation link can still point to the wrong evidence. -->
     <g style="fill: #586f78" transform="translate(442.928411 255.66333) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-38" d="M 556 4666 
@@ -1926,6 +1926,10 @@ z
      <use xlink:href="#DejaVuSans-48" transform="translate(2514.71875 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(2576.25 0)"/>
     </g>
+   </g>
+   <g id="text_14_plain_language_replacement">
+    <rect x="425" y="243" width="350" height="19" fill="#ffffff"/>
+    <text x="600" y="255.7" text-anchor="middle" style="font: 12px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #586f78">A citation link can still point to the wrong evidence.</text>
    </g>
    <g id="text_15">
     <!-- They still sound confident. Open the source. -->

@@ -1248,7 +1248,7 @@ z
      <use xlink:href="#DejaVuSans-51" transform="translate(1145.34375 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(1208.71875 0)"/>
     </g>
-    <!-- Then check whether the -->
+    <!-- Then open the -->
     <g style="fill: #281241" transform="translate(505.2 189.29428) scale(0.16 -0.16)">
      <defs>
       <path id="DejaVuSans-4e" d="M 581 4863 
@@ -1289,7 +1289,7 @@ z
      <use xlink:href="#DejaVuSans-4b" transform="translate(1088.59375 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(1151.96875 0)"/>
     </g>
-    <!-- citations are real. -->
+    <!-- cited source. -->
     <g style="fill: #281241" transform="translate(532.40375 213.29428) scale(0.16 -0.16)">
      <use xlink:href="#DejaVuSans-46"/>
      <use xlink:href="#DejaVuSans-4c" transform="translate(54.984375 0)"/>
@@ -1311,6 +1311,11 @@ z
      <use xlink:href="#DejaVuSans-4f" transform="translate(813.890625 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(841.671875 0)"/>
     </g>
+   </g>
+   <g id="text_6_plain_language_replacement">
+    <rect x="492" y="173" width="235" height="47" fill="#ffffff"/>
+    <text x="609.5" y="189.3" text-anchor="middle" style="font: 16px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241">Then open the</text>
+    <text x="609.5" y="213.3" text-anchor="middle" style="font: 16px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241">cited source.</text>
    </g>
   </g>
  </g>

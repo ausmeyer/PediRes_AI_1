@@ -201,10 +201,10 @@ $presentation-h2-font-size: 1.35em;
 
 .reveal .viz-caption {
   color: $mclane-muted;
-  font-size: 0.42em;
-  line-height: 1.3;
+  font-size: 0.46em;
+  line-height: 1.34;
   text-align: center;
-  margin: 0.12em 0 0;
+  margin: 0.25em auto 0;
   max-width: 100%;
 }
 
@@ -222,11 +222,11 @@ $presentation-h2-font-size: 1.35em;
 
 .reveal .viz-explanatory {
   color: $mclane-ink;
-  font-size: 0.42em;
-  line-height: 1.38;
+  font-size: 0.48em;
+  line-height: 1.4;
   text-align: left;
-  margin: 0.18em 0 0;
-  max-width: 100%;
+  margin: 0.45em auto 0;
+  max-width: 94%;
 }
 
 .reveal .viz-explanatory p {
@@ -242,12 +242,25 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .reveal .slides section.viz:has(.viz-explanatory) img {
-  max-height: 52vh;
+  max-height: 50vh;
+}
+
+.reveal .slides > section.section-break {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 3.6em;
+  text-align: center;
 }
 
 .reveal .section-break h2 {
   color: #fff !important;
   font-size: 2.35em;
+  line-height: 1.06;
+  margin: 0;
 }
 
 .reveal .section-break p {
@@ -255,7 +268,7 @@ $presentation-h2-font-size: 1.35em;
   font-size: 0.72em;
   font-weight: 500;
   opacity: 0.92;
-  margin-top: 0.35em;
+  margin: 0.45em 0 0;
 }
 
 .reveal .section-break .column {
@@ -645,6 +658,103 @@ $presentation-h2-font-size: 1.35em;
   margin: 0.1em 0;
 }
 
+/* Workshop slides share a centered stage so short instructions do not cling
+   to the top edge while the footer occupies the lower band. */
+.reveal .slides > section.lab-stage {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 4.4em;
+  text-align: left;
+}
+
+.reveal .slides > section.lab-stage > h2 {
+  line-height: 1.08;
+  margin: 0 0 0.14em;
+  text-align: center;
+}
+
+.lab-stage > .kicker {
+  margin: 0 0 0.55em;
+  text-align: center;
+}
+
+.lab-stage .lab-arms .box-prose {
+  font-size: 0.52em;
+  line-height: 1.32;
+}
+
+.lab-stage .lab-prompt,
+.lab-stage .lab-steps {
+  font-size: 0.56em;
+}
+
+.lab-stage .predict-strip {
+  font-size: 0.5em;
+  margin-top: 0.55em;
+}
+
+.lab-stage .scorecard .box-label {
+  font-size: 0.5em;
+}
+
+.reveal .slides > section.workshop-overview {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 4.2em;
+}
+
+.reveal .slides > section.workshop-overview > h2 {
+  margin: 0 0 0.55em;
+  text-align: center;
+}
+
+.workshop-roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.15em 1.8em;
+  width: 86%;
+  margin: 0 auto;
+}
+
+.workshop-step {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  min-width: 0;
+  padding: 0.32em 0;
+  border-bottom: 2px solid rgba($mclane-purple, 0.14);
+  text-align: left;
+}
+
+.workshop-index {
+  flex: 0 0 1.2em;
+  color: $mclane-purple-web;
+  font-size: 0.72em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.workshop-name {
+  min-width: 0;
+  color: $mclane-ink;
+  font-size: 0.56em;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.workshop-index p,
+.workshop-name p {
+  margin: 0;
+}
+
 .lab-catalog {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -829,20 +939,69 @@ $presentation-h2-font-size: 1.35em;
 
 .qa-three {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.45em;
-  margin: 0.4em 0 0.7em;
-  text-align: left;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.05em;
+  width: 88%;
+  max-width: 34em;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.qa-three .box {
+.qa-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 5em;
   margin: 0;
-  padding: 0.55em 0.75em;
+  padding: 0.15em 0.45em 0.3em;
+  color: $mclane-ink;
+  text-align: center;
 }
 
-.qa-three .box-label {
-  font-size: 0.85em;
+.qa-number {
+  font-size: 1.45em;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 0.25em;
+}
+
+.qa-text {
+  max-width: 8em;
+  color: $mclane-ink;
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.qa-number p,
+.qa-text p {
   margin: 0;
+}
+
+.qa-item::after {
+  content: "";
+  display: block;
+  width: 2.6em;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 0.58em;
+  background: currentColor;
+}
+
+.qa-orange {
+  color: $mclane-orange;
+}
+
+.qa-purple {
+  color: $mclane-purple;
+}
+
+.qa-teal {
+  color: $mclane-teal;
 }
 
 .qa-ask {
@@ -863,7 +1022,83 @@ $presentation-h2-font-size: 1.35em;
 }
 
 .reveal .slides section.qa-close {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 4.2em;
   text-align: left;
+}
+
+.reveal .slides section.qa-close > h2 {
+  margin: 0 0 0.38em;
+  text-align: center;
+}
+
+.reveal .slides section.qa-close .qa-three {
+  margin: 0;
+}
+
+/* Text-forward workshops use a centered instruction block at a readable
+   teaching-room scale. */
+.reveal .slides > section.workshop-text {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 4.2em;
+  text-align: left;
+}
+
+.reveal .slides > section.workshop-text > h2 {
+  line-height: 1.08;
+  margin: 0 0 0.14em;
+  text-align: center;
+}
+
+.workshop-text > .kicker {
+  margin: 0 0 0.6em;
+  text-align: center;
+}
+
+.workshop-text .lab-goal,
+.workshop-text .lab-prompt,
+.workshop-text .lab-steps {
+  font-size: 0.58em;
+  line-height: 1.36;
+}
+
+.workshop-text .lab-goal {
+  margin-bottom: 0.45em;
+}
+
+.workshop-text .lab-prompt {
+  margin-top: 0;
+  margin-bottom: 0.45em;
+}
+
+.reveal .slides > section.statement-slide {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 4.2em;
+  text-align: center;
+}
+
+.reveal .slides > section.statement-slide > h2 {
+  margin: 0 0 0.5em;
+  text-align: center;
+}
+
+.reveal .slides > section.statement-slide .copy-block {
+  margin: 0 auto;
 }
 
 .lab6-cards {

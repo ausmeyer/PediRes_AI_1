@@ -1103,7 +1103,7 @@ z
      <use xlink:href="#DejaVuSans-53" transform="translate(722.59375 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(786.078125 0)"/>
     </g>
-    <!-- Runs a check. -->
+    <!-- Tests the result. -->
     <g style="fill: #281241" transform="translate(607.48125 182.541547) scale(0.15 -0.15)">
      <defs>
       <path id="DejaVuSans-35" d="M 2841 2188 
@@ -1149,6 +1149,10 @@ z
      <use xlink:href="#DejaVuSans-4e" transform="translate(603.5625 0)"/>
      <use xlink:href="#DejaVuSans-11" transform="translate(661.46875 0)"/>
     </g>
+   </g>
+   <g id="text_11_plain_language_replacement">
+    <rect x="590" y="167" width="135" height="21" fill="#ffffff"/>
+    <text x="657.5" y="182.6" text-anchor="middle" style="font: 15px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241">Tests the result.</text>
    </g>
   </g>
  </g>

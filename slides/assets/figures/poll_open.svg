@@ -710,7 +710,7 @@ z
      <use xlink:href="#DejaVuSans-Bold-44" transform="translate(1016.4375 0)"/>
      <use xlink:href="#DejaVuSans-Bold-51" transform="translate(1083.921875 0)"/>
     </g>
-    <!-- checks the output? -->
+    <!-- reviews the output? -->
     <g style="fill: #281241" transform="translate(123.580312 277.79875) scale(0.2 -0.2)">
      <defs>
       <path id="DejaVuSans-Bold-53" d="M 1656 506 
@@ -759,6 +759,10 @@ z
      <use xlink:href="#DejaVuSans-Bold-57" transform="translate(970.484375 0)"/>
      <use xlink:href="#DejaVuSans-Bold-22" transform="translate(1018.28125 0)"/>
     </g>
+   </g>
+   <g id="text_3_plain_language_replacement">
+    <rect x="116" y="260" width="234" height="24" fill="#ffffff"/>
+    <text x="209" y="277.8" text-anchor="middle" style="font: 700 20px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #281241">reviews the output?</text>
    </g>
    <g id="patch_9">
     <path d="M 465.57 280.2384 

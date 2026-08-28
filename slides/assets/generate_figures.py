@@ -160,7 +160,7 @@ def fig_hour_map():
     blocks = [
         (0, 10, BLUE, "Why tonight\n10 min", 12),
         (10, 8, TEAL, "How AI\nanswers\n8 min", 9),
-        (18, 8, PURPLE, "Files &\nchecks\n8 min", 9),
+        (18, 8, PURPLE, "Files &\nverification\n8 min", 9),
         (26, 8, ORANGE, "Evidence\n8 min", 11),
         (34, 18, PURPLE_WEB, "Live blocks\n18 min", 12),
         (52, 8, GOLD, "Takeaways\n8 min", 11),
@@ -544,6 +544,7 @@ def fig_three_boxes():
             ORANGE,
             "Consumer cloud",
             "ChatGPT · Claude · Gemini",
+            None,
             [
                 "Phone or laptop browser.",
                 "No hospital privacy contract.",
@@ -555,6 +556,7 @@ def fig_three_boxes():
             PURPLE,
             "Hospital-governed cloud",
             "EHR tool with a contract",
+            None,
             [
                 "The official cloud path.",
                 "A business associate agreement",
@@ -566,6 +568,7 @@ def fig_three_boxes():
             TEAL,
             "Local laptop",
             "Ollama on this machine",
+            "Qwen3.8 · Muse Glimmer · Gemma 4",
             [
                 "The vendor never sees the prompt.",
                 "You already use this laptop",
@@ -576,11 +579,21 @@ def fig_three_boxes():
     stacks = []
     colors = []
     xs = []
-    for x, c, title, kicker, notes in cards:
+    for x, c, title, kicker, examples, notes in cards:
         items = [
             {"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.12},
             {"text": kicker, "fontsize": 13, "color": INK, "gap_after": 0.12},
         ]
+        if examples:
+            items.append(
+                {
+                    "text": examples,
+                    "fontsize": 11,
+                    "color": c,
+                    "fontweight": "bold",
+                    "gap_after": 0.16,
+                }
+            )
         for i, line in enumerate(notes):
             items.append(
                 {
@@ -690,7 +703,7 @@ def fig_hallucinations():
             [
                 ("Real paper, wrong claim", "The article exists. That sentence is not in it."),
                 ("A rule gets dropped", "“No meds” at the start can be gone by the end."),
-                ("Citation theater", "A chip or URL can still dress up the wrong sentence."),
+                ("Citation theater", "A citation link can still point to the wrong evidence."),
             ],
         ),
     ]
@@ -732,7 +745,7 @@ def fig_ttc():
     ax.axis("off")
     left_items = [
         {"text": "Answer once", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.12},
-        {"text": "First fluent sentence. Ship it.", "fontsize": 13, "color": MUTED, "gap_after": 0.12},
+        {"text": "First fluent sentence. Stop there.", "fontsize": 13, "color": MUTED, "gap_after": 0.12},
         {
             "text": "=B2*10",
             "fontsize": 26,
@@ -808,7 +821,7 @@ def fig_harness():
     ax.text(
         7,
         0.48,
-        "Cursor, Codex, Claude Code, OpenCode: same genus. Labs 1 and 2 only make sense if the file is the product.",
+        "Cursor, Codex, Claude Code, and OpenCode use the same workflow: prompt → files → tools → inspect.",
         ha="center",
         fontsize=12,
         color=INK,
@@ -1241,7 +1254,7 @@ def fig_takehomes():
     ax.axis("off")
     items = [
         (0.35, BLUE, "1", "No patient data\nin consumer tools"),
-        (4.95, ORANGE, "2", "Click every\ncitation"),
+        (4.95, ORANGE, "2", "Open every\ncitation link"),
         (9.55, PURPLE, "3", "Never copy\na dose"),
         (0.35, TEAL, "4", "Harnesses\nemit files"),
         (4.95, GOLD, "5", "Local keeps the prompt\non the laptop"),
@@ -1253,25 +1266,25 @@ def fig_takehomes():
         rounded(ax, x, y, box_w, box_h, c, r=0.1)
         ink = INK if c == GOLD else WHITE
         ax.text(
-            x + 0.58,
-            y + box_h / 2,
+            x + 0.32,
+            y + box_h - 0.28,
             n,
             color=ink,
-            fontsize=26,
+            fontsize=21,
             fontweight="bold",
-            va="center",
-            ha="center",
+            va="top",
+            ha="left",
         )
         ax.text(
-            x + 2.55,
+            x + box_w / 2,
             y + box_h / 2,
             t,
             color=ink,
-            fontsize=15,
+            fontsize=13,
             fontweight="bold",
             va="center",
             ha="center",
-            linespacing=1.35,
+            linespacing=1.25,
         )
     save(fig, "takehomes")
 
@@ -1316,7 +1329,7 @@ def fig_three_eras():
     eras = [
         (0.4, BLUE, "1", "Autocomplete", "Completes the next\nword or line."),
         (4.95, PURPLE, "2", "Chat", "You ask. It answers\nin a conversation."),
-        (9.5, TEAL, "3", "Tools", "Looks things up.\nRuns a check."),
+        (9.5, TEAL, "3", "Tools", "Looks things up.\nTests the result."),
     ]
     stacks = []
     for x, c, n, title, body in eras:
@@ -1419,7 +1432,7 @@ def fig_poll_open():
     cards = [
         (0.4, 3.35, BLUE, "1", "Used AI at work\nin the last year?"),
         (7.3, 3.35, TEAL, "2", "Used an AI scribe?"),
-        (0.4, 0.85, ORANGE, "3", "Worried if no human\nchecks the output?"),
+        (0.4, 0.85, ORANGE, "3", "Worried if no human\nreviews the output?"),
         (7.3, 0.85, PURPLE, "4", "Trust these tools for\npediatric care?"),
     ]
     for x, y, c, n, label in cards:
@@ -1449,7 +1462,7 @@ def fig_two_blocks():
         {"text": "Ask → verify", "fontsize": 24, "color": TEAL, "fontweight": "bold", "gap_after": 0.12},
         {"text": "Labs 3 and 4", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.12},
         {
-            "text": "A febrile-infant question.\nThen check whether the\ncitations are real.",
+            "text": "A febrile-infant question.\nThen open the\ncited source.",
             "fontsize": 16,
             "color": INK,
             "linespacing": 1.50,

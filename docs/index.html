@@ -6,8 +6,8 @@
 <script src="lecture_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lecture_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lecture_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lecture_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="lecture_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>AI on the pediatric ward</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,10 +16,16 @@
   <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -28,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-9582d8763679a491d4844a4cf801636b.css">
+  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-88c66cef8543303ea4e84747e2397ef1.css">
   <link href="lecture_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,7 +138,7 @@
 <p>AI on the pediatric ward</p>
 </div>
 <div class="title-sub">
-<p>What it can do, where it fails, and how to check it.</p>
+<p>What it can do, where it fails, and how to verify the output.</p>
 </div>
 <div class="title-meta">
 <p>Austin G. Meyer, MD, PhD, MS, MPH, MS, FACP, FAAP</p>
@@ -141,7 +147,7 @@
 <p>Assistant Professor, Pediatrics</p>
 </div>
 <aside class="notes">
-<p>One hour. Two live blocks, four lessons (Labs 1–4): Make → inspect, then Ask → verify. Take-home Labs 5–8 sit after Q&amp;A and are not on the 60-minute clock. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.</p>
+<p>One hour. All eight workshops appear in the same order as briefing/workshops.md. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -158,7 +164,7 @@
 <h2>Four questions, then the national numbers</h2>
 <p><img data-src="assets/figures/poll_open.svg" style="width:100.0%"></p>
 <aside class="notes">
-<p>Do this before you show the national bars. Four show-of-hands: used AI at work in the last year; used an AI scribe; worried if no human checks the output; trust these tools for pediatric care. Then advance.</p>
+<p>Do this before you show the national bars. Four show-of-hands: used AI at work in the last year; used an AI scribe; worried if no human reviews the output; trust these tools for pediatric care. Then advance.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -206,7 +212,7 @@
 </div>
 <div class="box box-teal">
 <div class="box-label">
-<p>Check before you copy</p>
+<p>Verify before you copy</p>
 </div>
 <p>Do not copy a dose or a citation into a note until you have opened the source.</p>
 </div>
@@ -230,23 +236,6 @@
 <p><img data-src="assets/figures/hipaa.svg" style="width:100.0%"></p>
 <aside class="notes">
 <p>This is the clinically actionable privacy slide. Consumer ChatGPT: the prompt leaves the building. OpenEvidence’s HIPAA badge is still a vendor cloud. Local Ollama: the prompt stays on the laptop they already use for the EHR. That is a reasonable path. Hospital BAA tools are the official cloud path.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 viz">
-<h2>Sixty minutes on the clock. Take-home labs sit after Q&amp;A.</h2>
-<p><img data-src="assets/figures/hour_map.svg" style="width:100.0%"></p>
-<aside class="notes">
-<p>10-8-8-8-18-8. Take-home Labs 5–8 are not on this clock — say that out loud. Q&amp;A eats slack at the end of the hour, after Lab 4. Live work is two blocks containing four lessons: Make → inspect (Labs 1–2), Ask → verify (Labs 3–4).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -351,7 +340,7 @@
 <h2>The usual mistake now is a real paper with the wrong claim.</h2>
 <p><img data-src="assets/figures/hallucinations.svg" style="width:100.0%"></p>
 <aside class="notes">
-<p>Old failure: invented PubMed ID. Usual failure now: a real paper with the wrong claim; a rule set at the start can vanish mid-run; citation chips that look like proof. Citations and tool use do not eliminate checking. Artsi: interpretive error even with real citations.</p>
+<p>Old failure: invented PubMed ID. Usual failure now: a real paper with the wrong claim; a rule set at the start can vanish mid-run; citation links that look like proof. Citations and tool use do not eliminate source verification. Artsi: interpretive error even with real citations.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -368,7 +357,7 @@
 <h2>The jobs to remember are autocomplete, chat, and tools.</h2>
 <p><img data-src="assets/figures/three_eras.svg" style="width:100.0%"></p>
 <aside class="notes">
-<p>The goal is a taxonomy they can keep when the posters change. Autocomplete finishes the next word. Chat is a conversation. Tools look things up or run a check. Product names change quickly; these three jobs are what to remember. Full chronology is in backup if someone wants GPT-2 through Fable.</p>
+<p>The goal is a taxonomy they can keep when the posters change. Autocomplete finishes the next word. Chat is a conversation. Tools look things up or test a result. Product names change quickly; these three jobs are what to remember. Full chronology is in backup if someone wants GPT-2 through Fable.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -382,14 +371,14 @@
       }</style></aside>
 </section>
 <section class="slide level2 section-break" data-background-color="#691F74">
-<h2>Files and checks</h2>
-<p>What can the model check before it answers?</p>
+<h2>Sources, limits, and files</h2>
+<p>Three ways to make an answer easier to inspect.</p>
 </section>
 <section class="slide level2 viz">
 <h2>RAG looks a corpus up, then writes. Gemini Notebook is the best-known example.</h2>
 <p><img data-src="assets/figures/rag.svg" style="width:100.0%"></p>
 <aside class="notes">
-<p>Spell RAG once: retrieval-augmented generation — they have heard the acronym. Point at the corpus card — that is the choice. Gemini Notebook is the best-known example (public PDFs, citation chips). Do not claim a measured market share. OpenEvidence and UpToDate are other corpora. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.</p>
+<p>Spell RAG once: retrieval-augmented generation — they have heard the acronym. Point at the corpus card — that is the choice. Gemini Notebook is the best-known example (public PDFs with citation links). Do not claim a measured market share. OpenEvidence and UpToDate are other corpora. Reduces some hallucinations. Does not stop wrong-paper, unsupported synthesis, leftover parametric claims, or citation theater.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -403,13 +392,13 @@
       }</style></aside>
 </section>
 <section class="slide level2 viz">
-<h2>These models try an answer, check it, and try again.</h2>
+<h2>These models can test an answer and revise it before responding.</h2>
 <p><img data-src="assets/figures/test_time_compute.svg" style="width:100.0%"></p>
 <div class="viz-caption">
-<p>The 400 mg maximum is the check. 500 mg fails it, so the model revises to 400 mg.</p>
+<p>The 400 mg maximum is the safety limit. 500 mg exceeds it, so the model revises to 400 mg.</p>
 </div>
 <aside class="notes">
-<p>Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, ship it. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The line under the boxes is that in English. Coding tests had a unit-test check like that first; keep that history off the canvas unless someone asks. Do not turn this into Lab 2. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.</p>
+<p>Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, stop there. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The line under the boxes is that in English. Coding tests had an automated limit test like that first; keep that history off the canvas unless someone asks. Workshop 6 will audit the spreadsheet directly. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -424,9 +413,9 @@
 </section>
 <section class="slide level2 viz">
 <h2>A chatbot returns a paragraph. A harness returns a file.</h2>
-<p><img data-src="assets/figures/harness_loop.svg" style="width:100.0%"></p>
+<p><img data-src="assets/figures/harness_loop.svg?rev=20260827b" style="width:100.0%"></p>
 <aside class="notes">
-<p>Ask: which row produces something another person can inspect tomorrow? Top row is a chatbot: prompt in, a paragraph out, you copy it. Bottom row is a harness: prompt, files, tools, an artifact you can open. Cursor, Codex, Claude Code, OpenCode: same genus. Labs 1 and 2 only make sense if the file is the product.</p>
+<p>Ask: which row produces something another person can inspect tomorrow? Top row is a chatbot: prompt in, a paragraph out, you copy it. Bottom row is a harness: prompt, files, tools, an artifact you can open. Cursor, Codex, Claude Code, OpenCode: same genus. Workshops 1 and 7 only make sense if the file is the product.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -465,9 +454,9 @@
 </section>
 <section class="slide level2 viz">
 <h2>For real notes, use a hospital-approved cloud or this laptop.</h2>
-<p><img data-src="assets/figures/three_boxes.svg" style="width:100.0%"></p>
+<p><img data-src="assets/figures/three_boxes.svg?rev=20260827b" style="width:100.0%"></p>
 <aside class="notes">
-<p>Three places a prompt can live. Consumer ChatGPT, Claude, and Gemini send the prompt off-site with no hospital privacy contract. A hospital tool with a business associate agreement is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR. Do not recatalog model names.</p>
+<p>Three places a prompt can live. Consumer ChatGPT, Claude, and Gemini send the prompt off-site with no hospital privacy contract. A hospital tool with a business associate agreement is the official cloud path. Laptop Ollama: the vendor never sees the prompt, and they already use that laptop for the EHR. Qwen3.8, Muse Glimmer, and Gemma 4 are examples of local model families, not endorsements or claims that they fit every laptop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -532,13 +521,79 @@
       }</style></aside>
 </section>
 <section class="slide level2 section-break" data-background-color="#5F277E">
-<h2>Live blocks</h2>
+<h2>Workshops</h2>
+<p>Eight recipes, in the same order as the briefing.</p>
 </section>
-<section class="slide level2 viz">
-<h2>Labs 1 through 4 run in two live blocks.</h2>
-<p><img data-src="assets/figures/two_blocks.svg" style="width:100.0%"></p>
+<section class="slide level2 nostretch workshop-overview">
+<h2>Eight workshops, in the recipe order.</h2>
+<div class="workshop-roadmap">
+<div class="workshop-step">
+<div class="workshop-index">
+<p>1</p>
+</div>
+<div class="workshop-name">
+<p>Office files from a harness</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>2</p>
+</div>
+<div class="workshop-name">
+<p>Journal club on GitHub Pages</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>3</p>
+</div>
+<div class="workshop-name">
+<p>Local model, airplane mode</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>4</p>
+</div>
+<div class="workshop-name">
+<p>One question, three systems</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>5</p>
+</div>
+<div class="workshop-name">
+<p>Citation autopsy</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>6</p>
+</div>
+<div class="workshop-name">
+<p>Dosing-sheet audit</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>7</p>
+</div>
+<div class="workshop-name">
+<p>Harness versus chatbot</p>
+</div>
+</div>
+<div class="workshop-step">
+<div class="workshop-index">
+<p>8</p>
+</div>
+<div class="workshop-name">
+<p>Source-grounded notebook</p>
+</div>
+</div>
+</div>
 <aside class="notes">
-<p>Four lessons, two context switches. Make → inspect is Labs 1 and 2 in one Cursor stretch. Ask → verify is Labs 3 and 4 in the browser. Take-home 5–8 live after Q&amp;A as an appendix; point at the handout, do not run them. Recurring ritual: before each demo, the room predicts what will fail. After, one resident names the check they would perform.</p>
+<p>This order now matches the eight Workshop headings in briefing/workshops.md. Each recipe uses synthetic data or public sources. Use the same ritual throughout: predict what will fail, reveal the output, then audit it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -551,8 +606,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 nostretch">
-<h2>Lab 1 — files, not paragraphs</h2>
+<section class="slide level2 nostretch lab-stage">
+<h2>Workshop 1 — files, not paragraphs</h2>
 <div class="kicker">
 <p>Make → inspect · Cursor</p>
 </div>
@@ -585,10 +640,10 @@
 </div>
 </div>
 <div class="predict-strip">
-<p>Before: what will fail? · After: name one check.</p>
+<p>Before: what will fail? · After: what did you verify?</p>
 </div>
 <aside class="notes">
-<p>Full prompt, already on the clipboard: Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, noon_conference.pptx from that stem only. No identifiers. No medication column. No invented PubMed IDs. End the letter with “this is a teaching example.” Predict first: a paragraph instead of files, a meds column, an invented PMID. Then paste. Open the three files. One resident names the check. At home: python slides/workshops/lab1_fallback.py. Optional sting: same stem in ChatGPT, “add a dexamethasone dose.”</p>
+<p>Full prompt, already on the clipboard: Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, and noon_conference.pptx from that stem only. No identifiers. The letter is one page at a sixth-grade reading level and ends with “this is a teaching example.” The tracker has six synthetic rows, the requested respiratory fields, and hours since the last wean attempt; it has no medication column. The deck uses placeholder citations and labels them unverified. Predict first: a paragraph instead of files, a medication column, or an invented PMID. Then paste, open all three files, and have one resident name what they verified. Fallback: python slides/workshops/lab1_fallback.py. Optional sting: ask a chat-only model to add a dexamethasone dose.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -601,17 +656,17 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 stack-viz nostretch">
-<h2>Lab 2 — spot the bug</h2>
+<section class="slide level2 stack-viz nostretch lab-stage">
+<h2>Workshop 2 — journal club on a URL</h2>
 <div class="kicker">
-<p>Make → inspect · same Cursor window</p>
+<p>Build → verify · public paper + empty folder</p>
 </div>
-<p><img data-src="assets/figures/formula_bug.svg" style="width:88.0%"></p>
+<p><img data-src="assets/figures/lab5_flow.svg" style="width:100.0%"></p>
 <div class="predict-strip">
-<p>Before: what will fail? · After: name one check.</p>
+<p>Before: what will fail? · After: what did you verify?</p>
 </div>
 <aside class="notes">
-<p>Do not show the error list on the projector first. KEY.md is in the folder: teachicillin, oral, 10 mg/kg/dose every 8 hours, max 400 mg/dose; weight under 2 kg → TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Room predicts. Then flip to formula view. Hunt: missing max, mg vs mcg, adult default, invented frequency. Fallback python slides/workshops/lab2_fallback.py omits the 400 mg maximum on purpose.</p>
+<p>Use an open-access pediatric paper or public guideline PDF. In an empty folder, ask the harness for no more than eight Reveal.js slides in docs/index.html, plus a README and MIT license. Open the deck locally and verify every citation before enabling GitHub Pages. If GitHub is blocked or a resident has no account, zip the static HTML and open it locally. The lesson is static, versioned teaching material—not a particular framework. Never post a paywalled PDF or an unverified DOI.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -624,8 +679,31 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 nostretch">
-<h2>Lab 3 — one question, three corpora</h2>
+<section class="slide level2 stack-viz nostretch lab-stage">
+<h2>Workshop 3 — local model, airplane mode</h2>
+<div class="kicker">
+<p>Summarize → inspect · Ollama + airplane mode</p>
+</div>
+<p><img data-src="assets/figures/lab6_rules.svg" style="width:100.0%"></p>
+<div class="predict-strip">
+<p>Before: what will fail? · After: what did you verify?</p>
+</div>
+<aside class="notes">
+<p>Pre-download and test the model before the lecture: ollama pull qwen3.8, or qwen3:8b when memory is tight. Then switch on airplane mode and keep Wi-Fi visibly off. Paste only a synthetic H&amp;P. Ask for a problem list, overnight contingencies, and three questions for the family; instruct the model to write MISSING instead of inventing absent values. A 16 GB laptop should use an 8B-class model; a 24–32 GB machine can run a larger quantized model. Local means the prompt stays on the laptop. It does not mean the answer is more accurate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 nostretch lab-stage">
+<h2>Workshop 4 — one question, three systems</h2>
 <div class="kicker">
 <p>Ask → verify · browser</p>
 </div>
@@ -643,7 +721,7 @@
 <div class="box-label">
 <p>B · Gemini Notebook</p>
 </div>
-<p>One public AAP or CDC PDF you uploaded. Require a quote. Click the chip.</p>
+<p>One public AAP or CDC PDF you uploaded. Require a quote. Open the citation link.</p>
 </div>
 <div class="box box-teal box-prose">
 <div class="box-label">
@@ -680,10 +758,10 @@
 </div>
 </div>
 <div class="predict-strip">
-<p>Before: what will fail? · After: name one check.</p>
+<p>Before: what will fail? · After: what did you verify?</p>
 </div>
 <aside class="notes">
-<p>The stem is deliberately missing urinalysis and inflammatory markers. That is the test — do not fill them in. Whiteboard now includes “Did it ask for missing data?” Arm A often mashups febrile-infant algorithms and never asks. If OpenEvidence is blocked, skip C without apology. Stay in the browser for Labs 3 and 4.</p>
+<p>The stem is deliberately missing urinalysis and inflammatory markers. That is the test—do not fill them in. Arm A has web search off; demand an identifier and try to open it. Arm B gets exactly one public AAP or CDC PDF and must quote a page or section. Arm C is OpenEvidence if available, otherwise use a PubMed Central full text in Gemini Notebook. Whiteboard includes “Did it ask for missing data?” If OpenEvidence is blocked, skip C without apology. Stay in the browser for Workshops 4 and 5.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -696,8 +774,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 nostretch">
-<h2>Lab 4 — citation autopsy</h2>
+<section class="slide level2 nostretch lab-stage">
+<h2>Workshop 5 — citation autopsy</h2>
 <div class="kicker">
 <p>Ask → verify · same ChatGPT tab, search still off</p>
 </div>
@@ -707,16 +785,100 @@
 <div class="lab-steps">
 <ol type="1">
 <li>Open PubMed.</li>
-<li>Search the first three IDs only.</li>
-<li>Mark each: exists / exists but the wrong paper / does not exist.</li>
+<li>Search the first five IDs.</li>
+<li>Mark each: correct / wrong paper / missing / wrong year.</li>
 <li>Stop. Do not chase all eight.</li>
 </ol>
 </div>
 <div class="predict-strip">
-<p>Before: what will fail? · After: name one check.</p>
+<p>Before: what will fail? · After: what did you verify?</p>
 </div>
 <aside class="notes">
-<p>Stochastic. Keep a frozen rehearsal output on the USB. If the live model refuses, or all three IDs are valid, say “good behavior today” and inspect the saved example. Do not invent PubMed IDs to force a miss. One dead or mismatched identifier is the teaching point. Then stop. Do not run Labs 5–8 live. Summary and Q&amp;A are next; take-home is after questions.</p>
+<p>Stochastic. Keep a frozen rehearsal output on the USB. If the model refuses or all five identifiers are valid, say “good behavior today” and inspect the saved example. Do not invent PubMed IDs to force a miss. Mark each as correct paper, wrong paper, missing identifier, or correct paper with the wrong year. Then rerun the question in Gemini Notebook with two real PDFs and show that grounded mode still requires opening the citation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 stack-viz nostretch lab-stage">
+<h2>Workshop 6 — audit the dosing sheet</h2>
+<div class="kicker">
+<p>Build → audit · harness + spreadsheet</p>
+</div>
+<p><img data-src="assets/figures/formula_bug.svg" style="width:88.0%"></p>
+<div class="predict-strip">
+<p>Before: what will fail? · After: what did you verify?</p>
+</div>
+<aside class="notes">
+<p>Do not show the error list first. KEY.md contains the only permitted rules: fictional teachicillin, oral, 10 mg/kg/dose every 8 hours, maximum 400 mg/dose; weight below 2 kg produces TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Then flip to formula view. Hunt for mg versus mcg, a missing maximum, an adult default, always-round-up logic, or an invented frequency. Fallback python slides/workshops/lab2_fallback.py deliberately omits the 400 mg cap.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 nostretch workshop-text">
+<h2>Workshop 7 — harness loop versus chatbot</h2>
+<div class="kicker">
+<p>Compare → inspect · chatbot + harness</p>
+</div>
+<div class="lab-goal">
+<p>Same request in both tools. The useful difference is the loop: files, tools, a basic test, and a result you can inspect.</p>
+</div>
+<div class="lab-prompt">
+<p>In an empty folder, create a single <code>index.html</code> that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then run a basic check that the file opens.</p>
+</div>
+<div class="lab-steps">
+<ol type="1">
+<li><strong>Arm A · ChatGPT.</strong> Paste the request. Try to copy the resulting code into a file by hand.</li>
+<li><strong>Arm B · harness.</strong> Use Cursor, Codex, Claude Code, or OpenCode in an empty folder. Let it create, test, and open the file.</li>
+</ol>
+</div>
+<aside class="notes">
+<p>Nonclinical on purpose. Do not create a fake pediatric growth calculator that someone could reuse. Use the identical request in both arms. The chat arm returns code that the resident must place and run; the harness writes the file and checks that it opens. Paid Cursor is optional; OpenCode plus a local model is the free equivalent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 nostretch workshop-text">
+<h2>Workshop 8 — source-grounded notebook</h2>
+<div class="kicker">
+<p>Ask → verify · Gemini Notebook + public PDFs</p>
+</div>
+<div class="lab-goal">
+<p>Grounded Q&amp;A over sources you selected. Useful for journal club and policy; wrong for patient notes or the census.</p>
+</div>
+<div class="lab-steps">
+<ol type="1">
+<li>Upload four public sources.</li>
+<li>Ask a question answered by the corpus. Open every citation.</li>
+<li>Ask something outside the corpus. It should say the answer is not in the sources.</li>
+<li>Optional: generate an audio overview for review on the commute.</li>
+</ol>
+</div>
+<aside class="notes">
+<p>Use public papers only: for example the AAP digital-ecosystems statement, Grundmeier’s Pediatrics review, ICMJE Recommendations, and an open CDC/AAP guideline or the Artsi review. Ask what AAP says it is not covering in the statement; the dedicated AI policy is forthcoming. Contrast that with the Grundmeier review, which is not AAP policy. Then ask an out-of-corpus question and expect a refusal or “not in sources.” Open every citation. NotebookLM was renamed Gemini Notebook on 16 July 2026; product privacy copy is not a hospital BAA.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -730,8 +892,8 @@
       }</style></aside>
 </section>
 <section class="slide level2 viz">
-<h2>Six checks to take home.</h2>
-<p><img data-src="assets/figures/takehomes.svg" style="width:100.0%"></p>
+<h2>Six habits to remember.</h2>
+<p><img data-src="assets/figures/takehomes.svg?rev=20260827" style="width:100.0%"></p>
 <aside class="notes">
 <p>Repeat. Point at the briefing packet and workshops.md. A local model keeps the prompt on the laptop; it does not make the answer more accurate. Last box: you still need the child’s age and context. Do not invent an AAP clinical AI policy.</p>
 <style type="text/css">
@@ -749,24 +911,33 @@
 <section class="slide level2 qa-close nostretch">
 <h2>Three questions before you copy.</h2>
 <div class="qa-three">
-<div class="box box-orange">
-<div class="box-label">
+<div class="qa-item qa-orange">
+<div class="qa-number">
+<p>1</p>
+</div>
+<div class="qa-text">
 <p>Where did the prompt go?</p>
 </div>
 </div>
-<div class="box box-purple">
-<div class="box-label">
+<div class="qa-item qa-purple">
+<div class="qa-number">
+<p>2</p>
+</div>
+<div class="qa-text">
 <p>What source did it use?</p>
 </div>
 </div>
-<div class="box box-teal">
-<div class="box-label">
+<div class="qa-item qa-teal">
+<div class="qa-number">
+<p>3</p>
+</div>
+<div class="qa-text">
 <p>What did I verify?</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>These three checks before they copy. Then thank them and take questions. Do not invent an AAP clinical AI guideline.</p>
+<p>These are the three questions to ask before copying. Then thank them and take questions. Do not invent an AAP clinical AI guideline.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -791,107 +962,7 @@
 <p>Questions?</p>
 </div>
 <aside class="notes">
-<p>Stop here for the live hour. Thank them. Take questions. Do not invent an AAP clinical AI guideline. Packet is briefing/; presenter-kit is slides/presenter-kit.md. Appendix is take-home Labs 5–8, then backup. Linear deck: you can leave the rest unshown.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 section-break" data-background-color="#00C4B3">
-<h2>Take-home labs</h2>
-<p>After the hour. Recipes in the handout.</p>
-</section>
-<section class="slide level2 stack-viz nostretch">
-<h2>Lab 5 — journal club on a URL</h2>
-<div class="kicker">
-<p>Take-home · 5 of 8</p>
-</div>
-<p><img data-src="assets/figures/lab5_flow.svg" style="width:100.0%"></p>
-<aside class="notes">
-<p>Do not run live. Visible lesson is the four-step flow. Full recipe is in briefing/workshops.md: PAPER.md → eight Reveal slides in docs/index.html → verify citations → GitHub Pages or a local zip. Do not enable Pages until citations are verified. Lab 5 is a resident journal-club fork, not this repo’s docs/.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 stack-viz nostretch">
-<h2>Lab 6 — local model, airplane mode</h2>
-<div class="kicker">
-<p>Take-home · 6 of 8</p>
-</div>
-<p><img data-src="assets/figures/lab6_rules.svg" style="width:100.0%"></p>
-<aside class="notes">
-<p>Slide is the constraints. Commands live in the written recipe: ollama.com, ollama pull qwen3.8 or qwen3:8b if memory is tight. 8–16 GB laptop: 8B-class, slowly. 24–32 GB box: Qwen3.8-27B, Muse Glimmer 30B, or Gemma 4 31B (4-bit ~17.5 GB). Synthetic H&amp;P only. Hardware figure is in backup.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 nostretch">
-<h2>Lab 7 — harness loop vs chatbot</h2>
-<div class="kicker">
-<p>Take-home · 7 of 8 · files vs a paragraph</p>
-</div>
-<div class="lab-goal">
-<p>Same request in ChatGPT and in a harness. The product you want is the loop (files, tools, a check), not the chat box.</p>
-</div>
-<div class="lab-prompt">
-<p>In an empty folder, create a single <code>index.html</code> that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then confirm the file opens.</p>
-</div>
-<div class="lab-steps">
-<ol type="1">
-<li><strong>Arm A · ChatGPT.</strong> Paste the request. Try to copy files by hand.</li>
-<li><strong>Arm B · harness.</strong> Cursor, Codex, Claude Code, or OpenCode in an empty folder. Same request. Let it write and open the file.</li>
-</ol>
-</div>
-<aside class="notes">
-<p>Nonclinical on purpose. Do not ship a fake pediatric growth z-score that someone could reuse. Full recipe in the handout. Paid Cursor is optional; OpenCode + a local model is the free echo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 nostretch">
-<h2>Lab 8 — source-grounded notebook</h2>
-<div class="kicker">
-<p>Take-home · 8 of 8 · public PDFs</p>
-</div>
-<div class="lab-goal">
-<p>Grounded Q&amp;A over files you chose. Right tool for journal club and policy. Wrong tool for the census.</p>
-</div>
-<div class="lab-steps">
-<p>Upload public papers only. Ask something in the corpus. Ask something outside it — it should refuse. Click every citation chip.</p>
-</div>
-<aside class="notes">
-<p>NotebookLM was renamed Gemini Notebook (16 Jul 2026); that rename belongs in the handout, not as the punch. Public papers only. Do not upload real notes.</p>
+<p>Thank them and take questions. All eight workshops now precede this slide and follow the recipe numbering. Do not invent an AAP clinical AI guideline. Packet is briefing/; presenter kit is slides/presenter-kit.md. Backup begins after this slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -929,7 +1000,7 @@
 <h2>Attention is the mix step before the next-token guess.</h2>
 <p><img data-src="assets/figures/attention.svg" style="width:100.0%"></p>
 <aside class="notes">
-<p>Self-attention, 2017. One token looking at the sentence. The live hour uses the 38.5 °C age example instead.</p>
+<p>Self-attention, 2017. One token looking at the sentence. The main lecture uses the 38.5 °C age example instead.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -996,7 +1067,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 nostretch">
+<section class="slide level2 nostretch statement-slide">
 <h2>Judge the claims, not the fluency.</h2>
 <div class="copy-block">
 <p><strong>Judge the claims, data, code, and citations—not the fluency or confession.</strong></p>

@@ -11,6 +11,10 @@ else
   quarto render lecture.qmd
 fi
 
+# Quarto can retain an older copy of a linked SVG in _site. Sync the authored
+# figures explicitly so a rerender always publishes the current artwork.
+rsync -a assets/figures/ _site/assets/figures/
+
 # Drop stale single-file builds so they are not copied into docs/.
 rm -f _site/lecture.html
 
