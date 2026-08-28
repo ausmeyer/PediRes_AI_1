@@ -553,7 +553,13 @@ def fig_three_boxes():
     for x, c, title, kicker, examples, notes in cards:
         items = [
             {"text": title, "fontsize": 16, "color": c, "fontweight": "bold", "gap_after": 0.12},
-            {"text": kicker, "fontsize": 13, "color": INK, "gap_after": 0.12},
+            {
+                "text": kicker,
+                "fontsize": 13,
+                "color": c if title == "Consumer cloud" else INK,
+                "fontweight": "bold" if title == "Consumer cloud" else "normal",
+                "gap_after": 0.12,
+            },
         ]
         if examples:
             items.append(
@@ -717,14 +723,6 @@ def fig_ttc():
     left_items = [
         {"text": "Answer once", "fontsize": 18, "color": ORANGE, "fontweight": "bold", "gap_after": 0.12},
         {"text": "First fluent sentence. Stop there.", "fontsize": 13, "color": MUTED, "gap_after": 0.12},
-        {
-            "text": "=B2*10",
-            "fontsize": 26,
-            "color": INK,
-            "fontweight": "bold",
-            "family": "DejaVu Sans Mono",
-            "gap_after": 0.12,
-        },
         {
             "text": "10 mg/kg × 50 kg → 500 mg.\nNo 400 mg maximum. No test.",
             "fontsize": 14,
