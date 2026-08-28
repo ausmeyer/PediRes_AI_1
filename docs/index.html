@@ -34,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-0b7bc1722c739d5ab6d56b573add4b3d.css">
+  <link rel="stylesheet" href="lecture_files/libs/revealjs/dist/theme/quarto-70fd04105395becc150263b45200b860.css">
   <link href="lecture_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lecture_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -522,7 +522,7 @@
 </section>
 <section class="slide level2 section-break" data-background-color="#5F277E">
 <h2>Live demonstrations</h2>
-<p>Six presenter-run examples. Predict, reveal, verify.</p>
+<p>Six presenter-run examples. Show, inspect, verify.</p>
 </section>
 <section class="slide level2 nostretch workshop-overview">
 <h2>Six demonstrations, in the runbook order.</h2>
@@ -577,7 +577,7 @@
 </div>
 </div>
 <aside class="notes">
-<p>This order matches briefing/workshops.md. These are live demonstrations, not participant exercises. Every case is synthetic and every source is named. Use the same ritual throughout: predict one failure, reveal the output, then verify one thing aloud.</p>
+<p>This order matches briefing/workshops.md. These are live demonstrations, not participant exercises. Every case is synthetic and every source is named. Use the same ritual throughout: name the practical job, show the output, then verify one thing aloud.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -623,8 +623,8 @@
 </div>
 </div>
 </div>
-<div class="predict-strip">
-<p>Before: what will fail? · After: what did you verify?</p>
+<div class="verify-strip">
+<p>Show the result · Open the file · Verify one concrete detail</p>
 </div>
 <aside class="notes">
 <p>Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.md into Codex. The exact source is STEM.md. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/demo1_fallback.py. The visible verification action is opening all three files.</p>
@@ -668,11 +668,11 @@
 <p>Open the cited PDF page</p>
 </div>
 </div>
-<div class="predict-strip">
-<p>Before: what will fail? · After: what did you verify?</p>
+<div class="verify-strip">
+<p>Show the result · Open the source · Verify one concrete detail</p>
 </div>
 <aside class="notes">
-<p>Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on the cited PDF viewer page. No outside browsing, copied figures, or invented identifiers.</p>
+<p>Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on PDF viewer page 3. No outside browsing, copied figures, or invented identifiers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -694,11 +694,11 @@
 <div class="lab-prompt">
 <p><code>ollama run qwen3.8 &lt; demo3_ollama_prompt.txt</code></p>
 </div>
-<div class="predict-strip">
-<p>Before: what will fail? · After: what did you verify?</p>
+<div class="verify-strip">
+<p>Show the result · Inspect missing facts · Verify one concrete detail</p>
 </div>
 <aside class="notes">
-<p>Prepared folder: /tmp/peds-ai-live-demos/03-offline-ollama. Pre-pull qwen3.8, then show Wi-Fi off and run: ollama run qwen3.8 &lt; demo3_ollama_prompt.txt. The file contains the complete prompt and synthetic H&amp;P. It explicitly omits a current weight and numeric urine output; verify that the response says MISSING rather than inferring them. If hardware is tight, substitute one already-tested 8B-class Ollama model without changing the prompt. Local controls where the prompt goes; it does not certify the answer.</p>
+<p>Prepared folder: /tmp/peds-ai-live-demos/03-offline-ollama. Pre-pull qwen3.8, then show Wi-Fi off and run: ollama run qwen3.8 &lt; demo3_ollama_prompt.txt. The file contains the complete prompt and synthetic H&amp;P. It explicitly omits a current weight and numeric urine output; verify that the response says MISSING rather than inferring them. If hardware is tight, substitute one already-tested 8B-class Ollama model without changing the prompt. Local controls where the prompt goes; it does not certify the answer. Turn Wi-Fi back on and confirm the connection before Demonstration 4.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -766,8 +766,8 @@
 </div>
 </div>
 </div>
-<div class="predict-strip">
-<p>Before: what will fail? · After: what did you verify?</p>
+<div class="verify-strip">
+<p>Run three conditions · Compare the sources · Verify missing inputs</p>
 </div>
 <aside class="notes">
 <p>Prepared parent folder: /tmp/peds-ai-live-demos/04-source-conditions. Use three fresh Codex tasks: A-no-source, B-guideline, C-guideline-and-correction. Each folder supplies CASE.md and an exact PROMPT.md; B and C also supply exact official AAP links. The case deliberately omits urinalysis and inflammatory markers. Do not add them. Score: source stated, relevant age group located, missing data requested, correction handled, answer bounded. Official sources are Pantell et al., Pediatrics 2021, DOI 10.1542/peds.2021-052228, and the correction, DOI 10.1542/peds.2021-054063.</p>
@@ -786,7 +786,7 @@
 <section class="slide level2 nostretch workshop-text">
 <h2>Demonstration 5 — Codex repairs the artifact</h2>
 <div class="kicker">
-<p>Reproduce → repair → test · Codex</p>
+<p>Open → repair → test · Codex</p>
 </div>
 <div class="lab-goal">
 <p>The provided attendance page looks finished, but typing a week does nothing. Let Codex work on the file itself.</p>
@@ -796,13 +796,13 @@
 </div>
 <div class="lab-steps">
 <ol type="1">
-<li>Reproduce the failure in the browser.</li>
+<li>Show the interaction issue in the browser.</li>
 <li>Let Codex inspect and edit the existing file.</li>
 <li>Enter <strong>4</strong>: one orange bar. Enter <strong>9</strong>: no highlight and a clear message.</li>
 </ol>
 </div>
 <aside class="notes">
-<p>Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the failure. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Ask whether the failure was data, display, or interaction before revealing the identifier mismatch.</p>
+<p>Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the interaction issue. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Tell the room that the displayed data remain intact while Codex inspects the unresponsive selection interaction.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -832,7 +832,7 @@
 </ol>
 </div>
 <aside class="notes">
-<p>Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al.&nbsp;2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify one row against the cited PDF viewer page, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.</p>
+<p>Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al.&nbsp;2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify the FDA document type on PDF viewer page 2, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

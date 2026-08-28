@@ -27,7 +27,7 @@ Materials for the McLane Children’s pediatric residency hour on modern AI. Eve
 | 2 | Codex | A self-contained journal-club web page from one named PDF | Trace the “11 studies” claim to the PDF |
 | 3 | Ollama | An offline summary of one supplied synthetic H&P | Missing weight and urine output remain `MISSING` |
 | 4 | Codex | One febrile-infant question under three source conditions | Compare traceability and recognition of missing inputs |
-| 5 | Codex | A repaired and tested interactive HTML page | Reproduce the failure, then run the stated acceptance tests |
+| 5 | Codex | A repaired and tested interactive HTML page | Show the interaction issue, then run the stated acceptance tests |
 | 6 | Codex | A page-cited brief from a fixed three-PDF packet | Confirm the off-corpus sentinel returns `NOT IN PACKET` |
 
 Prepare six isolated demonstration folders from the repository root:

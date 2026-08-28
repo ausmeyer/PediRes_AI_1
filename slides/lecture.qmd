@@ -289,7 +289,7 @@ As of August 2026. Left column is already in writing: ICMJE January 2026 and COP
 
 ## Live demonstrations {background-color="#5F277E" .section-break}
 
-Six presenter-run examples. Predict, reveal, verify.
+Six presenter-run examples. Show, inspect, verify.
 
 ---
 
@@ -347,7 +347,7 @@ Codex builds a source-bounded brief
 ::::
 
 ::: notes
-This order matches briefing/workshops.md. These are live demonstrations, not participant exercises. Every case is synthetic and every source is named. Use the same ritual throughout: predict one failure, reveal the output, then verify one thing aloud.
+This order matches briefing/workshops.md. These are live demonstrations, not participant exercises. Every case is synthetic and every source is named. Use the same ritual throughout: name the practical job, show the output, then verify one thing aloud.
 :::
 
 ---
@@ -391,8 +391,8 @@ Citations not yet verified
 :::
 ::::
 
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
+::: {.verify-strip}
+Show the result · Open the file · Verify one concrete detail
 :::
 
 ::: notes
@@ -437,12 +437,12 @@ Open the cited PDF page
 :::
 ::::
 
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
+::: {.verify-strip}
+Show the result · Open the source · Verify one concrete detail
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on the cited PDF viewer page. No outside browsing, copied figures, or invented identifiers.
+Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on PDF viewer page 3. No outside browsing, copied figures, or invented identifiers.
 :::
 
 ---
@@ -459,12 +459,12 @@ Summarize → inspect · Ollama + airplane mode
 `ollama run qwen3.8 < demo3_ollama_prompt.txt`
 :::
 
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
+::: {.verify-strip}
+Show the result · Inspect missing facts · Verify one concrete detail
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/03-offline-ollama. Pre-pull qwen3.8, then show Wi-Fi off and run: ollama run qwen3.8 < demo3_ollama_prompt.txt. The file contains the complete prompt and synthetic H&P. It explicitly omits a current weight and numeric urine output; verify that the response says MISSING rather than inferring them. If hardware is tight, substitute one already-tested 8B-class Ollama model without changing the prompt. Local controls where the prompt goes; it does not certify the answer.
+Prepared folder: /tmp/peds-ai-live-demos/03-offline-ollama. Pre-pull qwen3.8, then show Wi-Fi off and run: ollama run qwen3.8 < demo3_ollama_prompt.txt. The file contains the complete prompt and synthetic H&P. It explicitly omits a current weight and numeric urine output; verify that the response says MISSING rather than inferring them. If hardware is tight, substitute one already-tested 8B-class Ollama model without changing the prompt. Local controls where the prompt goes; it does not certify the answer. Turn Wi-Fi back on and confirm the connection before Demonstration 4.
 :::
 
 ---
@@ -531,8 +531,8 @@ Correction reviewed?
 :::
 ::::
 
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
+::: {.verify-strip}
+Run three conditions · Compare the sources · Verify missing inputs
 :::
 
 ::: notes
@@ -544,7 +544,7 @@ Prepared parent folder: /tmp/peds-ai-live-demos/04-source-conditions. Use three 
 ## Demonstration 5 — Codex repairs the artifact {.nostretch .workshop-text}
 
 ::: {.kicker}
-Reproduce → repair → test · Codex
+Open → repair → test · Codex
 :::
 
 ::: {.lab-goal}
@@ -556,13 +556,13 @@ Repair `broken_attendance.html`. Preserve the eight exact counts. Test 4, 1, 8, 
 :::
 
 ::: {.lab-steps}
-1. Reproduce the failure in the browser.
+1. Show the interaction issue in the browser.
 2. Let Codex inspect and edit the existing file.
 3. Enter **4**: one orange bar. Enter **9**: no highlight and a clear message.
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the failure. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Ask whether the failure was data, display, or interaction before revealing the identifier mismatch.
+Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the interaction issue. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Tell the room that the displayed data remain intact while Codex inspects the unresponsive selection interaction.
 :::
 
 ---
@@ -585,7 +585,7 @@ What should a clinician verify before relying on a clinical AI answer?
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al. 2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify one row against the cited PDF viewer page, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.
+Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al. 2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify the FDA document type on PDF viewer page 2, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.
 :::
 
 ---

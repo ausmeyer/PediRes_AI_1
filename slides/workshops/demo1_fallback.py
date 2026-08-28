@@ -78,6 +78,8 @@ def slides():
         slide.shapes.title.text = title
         body = slide.placeholders[1].text_frame
         body.text = "SYNTHETIC TEACHING CASE — NOT A REAL PATIENT"
+        if "Evidence" in title or "References" in title:
+            body.add_paragraph().text = "PLACEHOLDER—VERIFY BEFORE TEACHING"
     prs.save(OUT / "noon_conference.pptx")
 
 

@@ -1,6 +1,6 @@
 # Demonstration 5 prompt
 
-Open `broken_attendance.html` in a browser and reproduce the interaction failure. Then inspect and repair the existing file; do not replace it with a framework or add dependencies.
+Open `broken_attendance.html` in a browser and reproduce the interaction issue. Then inspect and repair the existing file; do not replace it with a framework or add dependencies.
 
 Acceptance tests:
 
@@ -11,4 +11,4 @@ Acceptance tests:
 5. The file makes no external API, library, font, or network request.
 6. The input has an accessible label and the status message is announced to assistive technology.
 
-After editing, test inputs `4`, `1`, `8`, `9`, and a blank value. Report the cause of the failure, the specific edit, and the test results.
+After editing, test inputs `4`, `1`, `8`, `9`, and a blank value. Report the cause of the issue, the specific edit, and the test results.

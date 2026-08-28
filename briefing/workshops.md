@@ -36,7 +36,7 @@ Before residents arrive:
 - Open the two official AAP links in Demonstration 4 once; the AAP site may challenge a new browser session.
 - Keep a local copy of the lecture and the prepared demonstration folders on the teaching laptop.
 
-Use the same delivery rhythm each time: **predict one failure → run the exact prompt → open the artifact or source → verify one thing aloud**.
+Use the same delivery rhythm each time: **name the practical job → run the exact prompt → open the artifact or source → verify one thing aloud**. These are demonstrations of possibilities residents might consider.
 
 ---
 
@@ -180,8 +180,8 @@ The page contains made-up noon-conference attendance counts for eight weeks. It 
 
 ### Run it
 
-1. Open `broken_attendance.html` first and reproduce the failure.
-2. Ask the room whether the problem is the data, the display, or the interaction.
+1. Open `broken_attendance.html` first and show the interaction issue.
+2. Tell the room that the data are visible but the week-selection interaction does not respond.
 3. Open the folder in Codex and paste `PROMPT.md`.
 4. Let Codex inspect, edit, and test the existing file.
 5. Enter `4`: only Week 4 should turn orange. Enter `9`: no bar should be highlighted and the page should ask for 1–8.
