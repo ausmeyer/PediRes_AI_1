@@ -821,7 +821,7 @@ def fig_harness():
     ax.text(
         7,
         0.48,
-        "Cursor, Codex, Claude Code, and OpenCode use the same workflow: prompt → files → tools → inspect.",
+        "Codex uses this workflow: prompt → files → tools → inspect → revise.",
         ha="center",
         fontsize=12,
         color=INK,
@@ -1226,7 +1226,7 @@ def fig_workshops():
         ax.text(1.18, y, n, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold", zorder=4)
         ax.text(1.62, y + 0.13, title, ha="left", va="center", fontsize=13, fontweight="bold", color=INK)
         ax.text(1.62, y - 0.13, sub, ha="left", va="center", fontsize=11, color=MUTED)
-    ax.text(3.6, 0.78, "Cursor, then the browser. Watch, then try later.", ha="center", fontsize=11, color=MUTED)
+    ax.text(3.6, 0.78, "Codex, then the browser. Watch the artifact change.", ha="center", fontsize=11, color=MUTED)
 
     rounded(ax, 7.15, 0.55, 6.5, 4.55, WHITE, TEAL, lw=3)
     ax.text(10.4, 4.72, "Take-home  ·  Labs 5–8", ha="center", fontsize=15, fontweight="bold", color=TEAL)

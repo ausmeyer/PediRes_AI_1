@@ -49,42 +49,32 @@ $presentation-h2-font-size: 1.35em;
   background: transparent;
 }
 
-/* Wordmark lives in the Reveal footer, not as a corner train. */
+/* Keep the wordmark in one fixed, slide-independent layer. Reveal's dynamic
+   footer can repaint behind alternating transformed slides in Chromium. */
 .reveal .slide-logo {
   display: none !important;
 }
 
 .reveal .footer {
-  color: $mclane-muted;
-  letter-spacing: 0.01em;
-  bottom: 10px !important;
-  height: auto !important;
-  overflow: visible !important;
-  z-index: 6 !important;
-  font-size: 0 !important;
+  display: none !important;
 }
 
-.reveal .footer p {
-  margin: 0 !important;
-  display: inline-block;
+.reveal::after {
+  content: "";
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 266px;
+  height: 71px;
   background: $mclane-paper;
-  padding: 6px 10px 5px;
   border-radius: 8px;
-  line-height: normal;
-  font-size: 0;
-}
-
-.reveal .footer img,
-.reveal .footer .footer-wordmark {
-  display: inline-block !important;
-  width: 246px !important;
-  height: 60px !important;
-  max-width: 250px !important;
-  max-height: 60px !important;
-  object-fit: contain;
-  margin: 0;
-  vertical-align: middle;
-  background: transparent;
+  background-image: url("../../../../../assets/mclane-wordmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 246px 60px;
+  pointer-events: none;
+  z-index: 100;
 }
 
 .reveal.has-dark-background .footer {

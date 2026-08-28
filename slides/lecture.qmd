@@ -44,7 +44,7 @@ Assistant Professor, Pediatrics
 :::
 
 ::: notes
-One hour. All eight workshops appear in the same order as briefing/workshops.md. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
+One hour. Six presenter-run demonstrations appear in the same order as briefing/workshops.md. No PHI tonight. This is a survey, not a protocol — keep that in your voice, not as a punch on the title slide.
 :::
 
 ---
@@ -212,17 +212,17 @@ The 400 mg maximum is the safety limit. 500 mg exceeds it, so the model revises 
 :::
 
 ::: notes
-Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, stop there. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The line under the boxes is that in English. Coding tests had an automated limit test like that first; keep that history off the canvas unless someone asks. Workshop 6 will audit the spreadsheet directly. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
+Vendors sell extra tokens before the answer — a try, test, revise loop you usually do not see. Left is the 2023 chatbot: first fluent sentence, stop there. Right is o1-class: hidden scratch work, then one answer. The toy is a 10 mg/kg dose that needs a 400 mg maximum: 50 kg × 10 = 500, which fails the maximum, so the revised answer is 400 mg. The line under the boxes is that in English. Coding tests had an automated limit test like that first; keep that history off the canvas unless someone asks. Files and tools are the next slide. o1 Sep 2024; DeepSeek-R1 Jan 2025 if someone asks whether it was OpenAI-only.
 :::
 
 ---
 
 ## A chatbot returns a paragraph. A harness returns a file. {.viz}
 
-![](assets/figures/harness_loop.svg?rev=20260827b){width="100%"}
+![](assets/figures/harness_loop.svg?rev=20260828){width="100%"}
 
 ::: notes
-Ask: which row produces something another person can inspect tomorrow? Top row is a chatbot: prompt in, a paragraph out, you copy it. Bottom row is a harness: prompt, files, tools, an artifact you can open. Cursor, Codex, Claude Code, OpenCode: same genus. Workshops 1 and 7 only make sense if the file is the product.
+Ask: which row produces something another person can inspect tomorrow? Top row is a chatbot: prompt in, a paragraph out, you copy it. Bottom row is Codex: prompt, files, tools, an artifact you can open, then a test. Demonstrations 1, 2, 5, and 6 make the file itself part of the evidence.
 :::
 
 ---
@@ -287,13 +287,13 @@ As of August 2026. Left column is already in writing: ICMJE January 2026 and COP
 
 ---
 
-## Workshops {background-color="#5F277E" .section-break}
+## Live demonstrations {background-color="#5F277E" .section-break}
 
-Eight recipes, in the same order as the briefing.
+Six presenter-run examples. Predict, reveal, verify.
 
 ---
 
-## Eight workshops, in the recipe order. {.nostretch .workshop-overview}
+## Six demonstrations, in the runbook order. {.nostretch .workshop-overview}
 
 :::: {.workshop-roadmap}
 ::: {.workshop-step}
@@ -301,7 +301,7 @@ Eight recipes, in the same order as the briefing.
 1
 :::
 ::: {.workshop-name}
-Office files from a harness
+Codex makes office files
 :::
 :::
 ::: {.workshop-step}
@@ -309,7 +309,7 @@ Office files from a harness
 2
 :::
 ::: {.workshop-name}
-Journal club on GitHub Pages
+Codex builds a journal-club page
 :::
 :::
 ::: {.workshop-step}
@@ -325,7 +325,7 @@ Local model, airplane mode
 4
 :::
 ::: {.workshop-name}
-One question, three systems
+One question, three source conditions
 :::
 :::
 ::: {.workshop-step}
@@ -333,7 +333,7 @@ One question, three systems
 5
 :::
 ::: {.workshop-name}
-Citation autopsy
+Codex repairs and tests a page
 :::
 :::
 ::: {.workshop-step}
@@ -341,37 +341,21 @@ Citation autopsy
 6
 :::
 ::: {.workshop-name}
-Dosing-sheet audit
-:::
-:::
-::: {.workshop-step}
-::: {.workshop-index}
-7
-:::
-::: {.workshop-name}
-Harness versus chatbot
-:::
-:::
-::: {.workshop-step}
-::: {.workshop-index}
-8
-:::
-::: {.workshop-name}
-Source-grounded notebook
+Codex builds a source-bounded brief
 :::
 :::
 ::::
 
 ::: notes
-This order now matches the eight Workshop headings in briefing/workshops.md. Each recipe uses synthetic data or public sources. Use the same ritual throughout: predict what will fail, reveal the output, then audit it.
+This order matches briefing/workshops.md. These are live demonstrations, not participant exercises. Every case is synthetic and every source is named. Use the same ritual throughout: predict one failure, reveal the output, then verify one thing aloud.
 :::
 
 ---
 
-## Workshop 1 — files, not paragraphs {.nostretch .lab-stage}
+## Demonstration 1 — files, not paragraphs {.nostretch .lab-stage}
 
 ::: {.kicker}
-Make → inspect · Cursor
+Make → open → inspect · Codex
 :::
 
 :::: {.lab-split}
@@ -412,30 +396,58 @@ Before: what will fail? · After: what did you verify?
 :::
 
 ::: notes
-Full prompt, already on the clipboard: Read STEM.md. Create family_update.docx, oxygen_wean_tracker.xlsx, and noon_conference.pptx from that stem only. No identifiers. The letter is one page at a sixth-grade reading level and ends with “this is a teaching example.” The tracker has six synthetic rows, the requested respiratory fields, and hours since the last wean attempt; it has no medication column. The deck uses placeholder citations and labels them unverified. Predict first: a paragraph instead of files, a medication column, or an invented PMID. Then paste, open all three files, and have one resident name what they verified. Fallback: python slides/workshops/lab1_fallback.py. Optional sting: ask a chat-only model to add a dexamethasone dose.
+Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.md into Codex. The exact source is STEM.md. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/lab1_fallback.py. The visible verification action is opening all three files.
 :::
 
 ---
 
-## Workshop 2 — journal club on a URL {.stack-viz .nostretch .lab-stage}
+## Demonstration 2 — one PDF becomes a journal-club page {.stack-viz .nostretch .lab-stage}
 
 ::: {.kicker}
-Build → verify · public paper + empty folder
+Build → trace → verify · Codex + named PDF
 :::
 
-![](assets/figures/lab5_flow.svg){width="100%"}
+:::: {.lab-arms}
+::: {.box .box-blue .box-prose}
+::: {.box-label}
+Exact source
+:::
+
+Artsi et al. 2026 accepted manuscript
+
+DOI `10.1038/s41746-026-03077-4`
+:::
+::: {.box .box-purple .box-prose}
+::: {.box-label}
+Exact artifact
+:::
+
+Seven-section `docs/index.html`
+
+Plus `SOURCE_LEDGER.md`
+:::
+::: {.box .box-orange .box-prose}
+::: {.box-label}
+Exact verification
+:::
+
+Abstract: **11 included studies**
+
+Open the cited PDF page
+:::
+::::
 
 ::: {.predict-strip}
 Before: what will fail? · After: what did you verify?
 :::
 
 ::: notes
-Use an open-access pediatric paper or public guideline PDF. In an empty folder, ask the harness for no more than eight Reveal.js slides in docs/index.html, plus a README and MIT license. Open the deck locally and verify every citation before enabling GitHub Pages. If GitHub is blocked or a resident has no account, zip the static HTML and open it locally. The lesson is static, versioned teaching material—not a particular framework. Never post a paywalled PDF or an unverified DOI.
+Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on the cited PDF viewer page. No outside browsing, copied figures, or invented identifiers.
 :::
 
 ---
 
-## Workshop 3 — local model, airplane mode {.stack-viz .nostretch .lab-stage}
+## Demonstration 3 — local model, airplane mode {.stack-viz .nostretch .lab-stage}
 
 ::: {.kicker}
 Summarize → inspect · Ollama + airplane mode
@@ -443,64 +455,68 @@ Summarize → inspect · Ollama + airplane mode
 
 ![](assets/figures/lab6_rules.svg){width="100%"}
 
+::: {.lab-prompt}
+`ollama run qwen3.8 < demo3_ollama_prompt.txt`
+:::
+
 ::: {.predict-strip}
 Before: what will fail? · After: what did you verify?
 :::
 
 ::: notes
-Pre-download and test the model before the lecture: ollama pull qwen3.8, or qwen3:8b when memory is tight. Then switch on airplane mode and keep Wi-Fi visibly off. Paste only a synthetic H&P. Ask for a problem list, overnight contingencies, and three questions for the family; instruct the model to write MISSING instead of inventing absent values. A 16 GB laptop should use an 8B-class model; a 24–32 GB machine can run a larger quantized model. Local means the prompt stays on the laptop. It does not mean the answer is more accurate.
+Prepared folder: /tmp/peds-ai-live-demos/03-offline-ollama. Pre-pull qwen3.8, then show Wi-Fi off and run: ollama run qwen3.8 < demo3_ollama_prompt.txt. The file contains the complete prompt and synthetic H&P. It explicitly omits a current weight and numeric urine output; verify that the response says MISSING rather than inferring them. If hardware is tight, substitute one already-tested 8B-class Ollama model without changing the prompt. Local controls where the prompt goes; it does not certify the answer.
 :::
 
 ---
 
-## Workshop 4 — one question, three systems {.nostretch .lab-stage}
+## Demonstration 4 — one question, three source conditions {.nostretch .lab-stage}
 
 ::: {.kicker}
-Ask → verify · browser
+Ask → constrain → compare · three fresh Codex tasks
 :::
 
 ::: {.lab-prompt}
-Previously healthy 3-week-old, 38.5 °C, well-appearing. Current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say so.
+Term 26-day-old, rectal temperature 38.5 °C, well-appearing. What does the AAP guideline say about lumbar puncture—and what data are missing?
 :::
 
 :::: {.lab-arms}
 ::: {.box .box-orange .box-prose}
 ::: {.box-label}
-A · ChatGPT
+A · No source
 :::
 
-Search **off**. Parameters only. Demand a PMID. Try to open it.
+Codex + CASE.md. Web off. It must not pretend to quote the guideline.
 :::
 ::: {.box .box-purple .box-prose}
 ::: {.box-label}
-B · Gemini Notebook
+B · Guideline
 :::
 
-One public AAP or CDC PDF you uploaded. Require a quote. Open the citation link.
+Codex + exact AAP article. Find the 22–28 day guidance.
 :::
 ::: {.box .box-teal .box-prose}
 ::: {.box-label}
-C · OpenEvidence
+C · Guideline + correction
 :::
 
-Licensed journals, if your NPI works. Click through. If blocked, B is enough.
+Codex + both DOI links. State whether the correction changes the answer.
 :::
 ::::
 
 :::: {.scorecard}
 ::: {.box .box-blue}
 ::: {.box-label}
-Quoted?
+No made-up quote?
 :::
 :::
 ::: {.box .box-teal}
 ::: {.box-label}
-Clickable?
+Source named?
 :::
 :::
 ::: {.box .box-purple}
 ::: {.box-label}
-Pediatric?
+Age-specific?
 :::
 :::
 ::: {.box .box-orange}
@@ -510,7 +526,7 @@ Asked for missing data?
 :::
 ::: {.box .box-gold}
 ::: {.box-label}
-Would I act?
+Correction reviewed?
 :::
 :::
 ::::
@@ -520,100 +536,56 @@ Before: what will fail? · After: what did you verify?
 :::
 
 ::: notes
-The stem is deliberately missing urinalysis and inflammatory markers. That is the test—do not fill them in. Arm A has web search off; demand an identifier and try to open it. Arm B gets exactly one public AAP or CDC PDF and must quote a page or section. Arm C is OpenEvidence if available, otherwise use a PubMed Central full text in Gemini Notebook. Whiteboard includes “Did it ask for missing data?” If OpenEvidence is blocked, skip C without apology. Stay in the browser for Workshops 4 and 5.
+Prepared parent folder: /tmp/peds-ai-live-demos/04-source-conditions. Use three fresh Codex tasks: A-no-source, B-guideline, C-guideline-and-correction. Each folder supplies CASE.md and an exact PROMPT.md; B and C also supply exact official AAP links. The case deliberately omits urinalysis and inflammatory markers. Do not add them. Score: source stated, relevant age group located, missing data requested, correction handled, answer bounded. Official sources are Pantell et al., Pediatrics 2021, DOI 10.1542/peds.2021-052228, and the correction, DOI 10.1542/peds.2021-054063.
 :::
 
 ---
 
-## Workshop 5 — citation autopsy {.nostretch .lab-stage}
+## Demonstration 5 — Codex repairs the artifact {.nostretch .workshop-text}
 
 ::: {.kicker}
-Ask → verify · same ChatGPT tab, search still off
-:::
-
-::: {.lab-prompt}
-Eight Vancouver-style references on high-flow vs CPAP for bronchiolitis, 2018–2026. Include PubMed IDs.
-:::
-
-::: {.lab-steps}
-1. Open PubMed.
-2. Search the first five IDs.
-3. Mark each: correct / wrong paper / missing / wrong year.
-4. Stop. Do not chase all eight.
-:::
-
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
-:::
-
-::: notes
-Stochastic. Keep a frozen rehearsal output on the USB. If the model refuses or all five identifiers are valid, say “good behavior today” and inspect the saved example. Do not invent PubMed IDs to force a miss. Mark each as correct paper, wrong paper, missing identifier, or correct paper with the wrong year. Then rerun the question in Gemini Notebook with two real PDFs and show that grounded mode still requires opening the citation.
-:::
-
----
-
-## Workshop 6 — audit the dosing sheet {.stack-viz .nostretch .lab-stage}
-
-::: {.kicker}
-Build → audit · harness + spreadsheet
-:::
-
-![](assets/figures/formula_bug.svg){width="88%"}
-
-::: {.predict-strip}
-Before: what will fail? · After: what did you verify?
-:::
-
-::: notes
-Do not show the error list first. KEY.md contains the only permitted rules: fictional teachicillin, oral, 10 mg/kg/dose every 8 hours, maximum 400 mg/dose; weight below 2 kg produces TOO_SMALL; age is recorded and does not change the dose. Paste: Read KEY.md. Create dosing.xlsx from those rules only. If KEY.md is silent, write CHECK_KEY. Add a README. Then flip to formula view. Hunt for mg versus mcg, a missing maximum, an adult default, always-round-up logic, or an invented frequency. Fallback python slides/workshops/lab2_fallback.py deliberately omits the 400 mg cap.
-:::
-
----
-
-## Workshop 7 — harness loop versus chatbot {.nostretch .workshop-text}
-
-::: {.kicker}
-Compare → inspect · chatbot + harness
+Reproduce → repair → test · Codex
 :::
 
 ::: {.lab-goal}
-Same request in both tools. The useful difference is the loop: files, tools, a basic test, and a result you can inspect.
+The provided attendance page looks finished, but typing a week does nothing. Let Codex work on the file itself.
 :::
 
 ::: {.lab-prompt}
-In an empty folder, create a single `index.html` that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then run a basic check that the file opens.
+Repair `broken_attendance.html`. Preserve the eight exact counts. Test 4, 1, 8, 9, and blank. No dependencies or network requests.
 :::
 
 ::: {.lab-steps}
-1. **Arm A · ChatGPT.** Paste the request. Try to copy the resulting code into a file by hand.
-2. **Arm B · harness.** Use Cursor, Codex, Claude Code, or OpenCode in an empty folder. Let it create, test, and open the file.
+1. Reproduce the failure in the browser.
+2. Let Codex inspect and edit the existing file.
+3. Enter **4**: one orange bar. Enter **9**: no highlight and a clear message.
 :::
 
 ::: notes
-Nonclinical on purpose. Do not create a fake pediatric growth calculator that someone could reuse. Use the identical request in both arms. The chat arm returns code that the resident must place and run; the harness writes the file and checks that it opens. Paid Cursor is optional; OpenCode plus a local model is the free equivalent.
+Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the failure. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Ask whether the failure was data, display, or interaction before revealing the identifier mismatch.
 :::
 
 ---
 
-## Workshop 8 — source-grounded notebook {.nostretch .workshop-text}
+## Demonstration 6 — a fixed packet, a bounded brief {.nostretch .workshop-text}
 
 ::: {.kicker}
-Ask → verify · Gemini Notebook + public PDFs
+Synthesize → trace → verify · Codex + three PDFs
 :::
 
 ::: {.lab-goal}
-Grounded Q&A over sources you selected. Useful for journal club and policy; wrong for patient notes or the census.
+What should a clinician verify before relying on a clinical AI answer?
 :::
 
 ::: {.lab-steps}
-1. Upload four public sources.
-2. Ask a question answered by the corpus. Open every citation.
-3. Ask something outside the corpus. It should say the answer is not in the sources.
-4. Optional: generate an audio overview for review on the commute.
+1. Read the **WHO**, **FDA**, and **Artsi et al.** PDFs only.
+2. Build a five-claim evidence table with PDF viewer pages.
+3. Distinguish the systematic review from two discussion papers.
+4. Ask for a pediatric randomized LP trial: answer **NOT IN PACKET**.
 :::
 
 ::: notes
-Use public papers only: for example the AAP digital-ecosystems statement, Grundmeier’s Pediatrics review, ICMJE Recommendations, and an open CDC/AAP guideline or the Artsi review. Ask what AAP says it is not covering in the statement; the dedicated AI policy is forthcoming. Contrast that with the Grundmeier review, which is not AAP policy. Then ask an out-of-corpus question and expect a refusal or “not in sources.” Open every citation. NotebookLM was renamed Gemini Notebook on 16 July 2026; product privacy copy is not a hospital BAA.
+Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al. 2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify one row against the cited PDF viewer page, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.
 :::
 
 ---
@@ -678,7 +650,7 @@ Questions?
 :::
 
 ::: notes
-Thank them and take questions. All eight workshops now precede this slide and follow the recipe numbering. Do not invent an AAP clinical AI guideline. Packet is briefing/; presenter kit is slides/presenter-kit.md. Backup begins after this slide.
+Thank them and take questions. All six demonstrations precede this slide and follow the runbook numbering. Do not invent an AAP clinical AI guideline. Runbook is briefing/workshops.md; presenter kit is slides/presenter-kit.md. Backup begins after this slide.
 :::
 
 ---
@@ -738,7 +710,7 @@ Parameter counts do not help a resident decide whether to trust an answer. Mixtu
 :::
 
 ::: notes
-Use with Lab 6 if someone asks. Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class.
+Use after Demonstration 3 if someone asks. Ollama qwen3.8 18 GB. Glimmer <20 GB 4-bit. 8–16 GB laptops run 8B-class, slowly. The 12 GB bar is the midpoint of that class.
 :::
 
 ---

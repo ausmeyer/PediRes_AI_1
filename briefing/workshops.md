@@ -1,357 +1,254 @@
-# Workshop recipes: from-scratch demos for pediatric residents
+# Live demonstrations: presenter runbook for pediatric residents
 
-Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md).  
-**All cases are synthetic. No PHI.**
+Companion to [`pediatric-resident-ai-survey.md`](pediatric-resident-ai-survey.md).
 
-**Design.** Each recipe starts from an **empty folder** (or empty notebook). Each has a presenter path (you may use a paid harness) and a **resident-replicable free path**. Most residents have no subscription and have never used a harness. Hospital Wi-Fi may block model downloads, GitHub, or local servers; have a USB copy of weights and a local HTML deck as fallback.
+**Every clinical vignette is synthetic. No PHI. These are demonstrations, not clinical protocols.**
 
-**Lecture order.** The lecture follows the recipe numbers in this file directly. All eight workshops appear before the summary and closing slides. Fallback materials for Workshops 1 and 6 are in [`../slides/workshops/`](../slides/workshops/README.md).
+## What changed
 
-| Workshop | What | Recipe in this file |
+The lecture now contains six short, presenter-run demonstrations. Demonstrations 1, 2, 4, 5, and 6 run in **Codex**. Demonstration 3 runs in **Ollama** with the laptop offline. There is no participant setup or alternate editor path.
+
+| Demonstration | Tool | Visible result |
 |---|---|---|
-| 1 | Office files from a harness | Workshop 1 |
-| 2 | GitHub Pages journal club | Workshop 2 |
-| 3 | Local Ollama | Workshop 3 |
-| 4 | One question, three systems | Workshop 4 |
-| 5 | Citation autopsy | Workshop 5 |
-| 6 | Dosing-sheet audit | Workshop 6 |
-| 7 | Harness versus chatbot | Workshop 7 |
-| 8 | Gemini Notebook | Workshop 8 |
+| 1 | Codex | Word, Excel, and PowerPoint files from one synthetic stem |
+| 2 | Codex | A self-contained journal-club web page from one named PDF |
+| 3 | Ollama | An offline summary of one provided synthetic H&P |
+| 4 | Codex | The same clinical question under three explicit source conditions |
+| 5 | Codex | A repaired, tested interactive HTML page |
+| 6 | Codex | A page-cited evidence brief from one fixed three-PDF packet |
 
-**Shared setup (2 minutes, once).**
+## One-time preparation
 
-- Label the projector: `SYNTHETIC TEACHING CASE — NOT A REAL PATIENT`.
-- Disable any browser extensions that auto-upload pages.
-- If using a cloud model, confirm the account is **not** receiving PHI.
-- Working directory: `~/peds-ai-workshop/` (empty).
-
----
-
-## Workshop 1 — Office files without Microsoft 365
-
-**Time:** 10–12 minutes  
-**Goal:** Produce a real Word letter, Excel tracker, and PowerPoint noon-conference deck from a synthetic bronchiolitis admission.  
-**Surprising artifact:** Three files residents can open on their phones.  
-**HIPAA:** Synthetic only. Still do not use a consumer cloud account as a habit for real notes.
-
-### Synthetic stem (read aloud)
-
-> 6-month-old former 36-week infant, day 2 of RSV bronchiolitis, SpO2 nadir 88% on RA overnight, now 94% on 0.5 L NC. Taking 50% of feeds. No underlying cardiopulmonary disease. Family wants a plain-language update and the team wants a wean tracker for tonight’s cross-cover.
-
-### Presenter path (harness)
-
-Empty folder. In Claude Code, Codex, Cursor, or OpenCode:
-
-> Create three files in this folder from the synthetic stem in STEM.md (I will paste it). Do not add any real identifiers.
-> 1. `family_update.docx` — 1-page family letter, 6th-grade reading level, no dose recommendations, ends with “this is a teaching example.”
-> 2. `oxygen_wean_tracker.xlsx` — columns: datetime, SpO2, NC L/min, work of breathing (0–3), feeds %, comments. Pre-fill 6 synthetic rows. Add a formula for hours since last wean attempt.
-> 3. `noon_conference.pptx` — 8 slides: title, objectives, pathophysiology cartoon-level, evidence bullets with PLACEHOLDER citations (not invented PMIDs), wean principles, discharge criteria, summary, references slide that says “citations not yet verified.”
-
-If the harness has **Skills** for docx/xlsx/pptx (Claude’s document skills; or `python-docx` / `openpyxl` / `python-pptx` in the environment), let it run. If not, ask it to write a `build_files.py` and execute it.
-
-### Resident free path
-
-1. Install Python 3 if needed.  
-2. `pip install python-docx openpyxl python-pptx`  
-3. Paste the stem into ChatGPT **without identifiers** and ask for a **Python script**, not the medical advice.  
-4. Run the script locally. Open files in Google Drive, LibreOffice, or Word Preview.
-
-### Intentional failure to show
-
-Ask the model (chat-only, no files) to “add the standard dexamethasone dose for this infant.” It will often invent a number. Contrast with the spreadsheet, which has **no medication column on purpose**.
-
-### Teaching point
-
-Chatbots return paragraphs. Harnesses return **artifacts you can version and audit**. Anthropic’s Skills post (16 Oct 2025) is explicit that skills can include executable code for Excel/PowerPoint/Word rather than relying on token generation alone.
-
----
-
-## Workshop 2 — Journal club on GitHub Pages, no coding by the resident
-
-**Time:** 8–10 minutes  
-**Goal:** Markdown slides → Reveal.js (or similar static HTML) → GitHub repo → public URL.  
-**Surprising artifact:** A shareable link that works on a phone in the back row.  
-**HIPAA:** Public repo. Only synthetic or published, cited material.
-
-### Stem
-
-Use a **published** open-access pediatric paper (for example a CDC/AAP open guideline PDF or a Creative Commons review). Do not upload a paywalled PDF you do not have rights to post.
-
-### Presenter path
-
-Empty folder:
-
-> Build a Reveal.js slide deck in `docs/index.html` (or `index.html` at repo root for GitHub Pages) summarizing PAPER.md. Eight slides max. Include a QR-ready URL placeholder. Add a MIT license and a README that says this is a teaching fork.
-
-Then:
+From the repository root, create six clean demonstration folders:
 
 ```bash
-git init
-git add .
-git commit -m "Add synthetic journal club deck"
-# create a public GitHub repo and push
-# Settings → Pages → deploy from main / docs
+./slides/workshops/prepare_demo_folders.sh /tmp/peds-ai-live-demos
 ```
 
-### Resident free path
+The script refuses to overwrite an existing directory. Use a new destination for each rehearsal. It copies every input into the folder where it will be used, including the exact PDFs for Demonstrations 2 and 6.
 
-- No GitHub account: zip the `index.html` and open locally.  
-- No git knowledge: GitHub web UI “Upload files” into a new public repo, enable Pages.  
-- Alternative: Marp / Slidev if the presenter prefers Markdown-only; the lesson is **static hosting**, not a particular framework.
+Before residents arrive:
 
-### Intentional failure
+- Put `SYNTHETIC TEACHING CASE — NOT A REAL PATIENT` on the projector.
+- Open this runbook and [`../slides/presenter-kit.md`](../slides/presenter-kit.md).
+- Open Codex on `/tmp/peds-ai-live-demos`.
+- Pull and test the Ollama model while online: `ollama pull qwen3.8`.
+- Open the two official AAP links in Demonstration 4 once; the AAP site may challenge a new browser session.
+- Keep a local copy of the lecture and the prepared demonstration folders on the teaching laptop.
 
-Show a model-written “References” slide with a plausible but **unverified** DOI. Do not enable Pages until Workshop 5’s lesson is stated: **no invented citations on a public URL.**
-
-### Teaching point
-
-Versioned teaching materials beat emailing `final_v7.pptx`. “I don’t code” is not a blocker if an agent writes the HTML once.
+Use the same delivery rhythm each time: **predict one failure → run the exact prompt → open the artifact or source → verify one thing aloud**.
 
 ---
 
-## Workshop 3 — Air-gapped local model (zero vendor)
+## Demonstration 1 — Codex makes files, not paragraphs
 
-**Time:** 10 minutes (plus pre-download)  
-**Goal:** Summarize a synthetic H&P with Ollama while the laptop is in airplane mode.  
-**Surprising artifact:** A competent summary with the network off.  
-**HIPAA:** Closest no-vendor-BA demo. Do not use real notes.
+- **Time:** 5 minutes
+- **Working folder:** `/tmp/peds-ai-live-demos/01-office-files/`
+- **Inputs supplied:** `STEM.md`, `PROMPT.md`
+- **Expected outputs:** `family_update.docx`, `oxygen_wean_tracker.xlsx`, `noon_conference.pptx`
 
-### Hardware honesty (say this before you boot)
+### Run it
 
-| Machine | Realistic local model | Not realistic |
-|---|---|---|
-| Mac Studio / 32 GB unified or 24 GB NVIDIA | Qwen3.8-27B Q4 (~18 GB) or Muse Glimmer 30B Q4 | Full BF16 30B |
-| 16 GB RAM laptop, no GPU | 8B-class GGUF, slow | 27B at usable speed |
-| Typical resident Windows 8–16 GB | 3B–8B quantized | Anything “frontier local” |
+1. Open the folder in Codex.
+2. Paste the complete contents of `PROMPT.md`.
+3. Let Codex create and inspect all three files.
+4. Open each artifact, not just the terminal output.
 
-Ollama library listing for `qwen3.8` (retrieved 25 Aug 2026): 18 GB, 256K context, text+image, `ollama run qwen3.8`. Meta’s Glimmer post: 4-bit under ~20 GB targeting 24/32 GB GPUs.
+### Verify aloud
 
-### Presenter path (pre-work the night before)
+- The letter ends with “This is a teaching example.”
+- The tracker has six synthetic rows and **no medication column**.
+- The slides label citations as placeholders rather than inventing PMIDs or DOIs.
+
+### If the live build stalls
+
+From `slides/workshops/`, run `python lab1_fallback.py` and open the three files in `lab1_out/`.
+
+### Teaching point
+
+Codex can create inspectable files. A polished file is still only a draft until a person verifies its claims against sources, formulas against rules, and citations against originals.
+
+---
+
+## Demonstration 2 — Codex builds a journal-club page from one exact PDF
+
+- **Time:** 6 minutes
+- **Working folder:** `/tmp/peds-ai-live-demos/02-journal-club/`
+- **Input supplied:** `sources/OpenEvidence_systematic_review_2026.pdf`
+- **Prompt supplied:** `PROMPT.md`
+
+### Source
+
+Artsi Y, Sorin V, Glicksberg BS, et al. *OpenEvidence clinical question-answering platform: systematic review of early evaluations.* **npj Digital Medicine.** Article in press; accepted July 26, 2026. DOI: [`10.1038/s41746-026-03077-4`](https://doi.org/10.1038/s41746-026-03077-4). The supplied accepted manuscript is licensed CC BY-NC-ND 4.0.
+
+### Run it
+
+1. Open the folder in Codex and paste `PROMPT.md`.
+2. Let Codex build `docs/index.html`, `README.md`, and `SOURCE_LEDGER.md`.
+3. Open `docs/index.html` locally and move through all seven sections.
+4. Open one numeric claim in `SOURCE_LEDGER.md`, then jump to that PDF viewer page.
+
+The prompt forbids outside browsing, copied figures, invented identifiers, and external JavaScript libraries. It also requires the page to say that the PDF is an accepted manuscript, not the final typeset article.
+
+### Verify aloud
+
+The abstract reports 11 included studies. Confirm that number in the source before admiring the page.
+
+### Teaching point
+
+The useful chain is **named source → generated artifact → page-level verification**. The HTML is portable; the truth still lives in the paper.
+
+---
+
+## Demonstration 3 — Ollama summarizes a provided H&P offline
+
+- **Time:** 5 minutes
+- **Working folder:** `/tmp/peds-ai-live-demos/03-offline-ollama/`
+- **Input and prompt supplied together:** `demo3_ollama_prompt.txt`
+
+### Run it
+
+Show Wi-Fi off, then run:
 
 ```bash
-# online, once
-ollama pull qwen3.8          # or a documented 8B fallback: ollama pull qwen3:8b
-# verify
-ollama run qwen3.8 "Reply with the word OFFLINE_OK"
+cd /tmp/peds-ai-live-demos/03-offline-ollama
+ollama run qwen3.8 < demo3_ollama_prompt.txt
 ```
 
-Day of:
+If the teaching laptop cannot run `qwen3.8`, rehearse and substitute an already-downloaded 8B-class Ollama model. Change only the model name in the command; do not change the prompt.
 
-1. Airplane mode.  
-2. Paste `synthetic_hp.txt` (no real names).  
-3. Prompt: “List problems, overnight contingencies, and three questions for the family. Do not invent labs that are not in the note. If a value is missing, say MISSING.”  
-4. Show System Settings / Wi-Fi off the whole time.
+### Verify aloud
 
-### Resident free path
-
-Install Ollama from https://ollama.com (or LM Studio). Pull the largest model that **fits**. Alternatives: llama.cpp + GGUF; LM Studio GUI.
-
-### Intentional failure
-
-While **online**, paste the same note into consumer ChatGPT. Ask the room: “Which of these just created a business associate we do not have a contract with?” (Answer: the cloud one.)
+- The note explicitly omits a current weight and numeric urine output.
+- The response should write `MISSING` for those facts, not infer them.
+- Local execution controls where the prompt goes; it does not prove that the clinical summary is correct.
 
 ### Teaching point
 
-Local models keep the prompt off a vendor. Offline Qwen3.8-27B is useful for drafting. It is not GPT-5.6 Sol.
+Airplane mode makes data flow visible. It does not make the model a hospital policy, a medical device, or a source of truth.
 
 ---
 
-## Workshop 4 — Same question, three systems
+## Demonstration 4 — One question, three source conditions in Codex
 
-**Time:** 12 minutes  
-**Goal:** One pediatric question, three corpora.  
-**Surprising artifact:** Side-by-side citations: fabricated vs quoted vs editorial.  
-**HIPAA:** Public sources only. No patient detail.
+- **Time:** 7 minutes
+- **Parent folder:** `/tmp/peds-ai-live-demos/04-source-conditions/`
+- **Synthetic case:** a term, well-appearing 26-day-old infant with rectal temperature 38.5 °C; urinalysis and inflammatory markers are deliberately missing.
 
-### Question (published teaching-case pattern)
+Use three fresh Codex tasks so an earlier source cannot leak into a later answer.
 
-> In a previously healthy 3-week-old with fever of 38.5 °C, well-appearing, what is the current AAP guidance on lumbar puncture? Quote the document. If you cannot quote, say you cannot.
-
-### Three systems
-
-| Arm | System | Corpus |
+| Condition | Folder | What Codex may use |
 |---|---|---|
-| A | Consumer LLM, **web search off** | Parameters only |
-| B | Gemini Notebook (formerly NotebookLM) | **One** public AAP or CDC PDF you uploaded |
-| C | OpenEvidence (if NPI demo available) or, if not, PubMed Central full text pasted into Notebook | Licensed journals / your PDF |
+| A | `A-no-source/` | `CASE.md` only; no web and no other files |
+| B | `B-guideline/` | `CASE.md` plus the exact AAP guideline link in `SOURCES.md` |
+| C | `C-guideline-and-correction/` | `CASE.md` plus the guideline and its correction in `SOURCES.md` |
 
-### Procedure
+### Exact sources
 
-1. Run A. Highlight any guideline-sounding sentence. Demand a PMID/DOI. Try to open it.  
-2. Run B. Require a quote with page/section. Click the citation chip.  
-3. Run C if available. Click through to the partner journal.  
-4. Score on a whiteboard: *quoted? clickable? pediatric-specific? did it ask for missing data? would I act?*
+- Pantell RH, Roberts KB, Adams WG, et al. *Evaluation and Management of Well-Appearing Febrile Infants 8 to 60 Days Old.* **Pediatrics.** 2021;148(2):e2021052228. DOI: [`10.1542/peds.2021-052228`](https://doi.org/10.1542/peds.2021-052228).
+- *Statement of Correction* for that guideline. **Pediatrics.** 2021;148(5):e2021054063. DOI: [`10.1542/peds.2021-054063`](https://doi.org/10.1542/peds.2021-054063).
 
-The stem is missing urinalysis and inflammatory markers **on purpose**. Do not fill them in. The test is whether the tool asks.
+### Run it
 
-### Intentional failure
+For A, B, then C: open the named folder, start a fresh Codex task, and paste its `PROMPT.md`. Do not add laboratory values that are not in `CASE.md`.
 
-Arm A will often emit a confident 2021-vs-2021 febrile infant algorithm mashup with a real-looking citation, and will often never ask for the missing labs.
+Score each answer on five questions:
 
-### Teaching point
+1. Did it state what source material it actually used?
+2. Did it quote or point to the relevant age-specific recommendation?
+3. Did it ask for the missing urinalysis and inflammatory markers?
+4. In C, did it determine whether the correction changes the conclusion?
+5. Did it keep the answer educational rather than pretending to manage a patient?
 
-RAG is a **corpus choice**. OpenEvidence ≠ UpToDate ≠ ChatGPT. Artsi et al. 2026 found OpenEvidence generally better on fabricated citations than general LLMs **in studies that measured that**, and still methodologically thin. Do not overclaim.
+### Expected contrast
 
----
-
-## Workshop 5 — Citation autopsy
-
-**Time:** 8 minutes  
-**Goal:** Verify five identifiers from a model-written reference list.  
-**Surprising artifact:** At least one dead or mismatched citation in a fluent list (very often).  
-**HIPAA:** None.
-
-### Prompt (ungrounded model)
-
-> Give eight Vancouver-style references on pediatric high-flow nasal cannula vs CPAP for bronchiolitis, 2018–2026. Include PMIDs.
-
-### Resident task (pairs, 4 minutes)
-
-For references 1–5:
-
-1. Open PubMed.  
-2. Search the PMID.  
-3. Mark: exists / exists-but-wrong-paper / does not exist / correct paper but wrong year.
-
-### Presenter closer
-
-Re-run the same prompt in Gemini Notebook with **two real PDFs** uploaded. Show that grounded mode still requires a click—models mis-attribute real papers.
+Condition A should be cautious and should not fabricate a quotation. B should distinguish a recommendation that depends on source and age group. C should explicitly account for the correction. The correct demonstration outcome is not a particular sentence—it is better traceability and better recognition of missing inputs.
 
 ### Teaching point
 
-ICMJE: authors must ensure attribution of quoted material and that AI text is not plagiarized or fabricated ([ICMJE Recommendations](https://www.icmje.org/icmje-recommendations.pdf)). The autopsy is how you operationalize that sentence.
+Retrieval is a source choice. Giving the same model a defined corpus changes what can be traced back to an original source.
 
 ---
 
-## Workshop 6 — Spreadsheet that looks official and can harm if trusted
+## Demonstration 5 — Codex repairs and tests a broken page
 
-**Time:** 10 minutes  
-**Goal:** Agent builds a weight-based dosing sheet; residents audit every formula.  
-**Surprising artifact:** A pretty Excel file with at least one wrong formula or unit.  
-**HIPAA:** Synthetic weights only.
+- **Time:** 5 minutes
+- **Working folder:** `/tmp/peds-ai-live-demos/05-repair-page/`
+- **Inputs supplied:** `broken_attendance.html`, `PROMPT.md`
 
-### Guardrails (read first)
+The page contains made-up noon-conference attendance counts for eight weeks. It is intentionally broken: typing a week does not highlight the matching bar.
 
-Use a **fictional** drug name (`teachicillin`) or a widely published OTC example with a **labeled answer key** you prepared.
+### Run it
 
-### Answer key (presenter prepares on paper)
+1. Open `broken_attendance.html` first and reproduce the failure.
+2. Ask the room whether the problem is the data, the display, or the interaction.
+3. Open the folder in Codex and paste `PROMPT.md`.
+4. Let Codex inspect, edit, and test the existing file.
+5. Enter `4`: only Week 4 should turn orange. Enter `9`: no bar should be highlighted and the page should ask for 1–8.
 
-Example teaching key (synthetic):
+### Acceptance tests already in the prompt
 
-- `teachicillin` oral: 10 mg/kg/dose (max 400 mg/dose) every 8 hours  
-- Spreadsheet must use `=weight_kg*10` and cap with `=MIN(weight_kg*10,400)`  
-- Must refuse weights < 2 kg with a warning cell
-
-### Presenter path
-
-> Create dosing.xlsx with inputs: weight_kg, age_months. Compute teachicillin_mg_per_dose and doses_per_day using ONLY the rules in KEY.md. If KEY.md is silent, write CHECK_KEY rather than guessing. Add a README.
-
-Then flip the projector to formula view. Residents find:
-
-- mg vs mcg,
-- missing max,
-- adult default,
-- `round()` that always rounds up,
-- hallucinated frequency.
+- No console error on load.
+- Weeks and counts remain `1–8` and `19, 22, 17, 25, 23, 20, 26, 24`.
+- Valid input highlights exactly one bar.
+- Invalid input highlights none and displays `Enter a week from 1 to 8.`
+- No external APIs, libraries, or network requests.
 
 ### Teaching point
 
-Numeric hallucination plus official formatting is how a model kills someone. FDA’s discussion paper uses an **insulin-dose** example as higher-consequence than OTC hydrocortisone ([FDA CDRH 2026](https://www.fda.gov/)). Same geometry: action-directing plus high harm.
+The loop is the product: reproduce, inspect, edit, run, and verify. Codex is most useful when it can work on the artifact itself.
 
 ---
 
-## Workshop 7 — Harness vs chatbot (the loop is the product)
+## Demonstration 6 — Codex produces a source-bounded evidence brief
 
-**Time:** 8–10 minutes  
-**Goal:** Same request in ChatGPT paste vs an agent in an empty git repo.  
-**Surprising artifact:** A running local HTML **noon-conference attendance** plot (synthetic counts) vs a blob of code that does not run.  
-**HIPAA:** Made-up counts. Not real residents. Not a clinical calculator.
+- **Time:** 6 minutes
+- **Working folder:** `/tmp/peds-ai-live-demos/06-source-packet/`
+- **Inputs supplied:** `PROMPT.md`, `SOURCE_PACKET.md`, and three PDFs in `sources/`
 
-### Request (identical in both arms)
+### Exact packet
 
-> In an empty folder, create a single `index.html` that plots synthetic noon-conference attendance for eight weeks of residency (made-up counts, not real people). Let me type a week number to highlight that bar. No external APIs. Then run a basic check that the file opens.
+1. World Health Organization. *Artificial intelligence and evidence-informed policy – emerging challenges and opportunities: discussion paper.* Geneva: WHO; 2026. DOI: [`10.2471/B09667`](https://doi.org/10.2471/B09667). CC BY-NC-SA 3.0 IGO.
+2. U.S. Food and Drug Administration, Center for Devices and Radiological Health. *Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback.* 2026. Docket [`FDA-2026-N-7874`](https://www.regulations.gov/docket/FDA-2026-N-7874).
+3. Artsi Y, Sorin V, Glicksberg BS, et al. *OpenEvidence clinical question-answering platform: systematic review of early evaluations.* **npj Digital Medicine.** Article in press; accepted July 26, 2026. DOI: [`10.1038/s41746-026-03077-4`](https://doi.org/10.1038/s41746-026-03077-4). CC BY-NC-ND 4.0.
 
-### Arm A — Chatbot
+### Run it
 
-Paste into consumer ChatGPT. Try to copy files by hand. Watch the room stall on “where do I put this.”
+1. Turn Codex web access off for this task.
+2. Paste `PROMPT.md`.
+3. Open the generated `evidence_brief.md`.
+4. Pick one row and verify the quoted idea on the cited PDF viewer page.
+5. Read the sentinel answer aloud. The packet contains no pediatric randomized trial of AI-assisted lumbar-puncture decisions, so the answer must be `NOT IN PACKET`.
 
-### Arm B — Harness
+### Verify aloud
 
-Claude Code / Codex / Cursor / OpenCode / `ollama launch opencode --model qwen3.8`:
-
-> Implement the request. Open a local server if needed. Do not use real patient data.
-
-Codex sandbox talking point: default workspace-write, network off unless enabled ([OpenAI Codex sandbox docs](https://developers.openai.com/codex/concepts/sandboxing)).
+The brief must distinguish a systematic review from two discussion papers and must not convert any of them into clinical guidance.
 
 ### Teaching point
 
-The product residents should learn is the **loop** (files, tools, tests), not the chat box. Paid Cursor is optional; OpenCode + Ollama is the free echo.
+A fixed packet can make synthesis more inspectable. It cannot make absent pediatric evidence appear.
 
 ---
 
-## Workshop 8 — Gemini Notebook as a research notebook
+## Presenter fallback kit
 
-**Time:** 8 minutes  
-**Goal:** Four public sources → grounded Q&A ± audio/slide overview.  
-**Surprising artifact:** Questions that cite **your** PDFs.  
-**HIPAA:** Google’s “we don’t train on your uploaded data” (Workspace product copy) is **not** a hospital BAA. Public papers only.
+Keep these on the teaching laptop, not scattered across cloud tabs:
 
-### Sources (examples)
+- the prepared `/tmp/peds-ai-live-demos/` folder;
+- the already-rendered Demonstration 1 outputs from `lab1_fallback.py`;
+- the Ollama model verified before airplane mode;
+- the three local PDFs for Demonstration 6;
+- the exact AAP guideline and correction links open in browser tabs;
+- the lecture at `docs/index.html`.
 
-- AAP digital-ecosystems policy PDF (2026)  
-- Grundmeier et al. 2026 *Pediatrics* SOTA review (in `briefing/papers/`; **not** AAP policy)  
-- ICMJE Recommendations PDF  
-- CDC/AAP open bronchiolitis or immunization page saved as PDF  
-- Artsi et al. 2026 OpenEvidence review (open access; local PDF in `briefing/papers/`)
+If the network fails, Demonstrations 1, 2, 3, 5, and 6 still run locally. For Demonstration 4, explain the three source conditions from the prepared prompts and use the already-open AAP tabs; do not substitute an unofficial mirror during the lecture.
 
-### Procedure
+## Final rehearsal list
 
-1. Create a notebook. Upload only those files.  
-2. Ask: “What does AAP say it is **not** covering in this statement regarding AI?” (Answer: dedicated AI policy is forthcoming.) Contrast with Grundmeier 2026: useful counseling review, **not** that policy.  
-3. Ask a question **outside** the corpus. The right behavior is refusal or “not in sources.”  
-4. Optional: generate an audio overview for commute learning.
-
-Rename note: NotebookLM became **Gemini Notebook** on 16 July 2026; secure cloud computer (code execution) is tier-gated ([Google 2026](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/)).
-
-### Teaching point
-
-Source-grounded notebooks are the right tool for **journal club and policy**, not for the census.
-
----
-
-## Optional ninth — Disclosure quiz (2 minutes)
-
-Dummy cover letter. Which uses must be reported under *Pediatrics* / ICMJE?
-
-| Use | Report? |
-|---|---|
-| Grammar in ChatGPT | Yes (writing assistance → Acknowledgments + cover letter) |
-| Model generated a figure | Yes (Methods + cover letter; name tool and manufacturer) |
-| Spellcheck in Word | Generally no (routine; COPE/CASRAI-style distinction) |
-| Model listed as co-author | Never |
-| Model invented three PMIDs you kept | Report **and** you have a bigger problem |
-
----
-
-## Hospital-network fallback kit
-
-Pre-load on a USB drive:
-
-- `qwen3.8` GGUF or Ollama blob (if license permits redistribution internally; otherwise each laptop pulls at home)  
-- Workshop 1 Python script already run, with output files  
-- Workshop 2 `index.html`  
-- PDFs for Workshops 4 and 8  
-- This file and the briefing, printed
-
-If GitHub is blocked, skip Pages and open HTML locally. If Python is blocked, run Workshop 1 outputs from the USB.
-
----
-
-## Facilitator checklist
-
-- [ ] Synthetic banner on every slide and terminal  
-- [ ] No Epic, no email with real names, no photo of a child  
-- [ ] All eight workshops appear in numerical order before the summary and closing slides  
-- [ ] Workshop 3 model downloaded and tested before airplane mode  
-- [ ] Workshop 6 answer key on paper, not generated as “truth”  
-- [ ] Handout QR to this markdown (or PDF export)
+- [ ] Six demonstrations appear in this order before the summary and closing slides.
+- [ ] Every Codex demonstration opens in its own prepared folder.
+- [ ] Ollama responds before airplane mode is enabled.
+- [ ] The AAP guideline and correction links open in the presentation browser.
+- [ ] Every source-dependent prompt names its exact source or exact local file.
+- [ ] No real notes, names, screenshots, or EHR tabs are present.
+- [ ] The audience sees one verification action after every generated artifact.

@@ -1,0 +1,13 @@
+SYNTHETIC TEACHING CASE — NOT A REAL PATIENT
+
+Use only the note below. Do not diagnose or recommend medication doses. Do not infer facts that are absent. When a requested fact is absent, write MISSING.
+
+Return exactly four sections:
+1. One-sentence summary.
+2. Problem list with the note evidence for each problem.
+3. Overnight contingencies for respiratory status and hydration, phrased as items for clinician review rather than patient-specific orders.
+4. Three questions the day team should ask the family.
+
+SYNTHETIC H&P
+
+A 6-month-old infant, born at 36 weeks, is admitted on day 2 of RSV bronchiolitis. Overnight oxygen saturation reached 88% on room air. At 06:00 the infant is at 94% on 0.5 L/min nasal cannula with mild subcostal retractions and respiratory rate 46/min. Oral intake yesterday was estimated at 50% of usual. The parent reports two wet diapers overnight but no measured urine volume. No vomiting. No known congenital heart disease or chronic lung disease. Current temperature is 37.4 C. No current weight is documented in this note. The family wants to know what the team will watch overnight and what needs to improve before discharge.

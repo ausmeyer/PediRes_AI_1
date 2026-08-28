@@ -1,19 +1,23 @@
-# Workshop fallback files
+# Live demonstration files
 
-Invented bronchiolitis stem and a fictional dosing key. Longer recipes: [`../../briefing/workshops.md`](../../briefing/workshops.md).
+The complete presenter runbook is [`../../briefing/workshops.md`](../../briefing/workshops.md). All clinical cases and attendance counts here are invented.
 
-| File | Workshop | What it is |
-|---|---|---|
-| [`STEM.md`](STEM.md) | 1 | Bronchiolitis stem we wrote (not model output) |
-| [`lab1_fallback.py`](lab1_fallback.py) | 1 | Writes Word, Excel, and PowerPoint into `lab1_out/` |
-| [`KEY.md`](KEY.md) | 6 | Fictional `teachicillin` rules we wrote |
-| [`lab2_fallback.py`](lab2_fallback.py) | 6 | Legacy filename; writes `lab2_out/dosing.xlsx` with the 400 mg cap missing on purpose |
-| [`requirements.txt`](requirements.txt) | — | `python-docx`, `openpyxl`, `python-pptx` |
+Run this once before rehearsal or the lecture:
 
 ```bash
-pip install -r requirements.txt
-python lab1_fallback.py
-python lab2_fallback.py
+./prepare_demo_folders.sh /tmp/peds-ai-live-demos
 ```
 
-You can also paste `STEM.md` into ChatGPT with no identifiers, ask for a Python script, and run that script locally.
+The preparation script creates six isolated folders and copies the exact prompt, case, web page, and PDF inputs into each. It refuses to overwrite an existing destination.
+
+| File | Demonstration | Purpose |
+|---|---:|---|
+| [`STEM.md`](STEM.md), [`demo1_prompt.md`](demo1_prompt.md) | 1 | Synthetic bronchiolitis stem and exact Codex file-building prompt |
+| [`lab1_fallback.py`](lab1_fallback.py) | 1 | Prebuilt Word, Excel, and PowerPoint fallback |
+| [`demo2_prompt.md`](demo2_prompt.md) | 2 | Exact Codex prompt for the named Artsi et al. PDF |
+| [`demo3_ollama_prompt.txt`](demo3_ollama_prompt.txt) | 3 | Complete offline Ollama prompt and synthetic H&P |
+| `demo4_*` | 4 | One exact case, canonical AAP links, and three source-condition prompts |
+| [`broken_attendance.html`](broken_attendance.html), [`demo5_prompt.md`](demo5_prompt.md) | 5 | Intentionally broken page and explicit Codex acceptance tests |
+| [`SOURCE_PACKET.md`](SOURCE_PACKET.md), [`demo6_prompt.md`](demo6_prompt.md) | 6 | Three-PDF manifest and exact source-bounded synthesis prompt |
+
+`KEY.md` and `lab2_fallback.py` are retained as legacy files but are no longer part of the lecture.

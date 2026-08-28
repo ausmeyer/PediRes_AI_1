@@ -1,0 +1,5 @@
+# Condition A — no source
+
+Read `CASE.md`. Do not browse the web and do not use any source other than the case. Answer the teaching question in five labeled parts: applicable population; what can be said without a source; missing case data; what source is needed; confidence and limitation.
+
+Do not fabricate a quotation, recommendation, page number, PMID, or DOI. If you cannot quote the AAP guideline from an allowed source, say that directly. This is an educational source-verification demonstration, not patient-specific advice.
