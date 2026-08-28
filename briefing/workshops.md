@@ -44,13 +44,13 @@ Use the same delivery rhythm each time: **name the practical job → run the exa
 
 - **Time:** 5 minutes
 - **Working folder:** `/tmp/peds-ai-live-demos/01-office-files/`
-- **Inputs supplied:** `STEM.md`, `PROMPT.md`
+- **Inputs supplied:** `STEM.txt`, `PROMPT.txt`
 - **Expected outputs:** `family_update.docx`, `oxygen_wean_tracker.xlsx`, `noon_conference.pptx`
 
 ### Run it
 
 1. Open the folder in Codex.
-2. Paste the complete contents of `PROMPT.md`.
+2. Paste the complete contents of `PROMPT.txt`.
 3. Let Codex create and inspect all three files.
 4. Open each artifact, not just the terminal output.
 
@@ -75,7 +75,7 @@ Codex can create inspectable files. A polished file is still only a draft until 
 - **Time:** 6 minutes
 - **Working folder:** `/tmp/peds-ai-live-demos/02-journal-club/`
 - **Input supplied:** `sources/OpenEvidence_systematic_review_2026.pdf`
-- **Prompt supplied:** `PROMPT.md`
+- **Prompt supplied:** `PROMPT.txt`
 
 ### Source
 
@@ -83,7 +83,7 @@ Artsi Y, Sorin V, Glicksberg BS, et al. *OpenEvidence clinical question-answerin
 
 ### Run it
 
-1. Open the folder in Codex and paste `PROMPT.md`.
+1. Open the folder in Codex and paste `PROMPT.txt`.
 2. Let Codex build `docs/index.html`, `README.md`, and `SOURCE_LEDGER.md`.
 3. Open `docs/index.html` locally and move through all seven sections.
 4. Open one numeric claim in `SOURCE_LEDGER.md`, then jump to that PDF viewer page.
@@ -139,9 +139,9 @@ Use three fresh Codex tasks so an earlier source cannot leak into a later answer
 
 | Condition | Folder | What Codex may use |
 |---|---|---|
-| A | `A-no-source/` | `CASE.md` only; no web and no other files |
-| B | `B-guideline/` | `CASE.md` plus the exact AAP guideline link in `SOURCES.md` |
-| C | `C-guideline-and-correction/` | `CASE.md` plus the guideline and its correction in `SOURCES.md` |
+| A | `A-no-source/` | `CASE.txt` only; no web and no other files |
+| B | `B-guideline/` | `CASE.txt` plus the exact AAP guideline link in `SOURCES.md` |
+| C | `C-guideline-and-correction/` | `CASE.txt` plus the guideline and its correction in `SOURCES.md` |
 
 ### Exact sources
 
@@ -150,7 +150,7 @@ Use three fresh Codex tasks so an earlier source cannot leak into a later answer
 
 ### Run it
 
-For A, B, then C: open the named folder, start a fresh Codex task, and paste its `PROMPT.md`. Do not add laboratory values that are not in `CASE.md`.
+For A, B, then C: open the named folder, start a fresh Codex task, and paste its `PROMPT.txt`. Do not add laboratory values that are not in `CASE.txt`.
 
 Score each answer on five questions:
 
@@ -174,7 +174,7 @@ Retrieval is a source choice. Giving the same model a defined corpus changes wha
 
 - **Time:** 5 minutes
 - **Working folder:** `/tmp/peds-ai-live-demos/05-repair-page/`
-- **Inputs supplied:** `broken_attendance.html`, `PROMPT.md`
+- **Inputs supplied:** `broken_attendance.html`, `PROMPT.txt`
 
 The page contains made-up noon-conference attendance counts for eight weeks. It is intentionally broken: typing a week does not highlight the matching bar.
 
@@ -182,7 +182,7 @@ The page contains made-up noon-conference attendance counts for eight weeks. It 
 
 1. Open `broken_attendance.html` first and show the interaction issue.
 2. Tell the room that the data are visible but the week-selection interaction does not respond.
-3. Open the folder in Codex and paste `PROMPT.md`.
+3. Open the folder in Codex and paste `PROMPT.txt`.
 4. Let Codex inspect, edit, and test the existing file.
 5. Enter `4`: only Week 4 should turn orange. Enter `9`: no bar should be highlighted and the page should ask for 1–8.
 
@@ -204,7 +204,7 @@ The loop is the product: reproduce, inspect, edit, run, and verify. Codex is mos
 
 - **Time:** 6 minutes
 - **Working folder:** `/tmp/peds-ai-live-demos/06-source-packet/`
-- **Inputs supplied:** `PROMPT.md`, `SOURCE_PACKET.md`, and three PDFs in `sources/`
+- **Inputs supplied:** `PROMPT.txt`, `SOURCE_PACKET.md`, and three PDFs in `sources/`
 
 ### Exact packet
 
@@ -215,7 +215,7 @@ The loop is the product: reproduce, inspect, edit, run, and verify. Codex is mos
 ### Run it
 
 1. Turn Codex web access off for this task.
-2. Paste `PROMPT.md`.
+2. Paste `PROMPT.txt`.
 3. Open the generated `evidence_brief.md`.
 4. Pick one row and verify the quoted idea on the cited PDF viewer page.
 5. Read the sentinel answer aloud. The packet contains no pediatric randomized trial of AI-assisted lumbar-puncture decisions, so the answer must be `NOT IN PACKET`.

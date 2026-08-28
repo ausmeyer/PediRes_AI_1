@@ -21,28 +21,28 @@ mkdir -p \
   "$destination/05-repair-page" \
   "$destination/06-source-packet/sources"
 
-cp "$script_dir/STEM.md" "$destination/01-office-files/STEM.md"
-cp "$script_dir/demo1_prompt.md" "$destination/01-office-files/PROMPT.md"
+cp "$script_dir/STEM.txt" "$destination/01-office-files/STEM.txt"
+cp "$script_dir/demo1_prompt.txt" "$destination/01-office-files/PROMPT.txt"
 
 cp "$repo_root/briefing/papers/s41746-026-03077-4_reference.pdf" \
   "$destination/02-journal-club/sources/OpenEvidence_systematic_review_2026.pdf"
-cp "$script_dir/demo2_prompt.md" "$destination/02-journal-club/PROMPT.md"
+cp "$script_dir/demo2_prompt.txt" "$destination/02-journal-club/PROMPT.txt"
 
 cp "$script_dir/demo3_ollama_prompt.txt" "$destination/03-offline-ollama/"
 
-cp "$script_dir/demo4_case.md" "$destination/04-source-conditions/A-no-source/CASE.md"
-cp "$script_dir/demo4_prompt_a.md" "$destination/04-source-conditions/A-no-source/PROMPT.md"
-cp "$script_dir/demo4_case.md" "$destination/04-source-conditions/B-guideline/CASE.md"
+cp "$script_dir/demo4_case.txt" "$destination/04-source-conditions/A-no-source/CASE.txt"
+cp "$script_dir/demo4_prompt_a.txt" "$destination/04-source-conditions/A-no-source/PROMPT.txt"
+cp "$script_dir/demo4_case.txt" "$destination/04-source-conditions/B-guideline/CASE.txt"
 cp "$script_dir/demo4_sources_guideline.md" "$destination/04-source-conditions/B-guideline/SOURCES.md"
-cp "$script_dir/demo4_prompt_b.md" "$destination/04-source-conditions/B-guideline/PROMPT.md"
-cp "$script_dir/demo4_case.md" "$destination/04-source-conditions/C-guideline-and-correction/CASE.md"
+cp "$script_dir/demo4_prompt_b.txt" "$destination/04-source-conditions/B-guideline/PROMPT.txt"
+cp "$script_dir/demo4_case.txt" "$destination/04-source-conditions/C-guideline-and-correction/CASE.txt"
 cp "$script_dir/demo4_sources_with_correction.md" "$destination/04-source-conditions/C-guideline-and-correction/SOURCES.md"
-cp "$script_dir/demo4_prompt_c.md" "$destination/04-source-conditions/C-guideline-and-correction/PROMPT.md"
+cp "$script_dir/demo4_prompt_c.txt" "$destination/04-source-conditions/C-guideline-and-correction/PROMPT.txt"
 
 cp "$script_dir/broken_attendance.html" "$destination/05-repair-page/"
-cp "$script_dir/demo5_prompt.md" "$destination/05-repair-page/PROMPT.md"
+cp "$script_dir/demo5_prompt.txt" "$destination/05-repair-page/PROMPT.txt"
 
-cp "$script_dir/demo6_prompt.md" "$destination/06-source-packet/PROMPT.md"
+cp "$script_dir/demo6_prompt.txt" "$destination/06-source-packet/PROMPT.txt"
 cp "$script_dir/SOURCE_PACKET.md" "$destination/06-source-packet/"
 cp "$repo_root/briefing/papers/B09667-eng.pdf" \
   "$destination/06-source-packet/sources/WHO_AI_evidence_policy_2026.pdf"

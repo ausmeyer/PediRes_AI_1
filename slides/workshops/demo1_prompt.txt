@@ -1,6 +1,6 @@
 # Demonstration 1 prompt
 
-Read `STEM.md` and use only that synthetic teaching case. Do not add real identifiers or unstated clinical facts.
+Read `STEM.txt` and use only that synthetic teaching case. Do not add real identifiers or unstated clinical facts.
 
 Create and then inspect these three files in the current folder:
 

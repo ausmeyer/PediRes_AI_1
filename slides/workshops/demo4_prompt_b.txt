@@ -1,6 +1,6 @@
 # Condition B — guideline source
 
-Read `CASE.md` and `SOURCES.md`. Open and use only the official AAP guideline listed in `SOURCES.md`. Do not use other websites or model-memory claims.
+Read `CASE.txt` and `SOURCES.md`. Open and use only the official AAP guideline listed in `SOURCES.md`. Do not use other websites or model-memory claims.
 
 Answer the teaching question in five labeled parts: applicability of the guideline; age-specific lumbar-puncture guidance; missing case data; exact source used; limitations. Quote no more than one short sentence and identify the relevant KAS or algorithm section. If the official page cannot be opened, say so rather than reconstructing the recommendation from memory.
 

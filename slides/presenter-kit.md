@@ -21,7 +21,7 @@ For each demonstration: explain the practical job, run the supplied prompt, open
 
 **Folder:** `/tmp/peds-ai-live-demos/01-office-files/`
 
-1. Open the folder in Codex and paste `PROMPT.md`.
+1. Open the folder in Codex and paste `PROMPT.txt`.
 2. Open the three generated files.
 3. Show that the letter ends with `This is a teaching example.`
 4. Show six spreadsheet rows with no medication column and citation placeholders in the slide deck.
@@ -32,7 +32,7 @@ For each demonstration: explain the practical job, run the supplied prompt, open
 
 **Folder:** `/tmp/peds-ai-live-demos/02-journal-club/`
 
-1. Start a fresh Codex task with web access off and paste `PROMPT.md`.
+1. Start a fresh Codex task with web access off and paste `PROMPT.txt`.
 2. Open the generated `docs/index.html` and `SOURCE_LEDGER.md`.
 3. Find the claim that the review included 11 studies.
 4. Open the supplied PDF to viewer page 3 and confirm that number in the abstract.
@@ -60,9 +60,9 @@ For each demonstration: explain the practical job, run the supplied prompt, open
 
 **Parent folder:** `/tmp/peds-ai-live-demos/04-source-conditions/`
 
-1. Start a fresh Codex task in `A-no-source/`, keep web access off, and paste `PROMPT.md`.
-2. Start a fresh task in `B-guideline/`, turn web access on, and paste `PROMPT.md`.
-3. Start a fresh task in `C-guideline-and-correction/` and paste `PROMPT.md`.
+1. Start a fresh Codex task in `A-no-source/`, keep web access off, and paste `PROMPT.txt`.
+2. Start a fresh task in `B-guideline/`, turn web access on, and paste `PROMPT.txt`.
+3. Start a fresh task in `C-guideline-and-correction/` and paste `PROMPT.txt`.
 4. Compare whether each answer names its source, uses the correct age group, asks for the missing urinalysis and inflammatory markers, and reviews the correction.
 
 **Takeaway:** The allowed source material changes how traceable and complete an answer can be.
@@ -72,7 +72,7 @@ For each demonstration: explain the practical job, run the supplied prompt, open
 **Folder:** `/tmp/peds-ai-live-demos/05-repair-page/`
 
 1. Open `broken_attendance.html`, enter `4`, and show that nothing highlights.
-2. Open the folder in Codex and paste `PROMPT.md`.
+2. Open the folder in Codex and paste `PROMPT.txt`.
 3. Reload the page and enter `4`; only Week 4 should turn orange and report `25`.
 4. Enter `9`; no bar should highlight and the page should ask for a week from 1 to 8.
 
@@ -82,7 +82,7 @@ For each demonstration: explain the practical job, run the supplied prompt, open
 
 **Folder:** `/tmp/peds-ai-live-demos/06-source-packet/`
 
-1. Start a fresh Codex task with web access off and paste `PROMPT.md`.
+1. Start a fresh Codex task with web access off and paste `PROMPT.txt`.
 2. Open the generated `evidence_brief.md`.
 3. Confirm that it distinguishes the Artsi systematic review from the WHO and FDA discussion papers.
 4. Verify the FDA document type on PDF viewer page 2, then show that the off-packet question begins `NOT IN PACKET`.

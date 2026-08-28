@@ -1,6 +1,6 @@
 # Condition C — guideline plus correction
 
-Read `CASE.md` and `SOURCES.md`. Open and use only the official AAP guideline and correction listed in `SOURCES.md`. Do not use other websites or model-memory claims.
+Read `CASE.txt` and `SOURCES.md`. Open and use only the official AAP guideline and correction listed in `SOURCES.md`. Do not use other websites or model-memory claims.
 
 Answer the teaching question in six labeled parts: applicability of the guideline; age-specific lumbar-puncture guidance; missing case data; exact guideline location; whether the correction changes the relevant conclusion; limitations. Quote no more than one short sentence. If either official page cannot be opened, say so rather than reconstructing it from memory.
 

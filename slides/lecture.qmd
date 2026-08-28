@@ -361,7 +361,7 @@ Make → open → inspect · Codex
 :::: {.lab-split}
 ::: {.box .box-purple .box-prose}
 ::: {.box-label}
-STEM.md — we wrote this
+STEM.txt — we wrote this
 :::
 
 6-month-old former 36-week infant, day 2 of RSV bronchiolitis. SpO2 nadir 88% on room air, now 94% on 0.5 L NC. Taking 50% of feeds. Family wants a plain-language update. Night team wants a wean tracker.
@@ -396,7 +396,7 @@ Show the result · Open the file · Verify one concrete detail
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.md into Codex. The exact source is STEM.md. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/demo1_fallback.py. The visible verification action is opening all three files.
+Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.txt into Codex. The exact source is STEM.txt. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/demo1_fallback.py. The visible verification action is opening all three files.
 :::
 
 ---
@@ -442,7 +442,7 @@ Show the result · Open the source · Verify one concrete detail
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on PDF viewer page 3. No outside browsing, copied figures, or invented identifiers.
+Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.txt into Codex. The only source is sources/OpenEvidence_systematic_review_2026.pdf: Artsi et al., accepted manuscript, DOI 10.1038/s41746-026-03077-4, CC BY-NC-ND 4.0. Codex creates a self-contained seven-section docs/index.html plus README.md and SOURCE_LEDGER.md. Open the page, then verify the abstract’s 11 included studies on PDF viewer page 3. No outside browsing, copied figures, or invented identifiers.
 :::
 
 ---
@@ -485,7 +485,7 @@ Term 26-day-old, rectal temperature 38.5 °C, well-appearing. What does the AAP 
 A · No source
 :::
 
-Codex + CASE.md. Web off. It must not pretend to quote the guideline.
+Codex + CASE.txt. Web off. It must not pretend to quote the guideline.
 :::
 ::: {.box .box-purple .box-prose}
 ::: {.box-label}
@@ -536,7 +536,7 @@ Run three conditions · Compare the sources · Verify missing inputs
 :::
 
 ::: notes
-Prepared parent folder: /tmp/peds-ai-live-demos/04-source-conditions. Use three fresh Codex tasks: A-no-source, B-guideline, C-guideline-and-correction. Each folder supplies CASE.md and an exact PROMPT.md; B and C also supply exact official AAP links. The case deliberately omits urinalysis and inflammatory markers. Do not add them. Score: source stated, relevant age group located, missing data requested, correction handled, answer bounded. Official sources are Pantell et al., Pediatrics 2021, DOI 10.1542/peds.2021-052228, and the correction, DOI 10.1542/peds.2021-054063.
+Prepared parent folder: /tmp/peds-ai-live-demos/04-source-conditions. Use three fresh Codex tasks: A-no-source, B-guideline, C-guideline-and-correction. Each folder supplies CASE.txt and an exact PROMPT.txt; B and C also supply exact official AAP links. The case deliberately omits urinalysis and inflammatory markers. Do not add them. Score: source stated, relevant age group located, missing data requested, correction handled, answer bounded. Official sources are Pantell et al., Pediatrics 2021, DOI 10.1542/peds.2021-052228, and the correction, DOI 10.1542/peds.2021-054063.
 :::
 
 ---
@@ -562,7 +562,7 @@ Repair `broken_attendance.html`. Preserve the eight exact counts. Test 4, 1, 8, 
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the interaction issue. Paste PROMPT.md. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Tell the room that the displayed data remain intact while Codex inspects the unresponsive selection interaction.
+Prepared folder: /tmp/peds-ai-live-demos/05-repair-page. Open broken_attendance.html before Codex so the room sees the interaction issue. Paste PROMPT.txt. Acceptance tests preserve weeks 1–8 and counts 19, 22, 17, 25, 23, 20, 26, 24; valid input highlights one bar; invalid input highlights none and says “Enter a week from 1 to 8”; no external resources; accessible label and live status. Tell the room that the displayed data remain intact while Codex inspects the unresponsive selection interaction.
 :::
 
 ---
@@ -585,7 +585,7 @@ What should a clinician verify before relying on a clinical AI answer?
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.md. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al. 2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify the FDA document type on PDF viewer page 2, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.
+Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off and paste PROMPT.txt. Exact packet: WHO 2026 discussion paper, DOI 10.2471/B09667; FDA 2026 GenAI-enabled medical devices discussion paper, docket FDA-2026-N-7874; Artsi et al. 2026 OpenEvidence systematic review, DOI 10.1038/s41746-026-03077-4. SOURCE_PACKET.md includes exact filenames and SHA-256 hashes. Open evidence_brief.md, verify the FDA document type on PDF viewer page 2, and read the sentinel answer. None of these is a pediatric trial or clinical guideline.
 :::
 
 ---
