@@ -396,7 +396,7 @@ Before: what will fail? · After: what did you verify?
 :::
 
 ::: notes
-Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.md into Codex. The exact source is STEM.md. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/lab1_fallback.py. The visible verification action is opening all three files.
+Prepared folder: /tmp/peds-ai-live-demos/01-office-files. Paste PROMPT.md into Codex. The exact source is STEM.md. Open all three outputs: the letter ends with “This is a teaching example”; the tracker has six synthetic rows and no medication column; the deck uses PLACEHOLDER—VERIFY BEFORE TEACHING instead of invented identifiers. Fallback: python slides/workshops/demo1_fallback.py. The visible verification action is opening all three files.
 :::
 
 ---
@@ -453,7 +453,7 @@ Prepared folder: /tmp/peds-ai-live-demos/02-journal-club. Paste PROMPT.md into C
 Summarize → inspect · Ollama + airplane mode
 :::
 
-![](assets/figures/lab6_rules.svg){width="100%"}
+![](assets/figures/offline_rules.svg){width="100%"}
 
 ::: {.lab-prompt}
 `ollama run qwen3.8 < demo3_ollama_prompt.txt`
@@ -592,7 +592,7 @@ Prepared folder: /tmp/peds-ai-live-demos/06-source-packet. Turn web access off a
 
 ## Six habits to remember. {.viz}
 
-![](assets/figures/takehomes.svg?rev=20260827){width="100%"}
+![](assets/figures/six_habits.svg){width="100%"}
 
 ::: notes
 Repeat. Point at the briefing packet and workshops.md. A local model keeps the prompt on the laptop; it does not make the answer more accurate. Last box: you still need the child’s age and context. Do not invent an AAP clinical AI policy.

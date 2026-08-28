@@ -1,6 +1,7 @@
 # Local agent dumps and OS junk
 .playwright-mcp/
 .DS_Store
+.Rhistory
 __pycache__/
 *.pyc
 

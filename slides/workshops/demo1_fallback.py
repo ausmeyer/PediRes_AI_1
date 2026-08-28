@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fallback for Lab 1 if the live agent hangs. Synthetic only."""
+"""Fallback for Demonstration 1 if the live Codex build stalls. Synthetic only."""
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -8,7 +8,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font
 from pptx import Presentation
 
-OUT = Path(__file__).parent / "lab1_out"
+OUT = Path(__file__).parent / "demo1_out"
 OUT.mkdir(exist_ok=True)
 
 
@@ -69,13 +69,13 @@ def slides():
         "Evidence bullets — citations not yet verified",
         "Wean principles (no doses)",
         "Discharge criteria (placeholder)",
-        "Take-home",
+        "What to remember",
         "References: citations not yet verified",
     ]
-    for t in titles:
+    for title in titles:
         layout = prs.slide_layouts[1]
         slide = prs.slides.add_slide(layout)
-        slide.shapes.title.text = t
+        slide.shapes.title.text = title
         body = slide.placeholders[1].text_frame
         body.text = "SYNTHETIC TEACHING CASE — NOT A REAL PATIENT"
     prs.save(OUT / "noon_conference.pptx")

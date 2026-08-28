@@ -1,10 +1,11 @@
 # A Survey of Modern AI for Pediatric Residents
 
-**Research briefing for a one-hour workshop-lecture**  
+**Research briefing for a one-hour lecture with live demonstrations**
+
 McLane Children’s Hospital, pediatric residency  
 Document type: source briefing (not slides). The live hour is [`../slides/lecture.qmd`](../slides/lecture.qmd).
 
-**How to use this document.** This is a teaching brief, not a clinical protocol. It does not provide patient-specific medical direction. Every workshop case is **synthetic**. Claims about 2025–2026 products and policies are dated and tied to sources in [`claim-source-ledger.md`](claim-source-ledger.md). Vendor benchmark tables are **vendor-reported** unless an independent evaluation is cited. Workshop recipes that you can run from an empty folder live in [`workshops.md`](workshops.md).
+**How to use this document.** This is a teaching brief, not a clinical protocol. It does not provide patient-specific medical direction. Every demonstration case is **synthetic**. Claims about 2025–2026 products and policies are dated and tied to sources in [`claim-source-ledger.md`](claim-source-ledger.md). Vendor benchmark tables are **vendor-reported** unless an independent evaluation is cited. The six fully specified presenter demonstrations live in [`workshops.md`](workshops.md).
 
 ---
 
@@ -14,17 +15,14 @@ Document type: source briefing (not slides). The live hour is [`../slides/lectur
 
 The intended audience is pediatric residents with mixed technical literacy. Most do not pay for a frontier subscription. Most have never used an **agent harness** (a program that lets a model read files, run commands, and write artifacts, rather than only chatting). The lecture is a survey of modern machine learning and large language models, followed by live demonstrations of tools that are useful for research, teaching, and low-risk administrative work.
 
-The one-hour live spine cannot cover this briefing. The projector clock is in [`../slides/lecture.qmd`](../slides/lecture.qmd): two live **blocks** containing four **lessons** (Labs 1–4), then take-home Labs 5–8 after Q&A. A workable briefing-length compression is:
+The one-hour live spine cannot cover this entire briefing. The projector sequence is in [`../slides/lecture.qmd`](../slides/lecture.qmd): a compact conceptual survey, six presenter-run demonstrations in runbook order, a six-habit summary, three questions to ask before reuse, and Q&A. A workable compression is:
 
 | Block | Minutes | Content |
 |---|---|---|
-| Foundations | 12 | Supervised vs unsupervised vs RL; neural nets; tokens; attention |
-| Timeline | 10 | GPT-2 → ChatGPT → GPT-4 → closed/open split |
-| Reasoning and tools | 10 | Test-time compute, RAG, harnesses, MCP, skills |
-| Frontier and privacy | 8 | August 2026 map; local models; HIPAA |
-| Policy | 8 | ICMJE / AAP digital ecosystems vs Grundmeier review / AMA 10 Jun 2026 / FDA / WHO; journal-policy gaps |
-| Live blocks | 12 | Four lessons in two blocks: Make → inspect (Labs 1–2), Ask → verify (Labs 3–4) |
-| Q&A | remainder | Handout covers Labs 5–8 |
+| Foundations and model behavior | 14 | AI categories; tokens; next-token prediction; attention; hallucination |
+| Tools, evidence, privacy, and policy | 12 | Retrieval; harnesses; benchmarks; local models; HIPAA; professional guidance |
+| Six demonstrations | about 30 | Codex for files, source-bounded work, and artifact repair; Ollama for one offline synthetic note |
+| Synthesis and Q&A | remainder | Six habits; three questions before reuse; discussion |
 
 ### 0.2 Methods
 
@@ -104,7 +102,7 @@ The AAP Periodic Survey / PLACES abstract on 2025 pediatrician experience report
 
 Adult-majority training data produce systematic, not random, errors in child health:
 
-- **Dosing is not a small adult.** mg/kg, mg/m², postnatal age, corrected gestational age, and maximum caps all have to be right simultaneously. Token models are bad at this (see §2.3 and Workshop 6).
+- **Dosing is not a small adult.** mg/kg, mg/m², postnatal age, corrected gestational age, and maximum caps all have to be right simultaneously. Token models are bad at this (see §2.3).
 - **Vital-sign and lab ranges move with age.** A “normal” creatinine or heart rate copied from an adult prior is a harm event.
 - **Development is a moving endpoint.** Language delay at 18 months is not the same task as at 4 years; models flatten this.
 - **The historian is often not the patient.** Caregiver-by-proxy history, adolescent confidentiality, and non-accidental injury documentation have legal and ethical structure models do not reliably keep.
@@ -414,7 +412,7 @@ Facts below are from first-party pages unless marked otherwise. Rankings are not
 
 ### 7.5 Why consider modern tooling at all?
 
-Because the job of a resident is **artifact production under time pressure**: slide decks, Excel trackers, letters, journal-club notes, IRB drafts, abstracts. Chatbots produce text. Harnesses produce **files**. Files can be audited, versioned, and submitted. That is the entire pedagogical point of Workshops 1, 2, and 7.
+Because the job of a resident is **artifact production under time pressure**: slide decks, Excel trackers, letters, journal-club notes, IRB drafts, abstracts. Chatbots produce text. Harnesses produce **files**. Files can be audited, versioned, and submitted. Demonstrations 1, 2, and 5 make that distinction visible.
 
 ### 7.6 Strengths and limitations of the stack (summary)
 
@@ -601,30 +599,23 @@ Bergman, Wachter, and Emanuel (*JAMA*, online 29 April 2026; print 26 May 2026) 
 
 ---
 
-## 12. Workshop catalog (overview)
+## 12. Demonstration catalog (overview)
 
-Eight from-scratch demos. Full copy-paste recipes, timing, HIPAA posture, and intentional failure modes: [`workshops.md`](workshops.md).
+Six presenter-run demonstrations. Full copy-paste prompts, exact inputs, timing, privacy posture, verification actions, and fallback plans: [`workshops.md`](workshops.md).
 
-Design rule: **presenter-led sophisticated run** plus a **free path** a resident can repeat without a subscription. Empty folder at t = 0. Synthetic cases only.
+Design rule: each run starts in a prepared folder with a synthetic case or named public source. The presenter opens the resulting artifact and verifies one thing aloud.
 
 | # | Demo | Surprising artifact | Teaching point |
 |---|---|---|---|
 | 1 | Office files without Office | `.docx` + `.xlsx` + `.pptx` from a harness | Chatbots talk; harnesses emit files |
-| 2 | GitHub Pages journal club | Live Reveal.js URL, no manual coding | Versioned teaching materials |
-| 3 | Air-gapped local model | Offline summary of a synthetic H&P | Vendor-free path; hardware honesty |
-| 4 | Same question, three systems | Fabricated vs grounded citations | RAG is a corpus choice |
-| 5 | Citation autopsy | PMIDs that do not exist or do not match | Fluent bibliographies lie |
-| 6 | Dosing spreadsheet audit | Excel that looks official and is wrong | Never copy a dose from a model |
-| 7 | Harness vs chatbot | Working repo vs stuck paste | The loop is the product |
-| 8 | Gemini Notebook | Source-grounded Q&A + optional overview | Research notebook ≠ BAA |
+| 2 | One-PDF journal club | Self-contained web page plus source ledger | A polished artifact still needs page-level verification |
+| 3 | Air-gapped local model | Offline summary of a supplied synthetic H&P | Local data flow is visible; quality is still uncertain |
+| 4 | One question, three source conditions | Answers with different traceability | Retrieval is a corpus choice |
+| 5 | Artifact repair | Existing interactive page repaired and tested | The reproduce–edit–verify loop is the product |
+| 6 | Fixed source packet | Page-cited evidence brief with an off-corpus sentinel | Bounded synthesis cannot create absent evidence |
 
-Live hour: run **1**, **6**, **4**, and **5**. Hand out 2, 3, 7, and 8.
+### 12.1 Other tools worth mentioning if asked
 
-Optional ninth (2 minutes): ICMJE/*Pediatrics* disclosure quiz on a dummy manuscript.
-
-### 12.1 Other tools worth 90 seconds in the lecture
-
-- **Gemini Notebook** (Workshop 8): best free-ish grounded notebook for **your** PDFs.  
 - **PubMed / PMC + a harness file tool:** still the honest literature workflow.  
 - **Zotero or Paperpile + export:** do not let the model be your only library.  
 - **Observable / GitHub Pages:** interactive teaching, not just slides.  

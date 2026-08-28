@@ -13,6 +13,7 @@ import numpy as np
 
 OUT = Path(__file__).parent / "figures"
 OUT.mkdir(exist_ok=True)
+GENERATED = set()
 
 GOLD = "#FFB71B"
 ORANGE = "#FF4D00"
@@ -38,16 +39,20 @@ plt.rcParams.update(
         "axes.spines.top": False,
         "axes.spines.right": False,
         "figure.dpi": 160,
+        "svg.hashsalt": "pedires-ai",
     }
 )
 
 
 def save(fig, name, tight=True):
-    kw = dict(facecolor=PAPER, pad_inches=0.15)
+    kw = dict(facecolor=PAPER, pad_inches=0.15, metadata={"Date": None})
     if tight:
         kw["bbox_inches"] = "tight"
-    fig.savefig(OUT / f"{name}.png", **kw)
-    fig.savefig(OUT / f"{name}.svg", **kw)
+    svg_path = OUT / f"{name}.svg"
+    fig.savefig(svg_path, **kw)
+    svg_text = svg_path.read_text(encoding="utf-8")
+    svg_path.write_text("\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n", encoding="utf-8")
+    GENERATED.add(name)
     plt.close(fig)
 
 
@@ -149,40 +154,6 @@ def white_card(ax, x, w, items, ec, y_mid=None, y=None, pad=0.16, r=0.1, lw=3, h
 def matched_height(*item_lists, pad=0.16):
     """Tallest content+pad height across several stacks (for paired cards)."""
     return max(stack_metrics(items)[2] + 2 * pad for items in item_lists)
-
-
-# --- 1. Hour map ---
-def fig_hour_map():
-    fig, ax = plt.subplots(figsize=(14.2, 4.55))
-    ax.set_xlim(0, 60)
-    ax.set_ylim(-0.08, 3.35)
-    ax.axis("off")
-    blocks = [
-        (0, 10, BLUE, "Why tonight\n10 min", 12),
-        (10, 8, TEAL, "How AI\nanswers\n8 min", 9),
-        (18, 8, PURPLE, "Files &\nverification\n8 min", 9),
-        (26, 8, ORANGE, "Evidence\n8 min", 11),
-        (34, 18, PURPLE_WEB, "Live blocks\n18 min", 12),
-        (52, 8, GOLD, "Takeaways\n8 min", 11),
-    ]
-    for x, w, c, lab, fs in blocks:
-        rounded(ax, x + 0.3, 1.18, w - 0.6, 1.48, c, r=0.15)
-        color = INK if c == GOLD else WHITE
-        ax.text(x + w / 2, 1.92, lab, ha="center", va="center", color=color, fontsize=fs, fontweight="bold", linespacing=1.15)
-    ax.plot([0, 60], [0.95, 0.95], color=INK, lw=2)
-    for t in range(0, 61, 10):
-        ax.plot([t, t], [0.82, 0.95], color=INK, lw=1.5)
-        ax.text(t, 0.52, f"{t}m", ha="center", fontsize=11, color=MUTED)
-    ax.text(
-        30,
-        0.12,
-        "Take-home Labs 5–8 are not on this clock.",
-        ha="center",
-        fontsize=12,
-        color=INK,
-        fontstyle="italic",
-    )
-    save(fig, "hour_map")
 
 
 # --- 2. Three meanings of AI ---
@@ -1202,52 +1173,8 @@ def fig_scale():
     save(fig, "param_scale", tight=False)
 
 
-# --- 21. Workshop split ---
-def fig_workshops():
-    fig, ax = plt.subplots(figsize=(14.2, 6.4))
-    ax.set_xlim(0, 14)
-    ax.set_ylim(0, 6.4)
-    ax.axis("off")
-    ax.text(7, 6.05, "Live blocks vs take-home labs", ha="center", fontsize=17, fontweight="bold", color=BLUE)
-
-    rounded(ax, 0.35, 0.55, 6.5, 4.55, WHITE, PURPLE_WEB, lw=3)
-    ax.text(3.6, 4.72, "This hour  ·  Labs 1–4", ha="center", fontsize=15, fontweight="bold", color=PURPLE_WEB)
-    live = [
-        ("1", "Files from a harness", "Word, Excel, slides from STEM.md"),
-        ("2", "Audit the dose sheet", "Fictional teachicillin. Find the error."),
-        ("3", "One question, three corpora", "Same febrile-infant question"),
-        ("4", "Citation autopsy", "Open PubMed on the first three IDs"),
-    ]
-    y0 = 3.95
-    gap = 0.78
-    for i, (n, title, sub) in enumerate(live):
-        y = y0 - i * gap
-        ax.add_patch(Circle((1.18, y), 0.24, facecolor=PURPLE_WEB, zorder=3))
-        ax.text(1.18, y, n, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold", zorder=4)
-        ax.text(1.62, y + 0.13, title, ha="left", va="center", fontsize=13, fontweight="bold", color=INK)
-        ax.text(1.62, y - 0.13, sub, ha="left", va="center", fontsize=11, color=MUTED)
-    ax.text(3.6, 0.78, "Codex, then the browser. Watch the artifact change.", ha="center", fontsize=11, color=MUTED)
-
-    rounded(ax, 7.15, 0.55, 6.5, 4.55, WHITE, TEAL, lw=3)
-    ax.text(10.4, 4.72, "Take-home  ·  Labs 5–8", ha="center", fontsize=15, fontweight="bold", color=TEAL)
-    home = [
-        ("5", "GitHub Pages journal club", "Markdown → a URL that works on a phone"),
-        ("6", "Local model on your laptop", "Ollama, airplane mode"),
-        ("7", "Harness loop vs chatbot", "Same request. Files vs a paragraph."),
-        ("8", "Gemini Notebook", "Your PDFs. Grounded Q&A."),
-    ]
-    for i, (n, title, sub) in enumerate(home):
-        y = y0 - i * gap
-        ax.add_patch(Circle((7.98, y), 0.24, facecolor=TEAL, zorder=3))
-        ax.text(7.98, y, n, ha="center", va="center", color=WHITE, fontsize=13, fontweight="bold", zorder=4)
-        ax.text(8.42, y + 0.13, title, ha="left", va="center", fontsize=13, fontweight="bold", color=INK)
-        ax.text(8.42, y - 0.13, sub, ha="left", va="center", fontsize=11, color=MUTED)
-    ax.text(10.4, 0.78, "Recipes in the handout. Free path for each.", ha="center", fontsize=11, color=MUTED)
-    save(fig, "workshops_split")
-
-
-# --- 22. Take-homes icons ---
-def fig_takehomes():
+# --- 22. Six habits ---
+def fig_six_habits():
     fig, ax = plt.subplots(figsize=(14.2, 6.2))
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 6.2)
@@ -1286,7 +1213,7 @@ def fig_takehomes():
             ha="center",
             linespacing=1.25,
         )
-    save(fig, "takehomes")
+    save(fig, "six_habits")
 
 
 def fig_context_age():
@@ -1443,90 +1370,7 @@ def fig_poll_open():
     save(fig, "poll_open")
 
 
-def fig_two_blocks():
-    fig, ax = plt.subplots(figsize=(14.2, 5.2))
-    ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 5.2)
-    ax.axis("off")
-    left_items = [
-        {"text": "Make → inspect", "fontsize": 24, "color": PURPLE_WEB, "fontweight": "bold", "gap_after": 0.12},
-        {"text": "Labs 1 and 2", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.12},
-        {
-            "text": "Files you can open tomorrow.\nThen find what is wrong.",
-            "fontsize": 16,
-            "color": INK,
-            "linespacing": 1.50,
-        },
-    ]
-    right_items = [
-        {"text": "Ask → verify", "fontsize": 24, "color": TEAL, "fontweight": "bold", "gap_after": 0.12},
-        {"text": "Labs 3 and 4", "fontsize": 14, "color": GOLD, "fontweight": "bold", "gap_after": 0.12},
-        {
-            "text": "A febrile-infant question.\nThen open the\ncited source.",
-            "fontsize": 16,
-            "color": INK,
-            "linespacing": 1.50,
-        },
-    ]
-    pad = 0.16
-    y_mid = 2.55
-    white_card(ax, 0.4, 6.4, left_items, PURPLE_WEB, y_mid=y_mid, pad=pad, lw=3)
-    white_card(ax, 7.4, 6.4, right_items, TEAL, y_mid=y_mid, pad=pad, lw=3)
-    save(fig, "two_blocks")
-
-
-def fig_formula_bug():
-    fig, ax = plt.subplots(figsize=(14.2, 4.0))
-    ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 4.0)
-    ax.axis("off")
-    items = [
-        {"text": "Cell C2", "fontsize": 14, "color": MUTED, "gap_after": 0.12},
-        {
-            "text": "=B2*10",
-            "fontsize": 48,
-            "color": INK,
-            "fontweight": "bold",
-            "family": "DejaVu Sans Mono",
-            "gap_after": 0.12,
-        },
-        {
-            "text": "Weight in B2. Ten milligrams per kilogram. No 400 mg maximum.",
-            "fontsize": 15,
-            "color": INK,
-        },
-    ]
-    white_card(ax, 1.5, 11.2, items, ORANGE, y_mid=2.0, pad=0.16, r=0.12, lw=3)
-    save(fig, "formula_bug")
-
-
-def fig_lab5_flow():
-    fig, ax = plt.subplots(figsize=(14.2, 4.0))
-    ax.set_xlim(0, 14.2)
-    ax.set_ylim(0, 4.0)
-    ax.axis("off")
-    steps = [
-        (0.4, BLUE, "Paper", "One open paper\nor guideline."),
-        (3.85, PURPLE, "Eight slides", "A deck you can\nhost or zip."),
-        (7.3, ORANGE, "Verify", "Open every\ncitation first."),
-        (10.75, TEAL, "Share", "A URL, or a zip\non a phone."),
-    ]
-    stacks = []
-    for x, c, title, body in steps:
-        stacks.append(
-            [
-                {"text": title, "fontsize": 18, "color": c, "fontweight": "bold", "gap_after": 0.12},
-                {"text": body, "fontsize": 14, "color": INK, "linespacing": 1.50},
-            ]
-        )
-    pad = 0.16
-    y_mid = 2.0
-    for (x, c, *_), items in zip(steps, stacks):
-        white_card(ax, x, 3.2, items, c, y_mid=y_mid, pad=pad, lw=3)
-    save(fig, "lab5_flow")
-
-
-def fig_lab6_rules():
+def fig_offline_rules():
     fig, ax = plt.subplots(figsize=(14.2, 4.6))
     ax.set_xlim(0, 14.2)
     ax.set_ylim(0, 4.6)
@@ -1548,11 +1392,10 @@ def fig_lab6_rules():
     y_mid = 2.25
     for (x, c, *_), items in zip(cards, stacks):
         white_card(ax, x, 4.25, items, c, y_mid=y_mid, pad=pad, lw=3)
-    save(fig, "lab6_rules")
+    save(fig, "offline_rules")
 
 
 def main():
-    fig_hour_map()
     fig_three_ais()
     fig_learning_modes()
     fig_pediatric_shift()
@@ -1573,17 +1416,16 @@ def main():
     fig_policy()
     fig_hipaa()
     fig_scale()
-    fig_workshops()
-    fig_takehomes()
+    fig_six_habits()
     fig_context_age()
     fig_three_eras()
     fig_settled()
     fig_poll_open()
-    fig_two_blocks()
-    fig_formula_bug()
-    fig_lab5_flow()
-    fig_lab6_rules()
-    print("wrote", len(list(OUT.glob("*.png"))), "pngs to", OUT)
+    fig_offline_rules()
+    for path in OUT.iterdir():
+        if path.suffix == ".png" or (path.suffix == ".svg" and path.stem not in GENERATED):
+            path.unlink()
+    print("wrote", len(GENERATED), "SVG figures to", OUT)
 
 
 if __name__ == "__main__":

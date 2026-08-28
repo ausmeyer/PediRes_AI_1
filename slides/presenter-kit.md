@@ -42,7 +42,7 @@ This keeps the lesson on judgment rather than command typing.
 - **Inputs:** `STEM.md`
 - **Open:** `family_update.docx`, `oxygen_wean_tracker.xlsx`, `noon_conference.pptx`
 
-Verify the teaching-example sentence, six synthetic spreadsheet rows, no medication column, and placeholder rather than invented citations. If needed, run `python slides/workshops/lab1_fallback.py`.
+Verify the teaching-example sentence, six synthetic spreadsheet rows, no medication column, and placeholder rather than invented citations. If needed, run `python slides/workshops/demo1_fallback.py`.
 
 ### 2 — Codex builds a journal-club page
 

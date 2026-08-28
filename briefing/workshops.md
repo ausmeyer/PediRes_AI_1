@@ -62,7 +62,7 @@ Use the same delivery rhythm each time: **predict one failure → run the exact 
 
 ### If the live build stalls
 
-From `slides/workshops/`, run `python lab1_fallback.py` and open the three files in `lab1_out/`.
+From `slides/workshops/`, run `python demo1_fallback.py` and open the three files in `demo1_out/`.
 
 ### Teaching point
 
@@ -235,7 +235,7 @@ A fixed packet can make synthesis more inspectable. It cannot make absent pediat
 Keep these on the teaching laptop, not scattered across cloud tabs:
 
 - the prepared `/tmp/peds-ai-live-demos/` folder;
-- the already-rendered Demonstration 1 outputs from `lab1_fallback.py`;
+- the already-rendered Demonstration 1 outputs from `demo1_fallback.py`;
 - the Ollama model verified before airplane mode;
 - the three local PDFs for Demonstration 6;
 - the exact AAP guideline and correction links open in browser tabs;

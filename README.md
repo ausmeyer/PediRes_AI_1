@@ -1,64 +1,55 @@
 # PediRes AI
 
-Handout for the McLane Children’s pediatric residency hour on modern AI.
-
-Cases in this repo are **invented**.
+Materials for the McLane Children’s pediatric residency hour on modern AI. Every clinical vignette and attendance count in this repository is invented.
 
 ## Ground rules
 
-1. Do not paste names, medical record numbers, or real notes into consumer ChatGPT, Claude, Gemini, or similar apps.
-2. Do not copy a dose or a citation into a note until you have opened the source yourself.
-3. A model on your own laptop keeps the prompt off a vendor.
+1. Do not paste names, medical record numbers, or real notes into a consumer AI product.
+2. Do not copy a dose or citation until you have opened the original source yourself.
+3. A model running on your laptop keeps the prompt local; it does not make the answer clinically correct or the laptop hospital-approved.
 
-## What to read
+## Start here
 
-| Packet | File |
+| Need | File |
 |---|---|
-| The written survey | [`briefing/pediatric-resident-ai-survey.md`](briefing/pediatric-resident-ai-survey.md) |
-| Step-by-step lab recipes | [`briefing/workshops.md`](briefing/workshops.md) |
-| Where a number came from | [`briefing/claim-source-ledger.md`](briefing/claim-source-ledger.md) |
+| Present the lecture | [`docs/index.html`](docs/index.html) |
+| Read the six-demonstration runbook | [`briefing/workshops.md`](briefing/workshops.md) |
+| Stage the exact prompts and inputs | [`slides/workshops/`](slides/workshops/) |
+| Use the presenter cues and fallbacks | [`slides/presenter-kit.md`](slides/presenter-kit.md) |
+| Read the longer research briefing | [`briefing/pediatric-resident-ai-survey.md`](briefing/pediatric-resident-ai-survey.md) |
+| Trace a lecture claim to its source | [`briefing/claim-source-ledger.md`](briefing/claim-source-ledger.md) |
 
-You do not need a paid AI subscription for any of this.
+## Six presenter-run demonstrations
 
-## Labs
+| # | Tool | Visible result | What to verify aloud |
+|---:|---|---|---|
+| 1 | Codex | Word, Excel, and PowerPoint files from one synthetic stem | Open all three; confirm the required teaching labels and constraints |
+| 2 | Codex | A self-contained journal-club web page from one named PDF | Trace the “11 studies” claim to the PDF |
+| 3 | Ollama | An offline summary of one supplied synthetic H&P | Missing weight and urine output remain `MISSING` |
+| 4 | Codex | One febrile-infant question under three source conditions | Compare traceability and recognition of missing inputs |
+| 5 | Codex | A repaired and tested interactive HTML page | Reproduce the failure, then run the stated acceptance tests |
+| 6 | Codex | A page-cited brief from a fixed three-PDF packet | Confirm the off-corpus sentinel returns `NOT IN PACKET` |
 
-Labs **1–4** were live, in two blocks: **Make → inspect** (1–2) and **Ask → verify** (3–4). **5–8** are take-home, after Q&A. Full recipes are in [`briefing/workshops.md`](briefing/workshops.md).
-
-| Lab | When | What you do |
-|---|---|---|
-| 1 | Live; repeat at home | Turn a fake bronchiolitis stem into Word, Excel, and PowerPoint |
-| 2 | Live; repeat at home | Audit a fake dosing sheet (`teachicillin` is not a real drug) |
-| 3 | Live | Same febrile-infant LP question in three tools. Score whether it asked for missing data. |
-| 4 | Live | Check whether ChatGPT’s PubMed IDs exist |
-| 5 | Take-home | Put journal-club slides on a URL (or open a local `index.html`) |
-| 6 | Take-home | Summarize a **synthetic** H&P in [Ollama](https://ollama.com) with Wi-Fi off |
-| 7 | Take-home | Same file request in ChatGPT vs a harness (Cursor, OpenCode, or similar) |
-| 8 | Take-home | Ask a source-grounded notebook over **public** PDFs only |
-
-## Repeat Labs 1 and 2 on your laptop
-
-[`slides/workshops/STEM.md`](slides/workshops/STEM.md) and [`slides/workshops/KEY.md`](slides/workshops/KEY.md) are written by us, not by a model.
+Prepare six isolated demonstration folders from the repository root:
 
 ```bash
-cd slides/workshops
-pip install -r requirements.txt
-python lab1_fallback.py
-python lab2_fallback.py
+./slides/workshops/prepare_demo_folders.sh /tmp/peds-ai-live-demos
 ```
 
-Lab 1 is done when three files open, the tracker has no medication column, and the letter ends with the teaching line. Lab 2 is done when you open formula view and find the missing 400 mg cap (the fallback sheet leaves it out on purpose).
+For the prebuilt Demonstration 1 fallback:
 
-Or skip the scripts: paste the stem into ChatGPT **with no identifiers**, ask for a Python script, and run that script locally.
+```bash
+pip install -r slides/workshops/requirements.txt
+python slides/workshops/demo1_fallback.py
+```
 
-## Take-home, in one line each
+## Build and publish the lecture
 
-- **Lab 5.** One open paper → eight slides in `docs/index.html` → GitHub Pages, or zip the file and open it on your phone. Do not publish unverified citations.
-- **Lab 6.** Install [Ollama](https://ollama.com). Pull a model that fits (`qwen3.8` or `qwen3:8b` on a small laptop). Airplane mode. Synthetic note only. Weights also live on [Hugging Face](https://huggingface.co/models).
-- **Lab 7.** Ask ChatGPT for an `index.html` that plots **synthetic noon-conference attendance** (made-up counts, not real people). Then ask a harness to write the file in an empty folder and open it.
-- **Lab 8.** Upload only public papers. Click every citation. Ask something off-corpus; it should refuse. Gemini Notebook is the current product name (formerly NotebookLM).
+The Quarto source is [`slides/lecture.qmd`](slides/lecture.qmd). Render it into the GitHub Pages tree with:
 
-Never use tonight’s patients, even “just the assessment.”
+```bash
+cd slides
+./render.sh
+```
 
-## This lecture as a webpage
-
-[`docs/index.html`](docs/index.html) is the hour’s Reveal deck (source: [`slides/lecture.qmd`](slides/lecture.qmd)). GitHub Pages: **Settings → Pages → GitHub Actions**, or **Deploy from a branch → `main` → `/docs`**. Re-render after you edit the lecture (`cd slides && ./render.sh`). Lab 5 is your own journal-club fork in a different repo, not this file.
+The workflow in [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes `docs/` from `main`.

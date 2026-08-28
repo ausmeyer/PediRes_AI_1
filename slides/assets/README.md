@@ -24,4 +24,6 @@ Used for an **internal educational talk** at Baylor Scott & White McLane Childre
 
 The train is a **trademarked hospital mark** (TM appears on the official artwork). Do not put it on public marketing without Communications. Using it on a residency lecture *in that hospital* is the intended setting. If this repo’s GitHub Pages site will be public, that is a Communications question before you flip the switch.
 
+Lecture figures are regenerated with `python generate_figures.py`. The generator owns `figures/`, writes deterministic SVG files, and removes obsolete figures and unreferenced PNG duplicates.
+
 2018 identity: kids’ train drawings refined with Siegel+Gale; unveiled locally as a colorful train honoring Temple’s railroad heritage ([KWTX](https://www.kwtx.com/content/news/Temple--New-childrens-hospital-logo-unveiled-500091251.html); [Morether](https://morether.com/portfolio-item/mclane-childrens-logo/)).
